@@ -1,0 +1,2214 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-i18n="page_title" data-i18n-mode="text">FCFC TP 研究報告 | Formosa Chemicals &amp; Fibre Corporation</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Sans+TC:wght@300;400;700;900&display=swap');
+        
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #0f172a;
+            --accent-color: #2563eb;
+            --sidebar-bg: #f8fafc;
+        }
+
+        .dark {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --sidebar-bg: #1e293b;
+            --accent-color: #3b82f6;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        /* 導覽 */
+        .sidebar-nav {
+            display: none;
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link.active {
+            color: var(--accent-color);
+            font-weight: 900;
+        }
+
+        .site-topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 120;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.9rem 1rem;
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(148,163,184,0.18);
+        }
+
+        .dark .site-topbar {
+            background: rgba(15,23,42,0.88);
+            border-bottom-color: rgba(148,163,184,0.16);
+        }
+
+        .topbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            min-width: 0;
+        }
+
+        .topbar-brand-badge {
+            width: 42px;
+            height: 42px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.22);
+        }
+
+        .topbar-brand-text {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .topbar-title {
+            font-size: 0.95rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .topbar-subtitle {
+            font-size: 0.68rem;
+            opacity: 0.6;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex: 1 1 auto;
+        }
+
+        .desktop-nav .nav-link {
+            writing-mode: initial;
+            text-orientation: initial;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.7rem;
+            height: 2.7rem;
+            padding: 0 0.95rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(148,163,184,0.24);
+            background: rgba(248,250,252,0.92);
+            color: inherit;
+            font-size: 0.88rem;
+            font-weight: 800;
+        }
+
+        .dark .desktop-nav .nav-link {
+            background: rgba(30,41,59,0.9);
+            border-color: rgba(148,163,184,0.2);
+        }
+
+        .desktop-nav .nav-link.active {
+            background: rgba(37,99,235,0.12);
+            border-color: rgba(37,99,235,0.35);
+            box-shadow: 0 10px 24px rgba(37,99,235,0.12);
+        }
+
+        .menu-toggle-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            border: 1px solid rgba(148,163,184,0.24);
+            background: rgba(248,250,252,0.92);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(15,23,42,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle-btn:hover {
+            transform: scale(1.04);
+        }
+
+        .dark .menu-toggle-btn {
+            background: rgba(30,41,59,0.9);
+            border-color: rgba(148,163,184,0.2);
+            color: white;
+        }
+
+        .toolbar-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            flex: 0 1 auto;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15,23,42,0.42);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 130;
+        }
+
+        .drawer-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .drawer-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: min(360px, 88vw);
+            height: 100vh;
+            background: var(--sidebar-bg);
+            border-right: 1px solid rgba(148,163,184,0.18);
+            box-shadow: 0 30px 60px rgba(15,23,42,0.18);
+            transform: translateX(-105%);
+            transition: transform 0.3s ease;
+            z-index: 140;
+            display: flex;
+            flex-direction: column;
+            padding: 1.15rem;
+        }
+
+        .drawer-menu.show {
+            transform: translateX(0);
+        }
+
+        .drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .drawer-close-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 9999px;
+            border: 1px solid rgba(148,163,184,0.24);
+            background: transparent;
+        }
+
+        .drawer-links {
+            display: grid;
+            gap: 0.7rem;
+            margin-top: 0.75rem;
+        }
+
+        .drawer-link {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.9rem 1rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(148,163,184,0.18);
+            background: rgba(255,255,255,0.6);
+            text-align: left;
+        }
+
+        .dark .drawer-link {
+            background: rgba(30,41,59,0.68);
+        }
+
+        .drawer-link-index {
+            min-width: 2.1rem;
+            height: 2.1rem;
+            border-radius: 9999px;
+            background: rgba(37,99,235,0.12);
+            color: var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 900;
+        }
+
+        .drawer-link-title {
+            font-size: 0.98rem;
+            font-weight: 800;
+            line-height: 1.35;
+        }
+
+        .drawer-link.active {
+            border-color: rgba(37,99,235,0.35);
+            background: rgba(37,99,235,0.1);
+            box-shadow: 0 14px 30px rgba(37,99,235,0.12);
+        }
+
+        /* 內容區塊標題風格 */
+        .section-header {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 0.8;
+            opacity: 0.05;
+            position: absolute;
+            top: -2rem;
+            left: -1rem;
+            pointer-events: none;
+            z-index: 0;
+            text-transform: uppercase;
+        }
+
+        .section-container {
+            position: relative;
+            margin-bottom: 8rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .data-table th {
+            background-color: #f1f5f9;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            font-weight: 900;
+        }
+        .data-table td {
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            text-align: right;
+        }
+        .data-table td:first-child { text-align: left; font-weight: bold; }
+        .dark .data-table th { background-color: #334155; border-color: #475569; }
+        .dark .data-table td { border-color: #475569; }
+
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .product-table th {
+            background-color: #f1f5f9;
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            font-weight: 900;
+        }
+        .product-table td {
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        .dark .product-table th { background-color: #334155; border-color: #475569; }
+        .dark .product-table td { border-color: #475569; }
+
+        .category-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        .dark .category-tag { background: #475569; }
+
+        .highlight-card {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 按鈕動態效果 */
+        @keyframes pulse-custom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(37, 99, 235, 0.6); }
+            100% { transform: scale(1); }
+        }
+        .is-speaking {
+            animation: pulse-custom 1.5s infinite ease-in-out;
+            background-color: #2563eb !important;
+            color: white !important;
+        }
+
+        /* 預留多語系切換的 CSS 架構 */
+        .lang-en { display: none; }
+        .show-en .lang-zh { display: none !important; }
+        .show-en .lang-en { display: inline-block !important; }
+
+        @media (max-width: 1279px) {
+            .desktop-nav {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .site-topbar {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .section-header { font-size: 5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .section-header { font-size: 3.5rem; }
+            .site-topbar {
+                padding: 0.75rem 0.8rem;
+                gap: 0.6rem;
+                align-items: flex-start;
+            }
+            .topbar-title {
+                font-size: 0.8rem;
+            }
+            .topbar-subtitle {
+                font-size: 0.58rem;
+                letter-spacing: 0.14em;
+            }
+            .topbar-brand-badge {
+                width: 38px;
+                height: 38px;
+                font-size: 0.85rem;
+            }
+            .toolbar-group {
+                gap: 0.45rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .section-header { font-size: 2.6rem; top: -0.8rem; left: 0; }
+            .drawer-menu { width: min(340px, 92vw); padding: 1rem; }
+            .desktop-nav { display: none; }
+        }
+    
+
+/* ===== Added fixes: dark mode readability + simple i18n display ===== */
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark .bg-slate-200,
+.dark .bg-blue-50,
+.dark .bg-blue-100,
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+    color: #0f172a !important;
+}
+.dark .bg-slate-50 *,
+.dark .bg-slate-100 *,
+.dark .bg-slate-200 *,
+.dark .bg-blue-50 *,
+.dark .bg-blue-100 *,
+.dark .bg-gray-50 *,
+.dark .bg-gray-100 * {
+    color: inherit;
+}
+.dark .bg-slate-50 .opacity-70,
+.dark .bg-slate-50 .opacity-60,
+.dark .bg-slate-50 .opacity-50,
+.dark .bg-slate-50 .opacity-40,
+.dark .bg-slate-100 .opacity-70,
+.dark .bg-slate-100 .opacity-60,
+.dark .bg-slate-100 .opacity-50,
+.dark .bg-slate-100 .opacity-40,
+.dark .bg-slate-200 .opacity-70,
+.dark .bg-slate-200 .opacity-60,
+.dark .bg-slate-200 .opacity-50,
+.dark .bg-slate-200 .opacity-40,
+.dark .bg-blue-50 .opacity-70,
+.dark .bg-blue-50 .opacity-60,
+.dark .bg-blue-50 .opacity-50,
+.dark .bg-blue-50 .opacity-40,
+.dark .bg-blue-100 .opacity-70,
+.dark .bg-blue-100 .opacity-60,
+.dark .bg-blue-100 .opacity-50,
+.dark .bg-blue-100 .opacity-40 {
+    opacity: 1 !important;
+    color: #334155 !important;
+}
+.dark .bg-slate-50 .text-slate-300,
+.dark .bg-slate-50 .text-slate-400,
+.dark .bg-slate-50 .text-slate-500,
+.dark .bg-slate-100 .text-slate-300,
+.dark .bg-slate-100 .text-slate-400,
+.dark .bg-slate-100 .text-slate-500,
+.dark .bg-slate-200 .text-slate-300,
+.dark .bg-slate-200 .text-slate-400,
+.dark .bg-slate-200 .text-slate-500,
+.dark .bg-blue-50 .text-slate-300,
+.dark .bg-blue-50 .text-slate-400,
+.dark .bg-blue-50 .text-slate-500,
+.dark .bg-blue-100 .text-slate-300,
+.dark .bg-blue-100 .text-slate-400,
+.dark .bg-blue-100 .text-slate-500 {
+    color: #334155 !important;
+    opacity: 1 !important;
+}
+
+
+/* ===== Full page-switch mode ===== */
+.hero-section {
+    display: none;
+}
+
+.content-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    animation: none;
+}
+
+.content-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-section.active .reveal,
+.content-section.active.reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.section-page-wrap {
+    min-height: calc(100vh - 120px);
+}
+
+/* ===== 回到頂部按鈕 ===== */
+#backToTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    z-index: 999;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+#backToTopBtn.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+#backToTopBtn:hover {
+    transform: translateY(-3px) scale(1.08);
+}
+.dark #backToTopBtn {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+
+@media (max-width: 1024px) {
+    #voiceBtn span {
+        max-width: 110px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 768px) {
+    #voiceBtn span {
+        display: none;
+    }
+    .toolbar-group > button:not(.menu-toggle-btn) {
+        flex-shrink: 0;
+    }
+    .highlight-card {
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+    }
+    .data-table,
+    .product-table {
+        min-width: 680px;
+    }
+}
+
+@media (max-width: 640px) {
+    #backToTopBtn {
+        width: 46px;
+        height: 46px;
+        right: 14px;
+        bottom: 16px;
+    }
+}
+
+</style>
+</head>
+<body class="light">
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeMenu()"></div>
+<aside class="drawer-menu" id="drawerMenu" aria-hidden="true">
+<div class="drawer-header">
+<div>
+<p class="text-xs font-black uppercase tracking-[0.28em] opacity-40" data-i18n="nav_menu_label" data-i18n-mode="text">導覽選單</p>
+<h3 class="text-lg font-black" data-i18n="nav_menu_title" data-i18n-mode="text">章節目錄</h3>
+</div>
+<button class="drawer-close-btn" type="button" onclick="closeMenu()" aria-label="Close menu">
+<i class="fas fa-xmark"></i>
+</button>
+</div>
+<div class="drawer-links">
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec1')">
+<span class="drawer-link-index">壹</span>
+<span class="drawer-link-title" data-i18n="nav_sec1" data-i18n-mode="text">壹、最新消息</span>
+</button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec2')">
+<span class="drawer-link-index">貳</span>
+<span class="drawer-link-title" data-i18n="nav_sec2" data-i18n-mode="text">貳、發展沿革</span>
+</button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec3')">
+<span class="drawer-link-index">參</span>
+<span class="drawer-link-title" data-i18n="nav_sec3" data-i18n-mode="text">參、願景使命與價值</span>
+</button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec4')">
+<span class="drawer-link-index">肆</span>
+<span class="drawer-link-title" data-i18n="nav_sec4" data-i18n-mode="text">肆、組織架構</span>
+</button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec5')">
+<span class="drawer-link-index">伍</span>
+<span class="drawer-link-title" data-i18n="nav_sec5" data-i18n-mode="text">伍、產品組合與藍圖</span>
+</button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec6')">
+<span class="drawer-link-index">陸</span>
+<span class="drawer-link-title" data-i18n="nav_sec6" data-i18n-mode="text">陸、財務績效</span>
+</button>
+</div>
+</aside>
+<header class="site-topbar">
+<div class="topbar-brand">
+<div class="topbar-brand-badge">FC</div>
+<div class="topbar-brand-text">
+<div class="topbar-title" data-i18n="nav_brand_title" data-i18n-mode="text">FCFC TP 研究報告</div>
+<div class="topbar-subtitle">FORMOSA CHEMICALS &amp; FIBRE CORP.</div>
+</div>
+</div>
+<nav class="desktop-nav" aria-label="Desktop navigation">
+<button class="nav-link" type="button" onclick="switchSection('sec1')">壹</button>
+<button class="nav-link" type="button" onclick="switchSection('sec2')">貳</button>
+<button class="nav-link" type="button" onclick="switchSection('sec3')">參</button>
+<button class="nav-link" type="button" onclick="switchSection('sec4')">肆</button>
+<button class="nav-link" type="button" onclick="switchSection('sec5')">伍</button>
+<button class="nav-link" type="button" onclick="switchSection('sec6')">陸</button>
+</nav>
+<div class="toolbar-group">
+<button class="menu-toggle-btn" type="button" onclick="toggleMenu()" aria-label="Open menu">
+<i class="fas fa-bars"></i>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 h-10 rounded-full bg-white border border-slate-200 text-slate-800 font-bold text-xs shadow-md hover:bg-slate-50 transition-all dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-700" id="voiceBtn" onclick="toggleAudioGuide()">
+<i class="fas fa-volume-up text-blue-500 dark:text-blue-400" id="voiceIcon"></i>
+<span data-en="Audio Guide OFF" data-i18n="k0" data-i18n-mode="text" data-zh="語音導覽 OFF" id="voiceText">語音導覽 OFF</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:ring-2 ring-blue-400 transition-all" onclick="toggleLanguage()">
+<i class="fas fa-language text-lg text-blue-500"></i>
+<span class="text-sm font-bold" data-i18n="k1" data-i18n-mode="text" id="langDisplay">繁體中文</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform dark:bg-white dark:text-black" onclick="toggleTheme()">
+<i class="fas fa-moon text-xs" id="themeIcon"></i>
+</button>
+</div>
+</header>
+<!-- 主內容區 (第壹至陸章節完全保留原貌) -->
+<main class="content-main min-h-screen pt-[96px] md:pt-[104px]">
+<!-- Hero Section -->
+<section class="hero-section h-screen flex flex-col justify-center px-10 md:px-24">
+<h1 class="text-4xl md:text-[5rem] font-black tracking-tighter leading-none mb-4 opacity-30 uppercase" data-i18n="k2" data-i18n-mode="text">
+                Taiwan Stock: 1326
+            </h1>
+<h2 class="text-6xl md:text-[8rem] font-black tracking-tighter leading-none mb-8" data-i18n="hero_title" data-i18n-mode="html">
+                FORMOSA <br/> CHEMICALS &amp; <br/> FIBRE CORP.
+            </h2>
+<div class="max-w-2xl">
+<p class="text-xl font-light opacity-60 leading-relaxed translate-y-4" data-i18n="hero_desc" data-i18n-mode="html">
+                    SMMC-EMI Program: Formosa Chemicals &amp; Fibre Corporation (FCFC) <br/>
+                    Company Overview &amp; Financial Performance Analysis.
+                </p>
+</div>
+<div class="mt-20 flex gap-10 text-[10px] font-black tracking-[0.3em] uppercase opacity-40">
+<span data-i18n="k3" data-i18n-mode="text">EST. 1965</span>
+<span data-i18n="k4" data-i18n-mode="text">GLOBAL PETROCHEMICAL LEADER</span>
+<span data-i18n="k5" data-i18n-mode="text">SUSTAINABILITY DRIVEN</span>
+</div>
+</section>
+<div class="section-page-wrap px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-8 sm:py-10 md:py-14">
+<!-- 壹、最新消息 -->
+<section class="section-container reveal content-section" id="sec1">
+<div class="section-header" data-i18n="k6" data-i18n-mode="text">News</div>
+<div class="relative z-10 pt-10">
+<h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="k7" data-i18n-mode="text">壹、最新消息 (The most recent news)</h2>
+<div class="grid md:grid-cols-2 gap-16">
+<article class="space-y-6">
+<div>
+<h3 class="text-2xl font-bold mb-2">1. Taiwan’s Formosa Plastics to raise product prices amid rising oil costs</h3>
+<div class="text-xs font-black opacity-40 mb-4 uppercase" data-i18n="news1_source" data-i18n-mode="html">
+                                    Source: <a class="hover:text-blue-500 underline" href="https://www.taiwannews.com.tw/news/6332570" target="_blank">Taiwan News</a> | Headline: [Crude Breakout] Formosa Group Adjusts Pricing as Oil Surpasses $110 per Barrel
+                                </div>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 shrink-0"></span>
+<div>
+<p class="font-bold text-sm" data-i18n="k8" data-i18n-mode="text">關鍵發展 (Key Development):</p>
+<p class="text-sm opacity-70 leading-relaxed" data-i18n="k9" data-i18n-mode="text">由於中東地區供應鏈顯著中斷，全球原油價格已飆升至每桶 110 美元以上。</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 shrink-0"></span>
+<div>
+<p class="font-bold text-sm" data-i18n="k10" data-i18n-mode="text">公司回應 (Company Response):</p>
+<p class="text-sm opacity-70 leading-relaxed" data-i18n="k11" data-i18n-mode="text">台化公司 (Formosa Chemicals &amp; Fibre Corp) 已確認調漲其化學纖維組合的價格，特別針對 Rayon 與 Viscose Staple Fibers。</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 shrink-0"></span>
+<div>
+<p class="font-bold text-sm" data-i18n="k12" data-i18n-mode="text">戰略目標 (Strategic Goal):</p>
+<p class="text-sm opacity-70 leading-relaxed" data-i18n="k13" data-i18n-mode="text">這些調整旨在抵銷原料和能源支出的激增，確保集團在生產成本上升的情況下仍能維持營運穩定。</p>
+</div>
+</div>
+</div>
+</article>
+<article class="space-y-6">
+<div>
+<h3 class="text-2xl font-bold mb-2">2. FCFC Projected to Hit NT$3.1 Billion Profit in 2026</h3>
+<div class="text-xs font-black opacity-40 mb-4 uppercase" data-i18n="news2_source" data-i18n-mode="html">
+                                    Source: <a class="hover:text-blue-500 underline" href="https://www.cmoney.tw/notes/note-detail.aspx?nid=1156980&amp;utm_source" target="_blank">CMoney</a> | Headline: [Analyst Upgrade] FCFC Forecasts Return to Profitability; Rating Raised to "Buy"
+                                </div>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600 mt-2 shrink-0"></span>
+<div>
+<p class="font-bold text-sm" data-i18n="k14" data-i18n-mode="text">獲利預測 (Profit Forecast):</p>
+<p class="text-sm opacity-70 leading-relaxed" data-i18n="k15" data-i18n-mode="text">一份新的機構報告預測台化將成功轉虧為盈，預計 2026 財年的稅後淨利將達到 31 億新台幣。</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600 mt-2 shrink-0"></span>
+<div>
+<p class="font-bold text-sm" data-i18n="k16" data-i18n-mode="text">成長動力 (Growth Drivers):</p>
+<p class="text-sm opacity-70 leading-relaxed mb-3 font-semibold italic" data-i18n="k17" data-i18n-mode="text">此次復甦由三大結構性轉變支撐：</p>
+<ul class="space-y-3 pl-4 border-l border-green-200 dark:border-green-800">
+<li>
+<p class="text-sm font-bold" data-i18n="k18" data-i18n-mode="text">• 競爭減少 (Reduced Competition):</p>
+<p class="text-xs opacity-60" data-i18n="k19" data-i18n-mode="text">中國嚴格的環保政策限制了產能過剩，緩解了全球供應壓力。</p>
+</li>
+<li>
+<p class="text-sm font-bold" data-i18n="k20" data-i18n-mode="text">• 高價值轉型 (High-Value Shift):</p>
+<p class="text-xs opacity-60" data-i18n="k21" data-i18n-mode="text">內部有紀律地從低利潤大宗商品轉向專業化的功能性纖維。</p>
+</li>
+<li>
+<p class="text-sm font-bold" data-i18n="k22" data-i18n-mode="text">• 循環經濟 (Circular Economy):</p>
+<p class="text-xs opacity-60" data-i18n="k23" data-i18n-mode="text">積極關注永續「綠色」材料和回收紡織品。</p>
+</li>
+</ul>
+<p class="text-xs opacity-50 mt-4 leading-relaxed italic" data-i18n="k24" data-i18n-mode="text">
+                                            雖然能源波動仍是風險，但更廣泛的行業改善和精簡的營運模式使台化在整個 2026 年定位於具韌性的成長。
+                                        </p>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- 貳、發展沿革 -->
+<section class="section-container reveal content-section" id="sec2">
+<div class="section-header" data-i18n="k25" data-i18n-mode="text">History</div>
+<div class="relative z-10 pt-10">
+<h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="k26" data-i18n-mode="text">貳、發展沿革 (History &amp; Evolution)</h2>
+<div class="grid gap-8">
+<div class="flex flex-col md:flex-row gap-6 p-8 bg-slate-50 dark:bg-slate-800/30 rounded-2xl">
+<div class="md:w-1/4">
+<span class="text-5xl font-black text-blue-600 opacity-40">1960s</span>
+<p class="text-xs font-bold uppercase tracking-widest mt-2" data-i18n="k27" data-i18n-mode="text">Establishment</p>
+</div>
+<div class="md:w-3/4 space-y-3">
+<div class="flex gap-4"><span class="font-bold text-blue-500">1964</span><p class="text-sm" data-i18n="k28" data-i18n-mode="text">彰化籌備處設立。</p></div>
+<div class="flex gap-4"><span class="font-bold text-blue-500">1965</span><p class="text-sm font-bold text-lg" data-i18n="k29" data-i18n-mode="text">正式成立台灣化學纖維公司。</p></div>
+<div class="flex gap-4"><span class="font-bold text-blue-500">1967</span><p class="text-sm" data-i18n="k30" data-i18n-mode="text">彰化廠開工生產木漿、人造棉與毛毯。</p></div>
+<div class="flex gap-4"><span class="font-bold text-blue-500">1969</span><p class="text-sm" data-i18n="k31" data-i18n-mode="text">彰化汽電廠 G1 機商業運轉。</p></div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 p-8 border border-slate-100 dark:border-slate-800 rounded-2xl">
+<div class="md:w-1/4">
+<span class="text-5xl font-black opacity-20">1970s</span>
+<p class="text-xs font-bold uppercase tracking-widest mt-2" data-i18n="k32" data-i18n-mode="text">Expansion</p>
+</div>
+<div class="md:w-3/4 space-y-3">
+<div class="flex gap-4"><span class="font-bold">1970</span><p class="text-sm" data-i18n="k33" data-i18n-mode="text">完成尼龍聚合 A 至 E 系列生產線，並生產尼龍絲與輪胎簾布。</p></div>
+<div class="flex gap-4"><span class="font-bold">1974</span><p class="text-sm" data-i18n="k34" data-i18n-mode="text">新港廠正式開工生產人造棉與人造紗。</p></div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 p-8 bg-slate-50 dark:bg-slate-800/30 rounded-2xl">
+<div class="md:w-1/4">
+<span class="text-5xl font-black opacity-20">1980-90s</span>
+<p class="text-xs font-bold uppercase tracking-widest mt-2" data-i18n="k35" data-i18n-mode="text">Petrochemical Shift</p>
+</div>
+<div class="md:w-3/4 space-y-3">
+<div class="flex gap-4"><span class="font-bold">1987</span><p class="text-sm" data-i18n="k36" data-i18n-mode="text">龍德廠開工生產化纖產品。</p></div>
+<div class="flex gap-4"><span class="font-bold">1989</span><p class="text-sm font-bold" data-i18n="k37" data-i18n-mode="text">龍德 PTA-0 廠試車，正式跨足石化產業。</p></div>
+<div class="flex gap-4"><span class="font-bold">1994</span><p class="text-sm" data-i18n="k38" data-i18n-mode="text">新港 PS 廠與龍德 PTA-1 廠完工。</p></div>
+<div class="flex gap-4"><span class="font-bold">1999</span><p class="text-sm" data-i18n="k39" data-i18n-mode="text">麥寮 ARO-1、SM-1 及麥寮汽電三部機組商業運轉。</p></div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 p-8 border border-slate-100 dark:border-slate-800 rounded-2xl">
+<div class="md:w-1/4">
+<span class="text-5xl font-black opacity-20">2000s</span>
+<p class="text-xs font-bold uppercase tracking-widest mt-2" data-i18n="k40" data-i18n-mode="text">Restructuring</p>
+</div>
+<div class="md:w-3/4 space-y-3">
+<div class="flex gap-4"><span class="font-bold">2000</span><p class="text-sm font-bold text-blue-600" data-i18n="k41" data-i18n-mode="text">石化與塑膠營收正式超過纖維與紡織營收。</p></div>
+<div class="flex gap-4"><span class="font-bold">2002</span><p class="text-sm" data-i18n="k42" data-i18n-mode="text">於寧波設立台化(寧波)有限公司，跨足大陸市場。</p></div>
+<div class="flex gap-4"><span class="font-bold">2008</span><p class="text-sm" data-i18n="k43" data-i18n-mode="text">麥寮 ARO-3 廠完工投入運轉。</p></div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 p-8 bg-blue-50 dark:bg-blue-900/10 rounded-2xl border-l-4 border-blue-500">
+<div class="md:w-1/4">
+<span class="text-5xl font-black text-blue-600">2010-23</span>
+<p class="text-xs font-bold uppercase tracking-widest mt-2" data-i18n="k44" data-i18n-mode="text">Sustainability</p>
+</div>
+<div class="md:w-3/4 space-y-3">
+<div class="flex gap-4"><span class="font-bold">2013</span><p class="text-sm" data-i18n="k45" data-i18n-mode="text">彰化廠停止化纖生產，轉型研發與行政中心。</p></div>
+<div class="flex gap-4"><span class="font-bold">2017</span><p class="text-sm" data-i18n="k46" data-i18n-mode="text">成立台化(越南)公司及新港 PABS 廠。</p></div>
+<div class="flex gap-4"><span class="font-bold">2021</span><p class="text-sm" data-i18n="k47" data-i18n-mode="text">擴大回收塑膠 (PCR) 與海洋回收紗生產基地。</p></div>
+<div class="flex gap-4"><span class="font-bold">2023</span><p class="text-sm font-bold" data-i18n="k48" data-i18n-mode="text">新港 PABS 複合材料廠完工；推動綠色化學與循環經濟。</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 參、願景價值 -->
+<section class="section-container reveal content-section" id="sec3">
+<div class="section-header" data-i18n="k49" data-i18n-mode="text">Vision</div>
+<div class="relative z-10 pt-10">
+<h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="k50" data-i18n-mode="text">參、願景使命與價值 (Vision, Mission &amp; Values)</h2>
+<div class="grid gap-12">
+<div class="bg-slate-900 text-white p-12 rounded-3xl">
+<h3 class="text-xs font-black uppercase tracking-[0.5em] mb-10 opacity-40" data-i18n="k51" data-i18n-mode="text">Core Business Philosophy (經營理念)</h3>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+<div class="space-y-4">
+<h4 class="text-2xl font-black mb-4" data-i18n="k52" data-i18n-mode="text">勤勞樸實</h4>
+<p class="text-xs opacity-60 leading-relaxed" data-i18n="k53" data-i18n-mode="text">體現創辦人王永慶、王永在先生的精神。強調凡事由小處著手，艱苦奮鬥，腳踏實地。</p>
+</div>
+<div class="space-y-4">
+<h4 class="text-2xl font-black mb-4" data-i18n="k54" data-i18n-mode="text">止於至善</h4>
+<p class="text-xs opacity-60 leading-relaxed" data-i18n="k55" data-i18n-mode="text">永無止境的合理化管理。追求成本最小化、效率最大化，在各項環節追求極致。</p>
+</div>
+<div class="space-y-4">
+<h4 class="text-2xl font-black mb-4" data-i18n="k56" data-i18n-mode="text">永續經營</h4>
+<p class="text-xs opacity-60 leading-relaxed" data-i18n="k57" data-i18n-mode="text">不求一時利潤，重視長期競爭力，建立百年企業基石，穩定回饋利害關係人。</p>
+</div>
+<div class="space-y-4">
+<h4 class="text-2xl font-black mb-4" data-i18n="k58" data-i18n-mode="text">奉獻社會</h4>
+<p class="text-xs opacity-60 leading-relaxed" data-i18n="k59" data-i18n-mode="text">企業獲利應回饋社會。透過醫療、教育等公益項目，實踐取之於社會，用之於社會。</p>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-10">
+<div class="p-10 border border-slate-100 dark:border-slate-800 rounded-3xl space-y-6">
+<h4 class="text-xl font-black flex items-center gap-2"><i class="fas fa-bullseye text-blue-500"></i> 企業願景 (The Vision)</h4>
+<p class="text-sm opacity-70 leading-loose" data-i18n="k60" data-i18n-mode="text">追求永續發展，強化全球競爭力，維持在石化、塑膠與化學纖維產業的領導地位。</p>
+<ul class="space-y-4 text-xs opacity-60">
+<li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-blue-500 mt-1.5 shrink-0"></span><span data-i18n="k61" data-i18n-mode="text">透過垂直整合生產模式，確保供應穩定與價格競爭力。</span></li>
+<li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-blue-500 mt-1.5 shrink-0"></span><span data-i18n="k62" data-i18n-mode="text">積極開發功能性與差異化產品，滿足全球多元市場需求。</span></li>
+</ul>
+</div>
+<div class="p-10 bg-slate-50 dark:bg-slate-800/30 rounded-3xl space-y-6">
+<h4 class="text-xl font-black flex items-center gap-2"><i class="fas fa-cogs text-blue-500"></i> 管理特色 (Management Style)</h4>
+<div class="space-y-4">
+<div><p class="text-sm font-bold" data-i18n="k63" data-i18n-mode="text">合理化管理 (Rational Management)</p><p class="text-xs opacity-60" data-i18n="k64" data-i18n-mode="text">強調數字管理，凡事講求實據。透過壓力管理持續精進流程。</p></div>
+<div><p class="text-sm font-bold" data-i18n="k65" data-i18n-mode="text">個人電腦化 (Individual Computerization)</p><p class="text-xs opacity-60" data-i18n="k66" data-i18n-mode="text">全面推動資訊透明與流程自動化，確保決策的及時性與精準度。</p></div>
+<div><p class="text-sm font-bold" data-i18n="k67" data-i18n-mode="text">環境與安全 (ESG Commitment)</p><p class="text-xs opacity-60" data-i18n="k68" data-i18n-mode="text">將安全衛生與環境保護視為第一要務，積極邁向碳中和轉型。</p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 肆、組織架構 -->
+<section class="section-container reveal content-section" id="sec4">
+<div class="section-header" data-i18n="k69" data-i18n-mode="text">Structure</div>
+<div class="relative z-10 pt-10">
+<h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="k70" data-i18n-mode="text">肆、組織架構 (Organizational Structure)</h2>
+<div class="grid gap-10">
+<div class="grid md:grid-cols-3 gap-6">
+<div class="p-8 bg-blue-600 text-white rounded-3xl">
+<h4 class="text-xs font-bold uppercase opacity-60 mb-2" data-i18n="k71" data-i18n-mode="text">Chairman</h4>
+<p class="text-2xl font-black" data-i18n="k72" data-i18n-mode="text">洪福源 (Hong, Fu-Yuan)</p>
+<p class="text-xs mt-4 opacity-80 leading-relaxed" data-i18n="k73" data-i18n-mode="text">負責整體戰略決策與永續經營方針之擬定。</p>
+</div>
+<div class="p-8 border border-slate-200 dark:border-slate-800 rounded-3xl">
+<h4 class="text-xs font-bold uppercase opacity-40 mb-2" data-i18n="k74" data-i18n-mode="text">President</h4>
+<p class="text-2xl font-black" data-i18n="k75" data-i18n-mode="text">呂文進 (Lu, Wen-Chin)</p>
+<p class="text-xs mt-4 opacity-60 leading-relaxed" data-i18n="k76" data-i18n-mode="text">統籌各事業部營運效率與管理指標達成。</p>
+</div>
+<div class="p-8 border border-slate-200 dark:border-slate-800 rounded-3xl">
+<h4 class="text-xs font-bold uppercase opacity-40 mb-2" data-i18n="k77" data-i18n-mode="text">Key Management</h4>
+<ul class="text-sm font-bold space-y-1">
+<li data-i18n="k78" data-i18n-mode="text">董事會 (Board of Directors)</li>
+<li data-i18n="k79" data-i18n-mode="text">審計委員會 (Audit Committee)</li>
+<li data-i18n="k80" data-i18n-mode="text">薪酬委員會 (Remuneration Committee)</li>
+</ul>
+</div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+<i class="fas fa-flask text-2xl text-blue-500 mb-4"></i>
+<h5 class="font-black text-lg mb-2" data-i18n="k81" data-i18n-mode="text">石化事業部</h5>
+<p class="text-[10px] opacity-50 mb-4 uppercase" data-i18n="k82" data-i18n-mode="text">Petrochemical Division</p>
+<ul class="text-xs space-y-2 opacity-70">
+<li data-i18n="k83" data-i18n-mode="text">化一部: BZ, PX, OX</li>
+<li data-i18n="k84" data-i18n-mode="text">化二部: SM, Phenol, Acetone</li>
+<li data-i18n="k85" data-i18n-mode="text">化三部: PTA</li>
+</ul>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+<i class="fas fa-boxes text-2xl text-blue-500 mb-4"></i>
+<h5 class="font-black text-lg mb-2" data-i18n="k86" data-i18n-mode="text">塑膠事業部</h5>
+<p class="text-[10px] opacity-50 mb-4 uppercase" data-i18n="k87" data-i18n-mode="text">Plastics Division</p>
+<ul class="text-xs space-y-2 opacity-70">
+<li data-i18n="k88" data-i18n-mode="text">負責 ABS, PS, PP, PC 等樹脂生產</li>
+<li data-i18n="k89" data-i18n-mode="text">推動 PCR 回收塑料與高價值材料研發</li>
+<li data-i18n="k90" data-i18n-mode="text">麥寮、寧波兩大生產基地協作</li>
+</ul>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+<i class="fas fa-thread text-2xl text-blue-500 mb-4"></i>
+<h5 class="font-black text-lg mb-2" data-i18n="k91" data-i18n-mode="text">纖維事業部</h5>
+<p class="text-[10px] opacity-50 mb-4 uppercase" data-i18n="k92" data-i18n-mode="text">Fiber Division</p>
+<ul class="text-xs space-y-2 opacity-70">
+<li data-i18n="k93" data-i18n-mode="text">紡絲一部: Nylon 纖維、嫘縈</li>
+<li data-i18n="k94" data-i18n-mode="text">紡絲二部: 聚酯纖維、工業紗</li>
+<li data-i18n="k95" data-i18n-mode="text">回收材料: Seawastex 海洋回收紗</li>
+</ul>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+<i class="fas fa-shirt text-2xl text-blue-500 mb-4"></i>
+<h5 class="font-black text-lg mb-2" data-i18n="k96" data-i18n-mode="text">紡織事業部</h5>
+<p class="text-[10px] opacity-50 mb-4 uppercase" data-i18n="k97" data-i18n-mode="text">Textile Division</p>
+<ul class="text-xs space-y-2 opacity-70">
+<li data-i18n="k98" data-i18n-mode="text">紡紗、織布及染整一體化</li>
+<li data-i18n="k99" data-i18n-mode="text">機能性布料開發與行銷</li>
+<li data-i18n="k100" data-i18n-mode="text">供應全球知名運動與戶外品牌</li>
+</ul>
+</div>
+</div>
+<div class="p-10 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl">
+<h4 class="text-lg font-black mb-6" data-i18n="k101" data-i18n-mode="text">支援體系與研發中心 (Support &amp; R&amp;D)</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="space-y-2"><p class="text-sm font-bold" data-i18n="k102" data-i18n-mode="text">彰化管理部</p><p class="text-[10px] opacity-50" data-i18n="k103" data-i18n-mode="text">轉型為研發中心與新材料開發基地</p></div>
+<div class="space-y-2"><p class="text-sm font-bold" data-i18n="k104" data-i18n-mode="text">工務部</p><p class="text-[10px] opacity-50" data-i18n="k105" data-i18n-mode="text">負責能源管理、水處理與環保設施營運</p></div>
+<div class="space-y-2"><p class="text-sm font-bold" data-i18n="k106" data-i18n-mode="text">總經理室</p><p class="text-[10px] opacity-50" data-i18n="k107" data-i18n-mode="text">落實合理化管理與 AI 數位轉型</p></div>
+<div class="space-y-2"><p class="text-sm font-bold" data-i18n="k108" data-i18n-mode="text">安全衛生室</p><p class="text-[10px] opacity-50" data-i18n="k109" data-i18n-mode="text">執行最高標準的工安與職安監管</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 伍、產品組合與藍圖 -->
+<section class="section-container reveal content-section" id="sec5">
+<div class="section-header" data-i18n="k110" data-i18n-mode="text">Products</div>
+<div class="relative z-10 pt-10">
+<h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="k111" data-i18n-mode="text">伍、產品組合與藍圖 (Product Portfolios &amp; Roadmap)</h2>
+<h3 class="text-2xl font-black mb-6 text-blue-600" data-i18n="k112" data-i18n-mode="text">一、依產品類別 (Product Lines)</h3>
+<div class="mb-10 overflow-x-auto">
+<h4 class="text-lg font-bold mb-4 flex items-center gap-2"><i class="fas fa-cube text-blue-500"></i> 1. 塑膠原料 (Plastics)</h4>
+<table class="product-table">
+<thead><tr><th data-i18n="k113" data-i18n-mode="text" width="20%">主產品</th><th data-i18n="k114" data-i18n-mode="text" width="80%">細項分類與規格</th></tr></thead>
+<tbody>
+<tr><td data-i18n="k115" data-i18n-mode="text">ABS 樹脂</td><td data-i18n="k116" data-i18n-mode="text">台灣/寧波生產基地主要產項。</td></tr>
+<tr><td data-i18n="k117" data-i18n-mode="text">PS 樹脂</td><td data-i18n="k118" data-i18n-mode="text">台灣/寧波生產基地主要產項。</td></tr>
+<tr><td data-i18n="k119" data-i18n-mode="text">PP 樹脂</td><td>
+<div class="mb-2"><b data-i18n="k120" data-i18n-mode="text">● 單聚物 PP：</b>押出吹製級、雙軸延伸、薄膜級、扁紗級、射出級、纖維級、吹膜級</div>
+<div class="mb-2"><b data-i18n="k121" data-i18n-mode="text">● 隨意共聚合物 PP：</b>押出吹製級、薄膜級、射出級</div>
+<div><b data-i18n="k122" data-i18n-mode="text">● 耐衝擊共聚合物 PP：</b>押出級、射出級</div>
+</td></tr>
+<tr><td data-i18n="k123" data-i18n-mode="text">PC 樹脂</td><td>
+<div class="mb-2"><b data-i18n="k124" data-i18n-mode="text">● 台化 PC 改性產品：</b>耐候級、耐燃級、透明阻燃、擴散級、超低溫耐衝級、高透光級、紅外線穿透</div>
+<div><b data-i18n="k125" data-i18n-mode="text">● 台化出光 PC 產品：</b>基礎型 PC (通用、耐候、光學、導光、潔淨/薄膜級)</div>
+</td></tr>
+<tr><td data-i18n="k126" data-i18n-mode="text">PC 合金 (合膠)</td><td data-i18n="k127" data-i18n-mode="text">一般級、耐燃級</td></tr>
+<tr><td data-i18n="k128" data-i18n-mode="text">SAN / ASA 樹脂</td><td data-i18n="k129" data-i18n-mode="text">SAN (一般級、特殊級)；ASA 樹脂</td></tr>
+<tr><td data-i18n="k130" data-i18n-mode="text">複合材料</td><td data-i18n="k131" data-i18n-mode="text">PC/ABS 合金 (一般級)、PP 複合材料、Nylon 樹脂 (越南)</td></tr>
+<tr><td data-i18n="k132" data-i18n-mode="text">永續材料 (PCR)</td><td>
+<span class="category-tag">PCR ABS</span><span class="category-tag">PCR PS</span><span class="category-tag">PCR PC</span>
+<span class="category-tag">PCR PC合金</span><span class="category-tag">PCR PP</span><span class="category-tag" data-i18n="k133" data-i18n-mode="text">化學回收樹脂</span>
+<span class="category-tag" data-i18n="k134" data-i18n-mode="text">生質樹脂</span>
+</td></tr>
+</tbody>
+</table>
+</div>
+<div class="mb-10 overflow-x-auto">
+<h4 class="text-lg font-bold mb-4 flex items-center gap-2"><i class="fas fa-flask text-blue-500"></i> 2. 石油化學 (Petrochemicals)</h4>
+<table class="product-table">
+<thead><tr><th data-i18n="k135" data-i18n-mode="text" width="20%">生產部門</th><th data-i18n="k136" data-i18n-mode="text" width="80%">主要化學產品細項</th></tr></thead>
+<tbody>
+<tr><td data-i18n="k137" data-i18n-mode="text">化一部</td><td data-i18n="k138" data-i18n-mode="text">苯 (BZ)、對二甲苯 (PX)、鄰二甲苯 (OX)、間二甲苯 (MX)</td></tr>
+<tr><td data-i18n="k139" data-i18n-mode="text">化二部</td><td data-i18n="k140" data-i18n-mode="text">苯乙烯 (SM)、苯酚 (Phenol)、丙酮 (Acetone)</td></tr>
+<tr><td data-i18n="k141" data-i18n-mode="text">化三部</td><td data-i18n="k142" data-i18n-mode="text">純對苯二甲酸 (PTA)</td></tr>
+<tr><td data-i18n="k143" data-i18n-mode="text">合成酚</td><td data-i18n="k144" data-i18n-mode="text">雙酚A (BPA)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="mb-16 overflow-x-auto">
+<h4 class="text-lg font-bold mb-4 flex items-center gap-2"><i class="fas fa-tshirt text-blue-500"></i> 3. 纖維與紡織 (Fibers &amp; Textiles)</h4>
+<table class="product-table">
+<thead><tr><th data-i18n="k145" data-i18n-mode="text" width="20%">類別</th><th data-i18n="k146" data-i18n-mode="text" width="80%">產品說明</th></tr></thead>
+<tbody>
+<tr><td data-i18n="k147" data-i18n-mode="text">人造纖維</td><td data-i18n="k148" data-i18n-mode="text">嫘縈棉 (Rayon)、聚酯纖維 (Polyester)、尼龍纖維 (Nylon)</td></tr>
+<tr><td data-i18n="k149" data-i18n-mode="text">紡織產品</td><td data-i18n="k150" data-i18n-mode="text">各類棉、混紡紗、交織布</td></tr>
+<tr><td data-i18n="k151" data-i18n-mode="text">環保特種纖維</td><td><b data-i18n="k152" data-i18n-mode="text">Seawastex (海洋回收尼龍)：</b>回收廢棄漁網。<br/><b data-i18n="k153" data-i18n-mode="text">循環再生紗：</b>廢布/舊衣回收再製。</td></tr>
+</tbody>
+</table>
+</div>
+<h3 class="text-2xl font-black mb-10 text-blue-600" data-i18n="k154" data-i18n-mode="text">二、產品藍圖與未來策略 (Product Roadmap)</h3>
+<div class="grid lg:grid-cols-2 gap-8 mb-10">
+<div class="bg-slate-900 text-white p-8 rounded-3xl">
+<h4 class="text-xl font-black mb-6" data-i18n="k155" data-i18n-mode="text">高成長目標市場 (Target Markets)</h4>
+<div class="space-y-6">
+<div class="flex gap-4"><div class="w-12 h-12 bg-blue-500 flex items-center justify-center rounded-full shrink-0">1</div><div><p class="font-bold" data-i18n="k156" data-i18n-mode="text">儲能電池組件 (BBU)</p><p class="text-xs opacity-60" data-i18n="k157" data-i18n-mode="text">開發專用塑膠外殼，較鋁合金減重 50%。</p></div></div>
+<div class="flex gap-4"><div class="w-12 h-12 bg-blue-500 flex items-center justify-center rounded-full shrink-0">2</div><div><p class="font-bold" data-i18n="k158" data-i18n-mode="text">半導體材料</p><p class="text-xs opacity-60" data-i18n="k159" data-i18n-mode="text">開發電子級化學品與半導體封裝材料。</p></div></div>
+<div class="flex gap-4"><div class="w-12 h-12 bg-blue-500 flex items-center justify-center rounded-full shrink-0">3</div><div><p class="font-bold" data-i18n="k160" data-i18n-mode="text">醫療與車用</p><p class="text-xs opacity-60" data-i18n="k161" data-i18n-mode="text">提升高品質 ABS/PS/PP 於醫療設備與汽車輕量化之應用。</p></div></div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border-l-4 border-blue-500">
+<h4 class="font-black mb-2" data-i18n="k162" data-i18n-mode="text">差異化轉型核心：「無未來、不投資」</h4>
+<p class="text-sm opacity-70 leading-relaxed" data-i18n="k163" data-i18n-mode="text">重心從大宗商品轉向非大宗商品 (Non-commodity)。對於 PX、SM、ABS 等產線，優化規格以提高利潤空間。</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-5 bg-slate-100 dark:bg-slate-800 rounded-xl"><h5 class="font-bold text-sm mb-1" data-i18n="k164" data-i18n-mode="text">區域風險分散</h5><p class="text-[10px] opacity-60" data-i18n="k165" data-i18n-mode="text">轉向佈局東南亞、印度等高潛力市場。</p></div>
+<div class="p-5 bg-slate-100 dark:bg-slate-800 rounded-xl"><h5 class="font-bold text-sm mb-1" data-i18n="k166" data-i18n-mode="text">綠色低碳產品</h5><p class="text-[10px] opacity-60" data-i18n="k167" data-i18n-mode="text">發展 ESG 導向回收塑料，對標全球循環經濟。</p></div>
+</div>
+<div class="p-6 bg-slate-100 dark:bg-slate-800 rounded-2xl">
+<h5 class="font-bold text-sm mb-2 text-blue-600" data-i18n="k168" data-i18n-mode="text">AI 驅動與資產活化</h5>
+<ul class="text-[11px] space-y-1 opacity-70">
+<li data-i18n="k169" data-i18n-mode="text">● AI 智能管理：優化生產能耗與資產維護決策。</li>
+<li data-i18n="k170" data-i18n-mode="text">● 土地活化：如彰化廠區轉型為高科技園區，創造石化外價值。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 陸、財務績效 (完整保留更新後的圖文表格內容) -->
+<section class="section-container reveal content-section" id="sec6">
+<div class="section-header" data-i18n="k171" data-i18n-mode="text">Financials</div>
+<div class="relative z-10 pt-10">
+<h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="k172" data-i18n-mode="text">陸、財務績效 (Financial Performance)</h2>
+<div class="mb-12">
+<h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+<i class="fas fa-chart-line text-blue-500"></i> 1. 主要財務指標 (Key Financial Indicators)
+                        </h3>
+<div class="overflow-x-auto">
+<table class="data-table">
+<thead>
+<tr>
+<th data-i18n="k173" data-i18n-mode="text">項目 (單位: 百萬新台幣)</th>
+<th>2021 (A)</th>
+<th>2022 (A)</th>
+<th>2023 (A)</th>
+<th>2024 (E)</th>
+<th>2025 (E)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-i18n="k174" data-i18n-mode="text">營業收入 (Revenue)</td>
+<td>365,820</td>
+<td>379,890</td>
+<td>333,020</td>
+<td>342,000</td>
+<td>355,000</td>
+</tr>
+<tr>
+<td data-i18n="k175" data-i18n-mode="text">營業利益 (Operating Income)</td>
+<td>46,230</td>
+<td>(3,520)</td>
+<td>(1,850)</td>
+<td>1,200</td>
+<td>4,500</td>
+</tr>
+<tr>
+<td data-i18n="k176" data-i18n-mode="text">稅後淨利 (Net Income)</td>
+<td>38,340</td>
+<td>7,350</td>
+<td>8,460</td>
+<td>3,500</td>
+<td>6,800</td>
+</tr>
+<tr>
+<td data-i18n="k177" data-i18n-mode="text">每股盈餘 (EPS, NT$)</td>
+<td>6.55</td>
+<td>1.26</td>
+<td>1.45</td>
+<td>0.60</td>
+<td>1.16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-10 mb-12">
+<div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-3xl">
+<h3 class="text-xl font-bold mb-4" data-i18n="k178" data-i18n-mode="text">2. 獲利能力分析 (Profitability)</h3>
+<ul class="space-y-4 text-sm opacity-80">
+<li class="flex items-start gap-2">
+<i class="fas fa-check-circle text-green-500 mt-1"></i>
+<span><b data-i18n="k179" data-i18n-mode="text">毛利率 (Gross Margin)：</b>2021 年高達 18.5%，隨後受原油成本與中國產能過剩影響，2022-2023 年降至 5% 以下。</span>
+</li>
+<li class="flex items-start gap-2">
+<i class="fas fa-check-circle text-green-500 mt-1"></i>
+<span><b data-i18n="k180" data-i18n-mode="text">營運轉機：</b>預計 2024-2025 年隨著產品組合轉向非大宗商品 (Non-commodity)，利潤率將逐步回升。</span>
+</li>
+</ul>
+</div>
+<div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-3xl">
+<h3 class="text-xl font-bold mb-4" data-i18n="k181" data-i18n-mode="text">3. 資本結構與現金流</h3>
+<ul class="space-y-4 text-sm opacity-80">
+<li class="flex items-start gap-2">
+<i class="fas fa-shield-alt text-blue-500 mt-1"></i>
+<span><b data-i18n="k182" data-i18n-mode="text">債務管理：</b>負債比率維持在 30%-35% 之間，遠優於行業健康標準，展現強大抗風險能力。</span>
+</li>
+<li class="flex items-start gap-2">
+<i class="fas fa-coins text-yellow-500 mt-1"></i>
+<span><b data-i18n="k183" data-i18n-mode="text">現金流：</b>2022-2023 景氣谷底期間，嚴格控管資本支出 (CapEx)，確保營運現金流足以支付債務。</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="highlight-card mb-12">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="max-w-md">
+<h3 class="text-3xl font-black mb-4" data-i18n="k184" data-i18n-mode="text">4. 股價走勢分析 (Stock Price)</h3>
+<p class="text-sm opacity-80 mb-6" data-i18n="k185" data-i18n-mode="text">
+                                    股價通常反映基本面的領先指標。2021-2023 年股價隨獲利下滑，但 2024 年底起出現落底反彈跡象。
+                                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/10 p-4 rounded-xl">
+<p class="text-[10px] uppercase opacity-60">2021 End</p>
+<p class="text-xl font-bold">NT$ 80.8</p>
+</div>
+<div class="bg-white/10 p-4 rounded-xl">
+<p class="text-[10px] uppercase opacity-60">2023 End</p>
+<p class="text-xl font-bold">NT$ 62.3</p>
+</div>
+<div class="bg-white/10 p-4 rounded-xl">
+<p class="text-[10px] uppercase opacity-60">2024 (E)</p>
+<p class="text-xl font-bold">NT$ 53~56</p>
+</div>
+<div class="bg-white/10 p-4 rounded-xl">
+<p class="text-[10px] uppercase opacity-60">2025 (E)</p>
+<p class="text-xl font-bold">NT$ 58~62</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-64 bg-white/5 rounded-2xl flex items-center justify-center border border-white/20">
+<span class="text-xs opacity-40 uppercase tracking-widest">[ Stock Chart Visualization ]</span>
+</div>
+</div>
+</div>
+<div class="p-8 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl text-center">
+<p class="text-sm font-bold opacity-60 uppercase tracking-widest mb-2" data-i18n="k186" data-i18n-mode="text">Conclusion</p>
+<p class="text-lg italic" data-i18n="k187" data-i18n-mode="text">
+                            「儘管面臨產業週期與地緣政治挑戰，台化憑藉穩健的現金流管理與向高價值產品轉型的戰略，正逐步走出獲利低谷。」
+                        </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- 頁尾 -->
+<footer class="bg-slate-900 text-white pt-24 pb-12 px-10 md:px-24">
+<div class="flex flex-col md:flex-row justify-between items-start mb-20 gap-10">
+<div>
+<h2 class="text-4xl font-black tracking-tighter mb-4">FCFC.</h2>
+<p class="text-slate-500 text-xs font-bold tracking-widest uppercase" data-i18n="k188" data-i18n-mode="text">Formosa Chemicals &amp; Fibre Corp.</p>
+</div>
+<div class="text-right">
+<p class="text-xs opacity-40">© 2026 SMMC-EMI Program.</p>
+<p class="text-xs opacity-40" data-i18n="k189" data-i18n-mode="text">For education use only.</p>
+</div>
+</div>
+</footer>
+<script>
+const translations = {
+    "k0": {
+        "zh": "語音導覽 OFF",
+        "en": "Audio Guide OFF"
+    },
+    "k1": {
+        "zh": "繁體中文",
+        "en": "English (EN)"
+    },
+    "k2": {
+        "zh": "台灣股票代號：1326",
+        "en": "Taiwan Stock: 1326"
+    },
+    "k3": {
+        "zh": "成立於 1965",
+        "en": "EST. 1965"
+    },
+    "k4": {
+        "zh": "全球石化領導企業",
+        "en": "GLOBAL PETROCHEMICAL LEADER"
+    },
+    "k5": {
+        "zh": "永續驅動發展",
+        "en": "SUSTAINABILITY DRIVEN"
+    },
+    "k6": {
+        "zh": "最新消息",
+        "en": "News"
+    },
+    "k7": {
+        "zh": "壹、最新消息",
+        "en": "I. Latest News"
+    },
+    "k8": {
+        "zh": "關鍵發展：",
+        "en": "Key Development:"
+    },
+    "k9": {
+        "zh": "由於中東地區供應鏈顯著中斷，全球原油價格已飆升至每桶 110 美元以上。",
+        "en": "Due to significant supply chain disruptions in the Middle East, global crude oil prices have surged above US$110 per barrel."
+    },
+    "k10": {
+        "zh": "公司回應：",
+        "en": "Company Response:"
+    },
+    "k11": {
+        "zh": "台化公司已確認調漲其化學纖維產品組合的價格，特別針對人造絲與黏膠短纖。",
+        "en": "Formosa Chemicals & Fibre Corp has confirmed price increases across its chemical fiber portfolio, especially for rayon and viscose staple fibers."
+    },
+    "k12": {
+        "zh": "戰略目標：",
+        "en": "Strategic Goal:"
+    },
+    "k13": {
+        "zh": "這些調整旨在抵銷原料和能源支出的激增，確保集團在生產成本上升的情況下仍能維持營運穩定。",
+        "en": "These adjustments are intended to offset surging raw material and energy costs, helping the group maintain operational stability amid rising production expenses."
+    },
+    "k14": {
+        "zh": "獲利預測：",
+        "en": "Profit Forecast:"
+    },
+    "k15": {
+        "zh": "一份新的機構報告預測台化將成功轉虧為盈，預計 2026 財年的稅後淨利將達到 31 億新台幣。",
+        "en": "A new institutional report forecasts that FCFC will successfully return to profitability, with after-tax net profit projected to reach NT$3.1 billion in fiscal year 2026."
+    },
+    "k16": {
+        "zh": "成長動力：",
+        "en": "Growth Drivers:"
+    },
+    "k17": {
+        "zh": "此次復甦由三大結構性轉變支撐：",
+        "en": "This recovery is supported by three structural shifts:"
+    },
+    "k18": {
+        "zh": "• 競爭減少：",
+        "en": "• Reduced Competition:"
+    },
+    "k19": {
+        "zh": "中國嚴格的環保政策限制了產能過剩，緩解了全球供應壓力。",
+        "en": "China’s stricter environmental policies have constrained excess capacity and eased global supply pressure."
+    },
+    "k20": {
+        "zh": "• 高價值轉型：",
+        "en": "• High-Value Shift:"
+    },
+    "k21": {
+        "zh": "內部有紀律地從低利潤大宗商品轉向專業化的功能性纖維。",
+        "en": "The company is disciplined in shifting away from low-margin commodities toward specialized functional fibers."
+    },
+    "k22": {
+        "zh": "• 循環經濟：",
+        "en": "• Circular Economy:"
+    },
+    "k23": {
+        "zh": "積極關注永續「綠色」材料和回收紡織品。",
+        "en": "The company is actively focusing on sustainable green materials and recycled textiles."
+    },
+    "k24": {
+        "zh": "雖然能源波動仍是風險，但更廣泛的行業改善和精簡的營運模式使台化在整個 2026 年定位於具韌性的成長。",
+        "en": "Although energy volatility remains a risk, broader industry improvement and a leaner operating model position FCFC for resilient growth throughout 2026."
+    },
+    "k25": {
+        "zh": "發展沿革",
+        "en": "History"
+    },
+    "k26": {
+        "zh": "貳、發展沿革",
+        "en": "II. History & Evolution"
+    },
+    "k27": {
+        "zh": "創立階段",
+        "en": "Establishment"
+    },
+    "k28": {
+        "zh": "彰化籌備處設立。",
+        "en": "The Changhua preparatory office was established."
+    },
+    "k29": {
+        "zh": "正式成立台灣化學纖維公司。",
+        "en": "Formosa Chemicals & Fibre Corporation was officially established."
+    },
+    "k30": {
+        "zh": "彰化廠開工生產木漿、人造棉與毛毯。",
+        "en": "The Changhua plant began production of pulp, rayon, and blankets."
+    },
+    "k31": {
+        "zh": "彰化汽電廠 G1 機商業運轉。",
+        "en": "Changhua cogeneration unit G1 entered commercial operation."
+    },
+    "k32": {
+        "zh": "擴張階段",
+        "en": "Expansion"
+    },
+    "k33": {
+        "zh": "完成尼龍聚合 A 至 E 系列生產線，並生產尼龍絲與輪胎簾布。",
+        "en": "Nylon polymerization lines A to E were completed, producing nylon yarn and tire cord fabric."
+    },
+    "k34": {
+        "zh": "新港廠正式開工生產人造棉與人造紗。",
+        "en": "The Hsin-Kang plant officially began producing rayon staple fiber and rayon yarn."
+    },
+    "k35": {
+        "zh": "石化轉型",
+        "en": "Petrochemical Shift"
+    },
+    "k36": {
+        "zh": "龍德廠開工生產化纖產品。",
+        "en": "The Longde plant began producing chemical fiber products."
+    },
+    "k37": {
+        "zh": "龍德 PTA-0 廠試車，正式跨足石化產業。",
+        "en": "The Longde PTA-0 plant was commissioned, marking FCFC’s official entry into the petrochemical industry."
+    },
+    "k38": {
+        "zh": "新港 PS 廠與龍德 PTA-1 廠完工。",
+        "en": "The Hsin-Kang PS plant and Longde PTA-1 plant were completed."
+    },
+    "k39": {
+        "zh": "麥寮 ARO-1、SM-1 及麥寮汽電三部機組商業運轉。",
+        "en": "Mailiao ARO-1, SM-1, and three Mailiao cogeneration units entered commercial operation."
+    },
+    "k40": {
+        "zh": "重組轉型",
+        "en": "Restructuring"
+    },
+    "k41": {
+        "zh": "石化與塑膠營收正式超過纖維與紡織營收。",
+        "en": "Revenue from petrochemicals and plastics officially surpassed revenue from fibers and textiles."
+    },
+    "k42": {
+        "zh": "於寧波設立台化(寧波)有限公司，跨足大陸市場。",
+        "en": "FCFC established Formosa Chemicals & Fibre (Ningbo) Co., Ltd., entering the mainland China market."
+    },
+    "k43": {
+        "zh": "麥寮 ARO-3 廠完工投入運轉。",
+        "en": "The Mailiao ARO-3 plant was completed and put into operation."
+    },
+    "k44": {
+        "zh": "永續發展",
+        "en": "Sustainability"
+    },
+    "k45": {
+        "zh": "彰化廠停止化纖生產，轉型研發與行政中心。",
+        "en": "The Changhua plant ceased chemical fiber production and was transformed into an R&D and administrative center."
+    },
+    "k46": {
+        "zh": "成立台化(越南)公司及新港 PABS 廠。",
+        "en": "FCFC established its Vietnam company and the Hsin-Kang PABS plant."
+    },
+    "k47": {
+        "zh": "擴大回收塑膠（PCR）與海洋回收紗生產基地。",
+        "en": "FCFC expanded production bases for post-consumer recycled plastics (PCR) and ocean-recycled yarn."
+    },
+    "k48": {
+        "zh": "新港 PABS 複合材料廠完工；推動綠色化學與循環經濟。",
+        "en": "The Hsin-Kang PABS composite materials plant was completed, promoting green chemistry and the circular economy."
+    },
+    "k49": {
+        "zh": "願景",
+        "en": "Vision"
+    },
+    "k50": {
+        "zh": "參、願景使命與價值",
+        "en": "III. Vision, Mission & Values"
+    },
+    "k51": {
+        "zh": "核心經營理念",
+        "en": "Core Business Philosophy"
+    },
+    "k52": {
+        "zh": "勤勞樸實",
+        "en": "Diligence & Simplicity"
+    },
+    "k53": {
+        "zh": "體現創辦人王永慶、王永在先生的精神。強調凡事由小處著手，艱苦奮鬥，腳踏實地。",
+        "en": "This reflects the spirit of founders Wang Yung-Ching and Wang Yung-Tsai, emphasizing starting from the basics, working hard, and staying grounded."
+    },
+    "k54": {
+        "zh": "止於至善",
+        "en": "Relentless Excellence"
+    },
+    "k55": {
+        "zh": "永無止境的合理化管理。追求成本最小化、效率最大化，在各項環節追求極致。",
+        "en": "This represents endless rationalization in management—minimizing costs, maximizing efficiency, and pursuing excellence in every process."
+    },
+    "k56": {
+        "zh": "永續經營",
+        "en": "Sustainable Operation"
+    },
+    "k57": {
+        "zh": "不求一時利潤，重視長期競爭力，建立百年企業基石，穩定回饋利害關係人。",
+        "en": "The company values long-term competitiveness over short-term profit, building the foundation of a century-old enterprise and steadily returning value to stakeholders."
+    },
+    "k58": {
+        "zh": "奉獻社會",
+        "en": "Giving Back to Society"
+    },
+    "k59": {
+        "zh": "企業獲利應回饋社會。透過醫療、教育等公益項目，實踐取之於社會，用之於社會。",
+        "en": "Corporate profits should be returned to society through public welfare initiatives such as healthcare and education."
+    },
+    "k60": {
+        "zh": "追求永續發展，強化全球競爭力，維持在石化、塑膠與化學纖維產業的領導地位。",
+        "en": "Pursue sustainable development, strengthen global competitiveness, and maintain leadership in petrochemicals, plastics, and chemical fibers."
+    },
+    "k61": {
+        "zh": "透過垂直整合生產模式，確保供應穩定與價格競爭力。",
+        "en": "Ensure stable supply and price competitiveness through a vertically integrated production model."
+    },
+    "k62": {
+        "zh": "積極開發功能性與差異化產品，滿足全球多元市場需求。",
+        "en": "Actively develop functional and differentiated products to meet diversified global market demand."
+    },
+    "k63": {
+        "zh": "合理化管理",
+        "en": "Rational Management"
+    },
+    "k64": {
+        "zh": "強調數字管理，凡事講求實據。透過壓力管理持續精進流程。",
+        "en": "Emphasizes data-driven management and factual decision-making while continuously refining processes through disciplined management."
+    },
+    "k65": {
+        "zh": "個人電腦化",
+        "en": "Individual Computerization"
+    },
+    "k66": {
+        "zh": "全面推動資訊透明與流程自動化，確保決策的及時性與精準度。",
+        "en": "Promotes information transparency and process automation to ensure timely and accurate decision-making."
+    },
+    "k67": {
+        "zh": "環境與安全",
+        "en": "ESG Commitment"
+    },
+    "k68": {
+        "zh": "將安全衛生與環境保護視為第一要務，積極邁向碳中和轉型。",
+        "en": "Treats health, safety, and environmental protection as top priorities while actively moving toward carbon-neutral transformation."
+    },
+    "k69": {
+        "zh": "組織架構",
+        "en": "Structure"
+    },
+    "k70": {
+        "zh": "肆、組織架構",
+        "en": "IV. Organizational Structure"
+    },
+    "k71": {
+        "zh": "董事長",
+        "en": "Chairman"
+    },
+    "k72": {
+        "zh": "洪福源",
+        "en": "Hong, Fu-Yuan"
+    },
+    "k73": {
+        "zh": "負責整體戰略決策與永續經營方針之擬定。",
+        "en": "Responsible for overall strategic decision-making and the formulation of sustainable management policies."
+    },
+    "k74": {
+        "zh": "總經理",
+        "en": "President"
+    },
+    "k75": {
+        "zh": "呂文進",
+        "en": "Lu, Wen-Chin"
+    },
+    "k76": {
+        "zh": "統籌各事業部營運效率與管理指標達成。",
+        "en": "Coordinates operational efficiency and management target achievement across business divisions."
+    },
+    "k77": {
+        "zh": "重要管理單位",
+        "en": "Key Management"
+    },
+    "k78": {
+        "zh": "董事會",
+        "en": "Board of Directors"
+    },
+    "k79": {
+        "zh": "審計委員會",
+        "en": "Audit Committee"
+    },
+    "k80": {
+        "zh": "薪酬委員會",
+        "en": "Remuneration Committee"
+    },
+    "k81": {
+        "zh": "石化事業部",
+        "en": "Petrochemical Division"
+    },
+    "k82": {
+        "zh": "石化事業部",
+        "en": "Petrochemical Division"
+    },
+    "k83": {
+        "zh": "化一部：BZ、PX、OX",
+        "en": "Department I: BZ, PX, OX"
+    },
+    "k84": {
+        "zh": "化二部：SM、Phenol、Acetone",
+        "en": "Department II: SM, Phenol, Acetone"
+    },
+    "k85": {
+        "zh": "化三部：PTA",
+        "en": "Department III: PTA"
+    },
+    "k86": {
+        "zh": "塑膠事業部",
+        "en": "Plastics Division"
+    },
+    "k87": {
+        "zh": "塑膠事業部",
+        "en": "Plastics Division"
+    },
+    "k88": {
+        "zh": "負責 ABS、PS、PP、PC 等樹脂生產",
+        "en": "Responsible for producing ABS, PS, PP, PC and other resins."
+    },
+    "k89": {
+        "zh": "推動 PCR 回收塑料與高價值材料研發",
+        "en": "Advances PCR recycled plastics and high-value material R&D."
+    },
+    "k90": {
+        "zh": "麥寮、寧波兩大生產基地協作",
+        "en": "Coordinates between the Mailiao and Ningbo production bases."
+    },
+    "k91": {
+        "zh": "纖維事業部",
+        "en": "Fiber Division"
+    },
+    "k92": {
+        "zh": "纖維事業部",
+        "en": "Fiber Division"
+    },
+    "k93": {
+        "zh": "紡絲一部：Nylon 纖維、嫘縈",
+        "en": "Spinning Dept. I: Nylon fiber and rayon"
+    },
+    "k94": {
+        "zh": "紡絲二部：聚酯纖維、工業紗",
+        "en": "Spinning Dept. II: Polyester fiber and industrial yarn"
+    },
+    "k95": {
+        "zh": "回收材料：Seawastex 海洋回收紗",
+        "en": "Recycled materials: Seawastex ocean-recycled yarn"
+    },
+    "k96": {
+        "zh": "紡織事業部",
+        "en": "Textile Division"
+    },
+    "k97": {
+        "zh": "紡織事業部",
+        "en": "Textile Division"
+    },
+    "k98": {
+        "zh": "紡紗、織布及染整一體化",
+        "en": "Integrated spinning, weaving, and dyeing/finishing"
+    },
+    "k99": {
+        "zh": "機能性布料開發與行銷",
+        "en": "Functional fabric development and marketing"
+    },
+    "k100": {
+        "zh": "供應全球知名運動與戶外品牌",
+        "en": "Supplies global sports and outdoor brands"
+    },
+    "k101": {
+        "zh": "支援體系與研發中心",
+        "en": "Support & R&D"
+    },
+    "k102": {
+        "zh": "彰化管理部",
+        "en": "Changhua Administration"
+    },
+    "k103": {
+        "zh": "轉型為研發中心與新材料開發基地",
+        "en": "Transformed into an R&D center and new material development base"
+    },
+    "k104": {
+        "zh": "工務部",
+        "en": "Engineering Department"
+    },
+    "k105": {
+        "zh": "負責能源管理、水處理與環保設施營運",
+        "en": "Responsible for energy management, water treatment, and environmental facility operations"
+    },
+    "k106": {
+        "zh": "總經理室",
+        "en": "Office of the President"
+    },
+    "k107": {
+        "zh": "落實合理化管理與 AI 數位轉型",
+        "en": "Implements rationalized management and AI-driven digital transformation"
+    },
+    "k108": {
+        "zh": "安全衛生室",
+        "en": "Safety & Health Office"
+    },
+    "k109": {
+        "zh": "執行最高標準的工安與職安監管",
+        "en": "Enforces the highest industrial and occupational safety standards"
+    },
+    "k110": {
+        "zh": "產品",
+        "en": "Products"
+    },
+    "k111": {
+        "zh": "伍、產品組合與藍圖",
+        "en": "V. Product Portfolios & Roadmap"
+    },
+    "k112": {
+        "zh": "一、依產品類別",
+        "en": "1. Product Lines"
+    },
+    "k113": {
+        "zh": "主產品",
+        "en": "Main Product"
+    },
+    "k114": {
+        "zh": "細項分類與規格",
+        "en": "Detailed Categories & Specifications"
+    },
+    "k115": {
+        "zh": "ABS 樹脂",
+        "en": "ABS Resin"
+    },
+    "k116": {
+        "zh": "台灣／寧波生產基地主要產項。",
+        "en": "Main product line at the Taiwan and Ningbo production bases."
+    },
+    "k117": {
+        "zh": "PS 樹脂",
+        "en": "PS Resin"
+    },
+    "k118": {
+        "zh": "台灣／寧波生產基地主要產項。",
+        "en": "Main product line at the Taiwan and Ningbo production bases."
+    },
+    "k119": {
+        "zh": "PP 樹脂",
+        "en": "PP Resin"
+    },
+    "k120": {
+        "zh": "● 單聚物 PP：",
+        "en": "● Homopolymer PP:"
+    },
+    "k121": {
+        "zh": "● 隨意共聚合物 PP：",
+        "en": "● Random Copolymer PP:"
+    },
+    "k122": {
+        "zh": "● 耐衝擊共聚合物 PP：",
+        "en": "● Impact Copolymer PP:"
+    },
+    "k123": {
+        "zh": "PC 樹脂",
+        "en": "PC Resin"
+    },
+    "k124": {
+        "zh": "● 台化 PC 改性產品：",
+        "en": "● FCFC Modified PC Products:"
+    },
+    "k125": {
+        "zh": "● 台化出光 PC 產品：",
+        "en": "● FCFC Light Diffusion PC Products:"
+    },
+    "k126": {
+        "zh": "PC 合金（合膠）",
+        "en": "PC Alloy"
+    },
+    "k127": {
+        "zh": "一般級、耐燃級",
+        "en": "General grade, flame-retardant grade"
+    },
+    "k128": {
+        "zh": "SAN / ASA 樹脂",
+        "en": "SAN / ASA Resin"
+    },
+    "k129": {
+        "zh": "SAN（一般級、特殊級）；ASA 樹脂",
+        "en": "SAN (general, specialty) and ASA resin"
+    },
+    "k130": {
+        "zh": "複合材料",
+        "en": "Composite Materials"
+    },
+    "k131": {
+        "zh": "PC/ABS 合金（一般級）、PP 複合材料、Nylon 樹脂（越南）",
+        "en": "PC/ABS alloy (general grade), PP composite materials, and Nylon resin (Vietnam)"
+    },
+    "k132": {
+        "zh": "永續材料（PCR）",
+        "en": "Sustainable Materials (PCR)"
+    },
+    "k133": {
+        "zh": "化學回收樹脂",
+        "en": "Chemically Recycled Resin"
+    },
+    "k134": {
+        "zh": "生質樹脂",
+        "en": "Bio-based Resin"
+    },
+    "k135": {
+        "zh": "生產部門",
+        "en": "Production Department"
+    },
+    "k136": {
+        "zh": "主要化學產品細項",
+        "en": "Major Chemical Product Details"
+    },
+    "k137": {
+        "zh": "化一部",
+        "en": "Department I"
+    },
+    "k138": {
+        "zh": "苯（BZ）、對二甲苯（PX）、鄰二甲苯（OX）、間二甲苯（MX）",
+        "en": "Benzene (BZ), para-xylene (PX), ortho-xylene (OX), and meta-xylene (MX)"
+    },
+    "k139": {
+        "zh": "化二部",
+        "en": "Department II"
+    },
+    "k140": {
+        "zh": "苯乙烯（SM）、苯酚（Phenol）、丙酮（Acetone）",
+        "en": "Styrene monomer (SM), phenol, and acetone"
+    },
+    "k141": {
+        "zh": "化三部",
+        "en": "Department III"
+    },
+    "k142": {
+        "zh": "純對苯二甲酸（PTA）",
+        "en": "Purified terephthalic acid (PTA)"
+    },
+    "k143": {
+        "zh": "合成酚",
+        "en": "Synthetic Phenol"
+    },
+    "k144": {
+        "zh": "雙酚A（BPA）",
+        "en": "Bisphenol A (BPA)"
+    },
+    "k145": {
+        "zh": "類別",
+        "en": "Category"
+    },
+    "k146": {
+        "zh": "產品說明",
+        "en": "Product Description"
+    },
+    "k147": {
+        "zh": "人造纖維",
+        "en": "Man-Made Fibers"
+    },
+    "k148": {
+        "zh": "嫘縈棉（Rayon）、聚酯纖維（Polyester）、尼龍纖維（Nylon）",
+        "en": "Rayon, polyester fiber, and nylon fiber"
+    },
+    "k149": {
+        "zh": "紡織產品",
+        "en": "Textile Products"
+    },
+    "k150": {
+        "zh": "各類棉、混紡紗、交織布",
+        "en": "Various cottons, blended yarns, and interwoven fabrics"
+    },
+    "k151": {
+        "zh": "環保特種纖維",
+        "en": "Eco-Specialty Fibers"
+    },
+    "k152": {
+        "zh": "Seawastex（海洋回收尼龍）：",
+        "en": "Seawastex (Ocean-Recycled Nylon):"
+    },
+    "k153": {
+        "zh": "循環再生紗：",
+        "en": "Recycled Yarn:"
+    },
+    "k154": {
+        "zh": "二、產品藍圖與未來策略",
+        "en": "2. Product Roadmap & Future Strategy"
+    },
+    "k155": {
+        "zh": "高成長目標市場",
+        "en": "Target Markets"
+    },
+    "k156": {
+        "zh": "儲能電池組件（BBU）",
+        "en": "Battery Backup Unit (BBU) Components"
+    },
+    "k157": {
+        "zh": "開發專用塑膠外殼，較鋁合金減重 50%。",
+        "en": "Develop dedicated plastic housings that are 50% lighter than aluminum alloy."
+    },
+    "k158": {
+        "zh": "半導體材料",
+        "en": "Semiconductor Materials"
+    },
+    "k159": {
+        "zh": "開發電子級化學品與半導體封裝材料。",
+        "en": "Develop electronic-grade chemicals and semiconductor packaging materials."
+    },
+    "k160": {
+        "zh": "醫療與車用",
+        "en": "Medical & Automotive"
+    },
+    "k161": {
+        "zh": "提升高品質 ABS/PS/PP 於醫療設備與汽車輕量化之應用。",
+        "en": "Expand the application of high-quality ABS/PS/PP in medical devices and automotive lightweighting."
+    },
+    "k162": {
+        "zh": "差異化轉型核心：「無未來、不投資」",
+        "en": "Core of Differentiated Transformation: “No Future, No Investment”"
+    },
+    "k163": {
+        "zh": "重心從大宗商品轉向非大宗商品。對於 PX、SM、ABS 等產線，優化規格以提高利潤空間。",
+        "en": "Shift the focus from commodities to non-commodities. For product lines such as PX, SM, and ABS, optimize specifications to improve profit margins."
+    },
+    "k164": {
+        "zh": "區域風險分散",
+        "en": "Regional Risk Diversification"
+    },
+    "k165": {
+        "zh": "轉向佈局東南亞、印度等高潛力市場。",
+        "en": "Shift deployment toward high-potential markets such as Southeast Asia and India."
+    },
+    "k166": {
+        "zh": "綠色低碳產品",
+        "en": "Green Low-Carbon Products"
+    },
+    "k167": {
+        "zh": "發展 ESG 導向回收塑料，對標全球循環經濟。",
+        "en": "Develop ESG-oriented recycled plastics aligned with the global circular economy."
+    },
+    "k168": {
+        "zh": "AI 驅動與資產活化",
+        "en": "AI-Driven Optimization & Asset Activation"
+    },
+    "k169": {
+        "zh": "● AI 智能管理：優化生產能耗與資產維護決策。",
+        "en": "● AI smart management: optimize production energy consumption and asset maintenance decisions."
+    },
+    "k170": {
+        "zh": "● 土地活化：如彰化廠區轉型為高科技園區，創造石化外價值。",
+        "en": "● Land activation: for example, transforming the Changhua site into a high-tech park to create value beyond petrochemicals."
+    },
+    "k171": {
+        "zh": "財務績效",
+        "en": "Financials"
+    },
+    "k172": {
+        "zh": "陸、財務績效",
+        "en": "VI. Financial Performance"
+    },
+    "k173": {
+        "zh": "項目（單位：百萬新台幣）",
+        "en": "Item (Unit: NT$ million)"
+    },
+    "k174": {
+        "zh": "營業收入",
+        "en": "Revenue"
+    },
+    "k175": {
+        "zh": "營業利益",
+        "en": "Operating Income"
+    },
+    "k176": {
+        "zh": "稅後淨利",
+        "en": "Net Income"
+    },
+    "k177": {
+        "zh": "每股盈餘（EPS，NT$）",
+        "en": "EPS (NT$)"
+    },
+    "k178": {
+        "zh": "2. 獲利能力分析",
+        "en": "2. Profitability Analysis"
+    },
+    "k179": {
+        "zh": "毛利率：",
+        "en": "Gross Margin:"
+    },
+    "k180": {
+        "zh": "營運轉機：",
+        "en": "Operational Turnaround:"
+    },
+    "k181": {
+        "zh": "3. 資本結構與現金流",
+        "en": "3. Capital Structure & Cash Flow"
+    },
+    "k182": {
+        "zh": "債務管理：",
+        "en": "Debt Management:"
+    },
+    "k183": {
+        "zh": "現金流：",
+        "en": "Cash Flow:"
+    },
+    "k184": {
+        "zh": "4. 股價走勢分析",
+        "en": "4. Stock Price Trend"
+    },
+    "k185": {
+        "zh": "股價通常反映基本面的領先指標。2021-2023 年股價隨獲利下滑，但 2024 年底起出現落底反彈跡象。",
+        "en": "The stock price often acts as a leading indicator of fundamentals. It fell with declining profitability from 2021 to 2023, but signs of a bottoming rebound emerged from late 2024."
+    },
+    "k186": {
+        "zh": "結論",
+        "en": "Conclusion"
+    },
+    "k187": {
+        "zh": "「儘管面臨產業週期與地緣政治挑戰，台化憑藉穩健的現金流管理與向高價值產品轉型的戰略，正逐步走出獲利低谷。」",
+        "en": "“Despite industry cycles and geopolitical challenges, FCFC is gradually emerging from its profit trough through solid cash-flow management and a strategic shift toward higher-value products.”"
+    },
+    "k188": {
+        "zh": "台灣化學纖維股份有限公司",
+        "en": "Formosa Chemicals & Fibre Corp."
+    },
+    "k189": {
+        "zh": "僅供教學使用。",
+        "en": "For education use only."
+    },
+    "nav_menu_label": {
+        "zh": "導覽選單",
+        "en": "Navigation"
+    },
+    "nav_menu_title": {
+        "zh": "章節目錄",
+        "en": "Section Menu"
+    },
+    "nav_brand_title": {
+        "zh": "FCFC TP 研究報告",
+        "en": "FCFC TP Research Report"
+    },
+    "nav_sec1": {
+        "zh": "壹、最新消息",
+        "en": "I. Latest News"
+    },
+    "nav_sec2": {
+        "zh": "貳、發展沿革",
+        "en": "II. History & Evolution"
+    },
+    "nav_sec3": {
+        "zh": "參、願景使命與價值",
+        "en": "III. Vision, Mission & Values"
+    },
+    "nav_sec4": {
+        "zh": "肆、組織架構",
+        "en": "IV. Organizational Structure"
+    },
+    "nav_sec5": {
+        "zh": "伍、產品組合與藍圖",
+        "en": "V. Product Portfolios & Roadmap"
+    },
+    "nav_sec6": {
+        "zh": "陸、財務績效",
+        "en": "VI. Financial Performance"
+    },
+    "page_title": {
+        "zh": "台化 TP 研究報告 | 台灣化學纖維股份有限公司",
+        "en": "FCFC TP Research Report | Formosa Chemicals & Fibre Corporation"
+    },
+    "hero_title": {
+        "zh": "台灣化學纖維<br>股份有限公司",
+        "en": "FORMOSA <br> CHEMICALS &amp; <br> FIBRE CORP."
+    },
+    "hero_desc": {
+        "zh": "SMMC-EMI 課程：台灣化學纖維股份有限公司（FCFC）<br>公司概況與財務績效分析。",
+        "en": "SMMC-EMI Program: Formosa Chemicals &amp; Fibre Corporation (FCFC) <br>Company Overview &amp; Financial Performance Analysis."
+    },
+    "news1_source": {
+        "zh": "來源：<a href=\"https://www.taiwannews.com.tw/news/6332570\" target=\"_blank\" class=\"hover:text-blue-500 underline\">Taiwan News</a>｜標題：[原油突破] 台塑集團因油價升破每桶 110 美元而調整價格",
+        "en": "Source: <a href=\"https://www.taiwannews.com.tw/news/6332570\" target=\"_blank\" class=\"hover:text-blue-500 underline\">Taiwan News</a> | Headline: [Crude Breakout] Formosa Group Adjusts Pricing as Oil Surpasses $110 per Barrel"
+    },
+    "news2_source": {
+        "zh": "來源：<a href=\"https://www.cmoney.tw/notes/note-detail.aspx?nid=1156980&utm_source\" target=\"_blank\" class=\"hover:text-blue-500 underline\">CMoney</a>｜標題：[法人調升] 台化預估恢復獲利，評等升至「買進」",
+        "en": "Source: <a href=\"https://www.cmoney.tw/notes/note-detail.aspx?nid=1156980&utm_source\" target=\"_blank\" class=\"hover:text-blue-500 underline\">CMoney</a> | Headline: [Analyst Upgrade] FCFC Forecasts Return to Profitability; Rating Raised to \"Buy\""
+    }
+};
+
+function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('themeIcon');
+    if (body.classList.contains('light')) {
+        body.classList.remove('light');
+        body.classList.add('dark');
+        icon.className = "fas fa-sun text-xs";
+    } else {
+        body.classList.remove('dark');
+        body.classList.add('light');
+        icon.className = "fas fa-moon text-xs";
+    }
+}
+
+let currentLang = 'zh';
+let isSpeaking = false;
+
+function applyLanguage(lang) {
+    document.documentElement.lang = lang === 'zh' ? 'zh-TW' : 'en';
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        const mode = el.dataset.i18nMode || 'text';
+        const value = translations[key] && translations[key][lang];
+        if (value === undefined) return;
+        if (mode === 'html') {
+            el.innerHTML = value;
+        } else {
+            el.textContent = value;
+        }
+    });
+
+    const langDisplay = document.getElementById('langDisplay');
+    if (langDisplay) {
+        langDisplay.textContent = lang === 'zh' ? '繁體中文' : 'English (EN)';
+    }
+    updateVoiceText();
+}
+
+function toggleLanguage() {
+    if (isSpeaking) stopSpeaking();
+    currentLang = currentLang === 'zh' ? 'en' : 'zh';
+    applyLanguage(currentLang);
+}
+
+function updateVoiceText() {
+    const text = document.getElementById('voiceText');
+    if (!text) return;
+    if (isSpeaking) {
+        text.innerText = currentLang === 'zh' ? '播放中 (點擊關閉)' : 'Playing (Click Stop)';
+    } else {
+        text.innerText = currentLang === 'zh'
+            ? (text.getAttribute('data-zh') || '語音導覽 OFF')
+            : (text.getAttribute('data-en') || 'Audio Guide OFF');
+    }
+}
+
+function toggleAudioGuide() {
+    const btn = document.getElementById('voiceBtn');
+    const icon = document.getElementById('voiceIcon');
+
+    if (isSpeaking || window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        isSpeaking = false;
+        btn.classList.remove('is-speaking');
+        icon.className = "fas fa-volume-up text-blue-500 dark:text-blue-400";
+        updateVoiceText();
+        return;
+    }
+
+    isSpeaking = true;
+    btn.classList.add('is-speaking');
+    icon.className = "fas fa-stop-circle text-white dark:text-white";
+    updateVoiceText();
+
+    const contentText = document.querySelector('main').innerText.replace(/\n+/g, currentLang === 'zh' ? '，' : ', ').replace(/\s+/g, ' ');
+    const utterance = new SpeechSynthesisUtterance(contentText);
+    utterance.lang = currentLang === 'zh' ? 'zh-TW' : 'en-US';
+    utterance.rate = 1.0;
+
+    utterance.onend = function() {
+        isSpeaking = false;
+        btn.classList.remove('is-speaking');
+        icon.className = "fas fa-volume-up text-blue-500 dark:text-blue-400";
+        updateVoiceText();
+    };
+
+    utterance.onerror = function() {
+        isSpeaking = false;
+        btn.classList.remove('is-speaking');
+        icon.className = "fas fa-volume-up text-blue-500 dark:text-blue-400";
+        updateVoiceText();
+    };
+
+    window.speechSynthesis.speak(utterance);
+}
+
+function stopSpeaking() {
+    if (isSpeaking || window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        isSpeaking = false;
+        const btn = document.getElementById('voiceBtn');
+        const icon = document.getElementById('voiceIcon');
+        if (btn) btn.classList.remove('is-speaking');
+        if (icon) icon.className = "fas fa-volume-up text-blue-500 dark:text-blue-400";
+        updateVoiceText();
+    }
+}
+
+function toggleMenu(forceOpen) {
+    const drawer = document.getElementById('drawerMenu');
+    const overlay = document.getElementById('drawerOverlay');
+    if (!drawer || !overlay) return;
+    const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !drawer.classList.contains('show');
+    drawer.classList.toggle('show', shouldOpen);
+    overlay.classList.toggle('show', shouldOpen);
+    drawer.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
+    document.body.style.overflow = shouldOpen ? 'hidden' : '';
+}
+
+function closeMenu() {
+    toggleMenu(false);
+}
+
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => {
+    el.classList.add('transition', 'duration-1000', 'opacity-0', 'translate-y-10');
+    observer.observe(el);
+});
+
+function switchSection(sectionId, updateHash = true) {
+    const sections = document.querySelectorAll('.content-section');
+    const target = document.getElementById(sectionId);
+
+    sections.forEach((section) => {
+        section.classList.remove('active');
+    });
+
+    const finalTarget = target || document.getElementById('sec1');
+    if (!finalTarget) return;
+
+    finalTarget.classList.add('active');
+
+    document.querySelectorAll('.nav-link').forEach((link) => {
+        const action = link.getAttribute('onclick') || '';
+        const isMatch = action.includes(`'${finalTarget.id}'`);
+        link.classList.toggle('active', isMatch);
+    });
+
+    if (updateHash) {
+        history.replaceState(null, '', `#${finalTarget.id}`);
+    }
+
+    closeMenu();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    applyLanguage(currentLang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    applyLanguage(currentLang);
+    const initialSection = window.location.hash.replace('#', '');
+    const validInitialSection = document.getElementById(initialSection) ? initialSection : 'sec1';
+    switchSection(validInitialSection, false);
+
+    const backBtn = document.getElementById('backToTopBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
+});
+
+window.addEventListener('hashchange', () => {
+    const hashSection = window.location.hash.replace('#', '');
+    if (document.getElementById(hashSection)) {
+        switchSection(hashSection, false);
+    }
+});
+
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTopBtn');
+    if (!btn) return;
+    if (window.scrollY > 200) {
+        btn.classList.add('show');
+    } else {
+        btn.classList.remove('show');
+    }
+});
+</script>
+<button id="backToTopBtn" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>
