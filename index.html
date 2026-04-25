@@ -7,7 +7,7 @@
 <title data-i18n="page_title" data-i18n-mode="text">FCFC TP 研究報告 | Formosa Chemicals &amp; Fibre Corporation</title>
 <script>document.documentElement.classList.add("js-enabled");</script>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Sans+TC:wght@300;400;700;900&display=swap');
         
@@ -989,9 +989,1126 @@ body {
     }
 }
 
+
+
+/* ===== Sec8 color tone aligned with sections 1-7 only ===== */
+#sec8 .sec8-glass-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    color: #0f172a !important;
+}
+#sec8 .sec8-glass-card h4,
+#sec8 .sec8-glass-card .font-black {
+    color: #0f172a !important;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    font-weight: 900;
+}
+#sec8 .sec8-glass-card p {
+    color: #334155 !important;
+    opacity: 1 !important;
+    font-size: 0.98rem;
+    line-height: 1.9;
+}
+.dark #sec8 .sec8-glass-card {
+    background: rgba(30, 41, 59, 0.88) !important;
+    border: 1px solid rgba(148, 163, 184, 0.22) !important;
+    box-shadow: none !important;
+    color: #e5e7eb !important;
+}
+.dark #sec8 .sec8-glass-card h4,
+.dark #sec8 .sec8-glass-card .font-black {
+    color: #f8fafc !important;
+}
+.dark #sec8 .sec8-glass-card p {
+    color: #dbe4f0 !important;
+    opacity: 1 !important;
+}
+@media (max-width: 768px) {
+    #sec8 .sec8-glass-card {
+        padding: 1.25rem !important;
+    }
+    #sec8 .sec8-glass-card p {
+        font-size: 0.92rem;
+        line-height: 1.8;
+    }
+}
+
+
+
+/* ===== Light mode blue highlight panels for sections 3, 5, 8 ===== */
+#sec3 .bg-blue-600,
+#sec5 .bg-blue-600,
+#sec8 .bg-blue-600 {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+}
+.dark #sec3 .dark\:bg-slate-900,
+.dark #sec5 .dark\:bg-slate-900,
+.dark #sec8 .dark\:bg-slate-900 {
+    background: #0f172a !important;
+}
+#sec8 .bg-blue-600 .sec8-glass-card {
+    background: rgba(255,255,255,0.95) !important;
+    border: 1px solid rgba(255,255,255,0.55) !important;
+    color: #0f172a !important;
+}
+#sec8 .bg-blue-600 .sec8-glass-card p {
+    color: #1e293b !important;
+}
+.dark #sec8 .bg-blue-600 .sec8-glass-card {
+    background: rgba(30, 41, 59, 0.88) !important;
+    border-color: rgba(148, 163, 184, 0.22) !important;
+    color: #e5e7eb !important;
+}
+.dark #sec8 .bg-blue-600 .sec8-glass-card p {
+    color: #dbe4f0 !important;
+}
+
+
+
+/* ===== Section 9 readability patch: keep light/dark contrast clear ===== */
+#sec9 .sec9-panel { background: rgba(37, 99, 235, 0.10) !important; color: #0f172a !important; border-color: rgba(37, 99, 235, 0.18) !important; }
+#sec9 .sec9-card { background: #ffffff !important; color: #0f172a !important; border-color: rgba(148, 163, 184, 0.28) !important; }
+#sec9 .sec9-threat { background: #fff1f2 !important; color: #0f172a !important; border-color: rgba(248, 113, 113, 0.28) !important; }
+#sec9 .sec9-response { background: #f0fdf4 !important; color: #0f172a !important; border-color: rgba(74, 222, 128, 0.28) !important; }
+#sec9 .sec9-insight { background: #ffffff !important; color: #0f172a !important; border-color: rgba(37, 99, 235, 0.55) !important; }
+#sec9 .sec9-panel p, #sec9 .sec9-panel li, #sec9 .sec9-panel h3, #sec9 .sec9-panel h4, #sec9 .sec9-panel span { -webkit-text-fill-color: currentColor !important; }
+.dark #sec9 .sec9-panel { background: #0f172a !important; color: #f8fafc !important; border-color: rgba(148, 163, 184, 0.24) !important; }
+.dark #sec9 .sec9-card, .dark #sec9 .sec9-threat, .dark #sec9 .sec9-response, .dark #sec9 .sec9-insight { background: #1e293b !important; color: #e5e7eb !important; border-color: rgba(148, 163, 184, 0.28) !important; }
+.dark #sec9 .sec9-panel p, .dark #sec9 .sec9-panel li, .dark #sec9 .sec9-panel h3, .dark #sec9 .sec9-panel h4, .dark #sec9 .sec9-panel span { color: inherit !important; opacity: 1 !important; -webkit-text-fill-color: currentColor !important; }
+.dark #sec9 h2, .dark #sec9 h3 { color: #f8fafc !important; -webkit-text-fill-color: #f8fafc !important; }
+.dark #sec9 .text-blue-600 { color: #93c5fd !important; }
+.dark #sec9 .text-red-600, .dark #sec9 .text-red-700 { color: #fca5a5 !important; }
+.dark #sec9 .text-green-600, .dark #sec9 .text-green-700 { color: #86efac !important; }
+
+
+
+/* ===== Visual refresh for sections 1-6 only: aligned with sections 7-11 tone ===== */
+#sec1, #sec2, #sec3, #sec4, #sec5, #sec6 {
+    --early-card-bg: #ffffff;
+    --early-soft-bg: #f8fafc;
+    --early-panel-bg: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --early-text-main: #0f172a;
+    --early-text-soft: #334155;
+    --early-border: rgba(148, 163, 184, 0.24);
+    --early-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+.dark #sec1, .dark #sec2, .dark #sec3, .dark #sec4, .dark #sec5, .dark #sec6 {
+    --early-card-bg: #1e293b;
+    --early-soft-bg: rgba(30, 41, 59, 0.88);
+    --early-panel-bg: #0f172a;
+    --early-text-main: #f8fafc;
+    --early-text-soft: #dbe4f0;
+    --early-border: rgba(148, 163, 184, 0.24);
+    --early-shadow: 0 22px 50px rgba(0, 0, 0, 0.20);
+}
+
+/* shared readability */
+#sec1 p, #sec2 p, #sec3 p, #sec4 p, #sec5 p, #sec6 p,
+#sec1 li, #sec2 li, #sec3 li, #sec4 li, #sec5 li, #sec6 li {
+    line-height: 1.85;
+}
+#sec1 .opacity-40, #sec1 .opacity-50, #sec1 .opacity-60, #sec1 .opacity-70,
+#sec2 .opacity-40, #sec2 .opacity-50, #sec2 .opacity-60, #sec2 .opacity-70,
+#sec3 .opacity-40, #sec3 .opacity-50, #sec3 .opacity-60, #sec3 .opacity-70,
+#sec4 .opacity-40, #sec4 .opacity-50, #sec4 .opacity-60, #sec4 .opacity-70,
+#sec5 .opacity-40, #sec5 .opacity-50, #sec5 .opacity-60, #sec5 .opacity-70,
+#sec6 .opacity-40, #sec6 .opacity-50, #sec6 .opacity-60, #sec6 .opacity-70 {
+    opacity: 0.92 !important;
+}
+.dark #sec1 .opacity-40, .dark #sec1 .opacity-50, .dark #sec1 .opacity-60, .dark #sec1 .opacity-70,
+.dark #sec2 .opacity-40, .dark #sec2 .opacity-50, .dark #sec2 .opacity-60, .dark #sec2 .opacity-70,
+.dark #sec3 .opacity-40, .dark #sec3 .opacity-50, .dark #sec3 .opacity-60, .dark #sec3 .opacity-70,
+.dark #sec4 .opacity-40, .dark #sec4 .opacity-50, .dark #sec4 .opacity-60, .dark #sec4 .opacity-70,
+.dark #sec5 .opacity-40, .dark #sec5 .opacity-50, .dark #sec5 .opacity-60, .dark #sec5 .opacity-70,
+.dark #sec6 .opacity-40, .dark #sec6 .opacity-50, .dark #sec6 .opacity-60, .dark #sec6 .opacity-70 {
+    opacity: 1 !important;
+    color: var(--early-text-soft) !important;
+}
+
+/* section 1: news cards */
+#sec1 article {
+    background: var(--early-card-bg) !important;
+    border: 1px solid var(--early-border) !important;
+    border-radius: 1.5rem !important;
+    padding: 2rem !important;
+    box-shadow: var(--early-shadow) !important;
+    color: var(--early-text-main) !important;
+    position: relative;
+    overflow: hidden;
+}
+#sec1 article::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 6px;
+    background: linear-gradient(180deg, #3b82f6, #22c55e);
+}
+#sec1 article h3 { color: var(--early-text-main) !important; line-height: 1.35; }
+#sec1 article p { color: var(--early-text-soft) !important; }
+#sec1 article p.font-bold, #sec1 article .font-bold { color: var(--early-text-main) !important; }
+#sec1 article a { color: #2563eb !important; }
+.dark #sec1 article a { color: #93c5fd !important; }
+
+/* section 2: timeline cards */
+#sec2 .grid.gap-8 > div {
+    background: var(--early-card-bg) !important;
+    border: 1px solid var(--early-border) !important;
+    border-left: 6px solid #3b82f6 !important;
+    border-radius: 1.5rem !important;
+    box-shadow: var(--early-shadow) !important;
+    color: var(--early-text-main) !important;
+}
+#sec2 .grid.gap-8 > div:nth-child(even) { border-left-color: #60a5fa !important; }
+#sec2 .grid.gap-8 > div:last-child {
+    background: linear-gradient(135deg, rgba(37,99,235,0.10), rgba(37,99,235,0.04)) !important;
+}
+.dark #sec2 .grid.gap-8 > div:last-child { background: var(--early-card-bg) !important; }
+#sec2 .grid.gap-8 p, #sec2 .grid.gap-8 span { color: inherit; }
+#sec2 .grid.gap-8 span.text-5xl { opacity: 0.34 !important; }
+
+/* section 3: soften lower cards while keeping blue panel */
+#sec3 .grid.md\:grid-cols-2.gap-10 > div {
+    background: var(--early-card-bg) !important;
+    border: 1px solid var(--early-border) !important;
+    border-radius: 1.5rem !important;
+    box-shadow: var(--early-shadow) !important;
+    color: var(--early-text-main) !important;
+}
+#sec3 .bg-blue-600,
+#sec5 .bg-blue-600,
+#sec6 .highlight-card {
+    background: var(--early-panel-bg) !important;
+    color: #ffffff !important;
+    box-shadow: 0 24px 55px rgba(37, 99, 235, 0.20) !important;
+}
+.dark #sec3 .bg-blue-600,
+.dark #sec5 .bg-blue-600,
+.dark #sec6 .highlight-card {
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.25) !important;
+}
+#sec3 .bg-blue-600 p, #sec3 .bg-blue-600 h3, #sec3 .bg-blue-600 h4,
+#sec5 .bg-blue-600 p, #sec5 .bg-blue-600 h3, #sec5 .bg-blue-600 h4,
+#sec6 .highlight-card p, #sec6 .highlight-card h3, #sec6 .highlight-card h4, #sec6 .highlight-card span {
+    color: #ffffff !important;
+}
+
+/* section 4: organization cards */
+#sec4 .grid.gap-10 > .grid > div {
+    background: var(--early-card-bg) !important;
+    border: 1px solid var(--early-border) !important;
+    border-radius: 1.5rem !important;
+    box-shadow: var(--early-shadow) !important;
+    color: var(--early-text-main) !important;
+}
+#sec4 .grid.gap-10 > .grid:first-child > div:first-child {
+    background: var(--early-panel-bg) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+#sec4 .grid.gap-10 > .grid:first-child > div:first-child p,
+#sec4 .grid.gap-10 > .grid:first-child > div:first-child h4 { color: #ffffff !important; }
+#sec4 .grid.gap-10 i { filter: drop-shadow(0 8px 16px rgba(37,99,235,0.20)); }
+
+/* section 5: product tables and roadmap panels */
+#sec5 .product-table {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--early-shadow);
+    border: 1px solid var(--early-border);
+}
+#sec5 .product-table th {
+    background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(59,130,246,0.08)) !important;
+    color: var(--early-text-main) !important;
+}
+.dark #sec5 .product-table th { background: #334155 !important; color: #f8fafc !important; }
+#sec5 .product-table td { background: var(--early-card-bg) !important; color: var(--early-text-soft) !important; }
+#sec5 .category-tag {
+    background: rgba(37,99,235,0.10) !important;
+    color: #1d4ed8 !important;
+    border: 1px solid rgba(37,99,235,0.18);
+}
+.dark #sec5 .category-tag { background: rgba(59,130,246,0.16) !important; color: #bfdbfe !important; }
+#sec5 .rounded-3xl,
+#sec5 .rounded-2xl {
+    border-color: var(--early-border) !important;
+}
+
+/* section 6: financial tables and metric blocks */
+#sec6 .data-table {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--early-shadow);
+    border: 1px solid var(--early-border);
+}
+#sec6 .data-table th {
+    background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(59,130,246,0.08)) !important;
+    color: var(--early-text-main) !important;
+}
+#sec6 .data-table td { background: var(--early-card-bg) !important; color: var(--early-text-soft) !important; }
+.dark #sec6 .data-table th { background: #334155 !important; color: #f8fafc !important; }
+.dark #sec6 .data-table td { background: #111827 !important; color: #e5e7eb !important; }
+#sec6 .bg-slate-50, #sec6 .bg-blue-50, #sec6 .border {
+    border-color: var(--early-border) !important;
+}
+
+@media (hover:hover) {
+    #sec1 article,
+    #sec2 .grid.gap-8 > div,
+    #sec3 .grid.md\:grid-cols-2.gap-10 > div,
+    #sec4 .grid.gap-10 > .grid > div {
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    #sec1 article:hover,
+    #sec2 .grid.gap-8 > div:hover,
+    #sec3 .grid.md\:grid-cols-2.gap-10 > div:hover,
+    #sec4 .grid.gap-10 > .grid > div:hover {
+        transform: translateY(-3px);
+        border-color: rgba(37,99,235,0.38) !important;
+        box-shadow: 0 24px 60px rgba(37, 99, 235, 0.12) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #sec1 article { padding: 1.25rem !important; }
+    #sec2 .grid.gap-8 > div { border-left-width: 4px !important; }
+}
+
+
+/* ===== Sections 1-6 colorful visual unification upgrade ===== */
+#sec1 h2, #sec2 h2, #sec3 h2, #sec4 h2, #sec5 h2, #sec6 h2 { border-image: linear-gradient(90deg, #2563eb, #06b6d4, #22c55e) 1; }
+#sec1 article { position: relative; padding: 2rem; border-radius: 1.75rem; border: 1px solid rgba(148,163,184,.22); background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(248,250,252,.88)); box-shadow: 0 18px 42px rgba(15,23,42,.08); overflow: hidden; }
+#sec1 article::before { content: ""; width:54px; height:54px; border-radius:9999px; display:block; margin-bottom:1.1rem; background-repeat:no-repeat; background-position:center; background-size:22px; }
+#sec1 article:nth-of-type(1)::before { background-color:#dbeafe; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath fill='%232563eb' d='M352 64C352 46.3 337.7 32 320 32S288 46.3 288 64L288 306.7 185.4 204.1c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l157.3 157.3c12.5 12.5 32.8 12.5 45.3 0L500 249.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L352 306.7 352 64z'/%3E%3C/svg%3E"); }
+#sec1 article:nth-of-type(2)::before { background-color:#dcfce7; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath fill='%2316a34a' d='M384 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l73.4 0-169.4 169.4-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l73.4-73.4 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0L502.6 269.4l0 73.4c0 17.7 14.3 32 32 32s32-14.3 32-32l0-150.8c0-17.7-14.3-32-32-32L384 160z'/%3E%3C/svg%3E"); }
+#sec1 article .flex.gap-4 span.w-1\.5 { width:.65rem!important; height:.65rem!important; box-shadow:0 0 0 5px rgba(37,99,235,.10); }
+#sec2 .grid.gap-8 > div { position:relative; border:1px solid rgba(148,163,184,.24)!important; box-shadow:0 14px 34px rgba(15,23,42,.06); overflow:hidden; }
+#sec2 .grid.gap-8 > div::after { content:""; position:absolute; top:0; left:0; width:7px; height:100%; background:linear-gradient(180deg,#2563eb,#06b6d4); }
+#sec2 .grid.gap-8 > div:nth-child(2)::after { background:linear-gradient(180deg,#10b981,#22c55e); } #sec2 .grid.gap-8 > div:nth-child(3)::after { background:linear-gradient(180deg,#8b5cf6,#6366f1); } #sec2 .grid.gap-8 > div:nth-child(4)::after { background:linear-gradient(180deg,#f59e0b,#f97316); } #sec2 .grid.gap-8 > div:nth-child(5)::after { background:linear-gradient(180deg,#06b6d4,#2563eb); }
+#sec2 .grid.gap-8 > div:nth-child(odd) { background:linear-gradient(135deg,#f8fafc,#eff6ff)!important; } #sec2 .grid.gap-8 > div:nth-child(even) { background:linear-gradient(135deg,#fff,#f0fdf4)!important; } #sec2 .grid.gap-8 > div:nth-child(3) { background:linear-gradient(135deg,#fff,#f5f3ff)!important; } #sec2 .grid.gap-8 > div:nth-child(4) { background:linear-gradient(135deg,#fff,#fff7ed)!important; } #sec2 .grid.gap-8 > div:nth-child(5) { background:linear-gradient(135deg,#eff6ff,#ecfeff)!important; }
+#sec3 .grid.gap-12 > .bg-blue-600 { background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 54%,#06b6d4 100%)!important; box-shadow:0 25px 55px rgba(37,99,235,.24)!important; }
+#sec3 .grid.gap-12 > .bg-blue-600 .space-y-4 { position:relative; padding:1.2rem; border-radius:1.35rem; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.16); }
+#sec3 .grid.gap-12 > .bg-blue-600 .space-y-4::before { content:""; display:block; width:42px; height:42px; border-radius:9999px; margin-bottom:.85rem; background:rgba(255,255,255,.20); }
+#sec3 .grid.gap-12 > .bg-blue-600 .space-y-4:nth-child(1)::before{background-color:rgba(34,197,94,.30)} #sec3 .grid.gap-12 > .bg-blue-600 .space-y-4:nth-child(2)::before{background-color:rgba(251,191,36,.30)} #sec3 .grid.gap-12 > .bg-blue-600 .space-y-4:nth-child(3)::before{background-color:rgba(6,182,212,.30)} #sec3 .grid.gap-12 > .bg-blue-600 .space-y-4:nth-child(4)::before{background-color:rgba(168,85,247,.30)}
+#sec3 .grid.md\:grid-cols-2.gap-10 > div { border:1px solid rgba(148,163,184,.24)!important; box-shadow:0 14px 34px rgba(15,23,42,.06); } #sec3 .grid.md\:grid-cols-2.gap-10 > div:nth-child(1){background:linear-gradient(135deg,#fff,#eff6ff)!important} #sec3 .grid.md\:grid-cols-2.gap-10 > div:nth-child(2){background:linear-gradient(135deg,#fff,#f0fdf4)!important}
+#sec4 .grid.md\:grid-cols-3.gap-6 > div, #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-6 > div, #sec4 .p-10.border-2 { border:1px solid rgba(148,163,184,.24)!important; box-shadow:0 14px 34px rgba(15,23,42,.06); }
+#sec4 .grid.md\:grid-cols-3.gap-6 > div:nth-child(1){background:linear-gradient(135deg,#2563eb,#1d4ed8)!important} #sec4 .grid.md\:grid-cols-3.gap-6 > div:nth-child(2){background:linear-gradient(135deg,#fff,#ecfeff)!important} #sec4 .grid.md\:grid-cols-3.gap-6 > div:nth-child(3){background:linear-gradient(135deg,#fff,#f5f3ff)!important}
+#sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-6 > div:nth-child(1){background:linear-gradient(135deg,#eff6ff,#fff)!important} #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-6 > div:nth-child(2){background:linear-gradient(135deg,#f0fdf4,#fff)!important} #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-6 > div:nth-child(3){background:linear-gradient(135deg,#fff7ed,#fff)!important} #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-6 > div:nth-child(4){background:linear-gradient(135deg,#f5f3ff,#fff)!important}
+#sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-6 i{width:50px;height:50px;border-radius:9999px;display:inline-flex;align-items:center;justify-content:center;background:rgba(37,99,235,.12)}
+#sec5 .mb-10.overflow-x-auto, #sec5 .mb-16.overflow-x-auto { padding:1.2rem; border:1px solid rgba(148,163,184,.22); border-radius:1.5rem; background:linear-gradient(135deg,#fff,#f8fafc); box-shadow:0 14px 34px rgba(15,23,42,.055); }
+#sec5 .mb-10.overflow-x-auto:nth-of-type(1){background:linear-gradient(135deg,#fff,#eff6ff)} #sec5 .mb-10.overflow-x-auto:nth-of-type(2){background:linear-gradient(135deg,#fff,#ecfeff)} #sec5 .mb-16.overflow-x-auto{background:linear-gradient(135deg,#fff,#f0fdf4)}
+#sec5 .product-table th, #sec6 .data-table th { background:linear-gradient(135deg,#2563eb,#1d4ed8)!important; color:#fff!important; } #sec5 .product-table td:first-child{color:#1d4ed8} #sec5 .category-tag{background:#dbeafe!important;color:#1d4ed8!important;border:1px solid rgba(37,99,235,.16)}
+#sec5 .grid.lg\:grid-cols-2.gap-8 > div:nth-child(1), #sec6 .highlight-card { background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 55%,#06b6d4 100%)!important; box-shadow:0 25px 55px rgba(37,99,235,.24)!important; }
+#sec5 .grid.lg\:grid-cols-2.gap-8 > div:nth-child(2) > div:nth-child(1){background:linear-gradient(135deg,#eff6ff,#fff)!important} #sec5 .grid.lg\:grid-cols-2.gap-8 > div:nth-child(2) .grid > div:nth-child(1){background:linear-gradient(135deg,#ecfeff,#fff)!important} #sec5 .grid.lg\:grid-cols-2.gap-8 > div:nth-child(2) .grid > div:nth-child(2){background:linear-gradient(135deg,#f0fdf4,#fff)!important} #sec5 .grid.lg\:grid-cols-2.gap-8 > div:nth-child(2) > div:nth-child(3){background:linear-gradient(135deg,#f5f3ff,#fff)!important}
+#sec6 .data-table{border-radius:1.2rem;overflow:hidden;box-shadow:0 14px 34px rgba(15,23,42,.06)} #sec6 .data-table tbody tr:nth-child(odd) td{background:#f8fafc} #sec6 .data-table tbody tr:nth-child(even) td{background:#eff6ff}
+#sec6 .grid.md\:grid-cols-2.gap-10 > div{border:1px solid rgba(148,163,184,.24);box-shadow:0 14px 34px rgba(15,23,42,.06)} #sec6 .grid.md\:grid-cols-2.gap-10 > div:nth-child(1){background:linear-gradient(135deg,#fff,#f0fdf4)!important} #sec6 .grid.md\:grid-cols-2.gap-10 > div:nth-child(2){background:linear-gradient(135deg,#fff,#eff6ff)!important}
+.dark #sec1 article, .dark #sec2 .grid.gap-8 > div, .dark #sec3 .grid.md\:grid-cols-2.gap-10 > div, .dark #sec4 .grid.md\:grid-cols-3.gap-6 > div:not(:first-child), .dark #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-6 > div, .dark #sec4 .p-10.border-2, .dark #sec5 .mb-10.overflow-x-auto, .dark #sec5 .mb-16.overflow-x-auto, .dark #sec5 .grid.lg\:grid-cols-2.gap-8 > div:nth-child(2) > div, .dark #sec6 .grid.md\:grid-cols-2.gap-10 > div { background:#1e293b!important; color:#e5e7eb!important; border-color:rgba(148,163,184,.24)!important; }
+.dark #sec1 article p, .dark #sec2 p, .dark #sec3 p, .dark #sec4 p, .dark #sec4 li, .dark #sec5 p, .dark #sec5 li, .dark #sec6 p, .dark #sec6 li{opacity:1!important;color:#dbe4f0!important}
+.dark #sec5 .product-table td:first-child, .dark #sec5 h3, .dark #sec6 h3, .dark #sec6 .text-blue-600{color:#93c5fd!important} .dark #sec5 .category-tag{background:rgba(37,99,235,.20)!important;color:#bfdbfe!important;border-color:rgba(147,197,253,.24)!important}
+.dark #sec6 .data-table tbody tr:nth-child(odd) td, .dark #sec6 .data-table tbody tr:nth-child(even) td{background:#111827!important;color:#e5e7eb!important} .dark #sec3 .grid.gap-12 > .bg-blue-600, .dark #sec5 .grid.lg\:grid-cols-2.gap-8 > div:nth-child(1), .dark #sec6 .highlight-card{background:#0f172a!important}
+@media (max-width:768px){#sec1 article{padding:1.25rem} #sec5 .mb-10.overflow-x-auto,#sec5 .mb-16.overflow-x-auto{padding:.85rem}}
+
+
+
+/* ===== FINAL PATCH: sections 1-6 icon placement + readable colored cards ===== */
+#sec1 article::before {
+    position: static !important;
+    inset: auto !important;
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px !important;
+    border-radius: 9999px !important;
+    display: block !important;
+    margin: 0 0 1.25rem 0 !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 22px !important;
+}
+#sec1 article h3 {
+    clear: both !important;
+    margin-top: 0 !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+#sec1 article p, #sec1 article li, #sec1 article span {
+    -webkit-text-fill-color: currentColor !important;
+}
+.dark #sec1 article h3 {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+}
+#sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4 {
+    background: rgba(255,255,255,0.96) !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(255,255,255,0.62) !important;
+    box-shadow: 0 18px 36px rgba(15,23,42,0.12) !important;
+}
+#sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4 h4 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+}
+#sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4 p {
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.85 !important;
+}
+#sec3 .grid.gap-12 > .bg-blue-600 > h3 {
+    color: #e0f2fe !important;
+    -webkit-text-fill-color: #e0f2fe !important;
+    opacity: 1 !important;
+}
+.dark #sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4 {
+    background: rgba(30,41,59,0.88) !important;
+    color: #f8fafc !important;
+    border-color: rgba(148,163,184,0.24) !important;
+}
+.dark #sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4 h4 {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+}
+.dark #sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4 p {
+    color: #dbe4f0 !important;
+    -webkit-text-fill-color: #dbe4f0 !important;
+}
+#sec1 *, #sec2 *, #sec3 *, #sec4 *, #sec5 *, #sec6 * {
+    text-shadow: none !important;
+}
+
+
+/* ===== FINAL USER REQUEST PATCH: visible real icons for Sec3, richer Sec7 & Sec8 ===== */
+/* make icon circles contain visible glyphs instead of empty dots */
+#sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4::before{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:52px !important;
+    height:52px !important;
+    border-radius:9999px !important;
+    margin-bottom:1rem !important;
+    font-size:1.35rem !important;
+    font-weight:900 !important;
+    line-height:1 !important;
+    background-image:none !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+#sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4:nth-child(1)::before{content:"🌱" !important;background:#dcfce7 !important;color:#16a34a !important;}
+#sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4:nth-child(2)::before{content:"🎯" !important;background:#fef3c7 !important;color:#d97706 !important;}
+#sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4:nth-child(3)::before{content:"🌐" !important;background:#cffafe !important;color:#0891b2 !important;}
+#sec3 .grid.gap-12 > .bg-blue-600 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-10 > div.space-y-4:nth-child(4)::before{content:"🤝" !important;background:#f3e8ff !important;color:#9333ea !important;}
+
+/* Section 7: colorful one-column PESTEL cards with icon badges */
+#sec7 .grid.grid-cols-1.gap-10 > div{
+    position:relative !important;
+    overflow:hidden !important;
+    padding-left:7.25rem !important;
+    border:1px solid rgba(148,163,184,.24) !important;
+    box-shadow:0 16px 38px rgba(15,23,42,.075) !important;
+    background:linear-gradient(135deg,#ffffff,#eff6ff) !important;
+}
+#sec7 .grid.grid-cols-1.gap-10 > div::before{
+    position:absolute !important;
+    left:2rem !important;
+    top:2.25rem !important;
+    width:3.8rem !important;
+    height:3.8rem !important;
+    border-radius:9999px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-size:1.55rem !important;
+    box-shadow:0 14px 28px rgba(15,23,42,.10) !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(1){background:linear-gradient(135deg,#eff6ff,#ffffff)!important;border-left:7px solid #2563eb!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(1)::before{content:"🏛️"!important;background:#dbeafe!important;color:#2563eb!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(2){background:linear-gradient(135deg,#ecfdf5,#ffffff)!important;border-left:7px solid #16a34a!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(2)::before{content:"📈"!important;background:#dcfce7!important;color:#16a34a!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(3){background:linear-gradient(135deg,#fffbeb,#ffffff)!important;border-left:7px solid #f59e0b!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(3)::before{content:"👥"!important;background:#fef3c7!important;color:#d97706!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(4){background:linear-gradient(135deg,#f5f3ff,#ffffff)!important;border-left:7px solid #7c3aed!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(4)::before{content:"💻"!important;background:#ede9fe!important;color:#7c3aed!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(5){background:linear-gradient(135deg,#ecfdf5,#ffffff)!important;border-left:7px solid #059669!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(5)::before{content:"🍃"!important;background:#d1fae5!important;color:#059669!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(6){background:linear-gradient(135deg,#fff1f2,#ffffff)!important;border-left:7px solid #e11d48!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div:nth-child(6)::before{content:"⚖️"!important;background:#ffe4e6!important;color:#e11d48!important;}
+#sec7 .grid.grid-cols-1.gap-10 > div h3{margin-bottom:1rem !important;}
+.dark #sec7 .grid.grid-cols-1.gap-10 > div{background:#1e293b!important;color:#e5e7eb!important;border-color:rgba(148,163,184,.25)!important;box-shadow:0 18px 42px rgba(0,0,0,.22)!important;}
+.dark #sec7 .grid.grid-cols-1.gap-10 > div p{color:#dbe4f0!important;opacity:1!important;}
+@media(max-width:768px){#sec7 .grid.grid-cols-1.gap-10 > div{padding-left:1.25rem!important;padding-top:5.75rem!important;}#sec7 .grid.grid-cols-1.gap-10 > div::before{left:1.25rem!important;top:1.25rem!important;}}
+
+/* Section 8: richer value-chain color blocks + visible icons */
+#sec8 .grid.gap-8.mb-10 > div{
+    position:relative !important;
+    padding-left:7rem !important;
+    overflow:hidden !important;
+    box-shadow:0 16px 38px rgba(15,23,42,.075) !important;
+}
+#sec8 .grid.gap-8.mb-10 > div::before{
+    position:absolute !important;
+    left:2rem !important;
+    top:2rem !important;
+    width:3.6rem !important;
+    height:3.6rem !important;
+    border-radius:9999px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-size:1.45rem !important;
+    box-shadow:0 14px 28px rgba(15,23,42,.10) !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+#sec8 .grid.gap-8.mb-10 > div:nth-child(1){background:linear-gradient(135deg,#eff6ff,#ffffff)!important;border-left:7px solid #2563eb!important;}
+#sec8 .grid.gap-8.mb-10 > div:nth-child(1)::before{content:"🛢️"!important;background:#dbeafe!important;color:#2563eb!important;}
+#sec8 .grid.gap-8.mb-10 > div:nth-child(2){background:linear-gradient(135deg,#ecfdf5,#ffffff)!important;border-left:7px solid #16a34a!important;}
+#sec8 .grid.gap-8.mb-10 > div:nth-child(2)::before{content:"🏭"!important;background:#dcfce7!important;color:#16a34a!important;}
+#sec8 .grid.gap-8.mb-10 > div:nth-child(3){background:linear-gradient(135deg,#f5f3ff,#ffffff)!important;border-left:7px solid #7c3aed!important;}
+#sec8 .grid.gap-8.mb-10 > div:nth-child(3)::before{content:"📦"!important;background:#ede9fe!important;color:#7c3aed!important;}
+#sec8 .sec8-glass-card{position:relative !important;}
+#sec8 .sec8-glass-card h4::before,
+#sec8 .sec8-glass-card p.font-black::before{
+    content:"●" !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:1.35rem !important;
+    height:1.35rem !important;
+    border-radius:9999px !important;
+    margin-right:.45rem !important;
+    background:#dbeafe !important;
+    color:#2563eb !important;
+    font-size:.72rem !important;
+    vertical-align:middle !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+#sec8 .highlight-card .sec8-glass-card:nth-child(1) p.font-black::before{content:"🛢️"!important;font-size:.85rem!important;}
+#sec8 .highlight-card .sec8-glass-card:nth-child(2) p.font-black::before{content:"🏭"!important;font-size:.85rem!important;background:#dcfce7!important;color:#16a34a!important;}
+#sec8 .highlight-card .sec8-glass-card:nth-child(3) p.font-black::before{content:"📦"!important;font-size:.85rem!important;background:#ede9fe!important;color:#7c3aed!important;}
+.dark #sec8 .grid.gap-8.mb-10 > div{background:#1e293b!important;color:#e5e7eb!important;border-color:rgba(148,163,184,.25)!important;box-shadow:0 18px 42px rgba(0,0,0,.22)!important;}
+.dark #sec8 .grid.gap-8.mb-10 > div p{color:#dbe4f0!important;opacity:1!important;}
+@media(max-width:768px){#sec8 .grid.gap-8.mb-10 > div{padding-left:1.25rem!important;padding-top:5.75rem!important;}#sec8 .grid.gap-8.mb-10 > div::before{left:1.25rem!important;top:1.25rem!important;}}
+
+/* ensure section 4 existing icon circles show Font Awesome icons clearly */
+#sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-6 i,
+#sec4 .grid.gap-10 i{
+    color:#2563eb !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+.dark #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4.gap-6 i,
+.dark #sec4 .grid.gap-10 i{color:#93c5fd !important;}
+
+
+/* ===== Final visual contrast + icon fixes requested ===== */
+#sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4 > div > i { width:3rem; height:3rem; border-radius:9999px; display:inline-flex !important; align-items:center; justify-content:center; margin-bottom:1rem; font-size:1.15rem !important; background:rgba(37,99,235,.12); color:#2563eb !important; }
+#sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4 > div:nth-child(1) > i { background:#dbeafe; color:#2563eb !important; }
+#sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4 > div:nth-child(2) > i { background:#dcfce7; color:#16a34a !important; }
+#sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4 > div:nth-child(3) > i { background:#fef3c7; color:#d97706 !important; }
+#sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4 > div:nth-child(4) > i { background:#f3e8ff; color:#9333ea !important; }
+.dark #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4 > div > i { background:rgba(59,130,246,.18)!important; color:#93c5fd!important; }
+.dark #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4 > div:nth-child(2) > i { background:rgba(34,197,94,.18)!important; color:#86efac!important; }
+.dark #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4 > div:nth-child(3) > i { background:rgba(245,158,11,.18)!important; color:#fcd34d!important; }
+.dark #sec4 .grid.md\:grid-cols-2.lg\:grid-cols-4 > div:nth-child(4) > i { background:rgba(168,85,247,.18)!important; color:#d8b4fe!important; }
+#sec5 .grid.grid-cols-2.gap-4 > div { background:#f8fafc!important; color:#0f172a!important; border:1px solid #e2e8f0!important; }
+#sec5 .grid.grid-cols-2.gap-4 > div h5 { color:#0f172a!important; opacity:1!important; }
+#sec5 .grid.grid-cols-2.gap-4 > div p { color:#475569!important; opacity:1!important; }
+.dark #sec5 .grid.grid-cols-2.gap-4 > div { background:#1e293b!important; color:#f8fafc!important; border-color:rgba(148,163,184,.28)!important; }
+.dark #sec5 .grid.grid-cols-2.gap-4 > div h5 { color:#f8fafc!important; opacity:1!important; }
+.dark #sec5 .grid.grid-cols-2.gap-4 > div p { color:#cbd5e1!important; opacity:1!important; }
+.dark #sec9 .sec9-threat { background:rgba(127,29,29,.42)!important; border-color:rgba(248,113,113,.55)!important; box-shadow:inset 0 0 0 1px rgba(248,113,113,.12)!important; }
+.dark #sec9 .sec9-response { background:rgba(20,83,45,.42)!important; border-color:rgba(74,222,128,.55)!important; box-shadow:inset 0 0 0 1px rgba(74,222,128,.12)!important; }
+.dark #sec9 .sec9-threat h4, .dark #sec9 .sec9-threat .font-black { color:#fecaca!important; }
+.dark #sec9 .sec9-response h4, .dark #sec9 .sec9-response .font-black { color:#bbf7d0!important; }
+.dark #sec9 .sec9-threat p, .dark #sec9 .sec9-threat li, .dark #sec9 .sec9-response p, .dark #sec9 .sec9-response li { color:#f8fafc!important; opacity:1!important; }
+
+
+
+/* ===== Final patch: Section 5 dark-mode readable colored cards + Section 4 icon visibility ===== */
+#sec5 .grid.grid-cols-2.gap-4 > div {
+    border: 1px solid rgba(148, 163, 184, 0.28) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06) !important;
+}
+#sec5 .grid.grid-cols-2.gap-4 > div:nth-child(1) {
+    background: #fff1f2 !important;
+    border-color: rgba(248, 113, 113, 0.38) !important;
+    color: #0f172a !important;
+}
+#sec5 .grid.grid-cols-2.gap-4 > div:nth-child(2) {
+    background: #f0fdf4 !important;
+    border-color: rgba(34, 197, 94, 0.34) !important;
+    color: #0f172a !important;
+}
+#sec5 .grid.grid-cols-2.gap-4 > div:nth-child(1) h5 {
+    color: #dc2626 !important;
+    -webkit-text-fill-color: #dc2626 !important;
+}
+#sec5 .grid.grid-cols-2.gap-4 > div:nth-child(2) h5 {
+    color: #16a34a !important;
+    -webkit-text-fill-color: #16a34a !important;
+}
+#sec5 .grid.grid-cols-2.gap-4 > div p {
+    color: #334155 !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #334155 !important;
+}
+#sec5 .p-6.bg-slate-100.dark\:bg-slate-800.rounded-2xl {
+    background: #eff6ff !important;
+    border: 1px solid rgba(59, 130, 246, 0.35) !important;
+    color: #0f172a !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06) !important;
+}
+#sec5 .p-6.bg-slate-100.dark\:bg-slate-800.rounded-2xl h5 {
+    color: #2563eb !important;
+    -webkit-text-fill-color: #2563eb !important;
+}
+#sec5 .p-6.bg-slate-100.dark\:bg-slate-800.rounded-2xl li {
+    color: #1e293b !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #1e293b !important;
+}
+.dark #sec5 .grid.grid-cols-2.gap-4 > div:nth-child(1) {
+    background: rgba(127, 29, 29, 0.38) !important;
+    border-color: rgba(248, 113, 113, 0.55) !important;
+    color: #fee2e2 !important;
+}
+.dark #sec5 .grid.grid-cols-2.gap-4 > div:nth-child(2) {
+    background: rgba(20, 83, 45, 0.38) !important;
+    border-color: rgba(74, 222, 128, 0.52) !important;
+    color: #dcfce7 !important;
+}
+.dark #sec5 .grid.grid-cols-2.gap-4 > div:nth-child(1) h5 {
+    color: #fca5a5 !important;
+    -webkit-text-fill-color: #fca5a5 !important;
+}
+.dark #sec5 .grid.grid-cols-2.gap-4 > div:nth-child(2) h5 {
+    color: #86efac !important;
+    -webkit-text-fill-color: #86efac !important;
+}
+.dark #sec5 .grid.grid-cols-2.gap-4 > div p {
+    color: #f8fafc !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #f8fafc !important;
+}
+.dark #sec5 .p-6.bg-slate-100.dark\:bg-slate-800.rounded-2xl {
+    background: rgba(30, 64, 175, 0.34) !important;
+    border-color: rgba(96, 165, 250, 0.55) !important;
+    color: #dbeafe !important;
+}
+.dark #sec5 .p-6.bg-slate-100.dark\:bg-slate-800.rounded-2xl h5 {
+    color: #93c5fd !important;
+    -webkit-text-fill-color: #93c5fd !important;
+}
+.dark #sec5 .p-6.bg-slate-100.dark\:bg-slate-800.rounded-2xl li {
+    color: #f8fafc !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #f8fafc !important;
+}
+#sec4 .fas, #sec4 i[class*="fa-"] {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+#sec4 .p-6.bg-slate-50 i, #sec4 .p-6.bg-slate-100 i, #sec4 .p-6[class*="bg-"] i {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: rgba(37, 99, 235, 0.12);
+    color: #2563eb !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 1rem;
+}
+.dark #sec4 .p-6.bg-slate-50 i, .dark #sec4 .p-6.bg-slate-100 i, .dark #sec4 .p-6[class*="bg-"] i {
+    background: rgba(96, 165, 250, 0.18);
+    color: #93c5fd !important;
+}
+
+
+/* ===== Final fixes: theme toggle + Section 5 dark-mode readability ===== */
+#sec5 .sec5-risk-card { background: rgba(255,255,255,0.96) !important; border: 1px solid rgba(148,163,184,0.28) !important; color: #0f172a !important; box-shadow: 0 14px 34px rgba(15,23,42,0.06); }
+#sec5 .sec5-risk-card h5, #sec5 .sec5-risk-card p, #sec5 .sec5-risk-card span, #sec5 .sec5-risk-card i { opacity: 1 !important; -webkit-text-fill-color: currentColor !important; }
+#sec5 .sec5-risk-card p { color: #334155 !important; line-height: 1.7; font-size: 0.82rem !important; }
+#sec5 .sec5-risk-card h5 { color: #0f172a !important; font-size: 1rem !important; }
+#sec5 .sec5-risk-card .sec5-risk-icon { width: 2.75rem; height: 2.75rem; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+#sec5 .sec5-risk-card-red { background: linear-gradient(135deg, #fff1f2, #ffffff) !important; border-color: rgba(248,113,113,0.35) !important; }
+#sec5 .sec5-risk-card-red h5, #sec5 .sec5-risk-card-red .sec5-risk-icon { color: #dc2626 !important; }
+#sec5 .sec5-risk-card-red .sec5-risk-icon { background: rgba(254,202,202,0.75) !important; }
+#sec5 .sec5-risk-card-green { background: linear-gradient(135deg, #ecfdf5, #ffffff) !important; border-color: rgba(34,197,94,0.35) !important; }
+#sec5 .sec5-risk-card-green h5, #sec5 .sec5-risk-card-green .sec5-risk-icon { color: #16a34a !important; }
+#sec5 .sec5-risk-card-green .sec5-risk-icon { background: rgba(187,247,208,0.78) !important; }
+.dark #sec5 .sec5-risk-card { color: #f8fafc !important; box-shadow: none !important; }
+.dark #sec5 .sec5-risk-card p { color: #f8fafc !important; opacity: 1 !important; }
+.dark #sec5 .sec5-risk-card-red { background: linear-gradient(135deg, rgba(127,29,29,0.58), rgba(30,41,59,0.96)) !important; border-color: rgba(248,113,113,0.62) !important; }
+.dark #sec5 .sec5-risk-card-red h5, .dark #sec5 .sec5-risk-card-red .sec5-risk-icon { color: #fca5a5 !important; }
+.dark #sec5 .sec5-risk-card-red .sec5-risk-icon { background: rgba(127,29,29,0.72) !important; }
+.dark #sec5 .sec5-risk-card-green { background: linear-gradient(135deg, rgba(20,83,45,0.58), rgba(30,41,59,0.96)) !important; border-color: rgba(74,222,128,0.62) !important; }
+.dark #sec5 .sec5-risk-card-green h5, .dark #sec5 .sec5-risk-card-green .sec5-risk-icon { color: #86efac !important; }
+.dark #sec5 .sec5-risk-card-green .sec5-risk-icon { background: rgba(20,83,45,0.72) !important; }
+.dark #sec5 .p-6.bg-slate-100, .dark #sec5 .bg-slate-100 { background: rgba(30,41,59,0.96) !important; color: #f8fafc !important; }
+.dark #sec5 .p-6.bg-slate-100 p, .dark #sec5 .p-6.bg-slate-100 li, .dark #sec5 .p-6.bg-slate-100 h5 { color: #f8fafc !important; opacity: 1 !important; -webkit-text-fill-color: currentColor !important; }
+@media (max-width: 768px) { #sec5 .sec5-risk-grid { grid-template-columns: 1fr !important; } }
+
+
+
+/* ===== FINAL PATCH: Section 5 dark mode readable cards + theme button reverted ===== */
+#sec5 .sec5-risk-card,
+#sec5 .sec5-risk-card * {
+    opacity: 1 !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+#sec5 .sec5-risk-card-red {
+    background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%) !important;
+    border: 1px solid rgba(248, 113, 113, 0.42) !important;
+    color: #0f172a !important;
+}
+#sec5 .sec5-risk-card-green {
+    background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%) !important;
+    border: 1px solid rgba(34, 197, 94, 0.42) !important;
+    color: #0f172a !important;
+}
+#sec5 .sec5-risk-card-red h5 {
+    color: #dc2626 !important;
+    font-weight: 900 !important;
+}
+#sec5 .sec5-risk-card-green h5 {
+    color: #16a34a !important;
+    font-weight: 900 !important;
+}
+#sec5 .sec5-risk-card p {
+    color: #334155 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+#sec5 .sec5-risk-card .sec5-risk-icon {
+    width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 9999px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+}
+#sec5 .sec5-risk-card-red .sec5-risk-icon {
+    background: rgba(254, 202, 202, 0.92) !important;
+    color: #dc2626 !important;
+}
+#sec5 .sec5-risk-card-green .sec5-risk-icon {
+    background: rgba(187, 247, 208, 0.92) !important;
+    color: #15803d !important;
+}
+.dark #sec5 .sec5-risk-card-red {
+    background: linear-gradient(135deg, rgba(76, 5, 25, 0.94) 0%, rgba(30, 41, 59, 0.96) 100%) !important;
+    border: 1px solid rgba(248, 113, 113, 0.82) !important;
+    color: #f8fafc !important;
+    box-shadow: 0 18px 40px rgba(127, 29, 29, 0.18) !important;
+}
+.dark #sec5 .sec5-risk-card-green {
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.94) 0%, rgba(30, 41, 59, 0.96) 100%) !important;
+    border: 1px solid rgba(74, 222, 128, 0.82) !important;
+    color: #f8fafc !important;
+    box-shadow: 0 18px 40px rgba(20, 83, 45, 0.18) !important;
+}
+.dark #sec5 .sec5-risk-card-red h5 {
+    color: #fca5a5 !important;
+    -webkit-text-fill-color: #fca5a5 !important;
+}
+.dark #sec5 .sec5-risk-card-green h5 {
+    color: #86efac !important;
+    -webkit-text-fill-color: #86efac !important;
+}
+.dark #sec5 .sec5-risk-card p {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+.dark #sec5 .sec5-risk-card-red .sec5-risk-icon {
+    background: rgba(127, 29, 29, 0.8) !important;
+    color: #fecaca !important;
+    -webkit-text-fill-color: #fecaca !important;
+}
+.dark #sec5 .sec5-risk-card-green .sec5-risk-icon {
+    background: rgba(20, 83, 45, 0.82) !important;
+    color: #bbf7d0 !important;
+    -webkit-text-fill-color: #bbf7d0 !important;
+}
+#sec5 .sec5-ai-card,
+#sec5 .sec5-ai-card * {
+    opacity: 1 !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+#sec5 .sec5-ai-card {
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%) !important;
+    border: 1px solid rgba(96, 165, 250, 0.45) !important;
+    color: #0f172a !important;
+}
+#sec5 .sec5-ai-card h5 { color: #2563eb !important; }
+#sec5 .sec5-ai-card li { color: #334155 !important; font-weight: 700 !important; }
+.dark #sec5 .sec5-ai-card {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.5) 0%, rgba(30, 41, 59, 0.96) 100%) !important;
+    border: 1px solid rgba(96, 165, 250, 0.78) !important;
+    color: #f8fafc !important;
+}
+.dark #sec5 .sec5-ai-card h5 {
+    color: #93c5fd !important;
+    -webkit-text-fill-color: #93c5fd !important;
+}
+.dark #sec5 .sec5-ai-card li {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    font-weight: 700 !important;
+}
+
+
+
+/* ===== ULTRA FINAL FIX: Section 5 dark mode card readability ===== */
+body.dark #sec5 .sec5-risk-card-red,
+html.dark #sec5 .sec5-risk-card-red {
+    background: linear-gradient(135deg, #3f1118 0%, #1f2937 100%) !important;
+    border: 1px solid rgba(248, 113, 113, 0.95) !important;
+    color: #ffffff !important;
+    box-shadow: 0 16px 36px rgba(127, 29, 29, 0.25) !important;
+}
+body.dark #sec5 .sec5-risk-card-green,
+html.dark #sec5 .sec5-risk-card-green {
+    background: linear-gradient(135deg, #052e22 0%, #1f2937 100%) !important;
+    border: 1px solid rgba(74, 222, 128, 0.95) !important;
+    color: #ffffff !important;
+    box-shadow: 0 16px 36px rgba(20, 83, 45, 0.25) !important;
+}
+body.dark #sec5 .sec5-risk-card-red h5,
+body.dark #sec5 .sec5-risk-card-red h5 *,
+html.dark #sec5 .sec5-risk-card-red h5,
+html.dark #sec5 .sec5-risk-card-red h5 * {
+    color: #fca5a5 !important;
+    -webkit-text-fill-color: #fca5a5 !important;
+    opacity: 1 !important;
+}
+body.dark #sec5 .sec5-risk-card-green h5,
+body.dark #sec5 .sec5-risk-card-green h5 *,
+html.dark #sec5 .sec5-risk-card-green h5,
+html.dark #sec5 .sec5-risk-card-green h5 * {
+    color: #86efac !important;
+    -webkit-text-fill-color: #86efac !important;
+    opacity: 1 !important;
+}
+body.dark #sec5 .sec5-risk-card p,
+body.dark #sec5 .sec5-risk-card p *,
+html.dark #sec5 .sec5-risk-card p,
+html.dark #sec5 .sec5-risk-card p * {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+body.dark #sec5 .sec5-risk-card-red .sec5-risk-icon,
+html.dark #sec5 .sec5-risk-card-red .sec5-risk-icon {
+    background: rgba(248, 113, 113, 0.22) !important;
+    color: #fecaca !important;
+    -webkit-text-fill-color: #fecaca !important;
+}
+body.dark #sec5 .sec5-risk-card-green .sec5-risk-icon,
+html.dark #sec5 .sec5-risk-card-green .sec5-risk-icon {
+    background: rgba(74, 222, 128, 0.22) !important;
+    color: #bbf7d0 !important;
+    -webkit-text-fill-color: #bbf7d0 !important;
+}
+body.dark #sec5 .sec5-ai-card,
+html.dark #sec5 .sec5-ai-card {
+    background: linear-gradient(135deg, #172554 0%, #1e293b 100%) !important;
+    border: 1px solid rgba(96, 165, 250, 0.9) !important;
+    color: #ffffff !important;
+}
+body.dark #sec5 .sec5-ai-card h5,
+html.dark #sec5 .sec5-ai-card h5 {
+    color: #93c5fd !important;
+    -webkit-text-fill-color: #93c5fd !important;
+    opacity: 1 !important;
+}
+body.dark #sec5 .sec5-ai-card li,
+body.dark #sec5 .sec5-ai-card li *,
+html.dark #sec5 .sec5-ai-card li,
+html.dark #sec5 .sec5-ai-card li * {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1 !important;
+}
+
+
+
+/* ===== Showcase Upgrade: SPA interactive polish ===== */
+:root {
+    --showcase-blue: #2563eb;
+    --showcase-cyan: #06b6d4;
+    --showcase-green: #22c55e;
+    --showcase-card-border: rgba(148, 163, 184, 0.22);
+}
+#spaLoader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top left, rgba(37,99,235,.16), transparent 34%), var(--bg-color);
+    color: var(--text-color);
+    transition: opacity .45s ease, visibility .45s ease;
+}
+#spaLoader.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-card {
+    width: min(420px, 88vw);
+    padding: 2rem;
+    border-radius: 2rem;
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(148,163,184,.26);
+    box-shadow: 0 30px 80px rgba(15,23,42,.12);
+    backdrop-filter: blur(18px);
+    text-align: center;
+}
+.dark .loader-card { background: rgba(15,23,42,.78); box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+.loader-orb {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 1rem;
+    border-radius: 9999px;
+    background: conic-gradient(from 90deg, #2563eb, #06b6d4, #22c55e, #2563eb);
+    animation: loaderSpin 1.2s linear infinite;
+    display: grid;
+    place-items: center;
+}
+.loader-orb::after {
+    content: 'FC';
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    background: var(--bg-color);
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    color: var(--showcase-blue);
+}
+@keyframes loaderSpin { to { transform: rotate(360deg); } }
+
+.showcase-card,
+.section-container article,
+.section-container .rounded-2xl,
+.section-container .rounded-3xl {
+    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.showcase-card:hover,
+.section-container article:hover,
+.section-container .rounded-2xl:hover,
+.section-container .rounded-3xl:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 45px rgba(15,23,42,.10);
+    border-color: rgba(37,99,235,.24) !important;
+}
+.dark .showcase-card:hover,
+.dark .section-container article:hover,
+.dark .section-container .rounded-2xl:hover,
+.dark .section-container .rounded-3xl:hover {
+    box-shadow: 0 18px 45px rgba(0,0,0,.30);
+}
+#sectionStepper {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 998;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .55rem .7rem;
+    border-radius: 9999px;
+    background: rgba(255,255,255,.82);
+    border: 1px solid rgba(148,163,184,.26);
+    box-shadow: 0 18px 50px rgba(15,23,42,.12);
+    backdrop-filter: blur(16px);
+}
+.dark #sectionStepper {
+    background: rgba(15,23,42,.82);
+    border-color: rgba(148,163,184,.20);
+    box-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+.stepper-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37,99,235,.10);
+    color: #2563eb;
+    transition: transform .2s ease, background .2s ease;
+}
+.stepper-btn:hover { transform: scale(1.08); background: rgba(37,99,235,.18); }
+.dark .stepper-btn { background: rgba(59,130,246,.18); color: #bfdbfe; }
+.stepper-info { min-width: 155px; text-align: center; line-height: 1.1; }
+.stepper-index { font-size: .72rem; font-weight: 900; color: #2563eb; }
+.dark .stepper-index { color: #93c5fd; }
+.stepper-title { font-size: .78rem; font-weight: 900; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px; }
+#sectionProgressBar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 0%;
+    z-index: 997;
+    background: linear-gradient(90deg, #2563eb, #06b6d4, #22c55e);
+    transition: width .35s ease;
+}
+.presentation-mode .site-topbar,
+.presentation-mode #sectionStepper,
+.presentation-mode #backToTopBtn { opacity: .06; }
+.presentation-mode .site-topbar:hover,
+.presentation-mode #sectionStepper:hover,
+.presentation-mode #backToTopBtn:hover { opacity: 1; }
+#focusModeBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 86px;
+    z-index: 999;
+    width: 52px;
+    height: 52px;
+    border-radius: 9999px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: white;
+    border: none;
+    box-shadow: 0 12px 34px rgba(37,99,235,.28);
+    transition: transform .25s ease, filter .25s ease;
+}
+#focusModeBtn:hover { transform: translateY(-3px) scale(1.06); filter: brightness(1.05); }
+
+/* Extra final guard: Sec5 dark mode readability */
+.dark #sec5 .sec5-risk-card-red,
+body.dark #sec5 .sec5-risk-card-red {
+    background: linear-gradient(135deg, rgba(69,10,10,.96), rgba(30,41,59,.96)) !important;
+    border-color: rgba(248,113,113,.85) !important;
+}
+.dark #sec5 .sec5-risk-card-green,
+body.dark #sec5 .sec5-risk-card-green {
+    background: linear-gradient(135deg, rgba(5,46,34,.96), rgba(30,41,59,.96)) !important;
+    border-color: rgba(74,222,128,.85) !important;
+}
+.dark #sec5 .sec5-risk-card-red p,
+.dark #sec5 .sec5-risk-card-green p,
+body.dark #sec5 .sec5-risk-card-red p,
+body.dark #sec5 .sec5-risk-card-green p {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+.dark #sec5 .sec5-risk-card-red h5,
+body.dark #sec5 .sec5-risk-card-red h5 {
+    color: #fca5a5 !important;
+    -webkit-text-fill-color: #fca5a5 !important;
+    opacity: 1 !important;
+}
+.dark #sec5 .sec5-risk-card-green h5,
+body.dark #sec5 .sec5-risk-card-green h5 {
+    color: #86efac !important;
+    -webkit-text-fill-color: #86efac !important;
+    opacity: 1 !important;
+}
+@media (max-width: 640px) {
+    #sectionStepper { bottom: 72px; max-width: calc(100vw - 26px); }
+    .stepper-info { min-width: 120px; }
+    .stepper-title { max-width: 130px; }
+    #focusModeBtn { right: 14px; bottom: 68px; width: 46px; height: 46px; }
+}
+
+
+
+/* ===== FINAL WOW FEATURES: search, guide, autoplay, chart, highlight, circular progress ===== */
+:root { --wow-blue:#2563eb; --wow-cyan:#06b6d4; --wow-green:#22c55e; --wow-orange:#f97316; --wow-purple:#8b5cf6; }
+.wow-btn{width:44px;height:44px;border-radius:9999px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(148,163,184,.28);background:rgba(255,255,255,.82);color:#0f172a;box-shadow:0 12px 26px rgba(15,23,42,.12);backdrop-filter:blur(12px);transition:.25s ease;}
+.wow-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 18px 34px rgba(37,99,235,.18);}
+.dark .wow-btn{background:rgba(30,41,59,.86);color:#f8fafc;border-color:rgba(148,163,184,.25);}
+#wowDock{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:910;display:flex;flex-direction:column;gap:.7rem;}
+#wowDock .active{background:linear-gradient(135deg,#2563eb,#06b6d4)!important;color:white!important;}
+#wowAutoBadge{position:fixed;top:86px;right:18px;z-index:920;display:none;align-items:center;gap:.5rem;padding:.55rem .8rem;border-radius:999px;background:rgba(37,99,235,.94);color:white;font-size:.75rem;font-weight:900;box-shadow:0 14px 34px rgba(37,99,235,.28);}
+#wowAutoBadge.show{display:flex;}
+#wowAutoBadge{min-width:230px;justify-content:flex-start;}
+#wowAutoText{white-space:nowrap;}
+#wowAutoCountdown{font-weight:900;color:#fff;}
+#wowAutoProgressTrack{position:absolute;left:12px;right:12px;bottom:6px;height:3px;border-radius:999px;background:rgba(255,255,255,.26);overflow:hidden;}
+#wowAutoProgressFill{display:block;width:0%;height:100%;border-radius:999px;background:#fff;transition:width .25s linear;}
+#wowCircle{position:fixed;left:18px;bottom:24px;z-index:905;width:64px;height:64px;border-radius:999px;background:conic-gradient(#2563eb 0deg, rgba(148,163,184,.20) 0deg);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(15,23,42,.15);}
+#wowCircle::before{content:"";position:absolute;inset:7px;border-radius:inherit;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);}
+.dark #wowCircle::before{background:rgba(15,23,42,.92);}
+#wowCircleText{position:relative;z-index:1;font-size:.72rem;font-weight:900;color:#2563eb;}.dark #wowCircleText{color:#93c5fd;}
+#wowSearchPanel,#wowGuidePanel,#wowTimerPanel{position:fixed;right:78px;top:88px;width:min(420px,calc(100vw - 100px));max-height:calc(100vh - 120px);overflow:auto;z-index:930;border-radius:1.35rem;background:rgba(255,255,255,.94);color:#0f172a;border:1px solid rgba(148,163,184,.26);box-shadow:0 26px 70px rgba(15,23,42,.20);backdrop-filter:blur(18px);display:none;padding:1rem;}
+.dark #wowSearchPanel,.dark #wowGuidePanel,.dark #wowTimerPanel{background:rgba(15,23,42,.95);color:#f8fafc;border-color:rgba(148,163,184,.22);}#wowSearchPanel.show,#wowGuidePanel.show,#wowTimerPanel.show{display:block;animation:wowPop .22s ease both;}
+@keyframes wowPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.wow-panel-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.75rem;}.wow-panel-title{font-weight:900;font-size:.98rem;display:flex;gap:.55rem;align-items:center;}
+#wowSearchInput{width:100%;padding:.8rem .95rem;border-radius:1rem;border:1px solid rgba(148,163,184,.28);background:#f8fafc;color:#0f172a;font-weight:700;outline:none;}.dark #wowSearchInput{background:#1e293b;color:#f8fafc;border-color:rgba(148,163,184,.25);}
+.wow-result{width:100%;text-align:left;border-radius:1rem;padding:.85rem;margin-top:.55rem;background:#f8fafc;border:1px solid rgba(148,163,184,.16);transition:.2s ease;}.wow-result:hover{transform:translateX(-3px);border-color:rgba(37,99,235,.45);}.dark .wow-result{background:#1e293b;border-color:rgba(148,163,184,.18);color:#f8fafc;}.wow-result b{display:block;font-size:.88rem;margin-bottom:.2rem;}.wow-result span{font-size:.76rem;opacity:.72;}
+.wow-guide-card{border-radius:1rem;padding:.85rem;background:#f8fafc;border:1px solid rgba(148,163,184,.18);margin:.55rem 0;}.dark .wow-guide-card{background:#1e293b;border-color:rgba(148,163,184,.18);}.wow-guide-card h4{font-size:.88rem;font-weight:900;margin-bottom:.35rem;color:#2563eb;}.dark .wow-guide-card h4{color:#93c5fd;}.wow-guide-card p{font-size:.82rem;line-height:1.65;opacity:.88;}
+.wow-keyword{background:linear-gradient(135deg,rgba(250,204,21,.55),rgba(251,146,60,.35));color:#0f172a!important;-webkit-text-fill-color:#0f172a!important;border-radius:.35rem;padding:.06rem .22rem;font-weight:900;box-shadow:0 0 0 1px rgba(250,204,21,.2);}.dark .wow-keyword{background:linear-gradient(135deg,rgba(250,204,21,.88),rgba(251,146,60,.58));color:#111827!important;-webkit-text-fill-color:#111827!important;}
+#wowChartWrap{position:relative;width:100%;height:100%;min-height:230px;padding:1rem;}#wowChartFallback{display:none;height:100%;align-items:end;gap:.7rem;justify-content:center;}.wow-bar{width:48px;border-radius:.75rem .75rem .2rem .2rem;background:rgba(255,255,255,.78);position:relative;}.wow-bar span{position:absolute;bottom:-1.45rem;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:900;white-space:nowrap;}
+.wow-stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-top:.75rem;}.wow-stat{border-radius:1rem;padding:.8rem;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.16);}.dark .wow-stat{background:rgba(59,130,246,.12);border-color:rgba(96,165,250,.2);}.wow-stat .num{font-size:1.15rem;font-weight:900;color:#2563eb;}.dark .wow-stat .num{color:#93c5fd;}.wow-stat .lab{font-size:.65rem;font-weight:900;opacity:.65;text-transform:uppercase;letter-spacing:.08em;}
+@media(max-width:768px){#wowDock{right:12px;top:auto;bottom:126px;transform:none}#wowSearchPanel,#wowGuidePanel,#wowTimerPanel{right:12px;left:12px;width:auto;top:82px}.wow-btn{width:40px;height:40px}#wowCircle{width:54px;height:54px;left:12px;bottom:16px}#wowAutoBadge{top:76px;right:12px}.wow-stat-grid{grid-template-columns:1fr}}
+
+
+
+
+/* ===== Presentation Timer Panel (replaces Highlight Mode) ===== */
+.wow-timer-display{font-size:3rem;font-weight:900;letter-spacing:-.04em;text-align:center;color:#2563eb;padding:1rem 0 .25rem;}
+.dark .wow-timer-display{color:#93c5fd;}
+.wow-timer-sub{text-align:center;font-size:.82rem;line-height:1.6;opacity:.72;margin-bottom:.85rem;}
+.wow-timer-presets,.wow-timer-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin-top:.65rem;}
+.wow-timer-presets button,.wow-timer-actions button,.wow-timer-custom button{border-radius:.9rem;padding:.65rem .5rem;font-size:.78rem;font-weight:900;border:1px solid rgba(148,163,184,.24);background:#f8fafc;color:#0f172a;transition:.2s ease;}
+.dark .wow-timer-presets button,.dark .wow-timer-actions button,.dark .wow-timer-custom button{background:#1e293b;color:#f8fafc;border-color:rgba(148,163,184,.22);}
+.wow-timer-presets button:hover,.wow-timer-actions button:hover,.wow-timer-custom button:hover{transform:translateY(-2px);border-color:rgba(37,99,235,.5);}
+.wow-timer-custom{display:grid;grid-template-columns:1fr 1fr auto;gap:.55rem;margin-top:.75rem;align-items:end;}
+.wow-timer-field label{display:block;font-size:.68rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 .25rem .1rem;}
+.wow-timer-field input{width:100%;border-radius:.9rem;padding:.66rem .75rem;font-size:.9rem;font-weight:900;border:1px solid rgba(148,163,184,.28);background:#ffffff;color:#0f172a;outline:none;}
+.dark .wow-timer-field input{background:#1e293b;color:#f8fafc;border-color:rgba(148,163,184,.24);}
+.wow-timer-field input:focus{border-color:rgba(37,99,235,.65);box-shadow:0 0 0 3px rgba(37,99,235,.12);}
+#wowTimerCustomSet{background:linear-gradient(135deg,#2563eb,#06b6d4)!important;color:white!important;border-color:transparent!important;}
+@media(max-width:520px){.wow-timer-custom{grid-template-columns:1fr 1fr}.wow-timer-custom button{grid-column:1 / -1}}
+#wowTimerStart{background:linear-gradient(135deg,#2563eb,#06b6d4)!important;color:white!important;border-color:transparent!important;}
+#wowTimerPause{background:#fef3c7!important;color:#92400e!important;border-color:#fde68a!important;}
+#wowTimerReset{background:#fee2e2!important;color:#991b1b!important;border-color:#fecaca!important;}
+.dark #wowTimerPause{background:rgba(245,158,11,.2)!important;color:#fde68a!important;border-color:rgba(245,158,11,.32)!important;}
+.dark #wowTimerReset{background:rgba(239,68,68,.2)!important;color:#fecaca!important;border-color:rgba(239,68,68,.32)!important;}
+
+/* ===== Bilingual WOW Tools ===== */
+.wow-keyword{display:inline-block;border-radius:.42rem;padding:.08rem .28rem;font-weight:900;line-height:1.35;box-shadow:0 0 0 1px rgba(15,23,42,.06);}
+.wow-keyword-strategy{background:linear-gradient(135deg,#fde68a,#fef3c7);color:#78350f!important;-webkit-text-fill-color:#78350f!important;}
+.wow-keyword-tech{background:linear-gradient(135deg,#bfdbfe,#dbeafe);color:#1e3a8a!important;-webkit-text-fill-color:#1e3a8a!important;}
+.wow-keyword-esg{background:linear-gradient(135deg,#bbf7d0,#dcfce7);color:#14532d!important;-webkit-text-fill-color:#14532d!important;}
+.wow-keyword-risk{background:linear-gradient(135deg,#fecaca,#fee2e2);color:#7f1d1d!important;-webkit-text-fill-color:#7f1d1d!important;}
+.wow-keyword-finance{background:linear-gradient(135deg,#ddd6fe,#ede9fe);color:#4c1d95!important;-webkit-text-fill-color:#4c1d95!important;}
+.dark .wow-keyword-strategy{background:linear-gradient(135deg,#facc15,#fbbf24);color:#111827!important;-webkit-text-fill-color:#111827!important;}
+.dark .wow-keyword-tech{background:linear-gradient(135deg,#60a5fa,#93c5fd);color:#0f172a!important;-webkit-text-fill-color:#0f172a!important;}
+.dark .wow-keyword-esg{background:linear-gradient(135deg,#4ade80,#86efac);color:#052e16!important;-webkit-text-fill-color:#052e16!important;}
+.dark .wow-keyword-risk{background:linear-gradient(135deg,#fb7185,#fca5a5);color:#111827!important;-webkit-text-fill-color:#111827!important;}
+.dark .wow-keyword-finance{background:linear-gradient(135deg,#a78bfa,#c4b5fd);color:#111827!important;-webkit-text-fill-color:#111827!important;}
+.wow-highlight-legend{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.65rem;font-size:.72rem;font-weight:900;}
+.wow-highlight-legend span{border-radius:999px;padding:.28rem .55rem;border:1px solid rgba(148,163,184,.22);}
+
 </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="light">
+
+<div id="spaLoader" aria-hidden="true">
+  <div class="loader-card">
+    <div class="loader-orb"></div>
+    <div class="text-xl font-black tracking-tight">FCFC SPA Loading</div>
+    <div class="text-xs font-bold uppercase tracking-[0.24em] opacity-60 mt-2">Interactive Business Analysis</div>
+  </div>
+</div>
+
 <div class="drawer-overlay" id="drawerOverlay" onclick="closeMenu()"></div>
 <aside class="drawer-menu" id="drawerMenu" aria-hidden="true">
 <div class="drawer-header">
@@ -1022,6 +2139,22 @@ body {
 <button class="drawer-link nav-link" type="button" onclick="switchSection('sec6')">
 <span class="drawer-link-title" data-i18n="nav_sec6" data-i18n-mode="text">陸、財務績效</span>
 </button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec7')">
+<span class="drawer-link-title" data-i18n="nav_sec7" data-i18n-mode="text">柒、PESTEL總體環境分析</span>
+</button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec8')">
+<span class="drawer-link-title" data-i18n="nav_sec8" data-i18n-mode="text">捌、產業價值鏈</span>
+</button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec9')">
+<span class="drawer-link-title" data-i18n="nav_sec9" data-i18n-mode="text">玖、競爭者與競爭動態</span>
+</button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec10')">
+<span class="drawer-link-title" data-i18n="nav_sec10" data-i18n-mode="text">拾、五力分析</span>
+</button>
+<button class="drawer-link nav-link" type="button" onclick="switchSection('sec11')">
+<span class="drawer-link-title" data-i18n="nav_sec11" data-i18n-mode="text">拾壹、產業生命週期與近期動態</span>
+</button>
+
 </div>
 </aside>
 <header class="site-topbar">
@@ -1044,10 +2177,10 @@ body {
 </button>
 <button class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:ring-2 ring-blue-400 transition-all" onclick="toggleLanguage()">
 <i class="fas fa-language text-lg text-blue-500"></i>
-<span class="text-sm font-bold" data-i18n="k1" data-i18n-mode="text" id="langDisplay">繁體中文</span>
+<span class="text-sm font-bold" id="langDisplay">English</span>
 </button>
-<button class="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform dark:bg-white dark:text-black" onclick="toggleTheme()">
-<i class="fas fa-moon text-xs" id="themeIcon"></i>
+<button class="w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all hover:scale-105 bg-white border border-slate-200 text-slate-800 hover:bg-slate-50 dark:bg-gray-800 dark:border-slate-700 dark:text-white dark:hover:bg-slate-700" onclick="toggleTheme()" aria-label="Toggle theme">
+<i class="fas fa-moon text-sm" id="themeIcon"></i>
 </button>
 </div>
 </header>
@@ -1227,7 +2360,7 @@ body {
 <div class="relative z-10 pt-10">
 <h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="k50" data-i18n-mode="text">參、願景使命與價值 (Vision, Mission &amp; Values)</h2>
 <div class="grid gap-12">
-<div class="bg-slate-900 text-white p-12 rounded-3xl">
+<div class="bg-blue-600 dark:bg-slate-900 text-white p-12 rounded-3xl shadow-xl">
 <h3 class="text-xs font-black uppercase tracking-[0.5em] mb-10 opacity-40" data-i18n="k51" data-i18n-mode="text">Core Business Philosophy (經營理念)</h3>
 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
 <div class="space-y-4">
@@ -1317,7 +2450,7 @@ body {
 </ul>
 </div>
 <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
-<i class="fas fa-thread text-2xl text-blue-500 mb-4"></i>
+<i class="fas fa-dna text-2xl text-blue-500 mb-4"></i>
 <h5 class="font-black text-lg mb-2" data-i18n="k91" data-i18n-mode="text">纖維事業部</h5>
 <p class="text-[10px] opacity-50 mb-4 uppercase" data-i18n="k92" data-i18n-mode="text">Fiber Division</p>
 <ul class="text-xs space-y-2 opacity-70">
@@ -1407,7 +2540,7 @@ body {
 </div>
 <h3 class="text-2xl font-black mb-10 text-blue-600" data-i18n="k154" data-i18n-mode="text">二、產品藍圖與未來策略 (Product Roadmap)</h3>
 <div class="grid lg:grid-cols-2 gap-8 mb-10">
-<div class="bg-slate-900 text-white p-8 rounded-3xl">
+<div class="bg-blue-600 dark:bg-slate-900 text-white p-8 rounded-3xl shadow-xl">
 <h4 class="text-xl font-black mb-6" data-i18n="k155" data-i18n-mode="text">高成長目標市場</h4>
 <div class="space-y-6">
 <div class="flex gap-4"><div class="w-12 h-12 bg-blue-500 flex items-center justify-center rounded-full shrink-0">1</div><div><p class="font-bold" data-i18n="k156" data-i18n-mode="text">儲能電池組件</p><p class="text-xs opacity-60" data-i18n="k157" data-i18n-mode="text">開發專用塑膠外殼，較鋁合金減重 50%。</p></div></div>
@@ -1420,12 +2553,12 @@ body {
 <h4 class="font-black mb-2" data-i18n="k162" data-i18n-mode="text">差異化轉型核心：「無未來、不投資」</h4>
 <p class="text-sm opacity-70 leading-relaxed" data-i18n="k163" data-i18n-mode="text">重心從大宗商品轉向非大宗商品 (Non-commodity)。對於 PX、SM、ABS 等產線，優化規格以提高利潤空間。</p>
 </div>
-<div class="grid grid-cols-2 gap-4">
-<div class="p-5 bg-slate-100 dark:bg-slate-800 rounded-xl"><h5 class="font-bold text-sm mb-1" data-i18n="k164" data-i18n-mode="text">區域風險分散</h5><p class="text-[10px] opacity-60" data-i18n="k165" data-i18n-mode="text">轉向佈局東南亞、印度等高潛力市場。</p></div>
-<div class="p-5 bg-slate-100 dark:bg-slate-800 rounded-xl"><h5 class="font-bold text-sm mb-1" data-i18n="k166" data-i18n-mode="text">綠色低碳產品</h5><p class="text-[10px] opacity-60" data-i18n="k167" data-i18n-mode="text">發展 ESG 導向回收塑料，對標全球循環經濟。</p></div>
+<div class="grid grid-cols-2 gap-4 sec5-risk-grid">
+<div class="sec5-risk-card sec5-risk-card-red p-5 rounded-xl"><div class="flex items-start gap-3"><div class="sec5-risk-icon"><i class="fas fa-globe-asia"></i></div><div><h5 class="font-bold text-sm mb-1" data-i18n="k164" data-i18n-mode="text">區域風險分散</h5><p class="text-[10px]" data-i18n="k165" data-i18n-mode="text">轉向佈局東南亞、印度等高潛力市場。</p></div></div></div>
+<div class="sec5-risk-card sec5-risk-card-green p-5 rounded-xl"><div class="flex items-start gap-3"><div class="sec5-risk-icon"><i class="fas fa-leaf"></i></div><div><h5 class="font-bold text-sm mb-1" data-i18n="k166" data-i18n-mode="text">綠色低碳產品</h5><p class="text-[10px]" data-i18n="k167" data-i18n-mode="text">發展 ESG 導向回收塑料，對標全球循環經濟。</p></div></div></div>
 </div>
-<div class="p-6 bg-slate-100 dark:bg-slate-800 rounded-2xl">
-<h5 class="font-bold text-sm mb-2 text-blue-600" data-i18n="k168" data-i18n-mode="text">AI 驅動與資產活化</h5>
+<div class="sec5-ai-card p-6 rounded-2xl">
+<h5 class="font-bold text-sm mb-2" data-i18n="k168" data-i18n-mode="text">AI 驅動與資產活化</h5>
 <ul class="text-[11px] space-y-1 opacity-70">
 <li data-i18n="k169" data-i18n-mode="text">● AI 智能管理：優化生產能耗與資產維護決策。</li>
 <li data-i18n="k170" data-i18n-mode="text">● 土地活化：如彰化廠區轉型為高科技園區，創造石化外價值。</li>
@@ -1547,8 +2680,17 @@ body {
 </div>
 </div>
 </div>
-<div class="w-full md:w-1/2 h-64 bg-white/5 rounded-2xl flex items-center justify-center border border-white/20">
-<span class="text-xs opacity-40 uppercase tracking-widest">[ Stock Chart Visualization ]</span>
+<div class="w-full md:w-1/2 h-64 bg-white/5 rounded-2xl border border-white/20">
+    <div id="wowChartWrap">
+        <canvas id="wowStockChart" aria-label="FCFC stock price trend chart"></canvas>
+        <div id="wowChartFallback">
+            <div class="wow-bar" style="height:92%"><span>2021</span></div>
+            <div class="wow-bar" style="height:77%"><span>2022</span></div>
+            <div class="wow-bar" style="height:71%"><span>2023</span></div>
+            <div class="wow-bar" style="height:63%"><span>2024E</span></div>
+            <div class="wow-bar" style="height:70%"><span>2025E</span></div>
+        </div>
+    </div>
 </div>
 </div>
 </div>
@@ -1560,6 +2702,376 @@ body {
 </div>
 </div>
 </section>
+<!-- 柒、PESTEL總體環境分析：依 FCFC_TP1 Word 內容完整放入 -->
+<section class="section-container reveal content-section" id="sec7">
+<div class="section-header" data-i18n="k201" data-i18n-mode="text">PESTEL</div>
+<div class="relative z-10 pt-10">
+<h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="sec7_h2" data-i18n-mode="html">柒、PESTEL 總體環境分析<br/><span class="text-xl font-bold opacity-60">Macro Analysis – PESTEL</span></h2>
+<div class="grid grid-cols-1 gap-10">
+<div class="p-10 md:p-12 bg-slate-50 dark:bg-slate-800/30 rounded-3xl shadow-sm">
+<h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-5" data-i18n="sec7_title_1" data-i18n-mode="text">政治因素 Political Factors</h3>
+<p class="text-base md:text-lg leading-8 opacity-90 whitespace-pre-line" data-i18n="sec7_body_1" data-i18n-mode="text">石化產業高度受到政府政策影響，尤其是在產業管制、貿易政策與兩岸關係方面。
+對 FCFC 而言，台灣與中國大陸的政策特別重要，因為中國既是主要市場，也是關鍵競爭者。中國政府支持本土石化產業，使產能增加，進一步加劇競爭並影響區域市場價格。</p>
+</div><div class="p-10 md:p-12 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-sm">
+<h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-5" data-i18n="sec7_title_2" data-i18n-mode="text">經濟因素 Economic Factors</h3>
+<p class="text-base md:text-lg leading-8 opacity-90 whitespace-pre-line" data-i18n="sec7_body_2" data-i18n-mode="text">FCFC 的業務對全球經濟情勢高度敏感。石化產品需求與工業生產、建築活動及消費支出密切相關。
+原油與原料價格波動會顯著影響生產成本與利潤率。此外，經濟放緩或通貨膨脹可能降低塑膠與化學產品需求，進而直接影響營收表現。</p>
+</div><div class="p-10 md:p-12 bg-slate-50 dark:bg-slate-800/30 rounded-3xl shadow-sm">
+<h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-5" data-i18n="sec7_title_3" data-i18n-mode="text">社會因素 Social Factors</h3>
+<p class="text-base md:text-lg leading-8 opacity-90 whitespace-pre-line" data-i18n="sec7_body_3" data-i18n-mode="text">環境意識與永續議題的提升，正在影響消費者行為與產業需求。
+石化企業面臨越來越大的壓力，必須降低污染、碳排放與塑膠廢棄物。因此，FCFC 也面臨社會期待，必須發展更環境友善的產品並改善永續實踐。</p>
+</div><div class="p-10 md:p-12 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-sm">
+<h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-5" data-i18n="sec7_title_4" data-i18n-mode="text">科技因素 Technological Factors</h3>
+<p class="text-base md:text-lg leading-8 opacity-90 whitespace-pre-line" data-i18n="sec7_body_4" data-i18n-mode="text">技術進步逐漸成為維持競爭力的關鍵因素。
+FCFC 需要導入先進生產技術、自動化與數位化，以提升效率並降低成本。此外，電子與半導體相關新材料的開發，也是公司邁向高附加價值產品的重要方向。</p>
+</div><div class="p-10 md:p-12 bg-slate-50 dark:bg-slate-800/30 rounded-3xl shadow-sm">
+<h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-5" data-i18n="sec7_title_5" data-i18n-mode="text">環境因素 Environmental Factors</h3>
+<p class="text-base md:text-lg leading-8 opacity-90 whitespace-pre-line" data-i18n="sec7_body_5" data-i18n-mode="text">全球環境法規日趨嚴格，尤其是碳排放、能源消耗與廢棄物管理相關規範。
+作為石化公司，FCFC 必須符合環境標準並投資綠色技術。若未能符合相關要求，可能導致成本增加或面臨法規處罰。</p>
+</div><div class="p-10 md:p-12 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-sm">
+<h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-5" data-i18n="sec7_title_6" data-i18n-mode="text">法律因素 Legal Factors</h3>
+<p class="text-base md:text-lg leading-8 opacity-90 whitespace-pre-line" data-i18n="sec7_body_6" data-i18n-mode="text">法律因素主要包含產業規範、環境法規與國際貿易政策。
+FCFC 必須遵守嚴格的環境保護法與安全規範。此外，貿易限制、關稅與地緣政治議題也可能影響出口市場與供應鏈。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 捌、產業價值鏈：新增自 FCFC_TP1，原章節未修改 -->
+<section class="section-container reveal content-section" id="sec8">
+<div class="section-header" data-i18n="sec8_header" data-i18n-mode="text">Value Chain</div>
+<div class="relative z-10 pt-10">
+<h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="sec8_title" data-i18n-mode="html">捌、產業價值鏈<br><span class="text-xl font-bold opacity-60">Industry Value Chain</span></h2>
+
+<div class="highlight-card mb-10">
+<h3 class="text-2xl md:text-3xl font-black mb-4" data-i18n="sec8_overview_title" data-i18n-mode="text">FCFC 位於傳統石化產業鏈的中游位置</h3>
+<p class="text-base md:text-lg leading-8 opacity-90" data-i18n="sec8_overview_body" data-i18n-mode="text">台化（FCFC）的產品屬性使其主要位於傳統石化產業鏈的中游：它承接上游原料，透過石化、塑膠、纖維與紡織等製程進行加工，再將原料或半成品供應給下游產業。由於其產品應用涵蓋汽車、紡織服飾、醫療照護、綠能設備與消費品，因此 FCFC 不只是原料供應商，更扮演連結上游資源與下游應用市場的關鍵加工平台。</p>
+</div>
+
+<div class="grid gap-8 mb-10">
+<div class="p-8 md:p-10 bg-slate-50 dark:bg-slate-800/30 rounded-3xl border border-slate-100 dark:border-slate-800">
+<p class="text-xs font-black uppercase tracking-[0.28em] opacity-50 mb-3" data-i18n="sec8_stage1_tag" data-i18n-mode="text">Upstream</p>
+<h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-5" data-i18n="sec8_stage1_title" data-i18n-mode="text">I. 上游：原料供應</h3>
+<p class="text-base leading-8 opacity-90 mb-5" data-i18n="sec8_stage1_intro" data-i18n-mode="text">FCFC 的上游主要包含基本化學原料與新興環保回收材料，目的在於確保原料來源的穩定性與永續性。</p>
+<div class="grid md:grid-cols-2 gap-5">
+<div class="sec8-glass-card p-8 rounded-2xl">
+<h4 class="font-black mb-3" data-i18n="sec8_stage1_a_title" data-i18n-mode="text">集團內基本石化原料</h4>
+<p class="text-base leading-8 opacity-90" data-i18n="sec8_stage1_a_body" data-i18n-mode="text">FCFC 屬於台塑集團垂直整合石化鏈的一環，關鍵原料多由集團內公司或上游製程直接供應。這種模式可降低市場供需波動造成的原料風險，並維持穩定料源與庫存水準。</p>
+</div>
+<div class="sec8-glass-card p-8 rounded-2xl">
+<h4 class="font-black mb-3" data-i18n="sec8_stage1_b_title" data-i18n-mode="text">循環經濟回收廢棄物</h4>
+<p class="text-base leading-8 opacity-90" data-i18n="sec8_stage1_b_body" data-i18n-mode="text">因應淨零與循環經濟趨勢，FCFC 的上游也納入來自環境或消費端的回收資源，例如海洋廢棄漁網、繩索、蚵繩，以及各類塑膠廢棄物與製程不良品。</p>
+</div>
+</div>
+</div>
+
+<div class="p-8 md:p-10 border-2 border-blue-500 rounded-3xl shadow-lg">
+<p class="text-xs font-black uppercase tracking-[0.28em] text-blue-600 mb-3" data-i18n="sec8_stage2_tag" data-i18n-mode="text">Midstream – FCFC Core</p>
+<h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-5" data-i18n="sec8_stage2_title" data-i18n-mode="text">II. 中游：FCFC 的核心製造與加工</h3>
+<p class="text-base leading-8 opacity-90 mb-5" data-i18n="sec8_stage2_intro" data-i18n-mode="text">FCFC 在產業鏈中扮演承上啟下的加工角色，將上游原料轉化為多樣化的工業與民生基礎材料。</p>
+<div class="grid md:grid-cols-3 gap-5">
+<div class="sec8-glass-card p-8 rounded-2xl">
+<h4 class="font-black mb-3" data-i18n="sec8_stage2_a_title" data-i18n-mode="text">四大核心事業</h4>
+<p class="text-base leading-8 opacity-90" data-i18n="sec8_stage2_a_body" data-i18n-mode="text">生產範圍橫跨石化、塑膠、纖維與紡織四大類別，使公司能服務多元產業需求，並分散單一產品景氣波動的風險。</p>
+</div>
+<div class="sec8-glass-card p-8 rounded-2xl">
+<h4 class="font-black mb-3" data-i18n="sec8_stage2_b_title" data-i18n-mode="text">自給式廠區基礎設施</h4>
+<p class="text-base leading-8 opacity-90" data-i18n="sec8_stage2_b_body" data-i18n-mode="text">廠區設有汽電共生設施，可內部生產製程所需的水、電與蒸氣，有助於擴大規模經濟並降低生產成本。</p>
+</div>
+<div class="sec8-glass-card p-8 rounded-2xl">
+<h4 class="font-black mb-3" data-i18n="sec8_stage2_c_title" data-i18n-mode="text">綠色與高值化製造</h4>
+<p class="text-base leading-8 opacity-90" data-i18n="sec8_stage2_c_body" data-i18n-mode="text">FCFC 具備循環經濟技術，可將廢棄漁網加工再製為環保尼龍粒與環保尼龍紗，也能清洗、造粒製程不良塑膠，生產環保再生塑膠粒。</p>
+</div>
+</div>
+</div>
+
+<div class="p-8 md:p-10 bg-slate-50 dark:bg-slate-800/30 rounded-3xl border border-slate-100 dark:border-slate-800">
+<p class="text-xs font-black uppercase tracking-[0.28em] opacity-50 mb-3" data-i18n="sec8_stage3_tag" data-i18n-mode="text">Downstream</p>
+<h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-5" data-i18n="sec8_stage3_title" data-i18n-mode="text">III. 下游：終端應用與產品銷售</h3>
+<p class="text-base leading-8 opacity-90 mb-5" data-i18n="sec8_stage3_intro" data-i18n-mode="text">FCFC 將製造出的石化原料或成品銷售給下游製造商、貿易商或品牌客戶，產品應用範圍相當廣泛。</p>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="sec8-glass-card p-8 rounded-2xl">
+<h4 class="font-black mb-3" data-i18n="sec8_stage3_a_title" data-i18n-mode="text">汽車與運輸產業</h4>
+<p class="text-base leading-8 opacity-90" data-i18n="sec8_stage3_a_body" data-i18n-mode="text">高值塑膠材料如 PP 可應用於汽車產業，並已成功進入國瑞汽車供應鏈，成為非日系 PP 材料供應商。</p>
+</div>
+<div class="sec8-glass-card p-8 rounded-2xl">
+<h4 class="font-black mb-3" data-i18n="sec8_stage3_b_title" data-i18n-mode="text">紡織與服飾產業</h4>
+<p class="text-base leading-8 opacity-90" data-i18n="sec8_stage3_b_body" data-i18n-mode="text">供應人造棉、環保再生尼龍紗等纖維與紡織原料，給下游織布廠與知名服飾品牌，例如 Patagonia。</p>
+</div>
+<div class="sec8-glass-card p-8 rounded-2xl">
+<h4 class="font-black mb-3" data-i18n="sec8_stage3_c_title" data-i18n-mode="text">綠能與新能源設備</h4>
+<p class="text-base leading-8 opacity-90" data-i18n="sec8_stage3_c_body" data-i18n-mode="text">配合再生能源發展，提供太陽能電纜托盤、儲能櫃與充電樁等設備所需之特定塑膠材料。</p>
+</div>
+<div class="sec8-glass-card p-8 rounded-2xl">
+<h4 class="font-black mb-3" data-i18n="sec8_stage3_d_title" data-i18n-mode="text">醫療器材與消費品</h4>
+<p class="text-base leading-8 opacity-90" data-i18n="sec8_stage3_d_body" data-i18n-mode="text">塑膠材料可供應醫療用途；同時 FCFC 也能整合集團資源，例如台塑生醫，延伸至 Dr’s Formula 等生活與保養消費產品。</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="p-8 md:p-10 rounded-3xl bg-blue-600 dark:bg-slate-900 text-white shadow-xl">
+<h3 class="text-2xl font-black mb-5" data-i18n="sec8_summary_title" data-i18n-mode="text">價值鏈重點整理</h3>
+<div class="grid md:grid-cols-3 gap-5 text-sm leading-7">
+<div class="sec8-glass-card p-6 rounded-2xl"><p class="font-black mb-2" data-i18n="sec8_summary_a_title" data-i18n-mode="text">上游穩定原料</p><p class="opacity-90" data-i18n="sec8_summary_a_body" data-i18n-mode="text">透過集團垂直整合與回收資源，降低原料供應與成本波動風險。</p></div>
+<div class="sec8-glass-card p-6 rounded-2xl"><p class="font-black mb-2" data-i18n="sec8_summary_b_title" data-i18n-mode="text">中游創造附加價值</p><p class="opacity-90" data-i18n="sec8_summary_b_body" data-i18n-mode="text">FCFC 以製程技術、汽電共生與綠色製造，將原料轉化為高應用性的材料。</p></div>
+<div class="sec8-glass-card p-6 rounded-2xl"><p class="font-black mb-2" data-i18n="sec8_summary_c_title" data-i18n-mode="text">下游擴大市場應用</p><p class="opacity-90" data-i18n="sec8_summary_c_body" data-i18n-mode="text">產品延伸至汽車、紡織、綠能、醫療與消費品，形成多元需求來源。</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-container reveal content-section" id="sec9">
+<div class="section-header" data-i18n="k219" data-i18n-mode="text">Rivals</div>
+<div class="relative z-10 pt-10 max-w-6xl mx-auto">
+<h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="k220" data-i18n-mode="html">玖、競爭者分析與競爭動態<br><span class="text-xl font-bold opacity-60">Competitor Analysis &amp; Competitive Dynamics</span></h2>
+
+<div class="sec9-panel p-6 sm:p-8 md:p-10 rounded-3xl border shadow-sm">
+<p class="text-sm md:text-base leading-relaxed opacity-85 mb-8" data-i18n="k300" data-i18n-mode="text">本章從市場共同性、產品線重疊、資源相似性與集團綜效四個角度，說明 FCFC 所面對的競爭壓力，並整理同業競爭攻擊與台化的策略回應。</p>
+
+<h3 class="text-2xl font-black mb-6" data-i18n="k301" data-i18n-mode="text">一、競爭者分析（Competitor Analysis）</h3>
+<div class="grid md:grid-cols-2 gap-6 mb-10">
+<div class="sec9-card p-6 rounded-2xl border shadow-sm">
+<h4 class="font-black text-lg mb-3 text-blue-600 dark:text-blue-400" data-i18n="k302" data-i18n-mode="text">市場共同性：中國與亞洲區域高度重疊</h4>
+<p class="text-sm leading-relaxed opacity-90" data-i18n="k303" data-i18n-mode="text">中國大陸是 FCFC 最主要的競爭戰場。根據 2024 年報，中國仍占銷售比重 44.7%；然而，中國本土石化企業大量擴產，使市場出現結構性供過於求，進一步壓縮價格與利潤空間。</p>
+<p class="text-sm leading-relaxed opacity-90 mt-3" data-i18n="k304" data-i18n-mode="text">此外，FCFC 透過寧波與越南基地進入 RCEP 與東南亞市場，與其他亞洲石化大廠競爭免關稅區域內的市占率。</p>
+</div>
+
+<div class="sec9-card p-6 rounded-2xl border shadow-sm">
+<h4 class="font-black text-lg mb-3 text-blue-600 dark:text-blue-400" data-i18n="k305" data-i18n-mode="text">產品線重疊：基礎化工與工程塑膠直接競爭</h4>
+<p class="text-sm leading-relaxed opacity-90" data-i18n="k306" data-i18n-mode="text">在 PX、PTA、SM 等大宗化學品市場，FCFC 與中國國營企業及大型民營石化集團直接競爭，例如 Sinopec、Hengli Petrochemical 與 Rongsheng Petrochemical。</p>
+<p class="text-sm leading-relaxed opacity-90 mt-3" data-i18n="k307" data-i18n-mode="text">在 ABS、PS、PC 等工程塑膠領域，FCFC 則同時面對全球領導品牌與中國新興產能的低價競爭，標準化產品更容易陷入價格戰。</p>
+</div>
+
+<div class="sec9-card p-6 rounded-2xl border shadow-sm">
+<h4 class="font-black text-lg mb-3 text-blue-600 dark:text-blue-400" data-i18n="k308" data-i18n-mode="text">資源相似性：垂直整合與規模經濟相近</h4>
+<p class="text-sm leading-relaxed opacity-90" data-i18n="k309" data-i18n-mode="text">FCFC 具備從煉油、上游石化、中游塑膠到下游纖維的完整供應鏈。這種垂直整合可降低單位成本、穩定原料來源，也使其能與同樣採取規模經濟模式的大型同業競爭。</p>
+<p class="text-sm leading-relaxed opacity-90 mt-3" data-i18n="k310" data-i18n-mode="text">但競爭者也正在投入數位轉型、設備監控與製程效率改善，因此競爭已不只是產能與價格，也延伸到技術效率與成本控制。</p>
+</div>
+
+<div class="sec9-card p-6 rounded-2xl border shadow-sm">
+<h4 class="font-black text-lg mb-3 text-blue-600 dark:text-blue-400" data-i18n="k311" data-i18n-mode="text">技術研發與集團綜效：台塑集團資源支撐</h4>
+<p class="text-sm leading-relaxed opacity-90" data-i18n="k312" data-i18n-mode="text">FCFC 透過國際授權技術、自有研發、AI 智慧製造與海廢回收技術維持競爭優勢。</p>
+<p class="text-sm leading-relaxed opacity-90 mt-3" data-i18n="k313" data-i18n-mode="text">作為台塑集團成員，FCFC 享有資金調度、公共工程、能源與原料整合等綜效，這與韓國大型化學集團或中國整合型能源集團的競爭模式相似。</p>
+</div>
+</div>
+
+<h3 class="text-2xl font-black mb-6" data-i18n="k314" data-i18n-mode="text">二、競爭動態（Competitive Dynamics）</h3>
+<div class="grid lg:grid-cols-2 gap-6 mb-10">
+<div class="sec9-threat p-6 rounded-2xl border">
+<h4 class="font-black text-xl mb-4 text-red-600 dark:text-red-400" data-i18n="k315" data-i18n-mode="text">競爭攻擊：外部壓力來源</h4>
+<div class="space-y-4">
+<div><p class="font-black" data-i18n="k316" data-i18n-mode="text">1. 產能擴張攻擊</p><p class="text-sm opacity-90 leading-relaxed" data-i18n="k317" data-i18n-mode="text">中國同業持續投入大量新產能，使市場供給快速增加，產業被迫進入紅海競爭。</p></div>
+<div><p class="font-black" data-i18n="k318" data-i18n-mode="text">2. 價格戰</p><p class="text-sm opacity-90 leading-relaxed" data-i18n="k319" data-i18n-mode="text">在供過於求下，競爭者以低價去化庫存，對 FCFC 的標準化大宗產品造成強烈毛利壓力。</p></div>
+<div><p class="font-black" data-i18n="k320" data-i18n-mode="text">3. 貿易障礙</p><p class="text-sm opacity-90 leading-relaxed" data-i18n="k321" data-i18n-mode="text">ECFA 關稅優惠停止，以及 PC 等產品面臨反傾銷措施，都會影響 FCFC 的出口與市場布局。</p></div>
+<div><p class="font-black" data-i18n="k322" data-i18n-mode="text">4. 環境法規壓力</p><p class="text-sm opacity-90 leading-relaxed" data-i18n="k323" data-i18n-mode="text">全球低碳轉型、碳稅與 ESG 規範提升，使企業必須投入昂貴的技術升級與製程改善。</p></div>
+</div>
+</div>
+
+<div class="sec9-response p-6 rounded-2xl border">
+<h4 class="font-black text-xl mb-4 text-green-700 dark:text-green-400" data-i18n="k324" data-i18n-mode="text">FCFC 策略回應：從價格競爭轉向價值競爭</h4>
+<div class="space-y-4">
+<div><p class="font-black" data-i18n="k325" data-i18n-mode="text">1. 差異化與高附加價值</p><p class="text-sm opacity-90 leading-relaxed" data-i18n="k326" data-i18n-mode="text">聚焦客製化、認證化與不可替代的產品，避免與低價標準品正面競爭。</p></div>
+<div><p class="font-black" data-i18n="k327" data-i18n-mode="text">2. 市場多元化</p><p class="text-sm opacity-90 leading-relaxed" data-i18n="k328" data-i18n-mode="text">推動降低對中國市場依賴，轉向 RCEP、印度、歐美等區域，以分散市場風險。</p></div>
+<div><p class="font-black" data-i18n="k329" data-i18n-mode="text">3. 數位轉型</p><p class="text-sm opacity-90 leading-relaxed" data-i18n="k330" data-i18n-mode="text">導入 AI 於製程、設備監控與營運效率改善，強化成本競爭力與生產穩定度。</p></div>
+<div><p class="font-black" data-i18n="k331" data-i18n-mode="text">4. 循環經濟與 ESG</p><p class="text-sm opacity-90 leading-relaxed" data-i18n="k332" data-i18n-mode="text">發展海廢回收尼龍與化學回收技術，建立永續材料領域的競爭護城河。</p></div>
+<div><p class="font-black" data-i18n="k333" data-i18n-mode="text">5. 資產重整</p><p class="text-sm opacity-90 leading-relaxed" data-i18n="k334" data-i18n-mode="text">關閉低效率人造棉與紡紗產線，將資源重新配置至高毛利產品與新事業。</p></div>
+</div>
+</div>
+</div>
+
+<div class="sec9-insight p-6 rounded-2xl border-l-4 shadow-sm">
+<p class="text-xs font-black uppercase tracking-[0.25em] opacity-50 mb-2" data-i18n="k335" data-i18n-mode="text">Strategic Insight</p>
+<p class="text-lg font-bold leading-relaxed" data-i18n="k336" data-i18n-mode="text">整體來看，FCFC 的競爭策略並非單純擴大產能，而是採取「Flight to Quality」：從數量導向轉向價值導向，以高值化、差異化、永續化與市場分散化降低紅海競爭衝擊。</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 拾、五力分析：依 FCFC_TP1 詳細化；壹到玖未修改 -->
+<section class="section-container reveal content-section" id="sec10">
+<div class="section-header" data-i18n="k224" data-i18n-mode="text">5 Forces</div>
+<div class="relative z-10 pt-10 max-w-7xl mx-auto">
+<h2 class="text-4xl font-black mb-8 border-b-4 border-current pb-4 inline-block" data-i18n="sec10_h2" data-i18n-mode="html">拾、產業分析：五力架構<br><span class="text-xl font-bold opacity-60">Industry Analysis – Five Force Framework</span></h2>
+<p class="text-base md:text-lg opacity-90 leading-relaxed mb-10 max-w-5xl" data-i18n="sec10_intro" data-i18n-mode="text">五力分析可用來判斷 FCFC 在石化與化學纖維產業中面臨的外部競爭壓力。整體來看，現有競爭者與替代品威脅較高；新進入者受資本、技術與法規限制而較低；供應商與買方議價力則取決於 FCFC 的垂直整合、全球採購與高值化轉型程度。</p>
+<div class="grid lg:grid-cols-5 gap-4 mb-10">
+<div class="p-5 rounded-2xl bg-red-100 dark:bg-red-900/30 border border-red-200 dark:border-red-700/50 text-center shadow-sm"><p class="text-xs font-black uppercase tracking-[0.18em] text-red-600 dark:text-red-300 opacity-95 dark:opacity-100 mb-2" data-i18n="sec10_l1" data-i18n-mode="text">高壓力</p><h3 class="font-black text-lg text-red-900 dark:text-red-100 opacity-95 dark:opacity-100" data-i18n="sec10_s1" data-i18n-mode="text">現有競爭者</h3></div>
+<div class="p-5 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700/50 text-center shadow-sm"><p class="text-xs font-black uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300 opacity-95 dark:opacity-100 mb-2" data-i18n="sec10_l2" data-i18n-mode="text">進入威脅較低</p><h3 class="font-black text-lg text-emerald-950 dark:text-emerald-100 opacity-95 dark:opacity-100" data-i18n="sec10_s2" data-i18n-mode="text">新進入者</h3></div>
+<div class="p-5 rounded-2xl bg-orange-100 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-700/50 text-center shadow-sm"><p class="text-xs font-black uppercase tracking-[0.18em] text-orange-600 dark:text-orange-300 opacity-95 dark:opacity-100 mb-2" data-i18n="sec10_l3" data-i18n-mode="text">威脅上升</p><h3 class="font-black text-lg text-orange-950 dark:text-orange-100 opacity-95 dark:opacity-100" data-i18n="sec10_s3" data-i18n-mode="text">替代品</h3></div>
+<div class="p-5 rounded-2xl bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700/50 text-center shadow-sm"><p class="text-xs font-black uppercase tracking-[0.18em] text-blue-600 dark:text-blue-300 opacity-95 dark:opacity-100 mb-2" data-i18n="sec10_l4" data-i18n-mode="text">可管理壓力</p><h3 class="font-black text-lg text-blue-950 dark:text-blue-100 opacity-95 dark:opacity-100" data-i18n="sec10_s4" data-i18n-mode="text">供應商</h3></div>
+<div class="p-5 rounded-2xl bg-purple-100 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700/50 text-center shadow-sm"><p class="text-xs font-black uppercase tracking-[0.18em] text-purple-600 dark:text-purple-300 opacity-95 dark:opacity-100 mb-2" data-i18n="sec10_l5" data-i18n-mode="text">取決於差異化</p><h3 class="font-black text-lg text-purple-950 dark:text-purple-100 opacity-95 dark:opacity-100" data-i18n="sec10_s5" data-i18n-mode="text">買方</h3></div>
+</div>
+<div class="space-y-7">
+<article class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex flex-col md:flex-row md:items-start gap-5"><div class="w-14 h-14 rounded-2xl bg-red-500 text-white flex items-center justify-center text-2xl font-black shrink-0">1</div><div class="flex-1">
+<h3 class="text-2xl font-black mb-3" data-i18n="sec10_1_title" data-i18n-mode="text">現有競爭者的競爭程度：高</h3>
+<p class="text-base opacity-90 leading-relaxed mb-5" data-i18n="sec10_1_body" data-i18n-mode="text">中國同業大規模擴產使全球供需失衡，價格競爭成為紅海市場的新常態。FCFC 所處的石化與化纖產品多屬標準化程度較高的產品，容易受到低價競爭與景氣循環影響。因此，公司必須以產品差異化、全球市場布局與高值化應用來降低中國市場風險。</p>
+<div class="grid md:grid-cols-3 gap-4">
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_1_h1" data-i18n-mode="text">主要壓力</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_1_b1" data-i18n-mode="text">中國產能過剩、價格戰、全球區域競爭。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_1_h2" data-i18n-mode="text">對 FCFC 影響</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_1_b2" data-i18n-mode="text">標準化產品利潤被壓縮，營收受景氣波動影響。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_1_h3" data-i18n-mode="text">策略重點</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_1_b3" data-i18n-mode="text">以差異化產品與海外市場分散化降低紅海衝擊。</p></div>
+</div></div></div></article>
+<article class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex flex-col md:flex-row md:items-start gap-5"><div class="w-14 h-14 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-2xl font-black shrink-0">2</div><div class="flex-1">
+<h3 class="text-2xl font-black mb-3" data-i18n="sec10_2_title" data-i18n-mode="text">新進入者威脅：低至中</h3>
+<p class="text-base opacity-90 leading-relaxed mb-5" data-i18n="sec10_2_body" data-i18n-mode="text">石化產業需要大量資本投入、長期技術累積、穩定原料供應與環安法規能力，因此進入門檻高。FCFC 亦投入碳減量與 AI 驅動生產，顯示產業競爭已不只是建廠，而是同時考驗資金、技術、ESG 與營運效率。</p>
+<div class="grid md:grid-cols-3 gap-4">
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_2_h1" data-i18n-mode="text">進入障礙</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_2_b1" data-i18n-mode="text">資本密集、技術密集、規模經濟要求高。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_2_h2" data-i18n-mode="text">法規門檻</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_2_b2" data-i18n-mode="text">ESG、碳中和、環安規範與貿易壁壘提高成本。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_2_h3" data-i18n-mode="text">對 FCFC 意義</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_2_b3" data-i18n-mode="text">既有規模與集團資源可形成防禦，但仍需持續升級技術。</p></div>
+</div></div></div></article>
+<article class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex flex-col md:flex-row md:items-start gap-5"><div class="w-14 h-14 rounded-2xl bg-orange-500 text-white flex items-center justify-center text-2xl font-black shrink-0">3</div><div class="flex-1">
+<h3 class="text-2xl font-black mb-3" data-i18n="sec10_3_title" data-i18n-mode="text">替代品威脅：中至高，且逐漸上升</h3>
+<p class="text-base opacity-90 leading-relaxed mb-5" data-i18n="sec10_3_body" data-i18n-mode="text">隨著永續需求提升，生質塑膠、可回收材料、低碳材料與綠色纖維逐漸成為傳統石化與纖維產品的替代方案。FCFC 透過海廢回收尼龍、環保塑膠粒，以及半導體電子材料、儲能與氫能相關材料布局，降低傳統產品被替代的風險。</p>
+<div class="grid md:grid-cols-3 gap-4">
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_3_h1" data-i18n-mode="text">替代來源</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_3_b1" data-i18n-mode="text">生質塑膠、再生材料、低碳纖維與循環經濟材料。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_3_h2" data-i18n-mode="text">FCFC 回應</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_3_b2" data-i18n-mode="text">將海洋廢棄物如蚵繩、漁網回收製成尼龍纖維。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_3_h3" data-i18n-mode="text">高值轉型</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_3_b3" data-i18n-mode="text">延伸至半導體材料、儲能與新能源應用。</p></div>
+</div></div></div></article>
+<article class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex flex-col md:flex-row md:items-start gap-5"><div class="w-14 h-14 rounded-2xl bg-blue-500 text-white flex items-center justify-center text-2xl font-black shrink-0">4</div><div class="flex-1">
+<h3 class="text-2xl font-black mb-3" data-i18n="sec10_4_title" data-i18n-mode="text">供應商議價力：中等，但可被管理</h3>
+<p class="text-base opacity-90 leading-relaxed mb-5" data-i18n="sec10_4_body" data-i18n-mode="text">FCFC 透過台塑集團垂直整合取得部分原料，可降低外部供應商議價力與供應不穩風險。對於非集團供應的原料，公司採取全球採購策略，持續開發 ASEAN 與美洲等多元供應來源，以避免過度依賴中東或單一供應商。</p>
+<div class="grid md:grid-cols-3 gap-4">
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_4_h1" data-i18n-mode="text">降低風險</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_4_b1" data-i18n-mode="text">集團內供料有助穩定原料來源與庫存。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_4_h2" data-i18n-mode="text">全球採購</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_4_b2" data-i18n-mode="text">拓展 ASEAN、美洲等供應渠道，形成競爭張力。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_4_h3" data-i18n-mode="text">策略意義</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_4_b3" data-i18n-mode="text">降低中東地緣政治與單一供應商造成的成本波動。</p></div>
+</div></div></div></article>
+<article class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex flex-col md:flex-row md:items-start gap-5"><div class="w-14 h-14 rounded-2xl bg-purple-500 text-white flex items-center justify-center text-2xl font-black shrink-0">5</div><div class="flex-1">
+<h3 class="text-2xl font-black mb-3" data-i18n="sec10_5_title" data-i18n-mode="text">買方議價力：取決於產品差異化程度</h3>
+<p class="text-base opacity-90 leading-relaxed mb-5" data-i18n="sec10_5_body" data-i18n-mode="text">若產品屬於標準化大宗商品，買方容易比價與轉換供應商，議價力較強；但當 FCFC 轉向高值、客製化、具認證或不可替代的產品，如醫療級、半導體級、車用材料或綠色認證纖維時，客戶轉換成本上升，買方議價力就會下降。</p>
+<div class="grid md:grid-cols-3 gap-4">
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_5_h1" data-i18n-mode="text">買方壓力來源</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_5_b1" data-i18n-mode="text">標準化產品容易比價，客戶轉換成本較低。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_5_h2" data-i18n-mode="text">降低議價力方式</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_5_b2" data-i18n-mode="text">發展特殊規格、認證產品與高附加價值材料。</p></div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700"><h4 class="font-black mb-2" data-i18n="sec10_5_h3" data-i18n-mode="text">策略效果</h4><p class="text-sm opacity-90 leading-relaxed" data-i18n="sec10_5_b3" data-i18n-mode="text">提高客戶黏著度，讓競爭從價格轉向品質與解決方案。</p></div>
+</div></div></div></article>
+</div>
+<div class="mt-10 p-8 rounded-3xl bg-blue-600 text-white shadow-xl">
+<p class="text-xs font-black uppercase tracking-[0.25em] opacity-80 mb-3" data-i18n="sec10_cl" data-i18n-mode="text">策略結論</p>
+<h3 class="text-2xl font-black mb-3" data-i18n="sec10_ct" data-i18n-mode="text">五力結論：從成本競爭轉向價值競爭</h3>
+<p class="text-base leading-relaxed opacity-95" data-i18n="sec10_cb" data-i18n-mode="text">FCFC 面臨最大的壓力來自既有競爭者與替代品，因此不能只依靠產能與成本優勢。未來競爭關鍵在於將傳統石化產品升級為高值化、低碳化、客製化與具認證的材料解決方案，並透過全球採購與市場分散降低供應鏈與區域市場風險。</p>
+</div>
+</div>
+</section>
+
+<!-- 拾壹、產業生命週期與近期動態：新增自 FCFC_TP1，原章節未修改 -->
+<section class="section-container reveal content-section" id="sec11">
+<div class="section-header" data-i18n="k236" data-i18n-mode="text">Lifecycle</div>
+<div class="relative z-10 pt-10 max-w-7xl mx-auto">
+<h2 class="text-4xl font-black mb-8 border-b-4 border-current pb-4 inline-block" data-i18n="k237" data-i18n-mode="html">拾壹、產業生命週期與近期動態<br><span class="text-xl font-bold opacity-60">Industry Lifecycle & Recent News</span></h2>
+
+<p class="text-base leading-relaxed opacity-90 max-w-5xl mb-10" data-i18n="k400" data-i18n-mode="text">本章說明 FCFC 所處的石化與化纖產業已進入成熟後期，傳統大宗產品面臨飽和與價格競爭；但公司正透過高值材料、循環經濟、AI 特用化學品與半導體材料，嘗試從成熟期走向更新階段。</p>
+
+<div class="grid lg:grid-cols-3 gap-6 mb-10">
+  <div class="p-8 rounded-3xl bg-blue-600 text-white shadow-xl lg:col-span-1">
+    <p class="text-xs font-black uppercase tracking-[0.28em] opacity-80 mb-4" data-i18n="k401" data-i18n-mode="text">Industry Stage</p>
+    <h3 class="text-3xl font-black mb-4" data-i18n="k402" data-i18n-mode="text">成熟後期 → 更新階段</h3>
+    <p class="text-sm leading-relaxed opacity-95" data-i18n="k403" data-i18n-mode="text">FCFC 所處的石化與化纖產業整體處於成熟期，部分傳統產品已出現飽和現象；因此公司需要透過產品升級與永續轉型，重新尋找成長動能。</p>
+  </div>
+  <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 lg:col-span-2">
+    <h3 class="text-2xl font-black mb-5 text-blue-600 dark:text-blue-300" data-i18n="k404" data-i18n-mode="text">傳統石化產業：成熟後期至飽和</h3>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-black mb-2" data-i18n="k405" data-i18n-mode="text">核心產品</h4>
+        <p class="text-sm leading-relaxed opacity-90" data-i18n="k406" data-i18n-mode="text">苯、PX、SM、PS、ABS、PP，以及聚酯／尼龍纖維等，皆屬於 FCFC 重要的傳統石化與化纖產品。</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-black mb-2" data-i18n="k407" data-i18n-mode="text">產業特徵</h4>
+        <p class="text-sm leading-relaxed opacity-90" data-i18n="k408" data-i18n-mode="text">產品標準化程度高、亞洲產能過剩、價格競爭激烈，導致成長趨緩與利潤空間被壓縮。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mb-10">
+  <h3 class="text-2xl font-black mb-5" data-i18n="k409" data-i18n-mode="text">一、更新驅動因素：從大宗商品轉向高值材料</h3>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="p-7 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+      <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-300 flex items-center justify-center mb-4"><i class="fas fa-recycle"></i></div>
+      <h4 class="font-black text-lg mb-3" data-i18n="k410" data-i18n-mode="text">回收塑膠與綠色纖維</h4>
+      <p class="text-sm leading-relaxed opacity-90" data-i18n="k411" data-i18n-mode="text">FCFC 發展 Seawastex、Netplus 等海洋回收尼龍與環保塑膠粒，將海廢、漁網與塑膠廢料轉化為具市場價值的永續材料。</p>
+    </div>
+    <div class="p-7 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+      <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 flex items-center justify-center mb-4"><i class="fas fa-microchip"></i></div>
+      <h4 class="font-black text-lg mb-3" data-i18n="k412" data-i18n-mode="text">電子與半導體材料</h4>
+      <p class="text-sm leading-relaxed opacity-90" data-i18n="k413" data-i18n-mode="text">公司布局 SiC 材料、AI 相關特用化學品與半導體應用，目標是提高技術門檻與客戶黏著度，降低傳統景氣循環影響。</p>
+    </div>
+    <div class="p-7 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+      <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 flex items-center justify-center mb-4"><i class="fas fa-coins"></i></div>
+      <h4 class="font-black text-lg mb-3" data-i18n="k414" data-i18n-mode="text">NT$32 Billion 轉型投資</h4>
+      <p class="text-sm leading-relaxed opacity-90" data-i18n="k415" data-i18n-mode="text">透過 320 億元聯貸投入 AI 材料與半導體 SiC 應用，代表公司從價格導向市場轉往技術導向、長期契約與高附加價值市場。</p>
+    </div>
+  </div>
+</div>
+
+<div class="grid lg:grid-cols-2 gap-8 mb-10">
+  <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+    <h3 class="text-2xl font-black mb-5" data-i18n="k416" data-i18n-mode="text">二、近期財務表現與產業動態</h3>
+    <div class="space-y-5">
+      <div class="p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700">
+        <p class="text-xs font-black uppercase tracking-widest text-blue-600 dark:text-blue-300 mb-2" data-i18n="k417" data-i18n-mode="text">Q1 2026 Turnaround</p>
+        <h4 class="text-xl font-black mb-2" data-i18n="k418" data-i18n-mode="text">由虧轉盈</h4>
+        <p class="text-sm leading-relaxed opacity-90" data-i18n="k419" data-i18n-mode="text">2026 年第一季 EPS 達 NT$1.07，歸屬母公司淨利約 NT$6.247 billion，顯示公司短期已擺脫前期虧損壓力。</p>
+      </div>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700">
+        <table class="data-table">
+          <thead><tr><th data-i18n="k278" data-i18n-mode="text">2026 月份</th><th data-i18n="k279" data-i18n-mode="text">營收（十億新台幣）</th><th data-i18n="k280" data-i18n-mode="text">年增率</th></tr></thead>
+          <tbody><tr><td data-i18n="k281" data-i18n-mode="text">一月</td><td>25.04</td><td>+4.3%</td></tr><tr><td data-i18n="k282" data-i18n-mode="text">二月</td><td>22.98</td><td>-15.3%</td></tr><tr><td data-i18n="k283" data-i18n-mode="text">三月</td><td>33.73</td><td>+21.6%</td></tr></tbody>
+        </table>
+      </div>
+      <p class="text-sm leading-relaxed opacity-90" data-i18n="k420" data-i18n-mode="text">月營收波動仍大，代表產業仍受到油價、利差、地緣政治與終端需求循環影響，短期復甦並不等於傳統石化景氣已完全改善。</p>
+    </div>
+  </div>
+
+  <div class="p-8 rounded-3xl bg-blue-600 text-white shadow-xl">
+    <h3 class="text-2xl font-black mb-6" data-i18n="k421" data-i18n-mode="text">三、獲利回升的關鍵原因</h3>
+    <div class="space-y-5">
+      <div class="p-5 rounded-2xl bg-white/10 border border-white/20">
+        <h4 class="font-black mb-2" data-i18n="k422" data-i18n-mode="text">外部因素：中東地緣衝突</h4>
+        <p class="text-sm leading-relaxed opacity-95" data-i18n="k423" data-i18n-mode="text">美伊緊張與荷莫茲海峽風險帶動供應不確定性，使 PX、SM 等石化品價格上升，產品利差擴大，進而推升 FCFC 獲利。</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-white/10 border border-white/20">
+        <h4 class="font-black mb-2" data-i18n="k424" data-i18n-mode="text">內部因素：產品組合優化</h4>
+        <p class="text-sm leading-relaxed opacity-95" data-i18n="k425" data-i18n-mode="text">公司提高 PX、SM、Phenol 等高毛利產品比重，降低 PS、PP、PTA、OX 等低毛利品項銷售，從「追求量」轉向「追求利潤」。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid lg:grid-cols-2 gap-8 mb-10">
+  <div class="p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+    <h3 class="text-2xl font-black mb-5" data-i18n="k426" data-i18n-mode="text">四、結構轉型行動</h3>
+    <ul class="space-y-4 text-sm leading-relaxed opacity-90">
+      <li data-i18n="k427" data-i18n-mode="html"><strong>AI 與 SiC 材料：</strong>轉向技術驅動市場，建立較穩定的長期客戶關係。</li>
+      <li data-i18n="k428" data-i18n-mode="html"><strong>能源轉型與 ESG：</strong>2025 年啟用沙鹿小水力發電廠，降低能源成本並強化永續競爭力。</li>
+      <li data-i18n="k429" data-i18n-mode="html"><strong>高值化路線：</strong>由標準化大宗產品，轉往客製化、認證化與高技術門檻材料。</li>
+    </ul>
+  </div>
+  <div class="p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+    <h3 class="text-2xl font-black mb-5" data-i18n="k430" data-i18n-mode="text">五、雙重轉型：短期循環復甦 × 長期結構升級</h3>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-black text-blue-600 dark:text-blue-300 mb-2" data-i18n="k431" data-i18n-mode="text">短期：循環復甦</h4>
+        <p class="text-sm leading-relaxed opacity-90" data-i18n="k432" data-i18n-mode="text">主要由油價、地緣政治、供應不穩與產品利差擴大推動，具有高度不穩定與外部事件驅動特性。</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-black text-green-600 dark:text-green-300 mb-2" data-i18n="k433" data-i18n-mode="text">長期：結構轉型</h4>
+        <p class="text-sm leading-relaxed opacity-90" data-i18n="k434" data-i18n-mode="text">由高值材料、ESG、半導體材料與 AI 特用化學品驅動，若成功將有助於降低對景氣循環的依賴。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="p-8 md:p-10 rounded-3xl border-2 border-dashed border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/20 text-center">
+  <p class="text-xs font-black uppercase tracking-[0.28em] text-blue-600 dark:text-blue-300 mb-3" data-i18n="k435" data-i18n-mode="text">Key Strategic Insight</p>
+  <h3 class="text-2xl md:text-3xl font-black mb-4" data-i18n="k436" data-i18n-mode="text">從 Commodity Player 轉型為 Material Solution Provider</h3>
+  <p class="text-sm md:text-base leading-relaxed opacity-90 max-w-4xl mx-auto" data-i18n="k437" data-i18n-mode="text">近期獲利改善主要來自外部循環紅利，真正的長期競爭優勢取決於 NT$32 billion 投資是否能成功帶動 AI 化學品、SiC 材料與高值永續材料成長，讓 FCFC 擺脫傳統石化產業的低毛利與高波動限制。</p>
+</div>
+
+</div>
+</section>
+
 </div>
 </main>
 <!-- 頁尾 -->
@@ -1579,6 +3091,83 @@ body {
 
 <script>
 const translations = {
+
+    "k400": {"zh":"本章說明 FCFC 所處的石化與化纖產業已進入成熟後期，傳統大宗產品面臨飽和與價格競爭；但公司正透過高值材料、循環經濟、AI 特用化學品與半導體材料，嘗試從成熟期走向更新階段。", "en":"This section explains that FCFC’s petrochemical and chemical fiber industry has entered late maturity. Traditional commodity products face saturation and price competition, while the company is attempting to move toward renewal through high-value materials, circular economy initiatives, AI specialty chemicals, and semiconductor materials."},
+    "k401": {"zh":"產業階段", "en":"Industry Stage"},
+    "k402": {"zh":"成熟後期 → 更新階段", "en":"Late Maturity → Renewal Stage"},
+    "k403": {"zh":"FCFC 所處的石化與化纖產業整體處於成熟期，部分傳統產品已出現飽和現象；因此公司需要透過產品升級與永續轉型，重新尋找成長動能。", "en":"The petrochemical and chemical fiber industry in which FCFC operates is generally in the maturity stage, with some traditional products showing signs of saturation; therefore, the company needs product upgrading and sustainable transformation to find new growth momentum."},
+    "k404": {"zh":"傳統石化產業：成熟後期至飽和", "en":"Traditional Petrochemical Industry: Late Maturity to Saturation"},
+    "k405": {"zh":"核心產品", "en":"Core Products"},
+    "k406": {"zh":"苯、PX、SM、PS、ABS、PP，以及聚酯／尼龍纖維等，皆屬於 FCFC 重要的傳統石化與化纖產品。", "en":"Benzene, PX, SM, PS, ABS, PP, and polyester/nylon fibers are key traditional petrochemical and chemical fiber products for FCFC."},
+    "k407": {"zh":"產業特徵", "en":"Industry Characteristics"},
+    "k408": {"zh":"產品標準化程度高、亞洲產能過剩、價格競爭激烈，導致成長趨緩與利潤空間被壓縮。", "en":"High product standardization, excess capacity in Asia, and intense price competition have slowed growth and compressed margins."},
+    "k409": {"zh":"一、更新驅動因素：從大宗商品轉向高值材料", "en":"I. Renewal Drivers: From Commodities to High-Value Materials"},
+    "k410": {"zh":"回收塑膠與綠色纖維", "en":"Recycled Plastics and Green Fibers"},
+    "k411": {"zh":"FCFC 發展 Seawastex、Netplus 等海洋回收尼龍與環保塑膠粒，將海廢、漁網與塑膠廢料轉化為具市場價值的永續材料。", "en":"FCFC develops marine-recycled nylon and eco-friendly plastic pellets such as Seawastex and Netplus, turning marine waste, fishing nets, and plastic waste into sustainable materials with market value."},
+    "k412": {"zh":"電子與半導體材料", "en":"Electronic and Semiconductor Materials"},
+    "k413": {"zh":"公司布局 SiC 材料、AI 相關特用化學品與半導體應用，目標是提高技術門檻與客戶黏著度，降低傳統景氣循環影響。", "en":"The company is expanding into SiC materials, AI-related specialty chemicals, and semiconductor applications to raise technology barriers, strengthen customer stickiness, and reduce exposure to traditional business cycles."},
+    "k414": {"zh":"NT$32 Billion 轉型投資", "en":"NT$32 Billion Transformation Investment"},
+    "k415": {"zh":"透過 320 億元聯貸投入 AI 材料與半導體 SiC 應用，代表公司從價格導向市場轉往技術導向、長期契約與高附加價值市場。", "en":"The NT$32 billion syndicated loan for AI materials and semiconductor SiC applications signals a shift from price-driven markets toward technology-driven, long-term contract, and high-value-added markets."},
+    "k416": {"zh":"二、近期財務表現與產業動態", "en":"II. Recent Financial Performance and Industry Dynamics"},
+    "k417": {"zh":"2026 第一季轉盈", "en":"Q1 2026 Turnaround"},
+    "k418": {"zh":"由虧轉盈", "en":"Turnaround from Loss to Profit"},
+    "k419": {"zh":"2026 年第一季 EPS 達 NT$1.07，歸屬母公司淨利約 NT$6.247 billion，顯示公司短期已擺脫前期虧損壓力。", "en":"In Q1 2026, EPS reached NT$1.07 and net profit attributable to the parent was about NT$6.247 billion, showing that the company had temporarily moved out of its previous loss period."},
+    "k420": {"zh":"月營收波動仍大，代表產業仍受到油價、利差、地緣政治與終端需求循環影響，短期復甦並不等於傳統石化景氣已完全改善。", "en":"Monthly revenue remains volatile, indicating that the industry is still affected by oil prices, product spreads, geopolitical events, and end-demand cycles. Short-term recovery does not necessarily mean the traditional petrochemical cycle has fully improved."},
+    "k421": {"zh":"三、獲利回升的關鍵原因", "en":"III. Key Drivers of Profit Recovery"},
+    "k422": {"zh":"外部因素：中東地緣衝突", "en":"External Factor: Middle East Geopolitical Conflict"},
+    "k423": {"zh":"美伊緊張與荷莫茲海峽風險帶動供應不確定性，使 PX、SM 等石化品價格上升，產品利差擴大，進而推升 FCFC 獲利。", "en":"U.S.-Iran tensions and risks around the Strait of Hormuz increased supply uncertainty, raising prices for petrochemical products such as PX and SM, widening product spreads, and boosting FCFC’s profitability."},
+    "k424": {"zh":"內部因素：產品組合優化", "en":"Internal Factor: Product Mix Optimization"},
+    "k425": {"zh":"公司提高 PX、SM、Phenol 等高毛利產品比重，降低 PS、PP、PTA、OX 等低毛利品項銷售，從「追求量」轉向「追求利潤」。", "en":"The company increased the share of higher-margin products such as PX, SM, and phenol while reducing lower-margin products such as PS, PP, PTA, and OX, shifting from volume orientation to profit orientation."},
+    "k426": {"zh":"四、結構轉型行動", "en":"IV. Structural Transformation Actions"},
+    "k427": {"zh":"<strong>AI 與 SiC 材料：</strong>轉向技術驅動市場，建立較穩定的長期客戶關係。", "en":"<strong>AI and SiC materials:</strong> Shift toward technology-driven markets and build more stable long-term customer relationships."},
+    "k428": {"zh":"<strong>能源轉型與 ESG：</strong>2025 年啟用沙鹿小水力發電廠，降低能源成本並強化永續競爭力。", "en":"<strong>Energy transformation and ESG:</strong> The 2025 activation of the Shalu small hydroelectric power plant helps reduce energy costs and strengthen long-term sustainability competitiveness."},
+    "k429": {"zh":"<strong>高值化路線：</strong>由標準化大宗產品，轉往客製化、認證化與高技術門檻材料。", "en":"<strong>High-value route:</strong> Move from standardized commodity products toward customized, certified, and technology-intensive materials."},
+    "k430": {"zh":"五、雙重轉型：短期循環復甦 × 長期結構升級", "en":"V. Dual Transition: Short-Term Cyclical Recovery × Long-Term Structural Upgrade"},
+    "k431": {"zh":"短期：循環復甦", "en":"Short Term: Cyclical Recovery"},
+    "k432": {"zh":"主要由油價、地緣政治、供應不穩與產品利差擴大推動，具有高度不穩定與外部事件驅動特性。", "en":"Driven mainly by oil prices, geopolitical events, supply instability, and widening product spreads, this recovery is highly unstable and externally driven."},
+    "k433": {"zh":"長期：結構轉型", "en":"Long Term: Structural Transformation"},
+    "k434": {"zh":"由高值材料、ESG、半導體材料與 AI 特用化學品驅動，若成功將有助於降低對景氣循環的依賴。", "en":"Driven by high-value materials, ESG, semiconductor materials, and AI specialty chemicals, this transformation could reduce dependence on business cycles if successful."},
+    "k435": {"zh":"關鍵策略洞察", "en":"Key Strategic Insight"},
+    "k436": {"zh":"從 Commodity Player 轉型為 Material Solution Provider", "en":"From Commodity Player to Material Solution Provider"},
+    "k437": {"zh":"近期獲利改善主要來自外部循環紅利，真正的長期競爭優勢取決於 NT$32 billion 投資是否能成功帶動 AI 化學品、SiC 材料與高值永續材料成長，讓 FCFC 擺脫傳統石化產業的低毛利與高波動限制。", "en":"The recent profit improvement mainly comes from external cyclical benefits. FCFC’s true long-term competitive advantage depends on whether the NT$32 billion investment can successfully drive growth in AI chemicals, SiC materials, and high-value sustainable materials, helping the company escape the low-margin and high-volatility limits of traditional petrochemicals."},
+
+    "k300": {"zh":"本章從市場共同性、產品線重疊、資源相似性與集團綜效四個角度，說明 FCFC 所面對的競爭壓力，並整理同業競爭攻擊與台化的策略回應。", "en":"This section explains FCFC’s competitive pressure through market commonality, product line overlap, resource similarity, and group synergy, while summarizing rivals’ competitive actions and FCFC’s strategic responses."},
+    "k301": {"zh":"一、競爭者分析（Competitor Analysis）", "en":"I. Competitor Analysis"},
+    "k302": {"zh":"市場共同性：中國與亞洲區域高度重疊", "en":"Market Commonality: High Overlap in China and Asia"},
+    "k303": {"zh":"中國大陸是 FCFC 最主要的競爭戰場。根據 2024 年報，中國仍占銷售比重 44.7%；然而，中國本土石化企業大量擴產，使市場出現結構性供過於求，進一步壓縮價格與利潤空間。", "en":"Mainland China is FCFC’s primary competitive battlefield. According to the 2024 annual report, China still accounts for 44.7% of sales; however, massive capacity expansion by local petrochemical companies has created structural oversupply, further compressing prices and margins."},
+    "k304": {"zh":"此外，FCFC 透過寧波與越南基地進入 RCEP 與東南亞市場，與其他亞洲石化大廠競爭免關稅區域內的市占率。", "en":"In addition, FCFC uses its Ningbo and Vietnam bases to enter RCEP and Southeast Asian markets, competing with other Asian petrochemical giants for market share in tariff-free zones."},
+    "k305": {"zh":"產品線重疊：基礎化工與工程塑膠直接競爭", "en":"Product Line Overlap: Direct Competition in Commodity Chemicals and Engineering Plastics"},
+    "k306": {"zh":"在 PX、PTA、SM 等大宗化學品市場，FCFC 與中國國營企業及大型民營石化集團直接競爭，例如 Sinopec、Hengli Petrochemical 與 Rongsheng Petrochemical。", "en":"In commodity chemical markets such as PX, PTA, and SM, FCFC directly competes with Chinese state-owned enterprises and large private petrochemical groups such as Sinopec, Hengli Petrochemical, and Rongsheng Petrochemical."},
+    "k307": {"zh":"在 ABS、PS、PC 等工程塑膠領域，FCFC 則同時面對全球領導品牌與中國新興產能的低價競爭，標準化產品更容易陷入價格戰。", "en":"In engineering plastics such as ABS, PS, and PC, FCFC faces both global leaders and low-price competition from emerging Chinese capacity, making standardized products more vulnerable to price wars."},
+    "k308": {"zh":"資源相似性：垂直整合與規模經濟相近", "en":"Resource Similarity: Similar Vertical Integration and Economies of Scale"},
+    "k309": {"zh":"FCFC 具備從煉油、上游石化、中游塑膠到下游纖維的完整供應鏈。這種垂直整合可降低單位成本、穩定原料來源，也使其能與同樣採取規模經濟模式的大型同業競爭。", "en":"FCFC has an integrated supply chain from refining and upstream petrochemicals to midstream plastics and downstream fibers. This vertical integration helps reduce unit costs and stabilize raw material supply, enabling it to compete with large rivals that also rely on economies of scale."},
+    "k310": {"zh":"但競爭者也正在投入數位轉型、設備監控與製程效率改善，因此競爭已不只是產能與價格，也延伸到技術效率與成本控制。", "en":"However, rivals are also investing in digital transformation, equipment monitoring, and process efficiency, so competition is no longer only about capacity and price but also about technical efficiency and cost control."},
+    "k311": {"zh":"技術研發與集團綜效：台塑集團資源支撐", "en":"Technology, R&D, and Group Synergy: Support from Formosa Plastics Group"},
+    "k312": {"zh":"FCFC 透過國際授權技術、自有研發、AI 智慧製造與海廢回收技術維持競爭優勢。", "en":"FCFC maintains its competitive edge through international technology licensing, proprietary R&D, AI-based smart manufacturing, and marine-waste recycling technology."},
+    "k313": {"zh":"作為台塑集團成員，FCFC 享有資金調度、公共工程、能源與原料整合等綜效，這與韓國大型化學集團或中國整合型能源集團的競爭模式相似。", "en":"As a member of Formosa Plastics Group, FCFC benefits from capital allocation, utilities, energy, and raw material integration, a structure similar to major Korean chemical groups and integrated Chinese energy groups."},
+    "k314": {"zh":"二、競爭動態（Competitive Dynamics）", "en":"II. Competitive Dynamics"},
+    "k315": {"zh":"競爭攻擊：外部壓力來源", "en":"Competitive Actions: External Pressure Sources"},
+    "k316": {"zh":"1. 產能擴張攻擊", "en":"1. Capacity Expansion Attack"},
+    "k317": {"zh":"中國同業持續投入大量新產能，使市場供給快速增加，產業被迫進入紅海競爭。", "en":"Chinese peers continue to add large amounts of new capacity, rapidly increasing supply and forcing the market into red-ocean competition."},
+    "k318": {"zh":"2. 價格戰", "en":"2. Price War"},
+    "k319": {"zh":"在供過於求下，競爭者以低價去化庫存，對 FCFC 的標準化大宗產品造成強烈毛利壓力。", "en":"Under oversupply, competitors use low prices to clear inventory, creating strong margin pressure on FCFC’s standardized commodity products."},
+    "k320": {"zh":"3. 貿易障礙", "en":"3. Trade Barriers"},
+    "k321": {"zh":"ECFA 關稅優惠停止，以及 PC 等產品面臨反傾銷措施，都會影響 FCFC 的出口與市場布局。", "en":"The suspension of ECFA tariff preferences and anti-dumping measures on products such as PC may affect FCFC’s exports and market positioning."},
+    "k322": {"zh":"4. 環境法規壓力", "en":"4. Environmental Regulation Pressure"},
+    "k323": {"zh":"全球低碳轉型、碳稅與 ESG 規範提升，使企業必須投入昂貴的技術升級與製程改善。", "en":"Global low-carbon transformation, carbon taxes, and stricter ESG requirements force companies to invest in costly technology upgrades and process improvements."},
+    "k324": {"zh":"FCFC 策略回應：從價格競爭轉向價值競爭", "en":"FCFC’s Strategic Responses: From Price Competition to Value Competition"},
+    "k325": {"zh":"1. 差異化與高附加價值", "en":"1. Differentiation and High Value-added Products"},
+    "k326": {"zh":"聚焦客製化、認證化與不可替代的產品，避免與低價標準品正面競爭。", "en":"Focus on customized, certified, and non-substitutable products to avoid direct competition with low-priced standardized goods."},
+    "k327": {"zh":"2. 市場多元化", "en":"2. Market Diversification"},
+    "k328": {"zh":"推動降低對中國市場依賴，轉向 RCEP、印度、歐美等區域，以分散市場風險。", "en":"Reduce dependence on the Chinese market and shift toward RCEP, India, Europe, and the United States to diversify market risk."},
+    "k329": {"zh":"3. 數位轉型", "en":"3. Digital Transformation"},
+    "k330": {"zh":"導入 AI 於製程、設備監控與營運效率改善，強化成本競爭力與生產穩定度。", "en":"Apply AI to production processes, equipment monitoring, and operational efficiency improvement to strengthen cost competitiveness and production stability."},
+    "k331": {"zh":"4. 循環經濟與 ESG", "en":"4. Circular Economy and ESG"},
+    "k332": {"zh":"發展海廢回收尼龍與化學回收技術，建立永續材料領域的競爭護城河。", "en":"Develop marine-waste recycled nylon and chemical recycling technologies to build a competitive moat in sustainable materials."},
+    "k333": {"zh":"5. 資產重整", "en":"5. Asset Restructuring"},
+    "k334": {"zh":"關閉低效率人造棉與紡紗產線，將資源重新配置至高毛利產品與新事業。", "en":"Shut down low-efficiency rayon and spinning lines and reallocate resources toward higher-margin products and new businesses."},
+    "k335": {"zh":"策略洞察", "en":"Strategic Insight"},
+    "k336": {"zh":"整體來看，FCFC 的競爭策略並非單純擴大產能，而是採取「Flight to Quality」：從數量導向轉向價值導向，以高值化、差異化、永續化與市場分散化降低紅海競爭衝擊。", "en":"Overall, FCFC’s competitive strategy is not simply capacity expansion. Instead, it follows a “Flight to Quality”: shifting from volume-based competition to value-based competition through high-value products, differentiation, sustainability, and market diversification."},
     "team_members": {
         "zh": "組員:羅于欣、賈安琪、蔡帷杉、張萓庭、張宜芊、林彥妤",
         "en": "Group member: Kimberly Luo, Angel Jia, Ann Tsai, Tina Chang, Elaine Chang, Winnie Lin"
@@ -2395,6 +3984,27 @@ const translations = {
         "zh": "陸、財務績效",
         "en": "VI. Financial Performance"
     },
+    "nav_sec7": {
+        "zh": "柒、PESTEL總體環境分析",
+        "en": "VII. PESTEL Analysis"
+    },
+    "nav_sec8": {
+        "zh": "捌、產業價值鏈",
+        "en": "VIII. Industry Value Chain"
+    },
+    "nav_sec9": {
+        "zh": "玖、競爭者與競爭動態",
+        "en": "IX. Competitor & Competitive Dynamics"
+    },
+    "nav_sec10": {
+        "zh": "拾、五力分析",
+        "en": "X. Five Forces Analysis"
+    },
+    "nav_sec11": {
+        "zh": "拾壹、產業生命週期與近期動態",
+        "en": "XI. Industry Lifecycle & Recent News"
+    },
+
     "page_title": {
         "zh": "台化 TP 研究報告 | 台灣化學纖維股份有限公司",
         "en": "FCFC TP Research Report | Formosa Chemicals & Fibre Corporation"
@@ -2471,20 +4081,149 @@ const translations = {
         "zh": "廢布/舊衣回收再製。",
         "en": "Remanufactured from recycled fabric waste and used clothing."
     }
+,
+    "k201": {"zh":"PESTEL", "en":"PESTEL"},
+    "k202": {"zh":"柒、PESTEL 總體環境分析<br><span class=\"text-xl font-bold opacity-60\">Macro Analysis – PESTEL</span>", "en":"VII. Macro Analysis – PESTEL<br><span class=\"text-xl font-bold opacity-60\">PESTEL Framework</span>"},
+    "k203": {"zh":"石化產業高度受政府政策、產業規範、貿易政策與兩岸關係影響。中國既是台化重要市場，也是主要競爭來源；中國對本土石化產業的支持與產能擴張，會加劇區域價格競爭。", "en":"The petrochemical industry is strongly influenced by government policy, industrial regulation, trade policy, and cross-strait relations. China is both an important market and a major source of competition for FCFC; policy support and capacity expansion in China intensify regional price competition."},
+    "k204": {"zh":"FCFC 對全球景氣循環非常敏感，石化需求連動工業生產、營建與消費支出；原油與原料價格波動會直接影響成本與利潤率。", "en":"FCFC is highly sensitive to global economic cycles. Petrochemical demand is linked to industrial production, construction, and consumer spending, while crude oil and raw material price fluctuations directly affect costs and margins."},
+    "k205": {"zh":"環保意識與永續議題改變消費者與產業需求，社會期待 FCFC 降低污染、碳排與塑膠廢棄物，並發展更環境友善的產品。", "en":"Environmental awareness and sustainability concerns are changing consumer and industrial demand. Society expects FCFC to reduce pollution, carbon emissions, and plastic waste while developing more environmentally friendly products."},
+    "k206": {"zh":"技術進步成為維持競爭力的關鍵。FCFC 需要導入先進製程、自動化與數位化，同時開發電子、半導體相關高值材料。", "en":"Technological advancement is essential for competitiveness. FCFC needs to adopt advanced processes, automation, and digitalization while developing high-value electronic and semiconductor-related materials."},
+    "k207": {"zh":"全球環境法規日趨嚴格，包含碳排、能源消耗與廢棄物管理。石化企業若無法符合標準，可能面臨成本上升或法規處罰。", "en":"Environmental regulations are becoming stricter worldwide, especially on carbon emissions, energy use, and waste management. Petrochemical firms that fail to comply may face higher costs or regulatory penalties."},
+    "k208": {"zh":"FCFC 必須遵守產業規範、環保法規與安全規定；貿易限制、關稅與地緣政治議題也會影響出口市場與供應鏈。", "en":"FCFC must comply with industrial regulations, environmental laws, and safety rules. Trade restrictions, tariffs, and geopolitical issues may also affect export markets and supply chains."},
+    "k209": {"zh":"價值鏈", "en":"Value Chain"},
+    "k210": {"zh":"捌、產業價值鏈<br><span class=\"text-xl font-bold opacity-60\">Industry Value Chain</span>", "en":"VIII. Industry Value Chain<br><span class=\"text-xl font-bold opacity-60\">FCFC’s Position in the Petrochemical Chain</span>"},
+    "k211": {"zh":"FCFC 位於石化產業鏈中游", "en":"FCFC is positioned in the midstream of the petrochemical value chain"},
+    "k212": {"zh":"台化承接上游原料，透過石化、塑膠、纖維與紡織製程轉換為多元工業與民生用材料，並供應汽車、紡織服飾、醫療、綠能與消費品等下游應用。", "en":"FCFC receives upstream raw materials and converts them through petrochemical, plastics, fiber, and textile processes into materials for industrial and consumer applications, supplying downstream sectors such as automotive, apparel, medical, green energy, and consumer goods."},
+    "k213": {"zh":"原料供應", "en":"Raw Material Supply"},
+    "k214": {"zh":"<li>• 集團內垂直整合供應基本石化原料。</li><li>• 降低市場供需波動造成的原料風險。</li><li>• 導入海廢漁網、繩索、蚵繩、塑膠廢棄物等循環經濟原料。</li>", "en":"<li>• Intra-group vertical integration supplies basic petrochemical raw materials.</li><li>• This reduces raw material risk caused by market supply-demand volatility.</li><li>• Circular inputs include discarded fishing nets, ropes, oyster ropes, and plastic waste.</li>"},
+    "k215": {"zh":"核心製造加工", "en":"Core Manufacturing and Processing"},
+    "k216": {"zh":"<li>• 四大事業：石化、塑膠、纖維、紡織。</li><li>• 汽電共生供應製程所需水、電、蒸氣。</li><li>• 將海廢漁網再製為環保尼龍粒與尼龍紗，將不良塑料再製為環保塑膠粒。</li>", "en":"<li>• Four business groups: petrochemicals, plastics, fibers, and textiles.</li><li>• Cogeneration supplies water, electricity, and steam for manufacturing processes.</li><li>• Marine waste is remanufactured into eco-friendly nylon pellets and yarn; off-spec plastics are remade into recycled plastic pellets.</li>"},
+    "k217": {"zh":"終端應用與銷售", "en":"End Applications and Sales"},
+    "k218": {"zh":"<li>• 汽車與運輸：PP 材料進入國瑞汽車供應鏈。</li><li>• 紡織服飾：供應人造棉與環保尼龍紗予品牌與織布廠。</li><li>• 綠能設備、醫療器材、消費生活產品。</li>", "en":"<li>• Automotive and transportation: PP materials have entered Kuozui Motors’ supply chain.</li><li>• Textiles and apparel: rayon and recycled nylon yarn are supplied to brands and weaving mills.</li><li>• Green energy equipment, medical devices, and consumer lifestyle products.</li>"},
+    "k219": {"zh":"競爭", "en":"Rivals"},
+    "k220": {"zh":"玖、競爭者分析與競爭動態<br><span class=\"text-xl font-bold opacity-60\">Competitor Analysis & Competitive Dynamics</span>", "en":"IX. Competitor Analysis & Competitive Dynamics<br><span class=\"text-xl font-bold opacity-60\">Market Commonality and Resource Similarity</span>"},
+    "k221": {"zh":"中國大陸是主要戰場，2024 年報指出中國仍占銷售比重 44.7%，但當地大量產能造成結構性供過於求。", "en":"Mainland China is the primary battleground. The 2024 annual report indicates that China still accounted for 44.7% of sales, but massive local capacity has created structural oversupply."},
+    "k222": {"zh":"FCFC 也透過寧波與越南基地，在 RCEP 與東南亞區域和亞洲石化大廠競爭。", "en":"FCFC also uses its Ningbo and Vietnam bases to compete with Asian petrochemical players across RCEP and Southeast Asian markets."},
+    "k223": {"zh":"FCFC 具備台塑集團垂直整合、國際授權技術、自有研發、AI 製造與海廢回收能力；競爭者也多以規模經濟與數位轉型作為成本優勢來源。", "en":"FCFC has Formosa Plastics Group vertical integration, international licensed technologies, proprietary R&D, AI manufacturing, and marine-waste recycling capabilities. Competitors also rely on economies of scale and digital transformation for cost advantages."},
+    "k224": {"zh":"五力", "en":"5 Forces"},
+    "k225": {"zh":"拾、產業分析：五力架構<br><span class=\"text-xl font-bold opacity-60\">Industry Analysis – Five Force Framework</span>", "en":"X. Industry Analysis – Five Forces<br><span class=\"text-xl font-bold opacity-60\">Porter’s Five Forces Framework</span>"},
+    "k226": {"zh":"1. 現有競爭者", "en":"1. Rivalry Among Existing Competitors"},
+    "k227": {"zh":"中國大量擴產造成全球供需失衡，價格競爭成為紅海市場的新常態；FCFC 以產品差異化與全球擴張降低中國市場風險。", "en":"Massive capacity expansion in China has created a global supply-demand imbalance, making price competition the new normal in a red-ocean market. FCFC uses product differentiation and global expansion to reduce China-market risk."},
+    "k228": {"zh":"2. 新進入者威脅", "en":"2. Threat of New Entrants"},
+    "k229": {"zh":"石化業資本與技術密集，加上 ESG、碳中和與反傾銷等法規門檻，使新進者進入難度高。", "en":"The petrochemical industry is capital- and technology-intensive. ESG requirements, carbon-neutrality goals, and anti-dumping regulations also raise entry barriers."},
+    "k230": {"zh":"3. 替代品威脅", "en":"3. Threat of Substitutes"},
+    "k231": {"zh":"生質塑膠、可回收材料與綠色纖維逐漸成為替代方案；FCFC 透過半導體材料、儲能與氫能等高值化方向降低被取代風險。", "en":"Bioplastics, recyclable materials, and green fibers are emerging substitutes. FCFC reduces substitution risk by moving toward high-value areas such as semiconductor materials, energy storage, and hydrogen energy."},
+    "k232": {"zh":"4. 供應商議價力", "en":"4. Bargaining Power of Suppliers"},
+    "k233": {"zh":"集團內供料降低依賴，非集團供應則採全球採購，拓展 ASEAN 與美洲供應來源，以避免過度依賴中東或單一供應商。", "en":"Intra-group sourcing reduces dependence, while non-group materials are sourced globally, including ASEAN and the Americas, to avoid overreliance on the Middle East or any single supplier."},
+    "k234": {"zh":"5. 買方議價力", "en":"5. Bargaining Power of Buyers"},
+    "k235": {"zh":"FCFC 從大宗商品轉向高值、差異化產品。當產品具備特殊規格、醫療或半導體等認證，或綠色材料認證時，客戶轉換成本提高，買方議價力相對下降。", "en":"FCFC is shifting from commodity products to high-value, differentiated products. Specialized specifications, medical or semiconductor certifications, and green-material certifications increase switching costs and reduce buyer bargaining power."},
+    "k236": {"zh":"生命週期", "en":"Lifecycle"},
+    "k237": {"zh":"拾壹、產業生命週期與近期動態<br><span class=\"text-xl font-bold opacity-60\">Industry Lifecycle & Recent News</span>", "en":"XI. Industry Lifecycle & Recent News<br><span class=\"text-xl font-bold opacity-60\">Maturity, Renewal, and Recent Performance</span>"},
+    "k238": {"zh":"成熟後期 → 更新階段", "en":"Late Maturity → Renewal Stage"},
+    "k239": {"zh":"台化所處的石化與化纖產業整體進入成熟期，部分區段甚至出現飽和；但公司正透過高值材料與永續轉型，嘗試進入更新階段。", "en":"The petrochemical and chemical-fiber industry where FCFC operates is generally in the maturity stage, with some segments approaching saturation. The company is trying to enter a renewal stage through high-value materials and sustainable transformation."},
+    "k240": {"zh":"<li>• Recycled Plastics & Green Fibers：Seawastex、Netplus 等海洋回收尼龍。</li><li>• Electronic & Semiconductor Materials：SiC 材料與 AI 相關特用化學品。</li><li>• NT$32 Billion Investment：投入 AI 材料與半導體應用，從價格導向轉為技術導向。</li>", "en":"<li>• Recycled Plastics & Green Fibers: marine recycled nylon such as Seawastex and Netplus.</li><li>• Electronic & Semiconductor Materials: SiC materials and AI-related specialty chemicals.</li><li>• NT$32 Billion Investment: funding AI materials and semiconductor applications to shift from price-driven to technology-driven competition.</li>"},
+    "k241": {"zh":"短期：循環復甦", "en":"Short Term: Cyclical Recovery"},
+    "k242": {"zh":"Q1 2026 EPS 達 NT$1.07，歸屬母公司淨利約 NT$6.247 billion。復甦主要來自中東地緣衝突、PX 與 SM 價格上升、產品利差擴大，以及 FCFC 低庫存成本優勢。", "en":"Q1 2026 EPS reached NT$1.07, with net profit attributable to the parent of about NT$6.247 billion. The recovery was mainly driven by Middle East geopolitical tensions, rising PX and SM prices, wider product spreads, and FCFC’s lower inventory cost advantage."},
+    "k243": {"zh":"長期：結構轉型", "en":"Long Term: Structural Transformation"},
+    "k244": {"zh":"公司提高 PX、SM、Phenol 等高毛利產品比重，降低 PS、PP、PTA、OX 等低毛利品項；長期競爭力取決於 AI 化學品與 SiC 材料投資能否降低產業循環依賴。", "en":"The company is increasing the share of higher-margin products such as PX, SM, and phenol while reducing lower-margin items such as PS, PP, PTA, and OX. Long-term competitiveness depends on whether AI chemicals and SiC investments can reduce reliance on industry cycles."},
+    "k245": {"zh":"FCFC 正嘗試從「Commodity Player」轉型為「Material Solution Provider」。", "en":"FCFC is attempting to transform from a “Commodity Player” into a “Material Solution Provider.”"}
 
+,
+    "k246": {"zh":"政治 Political", "en":"Political"},
+    "k247": {"zh":"經濟 Economic", "en":"Economic"},
+    "k248": {"zh":"社會 Social", "en":"Social"},
+    "k249": {"zh":"科技 Technological", "en":"Technological"},
+    "k250": {"zh":"環境 Environmental", "en":"Environmental"},
+    "k251": {"zh":"法律 Legal", "en":"Legal"},
+    "k252": {"zh":"上游 Upstream", "en":"Upstream"},
+    "k253": {"zh":"中游 – FCFC", "en":"Midstream – FCFC"},
+    "k254": {"zh":"下游 Downstream", "en":"Downstream"},
+    "k255": {"zh":"市場共同性 Market Commonality", "en":"Market Commonality"},
+    "k256": {"zh":"資源相似性 Resource Similarity", "en":"Resource Similarity"},
+    "k257": {"zh":"競爭攻擊", "en":"Competitive Attack"},
+    "k258": {"zh":"詳細說明", "en":"Detailed Description"},
+    "k259": {"zh":"產能擴張攻擊", "en":"Capacity Expansion Attack"},
+    "k260": {"zh":"中國同業持續擴產，使市場進入紅海競爭。", "en":"Mainland Chinese peers continue to expand capacity, pushing the market into red-ocean competition."},
+    "k261": {"zh":"價格戰", "en":"Price War"},
+    "k262": {"zh":"供過於求使競爭者以低價去化庫存，壓縮 FCFC 標準品利潤。", "en":"Oversupply leads competitors to clear inventory through aggressive pricing, compressing margins for FCFC’s standard commodity grades."},
+    "k263": {"zh":"貿易障礙", "en":"Trade Barriers"},
+    "k264": {"zh":"ECFA 關稅優惠停止、PC 反傾銷等措施形成外部威脅。", "en":"The suspension of ECFA tariff preferences and anti-dumping measures on PC create external threats."},
+    "k265": {"zh":"環境法規壓力", "en":"Environmental Regulation Pressure"},
+    "k266": {"zh":"低碳轉型與碳稅迫使產業承擔昂貴技術升級成本。", "en":"Low-carbon transformation and carbon taxes force the industry to bear costly technology-upgrade expenses."},
+    "k267": {"zh":"差異化高值化", "en":"Differentiation & High Value-added"},
+    "k268": {"zh":"聚焦客製化、認證化、不可替代產品。", "en":"Focus on customized, certified, and non-substitutable products."},
+    "k269": {"zh":"市場分散", "en":"Market Diversification"},
+    "k270": {"zh":"降低對中國市場與低價競爭的暴露。", "en":"Reduce exposure to the China market and low-price competition."},
+    "k271": {"zh":"數位轉型", "en":"Digital Transformation"},
+    "k272": {"zh":"AI 應用於製程與設備監控。", "en":"Apply AI to manufacturing processes and equipment monitoring."},
+    "k273": {"zh":"循環經濟 ESG", "en":"Circular Economy & ESG"},
+    "k274": {"zh":"發展海廢回收與化學回收技術。", "en":"Develop marine-waste recycling and chemical recycling technologies."},
+    "k275": {"zh":"資產重整", "en":"Asset Restructuring"},
+    "k276": {"zh":"關閉低效率人造棉與紡紗產線，轉向高毛利事業。", "en":"Shut down low-efficiency rayon and spinning lines and shift toward higher-margin businesses."},
+    "k277": {"zh":"更新驅動因素 Renewal Drivers", "en":"Renewal Drivers"},
+    "k278": {"zh":"2026 月份", "en":"2026 Month"},
+    "k279": {"zh":"營收（十億新台幣）", "en":"Revenue (NT$ Billion)"},
+    "k280": {"zh":"年增率", "en":"YoY Growth"},
+    "k281": {"zh":"一月", "en":"January"},
+    "k282": {"zh":"二月", "en":"February"},
+    "k283": {"zh":"三月", "en":"March"},
+    "k284": {"zh":"關鍵策略洞察", "en":"Key Strategic Insight"}
+
+,
+    "sec8_header": {"zh": "價值鏈", "en": "Value Chain"},
+    "sec8_title": {"zh": "捌、產業價值鏈<br><span class=\"text-xl font-bold opacity-60\">Industry Value Chain</span>", "en": "VIII. Industry Value Chain<br><span class=\"text-xl font-bold opacity-60\">產業價值鏈</span>"},
+    "sec8_overview_title": {"zh": "FCFC 位於傳統石化產業鏈的中游位置", "en": "FCFC is positioned in the midstream of the traditional petrochemical value chain"},
+    "sec8_overview_body": {"zh": "台化（FCFC）的產品屬性使其主要位於傳統石化產業鏈的中游：它承接上游原料，透過石化、塑膠、纖維與紡織等製程進行加工，再將原料或半成品供應給下游產業。由於其產品應用涵蓋汽車、紡織服飾、醫療照護、綠能設備與消費品，因此 FCFC 不只是原料供應商，更扮演連結上游資源與下游應用市場的關鍵加工平台。", "en": "The product attributes of Formosa Chemicals & Fibre Corporation (FCFC) position it mainly in the midstream of the traditional petrochemical value chain. It receives upstream raw materials, processes them through petrochemicals, plastics, fibers, and textiles, and then supplies raw materials or semi-finished products to downstream industries. Because its applications cover automotive, textiles and apparel, medical care, green energy equipment, and consumer goods, FCFC is not only a material supplier but also a key processing platform connecting upstream resources with downstream markets."},
+    "sec8_stage1_tag": {"zh": "上游 Upstream", "en": "Upstream"},
+    "sec8_stage1_title": {"zh": "I. 上游：原料供應", "en": "I. Upstream: Raw Material Supply"},
+    "sec8_stage1_intro": {"zh": "FCFC 的上游主要包含基本化學原料與新興環保回收材料，目的在於確保原料來源的穩定性與永續性。", "en": "FCFC's upstream mainly consists of basic chemical raw materials and emerging eco-friendly recycled materials, aiming to ensure stable and sustainable feedstock sources."},
+    "sec8_stage1_a_title": {"zh": "集團內基本石化原料", "en": "Intra-group basic petrochemical raw materials"},
+    "sec8_stage1_a_body": {"zh": "FCFC 屬於台塑集團垂直整合石化鏈的一環，關鍵原料多由集團內公司或上游製程直接供應。這種模式可降低市場供需波動造成的原料風險，並維持穩定料源與庫存水準。", "en": "As part of Formosa Plastics Group's vertically integrated petrochemical chain, FCFC's key raw materials are mostly supplied directly by intra-group companies or upstream processes. This model reduces raw material risks caused by market supply-demand fluctuations and helps maintain stable feedstock and inventory levels."},
+    "sec8_stage1_b_title": {"zh": "循環經濟回收廢棄物", "en": "Circular economy recycled waste"},
+    "sec8_stage1_b_body": {"zh": "因應淨零與循環經濟趨勢，FCFC 的上游也納入來自環境或消費端的回收資源，例如海洋廢棄漁網、繩索、蚵繩，以及各類塑膠廢棄物與製程不良品。", "en": "In response to net-zero and circular economy trends, FCFC's upstream also includes recycled resources from the environment or consumers, such as discarded fishing nets, ropes, oyster ropes, plastic wastes, and off-spec process products."},
+    "sec8_stage2_tag": {"zh": "中游 – FCFC Core", "en": "Midstream – FCFC Core"},
+    "sec8_stage2_title": {"zh": "II. 中游：FCFC 的核心製造與加工", "en": "II. Midstream: FCFC's Core Manufacturing and Processing"},
+    "sec8_stage2_intro": {"zh": "FCFC 在產業鏈中扮演承上啟下的加工角色，將上游原料轉化為多樣化的工業與民生基礎材料。", "en": "FCFC plays a pivotal processing role in the value chain, transforming upstream raw materials into diverse basic materials for industrial and civilian use."},
+    "sec8_stage2_a_title": {"zh": "四大核心事業", "en": "Four core business groups"},
+    "sec8_stage2_a_body": {"zh": "生產範圍橫跨石化、塑膠、纖維與紡織四大類別，使公司能服務多元產業需求，並分散單一產品景氣波動的風險。", "en": "Its production scope spans petrochemicals, plastics, fibers, and textiles, enabling the company to serve diverse industrial demand and reduce exposure to fluctuations in any single product category."},
+    "sec8_stage2_b_title": {"zh": "自給式廠區基礎設施", "en": "Self-sufficient plant infrastructure"},
+    "sec8_stage2_b_body": {"zh": "廠區設有汽電共生設施，可內部生產製程所需的水、電與蒸氣，有助於擴大規模經濟並降低生產成本。", "en": "The plants are equipped with cogeneration facilities that internally produce water, electricity, and steam required for manufacturing processes, expanding economies of scale and reducing production costs."},
+    "sec8_stage2_c_title": {"zh": "綠色與高值化製造", "en": "Green and high-value manufacturing"},
+    "sec8_stage2_c_body": {"zh": "FCFC 具備循環經濟技術，可將廢棄漁網加工再製為環保尼龍粒與環保尼龍紗，也能清洗、造粒製程不良塑膠，生產環保再生塑膠粒。", "en": "With circular economy technologies, FCFC can process discarded fishing nets into eco-friendly nylon pellets and nylon yarns, and can also wash and pelletize off-spec plastic products into eco-friendly recycled plastic pellets."},
+    "sec8_stage3_tag": {"zh": "下游 Downstream", "en": "Downstream"},
+    "sec8_stage3_title": {"zh": "III. 下游：終端應用與產品銷售", "en": "III. Downstream: End Applications and Product Sales"},
+    "sec8_stage3_intro": {"zh": "FCFC 將製造出的石化原料或成品銷售給下游製造商、貿易商或品牌客戶，產品應用範圍相當廣泛。", "en": "FCFC sells its manufactured petrochemical raw materials and finished products to downstream manufacturers, traders, and brand customers, with a very broad range of applications."},
+    "sec8_stage3_a_title": {"zh": "汽車與運輸產業", "en": "Automotive and transportation industry"},
+    "sec8_stage3_a_body": {"zh": "高值塑膠材料如 PP 可應用於汽車產業，並已成功進入國瑞汽車供應鏈，成為非日系 PP 材料供應商。", "en": "High-value plastic materials such as PP are used in the automotive industry. FCFC has successfully entered Kuozui Motors' supply chain as a non-Japanese supplier of PP materials."},
+    "sec8_stage3_b_title": {"zh": "紡織與服飾產業", "en": "Textile and apparel industry"},
+    "sec8_stage3_b_body": {"zh": "供應人造棉、環保再生尼龍紗等纖維與紡織原料，給下游織布廠與知名服飾品牌，例如 Patagonia。", "en": "FCFC supplies fibers and textile raw materials, such as rayon and eco-friendly recycled nylon yarns, to downstream weaving mills and well-known apparel brands such as Patagonia."},
+    "sec8_stage3_c_title": {"zh": "綠能與新能源設備", "en": "Green energy and new energy equipment"},
+    "sec8_stage3_c_body": {"zh": "配合再生能源發展，提供太陽能電纜托盤、儲能櫃與充電樁等設備所需之特定塑膠材料。", "en": "In line with renewable energy development, FCFC provides specific plastic materials required for solar cable trays, energy storage cabinets, charging stations, and related equipment."},
+    "sec8_stage3_d_title": {"zh": "醫療器材與消費品", "en": "Medical devices and consumer goods"},
+    "sec8_stage3_d_body": {"zh": "塑膠材料可供應醫療用途；同時 FCFC 也能整合集團資源，例如台塑生醫，延伸至 Dr’s Formula 等生活與保養消費產品。", "en": "Plastic materials can also be supplied for medical use. FCFC can also integrate group resources, such as Formosa Biomedical Technology, to extend into consumer lifestyle and skincare products such as the Dr's Formula brand."},
+    "sec8_summary_title": {"zh": "價值鏈重點整理", "en": "Value Chain Summary"},
+    "sec8_summary_a_title": {"zh": "上游穩定原料", "en": "Stable upstream feedstock"},
+    "sec8_summary_a_body": {"zh": "透過集團垂直整合與回收資源，降低原料供應與成本波動風險。", "en": "Vertical integration and recycled resources reduce feedstock supply risks and cost volatility."},
+    "sec8_summary_b_title": {"zh": "中游創造附加價值", "en": "Midstream value creation"},
+    "sec8_summary_b_body": {"zh": "FCFC 以製程技術、汽電共生與綠色製造，將原料轉化為高應用性的材料。", "en": "FCFC uses process technologies, cogeneration, and green manufacturing to transform raw materials into highly applicable materials."},
+    "sec8_summary_c_title": {"zh": "下游擴大市場應用", "en": "Expanded downstream applications"},
+    "sec8_summary_c_body": {"zh": "產品延伸至汽車、紡織、綠能、醫療與消費品，形成多元需求來源。", "en": "Products extend into automotive, textiles, green energy, medical, and consumer goods, creating diversified demand sources."}
 };
 
 function toggleTheme() {
     const body = document.body;
+    const root = document.documentElement;
     const icon = document.getElementById('themeIcon');
     if (body.classList.contains('light')) {
         body.classList.remove('light');
         body.classList.add('dark');
-        icon.className = "fas fa-sun text-xs";
+        root.classList.add('dark');
+        icon.className = "fas fa-sun text-sm";
     } else {
         body.classList.remove('dark');
         body.classList.add('light');
-        icon.className = "fas fa-moon text-xs";
+        root.classList.remove('dark');
+        icon.className = "fas fa-moon text-sm";
     }
 }
 
@@ -2507,7 +4246,8 @@ function applyLanguage(lang) {
 
     const langDisplay = document.getElementById('langDisplay');
     if (langDisplay) {
-        langDisplay.textContent = lang === 'zh' ? '繁體中文' : 'English (EN)';
+        // 顯示「下一個可切換的語言」：中文畫面顯示 English；英文畫面顯示 繁體中文
+        langDisplay.textContent = lang === 'zh' ? 'English' : '繁體中文';
     }
     updateVoiceText();
 }
@@ -2679,6 +4419,457 @@ window.addEventListener('scroll', () => {
     }
 });
 </script>
+<script>
+// Sec10 detailed Five Forces content.
+Object.assign(translations, {"sec10_h2": {"zh": "拾、產業分析：五力架構<br><span class=\"text-xl font-bold opacity-60\">Industry Analysis – Five Force Framework</span>", "en": "X. Industry Analysis – Five Forces<br><span class=\"text-xl font-bold opacity-60\">Porter’s Five Forces Framework</span>"}, "sec10_intro": {"zh": "五力分析可用來判斷 FCFC 在石化與化學纖維產業中面臨的外部競爭壓力。整體來看，現有競爭者與替代品威脅較高；新進入者受資本、技術與法規限制而較低；供應商與買方議價力則取決於 FCFC 的垂直整合、全球採購與高值化轉型程度。", "en": "The Five Forces framework evaluates the external competitive pressure FCFC faces in petrochemicals and chemical fibers. Rivalry and substitutes are relatively high; new entry is limited by capital, technology, and regulation; supplier and buyer power depend on vertical integration, global sourcing, and high-value transformation."}, "sec10_l1": {"zh": "高壓力", "en": "High Pressure"}, "sec10_l2": {"zh": "進入威脅較低", "en": "Lower Entry Threat"}, "sec10_l3": {"zh": "威脅上升", "en": "Rising Pressure"}, "sec10_l4": {"zh": "可管理壓力", "en": "Managed Pressure"}, "sec10_l5": {"zh": "取決於差異化", "en": "Differentiation-Based"}, "sec10_s1": {"zh": "現有競爭者", "en": "Existing Rivalry"}, "sec10_s2": {"zh": "新進入者", "en": "New Entrants"}, "sec10_s3": {"zh": "替代品", "en": "Substitutes"}, "sec10_s4": {"zh": "供應商", "en": "Suppliers"}, "sec10_s5": {"zh": "買方", "en": "Buyers"}, "sec10_1_title": {"zh": "現有競爭者的競爭程度：高", "en": "Rivalry Among Existing Competitors: High"}, "sec10_1_body": {"zh": "中國同業大規模擴產使全球供需失衡，價格競爭成為紅海市場的新常態。FCFC 所處的石化與化纖產品多屬標準化程度較高的產品，容易受到低價競爭與景氣循環影響。因此，公司必須以產品差異化、全球市場布局與高值化應用來降低中國市場風險。", "en": "Massive capacity expansion in China has created a severe global supply-demand imbalance, making price competition the new normal in a red-ocean market. Many FCFC products are relatively standardized, so they are vulnerable to low-price competition and industry cycles. FCFC therefore needs differentiation, global expansion, and high-value applications to reduce China-market risk."}, "sec10_2_title": {"zh": "新進入者威脅：低至中", "en": "Threat of New Entrants: Low to Medium"}, "sec10_2_body": {"zh": "石化產業需要大量資本投入、長期技術累積、穩定原料供應與環安法規能力，因此進入門檻高。FCFC 亦投入碳減量與 AI 驅動生產，顯示產業競爭已不只是建廠，而是同時考驗資金、技術、ESG 與營運效率。", "en": "Petrochemicals require heavy capital investment, technical know-how, stable feedstock, and strong environmental and safety compliance. FCFC’s investment in carbon reduction and AI-driven production shows that competition is not only about capacity, but also technology, ESG, and operating efficiency."}, "sec10_3_title": {"zh": "替代品威脅：中至高，且逐漸上升", "en": "Threat of Substitutes: Medium to High and Rising"}, "sec10_3_body": {"zh": "隨著永續需求提升，生質塑膠、可回收材料、低碳材料與綠色纖維逐漸成為傳統石化與纖維產品的替代方案。FCFC 透過海廢回收尼龍、環保塑膠粒，以及半導體電子材料、儲能與氫能相關材料布局，降低傳統產品被替代的風險。", "en": "As sustainability demand rises, bioplastics, recyclable materials, low-carbon materials, and green fibers are becoming substitutes for traditional petrochemical and fiber products. FCFC responds through marine-waste recycled nylon, eco-friendly pellets, and expansion into semiconductor, energy-storage, and hydrogen-related materials."}, "sec10_4_title": {"zh": "供應商議價力：中等，但可被管理", "en": "Bargaining Power of Suppliers: Moderate but Manageable"}, "sec10_4_body": {"zh": "FCFC 透過台塑集團垂直整合取得部分原料，可降低外部供應商議價力與供應不穩風險。對於非集團供應的原料，公司採取全球採購策略，持續開發 ASEAN 與美洲等多元供應來源，以避免過度依賴中東或單一供應商。", "en": "FCFC uses Formosa Plastics Group’s vertical integration for part of its feedstock, reducing external supplier power and instability. For non-group materials, it uses global sourcing and develops ASEAN and Americas channels to avoid overreliance on the Middle East or single suppliers."}, "sec10_5_title": {"zh": "買方議價力：取決於產品差異化程度", "en": "Bargaining Power of Buyers: Depends on Differentiation"}, "sec10_5_body": {"zh": "若產品屬於標準化大宗商品，買方容易比價與轉換供應商，議價力較強；但當 FCFC 轉向高值、客製化、具認證或不可替代的產品，如醫療級、半導體級、車用材料或綠色認證纖維時，客戶轉換成本上升，買方議價力就會下降。", "en": "For standardized commodities, buyers can compare prices and switch suppliers easily. But when FCFC shifts toward high-value, customized, certified, or less substitutable materials such as medical, semiconductor, automotive, or green-certified products, switching costs rise and buyer power weakens."}, "sec10_cl": {"zh": "策略結論", "en": "Strategic Conclusion"}, "sec10_ct": {"zh": "五力結論：從成本競爭轉向價值競爭", "en": "Five Forces Conclusion: From Cost Competition to Value Competition"}, "sec10_cb": {"zh": "FCFC 面臨最大的壓力來自既有競爭者與替代品，因此不能只依靠產能與成本優勢。未來競爭關鍵在於將傳統石化產品升級為高值化、低碳化、客製化與具認證的材料解決方案，並透過全球採購與市場分散降低供應鏈與區域市場風險。", "en": "FCFC’s greatest pressures come from existing rivalry and substitutes, so it cannot rely only on capacity and cost advantages. Future competitiveness depends on upgrading traditional petrochemical products into high-value, low-carbon, customized, and certified material solutions while using global sourcing and market diversification to reduce supply-chain and regional market risk."}, "sec10_1_h1": {"zh": "主要壓力", "en": "Main Pressure"}, "sec10_1_b1": {"zh": "中國產能過剩、價格戰、全球區域競爭。", "en": "Chinese overcapacity, price wars, and global regional competition."}, "sec10_1_h2": {"zh": "對 FCFC 影響", "en": "Impact on FCFC"}, "sec10_1_b2": {"zh": "標準化產品利潤被壓縮，營收受景氣波動影響。", "en": "Margins are compressed and revenue becomes more cyclical."}, "sec10_1_h3": {"zh": "策略重點", "en": "Strategic Focus"}, "sec10_1_b3": {"zh": "以差異化產品與海外市場分散化降低紅海衝擊。", "en": "Use differentiated products and overseas diversification to reduce red-ocean pressure."}, "sec10_2_h1": {"zh": "進入障礙", "en": "Entry Barriers"}, "sec10_2_b1": {"zh": "資本密集、技術密集、規模經濟要求高。", "en": "High capital, technology, and scale requirements."}, "sec10_2_h2": {"zh": "法規門檻", "en": "Regulatory Barriers"}, "sec10_2_b2": {"zh": "ESG、碳中和、環安規範與貿易壁壘提高成本。", "en": "ESG, carbon neutrality, safety rules, and trade barriers raise costs."}, "sec10_2_h3": {"zh": "對 FCFC 意義", "en": "Meaning for FCFC"}, "sec10_2_b3": {"zh": "既有規模與集團資源可形成防禦，但仍需持續升級技術。", "en": "Existing scale and group resources help defense, but technology must keep upgrading."}, "sec10_3_h1": {"zh": "替代來源", "en": "Substitution Sources"}, "sec10_3_b1": {"zh": "生質塑膠、再生材料、低碳纖維與循環經濟材料。", "en": "Bioplastics, recycled materials, low-carbon fibers, and circular materials."}, "sec10_3_h2": {"zh": "FCFC 回應", "en": "FCFC Response"}, "sec10_3_b2": {"zh": "將海洋廢棄物如蚵繩、漁網回收製成尼龍纖維。", "en": "Recycles marine waste such as oyster ropes and fishing nets into nylon fiber."}, "sec10_3_h3": {"zh": "高值轉型", "en": "High-Value Transition"}, "sec10_3_b3": {"zh": "延伸至半導體材料、儲能與新能源應用。", "en": "Expands into semiconductor materials, energy storage, and new-energy applications."}, "sec10_4_h1": {"zh": "降低風險", "en": "Risk Reduction"}, "sec10_4_b1": {"zh": "集團內供料有助穩定原料來源與庫存。", "en": "Intra-group supply stabilizes feedstock sources and inventory."}, "sec10_4_h2": {"zh": "全球採購", "en": "Global Sourcing"}, "sec10_4_b2": {"zh": "拓展 ASEAN、美洲等供應渠道，形成競爭張力。", "en": "Develops ASEAN and Americas channels to create supplier competition."}, "sec10_4_h3": {"zh": "策略意義", "en": "Strategic Meaning"}, "sec10_4_b3": {"zh": "降低中東地緣政治與單一供應商造成的成本波動。", "en": "Reduces Middle East geopolitical and single-supplier cost volatility."}, "sec10_5_h1": {"zh": "買方壓力來源", "en": "Buyer Pressure"}, "sec10_5_b1": {"zh": "標準化產品容易比價，客戶轉換成本較低。", "en": "Standardized products are easy to compare and switch."}, "sec10_5_h2": {"zh": "降低議價力方式", "en": "How to Reduce Power"}, "sec10_5_b2": {"zh": "發展特殊規格、認證產品與高附加價值材料。", "en": "Develop special specifications, certifications, and high-value materials."}, "sec10_5_h3": {"zh": "策略效果", "en": "Strategic Effect"}, "sec10_5_b3": {"zh": "提高客戶黏著度，讓競爭從價格轉向品質與解決方案。", "en": "Raises customer stickiness and shifts competition from price to quality."}});
+if (typeof applyLanguage === 'function') { applyLanguage(currentLang || 'zh'); }
+</script>
+<script>
+// Sec7 full Word content: keeps the page bilingual and prevents shortened text.
+Object.assign(translations, {"sec7_h2": {"zh": "柒、PESTEL 總體環境分析<br/><span class=\"text-xl font-bold opacity-60\">Macro Analysis – PESTEL</span>", "en": "VII. Macro Analysis – PESTEL<br/><span class=\"text-xl font-bold opacity-60\">Macro Analysis – PESTEL</span>"}, "sec7_title_1": {"zh": "政治因素 Political Factors", "en": "I. Political Factors:"}, "sec7_body_1": {"zh": "石化產業高度受到政府政策影響，尤其是在產業管制、貿易政策與兩岸關係方面。\n對 FCFC 而言，台灣與中國大陸的政策特別重要，因為中國既是主要市場，也是關鍵競爭者。中國政府支持本土石化產業，使產能增加，進一步加劇競爭並影響區域市場價格。", "en": "The petrochemical industry is highly influenced by government policies, especially in terms of industrial regulation, trade policies, and cross-strait relations.\nFor FCFC, policies in Taiwan and Mainland China are particularly important, as China is both a major market and a key competitor. Government support for domestic petrochemical industries in China has led to increased production capacity, intensifying competition and affecting pricing in the regional market."}, "sec7_title_2": {"zh": "經濟因素 Economic Factors", "en": "II. Economic Factors:"}, "sec7_body_2": {"zh": "FCFC 的業務對全球經濟情勢高度敏感。石化產品需求與工業生產、建築活動及消費支出密切相關。\n原油與原料價格波動會顯著影響生產成本與利潤率。此外，經濟放緩或通貨膨脹可能降低塑膠與化學產品需求，進而直接影響營收表現。", "en": "FCFC’s business is highly sensitive to global economic conditions. Demand for petrochemical products is closely linked to industrial production, construction, and consumer spending.\nFluctuations in crude oil and raw material prices significantly impact production costs and profit margins. In addition, economic slowdowns or inflation can reduce demand for plastics and chemical products, directly affecting revenue performance."}, "sec7_title_3": {"zh": "社會因素 Social Factors", "en": "III. Social Factors:"}, "sec7_body_3": {"zh": "環境意識與永續議題的提升，正在影響消費者行為與產業需求。\n石化企業面臨越來越大的壓力，必須降低污染、碳排放與塑膠廢棄物。因此，FCFC 也面臨社會期待，必須發展更環境友善的產品並改善永續實踐。", "en": "Growing environmental awareness and sustainability concerns are influencing consumer behavior and industrial demand.\nThere is increasing pressure on petrochemical companies to reduce pollution, carbon emissions, and plastic waste. As a result, FCFC faces rising expectations from society to develop environmentally friendly products and improve sustainability practices."}, "sec7_title_4": {"zh": "科技因素 Technological Factors", "en": "IV. Technological Factors:"}, "sec7_body_4": {"zh": "技術進步逐漸成為維持競爭力的關鍵因素。\nFCFC 需要導入先進生產技術、自動化與數位化，以提升效率並降低成本。此外，電子與半導體相關新材料的開發，也是公司邁向高附加價值產品的重要方向。", "en": "Technological advancement is becoming a key factor in maintaining competitiveness.\nFCFC is required to adopt advanced production technologies, automation, and digitalization to improve efficiency and reduce costs. In addition, the development of new materials, such as electronic and semiconductor-related materials, is essential for the company to move toward higher-value-added products."}, "sec7_title_5": {"zh": "環境因素 Environmental Factors", "en": "V. Environmental Factors:"}, "sec7_body_5": {"zh": "全球環境法規日趨嚴格，尤其是碳排放、能源消耗與廢棄物管理相關規範。\n作為石化公司，FCFC 必須符合環境標準並投資綠色技術。若未能符合相關要求，可能導致成本增加或面臨法規處罰。", "en": "Environmental regulations are becoming stricter globally, especially regarding carbon emissions, energy consumption, and waste management.\nAs a petrochemical company, FCFC is under pressure to comply with environmental standards and invest in green technologies. Failure to meet these requirements may lead to increased costs or regulatory penalties."}, "sec7_title_6": {"zh": "法律因素 Legal Factors", "en": "VI. Legal Factors"}, "sec7_body_6": {"zh": "法律因素主要包含產業規範、環境法規與國際貿易政策。\nFCFC 必須遵守嚴格的環境保護法與安全規範。此外，貿易限制、關稅與地緣政治議題也可能影響出口市場與供應鏈。", "en": "Legal factors mainly include industrial regulations, environmental laws, and international trade policies.\nFCFC must comply with strict environmental protection laws and safety regulations. In addition, trade restrictions, tariffs, and geopolitical issues may affect export markets and supply chains."}});
+if (typeof applyLanguage === 'function') { applyLanguage(currentLang || 'zh'); }
+</script>
+
+<div id="sectionProgressBar"></div>
+<div id="sectionStepper" aria-label="Section navigator">
+  <button class="stepper-btn" id="prevSectionBtn" type="button" aria-label="Previous section"><i class="fas fa-chevron-left"></i></button>
+  <div class="stepper-info">
+    <div class="stepper-index" id="stepperIndex">01 / 11</div>
+    <div class="stepper-title" id="stepperTitle">最新消息</div>
+  </div>
+  <button class="stepper-btn" id="nextSectionBtn" type="button" aria-label="Next section"><i class="fas fa-chevron-right"></i></button>
+</div>
+<button id="focusModeBtn" type="button" title="Focus mode / 簡報模式"><i class="fas fa-wand-magic-sparkles"></i></button>
+
 <button id="backToTopBtn" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+// ===== FORCE FIX: Section 5 dark-mode contrast (inline styles override all previous CSS) =====
+function forceSec5Contrast() {
+  const isDark = document.body.classList.contains('dark') || document.documentElement.classList.contains('dark');
+  const redCards = document.querySelectorAll('#sec5 .sec5-risk-card-red');
+  const greenCards = document.querySelectorAll('#sec5 .sec5-risk-card-green');
+  const aiCards = document.querySelectorAll('#sec5 .sec5-ai-card');
+
+  redCards.forEach(card => {
+    card.style.setProperty('background', isDark ? 'linear-gradient(135deg, #3f1118 0%, #1f2937 100%)' : 'linear-gradient(135deg, #fff1f2 0%, #ffffff 100%)', 'important');
+    card.style.setProperty('border', isDark ? '1px solid rgba(248,113,113,0.95)' : '1px solid rgba(248,113,113,0.45)', 'important');
+    card.style.setProperty('color', isDark ? '#ffffff' : '#0f172a', 'important');
+    card.querySelectorAll('h5').forEach(el => { el.style.setProperty('color', isDark ? '#fca5a5' : '#dc2626', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#fca5a5' : '#dc2626', 'important'); el.style.setProperty('opacity','1','important'); });
+    card.querySelectorAll('p').forEach(el => { el.style.setProperty('color', isDark ? '#f8fafc' : '#334155', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#f8fafc' : '#334155', 'important'); el.style.setProperty('opacity','1','important'); el.style.setProperty('font-weight','700','important'); });
+    card.querySelectorAll('.sec5-risk-icon').forEach(el => { el.style.setProperty('background', isDark ? 'rgba(248,113,113,0.24)' : 'rgba(254,202,202,0.92)', 'important'); el.style.setProperty('color', isDark ? '#fecaca' : '#dc2626', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#fecaca' : '#dc2626', 'important'); });
+    card.querySelectorAll('i').forEach(el => { el.style.setProperty('color', isDark ? '#fecaca' : '#dc2626', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#fecaca' : '#dc2626', 'important'); });
+  });
+
+  greenCards.forEach(card => {
+    card.style.setProperty('background', isDark ? 'linear-gradient(135deg, #052e22 0%, #1f2937 100%)' : 'linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%)', 'important');
+    card.style.setProperty('border', isDark ? '1px solid rgba(74,222,128,0.95)' : '1px solid rgba(34,197,94,0.45)', 'important');
+    card.style.setProperty('color', isDark ? '#ffffff' : '#0f172a', 'important');
+    card.querySelectorAll('h5').forEach(el => { el.style.setProperty('color', isDark ? '#86efac' : '#16a34a', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#86efac' : '#16a34a', 'important'); el.style.setProperty('opacity','1','important'); });
+    card.querySelectorAll('p').forEach(el => { el.style.setProperty('color', isDark ? '#f8fafc' : '#334155', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#f8fafc' : '#334155', 'important'); el.style.setProperty('opacity','1','important'); el.style.setProperty('font-weight','700','important'); });
+    card.querySelectorAll('.sec5-risk-icon').forEach(el => { el.style.setProperty('background', isDark ? 'rgba(74,222,128,0.24)' : 'rgba(187,247,208,0.92)', 'important'); el.style.setProperty('color', isDark ? '#bbf7d0' : '#15803d', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#bbf7d0' : '#15803d', 'important'); });
+    card.querySelectorAll('i').forEach(el => { el.style.setProperty('color', isDark ? '#bbf7d0' : '#15803d', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#bbf7d0' : '#15803d', 'important'); });
+  });
+
+  aiCards.forEach(card => {
+    card.style.setProperty('background', isDark ? 'linear-gradient(135deg, #172554 0%, #1e293b 100%)' : 'linear-gradient(135deg, #eff6ff 0%, #ffffff 100%)', 'important');
+    card.style.setProperty('border', isDark ? '1px solid rgba(96,165,250,0.90)' : '1px solid rgba(96,165,250,0.45)', 'important');
+    card.style.setProperty('color', isDark ? '#ffffff' : '#0f172a', 'important');
+    card.querySelectorAll('h5').forEach(el => { el.style.setProperty('color', isDark ? '#93c5fd' : '#2563eb', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#93c5fd' : '#2563eb', 'important'); el.style.setProperty('opacity','1','important'); });
+    card.querySelectorAll('li').forEach(el => { el.style.setProperty('color', isDark ? '#f8fafc' : '#334155', 'important'); el.style.setProperty('-webkit-text-fill-color', isDark ? '#f8fafc' : '#334155', 'important'); el.style.setProperty('opacity','1','important'); el.style.setProperty('font-weight','700','important'); });
+  });
+}
+
+// Wrap theme switch so the fix reapplies after every toggle.
+if (typeof toggleTheme === 'function' && !window.__sec5ContrastWrapped) {
+  const __oldToggleTheme = toggleTheme;
+  window.toggleTheme = function() {
+    __oldToggleTheme();
+    setTimeout(forceSec5Contrast, 0);
+  };
+  window.__sec5ContrastWrapped = true;
+}
+
+document.addEventListener('DOMContentLoaded', forceSec5Contrast);
+setTimeout(forceSec5Contrast, 300);
+</script>
+
+
+<script>
+// ===== Showcase Upgrade: SPA controls, focus mode, keyboard navigation =====
+(function(){
+  const sectionOrder = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8','sec9','sec10','sec11'];
+  const zhTitles = ['最新消息','發展沿革','願景使命與價值','組織架構','產品藍圖','財務績效','PESTEL','產業價值鏈','競爭動態','五力分析','生命週期'];
+  const enTitles = ['News','History','Vision & Values','Organization','Product Roadmap','Financials','PESTEL','Value Chain','Competition','Five Forces','Lifecycle'];
+
+  function currentIndex(){
+    const active = document.querySelector('.content-section.active');
+    const id = active ? active.id : 'sec1';
+    return Math.max(0, sectionOrder.indexOf(id));
+  }
+
+  function updateStepper(){
+    const idx = currentIndex();
+    const indexEl = document.getElementById('stepperIndex');
+    const titleEl = document.getElementById('stepperTitle');
+    const bar = document.getElementById('sectionProgressBar');
+    if (indexEl) indexEl.textContent = String(idx + 1).padStart(2,'0') + ' / ' + sectionOrder.length;
+    if (titleEl) titleEl.textContent = (window.currentLang === 'en' ? enTitles[idx] : zhTitles[idx]) || zhTitles[idx];
+    if (bar) bar.style.width = (((idx + 1) / sectionOrder.length) * 100) + '%';
+  }
+
+  function go(delta){
+    const idx = currentIndex();
+    const next = Math.min(sectionOrder.length - 1, Math.max(0, idx + delta));
+    if (next !== idx && typeof window.switchSection === 'function') window.switchSection(sectionOrder[next]);
+  }
+
+  function finalizeSec5Contrast(){
+    const isDark = document.body.classList.contains('dark') || document.documentElement.classList.contains('dark');
+    document.querySelectorAll('#sec5 .sec5-risk-card-red, #sec5 .sec5-risk-card-green').forEach(card => {
+      const isRed = card.classList.contains('sec5-risk-card-red');
+      card.style.setProperty('background', isDark ? (isRed ? 'linear-gradient(135deg, rgba(69,10,10,.96), rgba(30,41,59,.96))' : 'linear-gradient(135deg, rgba(5,46,34,.96), rgba(30,41,59,.96))') : '', 'important');
+      card.querySelectorAll('p').forEach(p => {
+        p.style.setProperty('color', isDark ? '#f8fafc' : '#334155', 'important');
+        p.style.setProperty('-webkit-text-fill-color', isDark ? '#f8fafc' : '#334155', 'important');
+        p.style.setProperty('opacity', '1', 'important');
+      });
+      card.querySelectorAll('h5').forEach(h => {
+        const c = isDark ? (isRed ? '#fca5a5' : '#86efac') : (isRed ? '#dc2626' : '#16a34a');
+        h.style.setProperty('color', c, 'important');
+        h.style.setProperty('-webkit-text-fill-color', c, 'important');
+        h.style.setProperty('opacity', '1', 'important');
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(() => document.getElementById('spaLoader')?.classList.add('hide'), 550);
+    document.getElementById('prevSectionBtn')?.addEventListener('click', () => go(-1));
+    document.getElementById('nextSectionBtn')?.addEventListener('click', () => go(1));
+    document.getElementById('focusModeBtn')?.addEventListener('click', () => document.body.classList.toggle('presentation-mode'));
+    document.addEventListener('keydown', (e) => {
+      if (['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) return;
+      if (e.key === 'ArrowRight') go(1);
+      if (e.key === 'ArrowLeft') go(-1);
+      if (e.key.toLowerCase() === 'f') document.body.classList.toggle('presentation-mode');
+    });
+    document.querySelectorAll('.section-container article, .section-container .rounded-2xl, .section-container .rounded-3xl').forEach(el => el.classList.add('showcase-card'));
+    updateStepper();
+    finalizeSec5Contrast();
+  });
+
+  if (typeof window.switchSection === 'function' && !window.__showcaseSwitchWrapped) {
+    const oldSwitch = window.switchSection;
+    window.switchSection = function(sectionId, updateHash){
+      oldSwitch(sectionId, updateHash);
+      setTimeout(() => { updateStepper(); finalizeSec5Contrast(); }, 30);
+    };
+    window.__showcaseSwitchWrapped = true;
+  }
+  if (typeof window.toggleTheme === 'function' && !window.__showcaseThemeWrapped) {
+    const oldTheme = window.toggleTheme;
+    window.toggleTheme = function(){
+      oldTheme();
+      setTimeout(finalizeSec5Contrast, 30);
+    };
+    window.__showcaseThemeWrapped = true;
+  }
+  if (typeof window.toggleLanguage === 'function' && !window.__showcaseLangWrapped) {
+    const oldLang = window.toggleLanguage;
+    window.toggleLanguage = function(){ oldLang(); setTimeout(updateStepper, 30); };
+    window.__showcaseLangWrapped = true;
+  }
+})();
+</script>
+
+
+
+<!-- ===== Final Interactive Feature Layer ===== -->
+<div id="wowDock" aria-label="Interactive tools">
+  <button class="wow-btn" id="wowSearchBtn" type="button" title="Search / 搜尋章節"><i class="fas fa-magnifying-glass"></i></button>
+  <button class="wow-btn" id="wowGuideBtn" type="button" title="AI Guide / 小助教"><i class="fas fa-robot"></i></button>
+  <button class="wow-btn" id="wowAutoBtn" type="button" title="Auto Play / 自動播放"><i class="fas fa-play"></i></button>
+  <button class="wow-btn" id="wowTimerBtn" type="button" title="Presentation Timer / 報告計時器"><i class="fas fa-stopwatch"></i></button>
+</div>
+<div id="wowAutoBadge"><i class="fas fa-circle-play"></i><span id="wowAutoText">Auto Play 自動播放中｜下一章 <b id="wowAutoCountdown">60</b>s</span><span id="wowAutoProgressTrack"><span id="wowAutoProgressFill"></span></span></div>
+<div id="wowCircle"><span id="wowCircleText">1/11</span></div>
+<div id="wowSearchPanel" aria-hidden="true"><div class="wow-panel-head"><div class="wow-panel-title"><i class="fas fa-magnifying-glass text-blue-500"></i><span>章節搜尋 Section Search</span></div><button class="wow-btn" style="width:34px;height:34px;box-shadow:none" onclick="document.getElementById('wowSearchPanel').classList.remove('show')"><i class="fas fa-xmark"></i></button></div><input id="wowSearchInput" placeholder="輸入 ESG、AI、PESTEL、五力、財務、價值鏈..." /><div id="wowSearchResults"></div></div>
+<div id="wowGuidePanel" aria-hidden="true"><div class="wow-panel-head"><div class="wow-panel-title"><i class="fas fa-robot text-blue-500"></i><span>FCFC 小助教 Guide</span></div><button class="wow-btn" style="width:34px;height:34px;box-shadow:none" onclick="document.getElementById('wowGuidePanel').classList.remove('show')"><i class="fas fa-xmark"></i></button></div><div id="wowGuideContent"></div></div>
+<div id="wowTimerPanel" aria-hidden="true"><div class="wow-panel-head"><div class="wow-panel-title"><i class="fas fa-stopwatch text-blue-500"></i><span id="wowTimerTitle">報告計時器 Presentation Timer</span></div><button class="wow-btn" style="width:34px;height:34px;box-shadow:none" onclick="document.getElementById('wowTimerPanel').classList.remove('show')"><i class="fas fa-xmark"></i></button></div><div class="wow-timer-display" id="wowTimerDisplay">15:00</div><div class="wow-timer-sub" id="wowTimerSub">適合課堂報告使用，可選預設時間，也可自行輸入分鐘與秒數。</div><div class="wow-timer-presets"><button type="button" data-min="10">10 min</button><button type="button" data-min="15">15 min</button><button type="button" data-min="20">20 min</button><button type="button" data-min="25">25 min</button><button type="button" data-min="30">30 min</button><button type="button" data-min="60">60 min</button></div><div class="wow-timer-custom"><div class="wow-timer-field"><label id="wowTimerMinLabel" for="wowTimerCustomMin">分鐘</label><input id="wowTimerCustomMin" type="number" min="0" max="180" step="1" value="15" inputmode="numeric"></div><div class="wow-timer-field"><label id="wowTimerSecLabel" for="wowTimerCustomSec">秒數</label><input id="wowTimerCustomSec" type="number" min="0" max="59" step="1" value="0" inputmode="numeric"></div><button type="button" id="wowTimerCustomSet">套用</button></div><div class="wow-timer-actions"><button type="button" id="wowTimerStart">Start</button><button type="button" id="wowTimerPause">Pause</button><button type="button" id="wowTimerReset">Reset</button></div></div>
+
+
+
+<script>
+// ===== Final Interactive Feature JS: bilingual search/guide + timer + autoplay =====
+(function(){
+  var sections = [
+    {id:'sec1', zh:'壹、最新消息', en:'News', keys:'news price oil profit forecast revenue 中東 油價 調漲 營收 獲利', tipZh:'用兩則新聞帶出 FCFC 的外部衝擊與轉虧為盈期待，適合開場說明。', tipEn:'Use the two news items to introduce FCFC’s external shocks and expected profit turnaround as the opening context.'},
+    {id:'sec2', zh:'貳、發展沿革', en:'History', keys:'history 1965 petrochemical sustainability 化纖 石化 永續 沿革', tipZh:'呈現台化從化纖起家，逐步轉向石化、塑膠與永續材料。', tipEn:'Show how FCFC started from chemical fiber and gradually expanded into petrochemicals, plastics, and sustainable materials.'},
+    {id:'sec3', zh:'參、願景使命與價值', en:'Vision & Values', keys:'vision mission values ESG sustainability 勤勞樸實 止於至善 永續經營 奉獻社會', tipZh:'強調勤勞樸實、止於至善、永續經營、奉獻社會。', tipEn:'Emphasize diligence, rational management, sustainable operation, and contribution to society.'},
+    {id:'sec4', zh:'肆、組織架構', en:'Organization', keys:'organization division petrochemical plastics textile 組織 事業部 垂直整合', tipZh:'用組織架構說明 FCFC 多事業部與垂直整合能力。', tipEn:'Use the organization structure to explain FCFC’s multiple divisions and vertical integration capability.'},
+    {id:'sec5', zh:'伍、產品組合與藍圖', en:'Product Roadmap', keys:'product roadmap AI ESG low carbon green 高值化 低碳 產品 藍圖 區域風險', tipZh:'重點放在高值化、低碳材料、AI 管理與區域風險分散。', tipEn:'Focus on high-value products, low-carbon materials, AI management, and regional risk diversification.'},
+    {id:'sec6', zh:'陸、財務績效', en:'Financial Performance', keys:'financial EPS stock price margin cash flow 財務 股價 營收 毛利率 現金流', tipZh:'用營收、毛利率、股價與現金流說明景氣循環與轉型壓力。', tipEn:'Use revenue, gross margin, stock price, and cash flow to explain cyclical pressure and transformation needs.'},
+    {id:'sec7', zh:'柒、PESTEL總體環境分析', en:'PESTEL Analysis', keys:'PESTEL political economic social technology environmental legal 政治 經濟 社會 技術 環境 法律', tipZh:'六大外部因素中，政策、油價、ESG 與新材料技術是報告重點。', tipEn:'Among the six external factors, policy, oil prices, ESG, and new-material technology are the key points.'},
+    {id:'sec8', zh:'捌、產業價值鏈', en:'Industry Value Chain', keys:'value chain upstream midstream downstream circular economy 上游 中游 下游 供應鏈 循環經濟', tipZh:'用上游原料、中游製造、下游應用說明 FCFC 在價值鏈的位置。', tipEn:'Explain FCFC’s value-chain position through upstream raw materials, midstream manufacturing, and downstream applications.'},
+    {id:'sec9', zh:'玖、競爭者與競爭動態', en:'Competition & Dynamics', keys:'competition red ocean China price war response 競爭 紅海 中國 價格戰 策略回應', tipZh:'競爭壓力來自中國擴產與價格戰；策略回應是高值化、市場分散與 ESG。', tipEn:'Competitive pressure comes from Chinese capacity expansion and price wars; FCFC responds with high-value products, market diversification, and ESG.'},
+    {id:'sec10', zh:'拾、五力分析', en:'Five Forces', keys:'five forces rivalry entrants substitutes suppliers buyers 五力 新進入者 替代品 供應商 買方', tipZh:'五力分析用來說明產業吸引力與 FCFC 的防守策略。', tipEn:'The Five Forces framework explains industry attractiveness and FCFC’s defensive strategies.'},
+    {id:'sec11', zh:'拾壹、產業生命週期與近期動態', en:'Industry Lifecycle & Recent Dynamics', keys:'lifecycle maturity renewal SiC semiconductor AI materials 生命週期 成熟期 更新 半導體 材料', tipZh:'傳統石化成熟化，但 FCFC 透過半導體、AI 材料與永續產品進入更新階段。', tipEn:'Traditional petrochemicals are maturing, while FCFC seeks renewal through semiconductors, AI materials, and sustainable products.'}
+  ];
+
+  var keywordGroups = [
+    {cls:'strategy', tipZh:'策略／競爭關鍵詞', tipEn:'Strategy / competition keyword', words:['策略','競爭','轉型','高值化','高附加價值','市場分散','區域風險','差異化','產品組合','產品藍圖','垂直整合','供應鏈','規模經濟','Red Ocean','red ocean','price war','competitive','competition','strategy','differentiation','market diversification','value chain','roadmap']},
+    {cls:'tech', tipZh:'科技／材料關鍵詞', tipEn:'Technology / material keyword', words:['AI','人工智慧','數位轉型','自動化','半導體','SiC','晶片','電子材料','特用化學品','新材料','Technological','technology','semiconductor','materials','automation','digitalization']},
+    {cls:'esg', tipZh:'ESG／永續關鍵詞', tipEn:'ESG / sustainability keyword', words:['ESG','永續','低碳','碳排','碳中和','環保','環境','循環經濟','回收','綠色','海洋回收','淨零','Environmental','sustainability','low-carbon','carbon','circular economy','recycled','green']},
+    {cls:'risk', tipZh:'風險／外部壓力關鍵詞', tipEn:'Risk / external pressure keyword', words:['風險','壓力','產能過剩','價格戰','中東','中國','RCEP','ECFA','反傾銷','法規','政策','油價','原油','通膨','地緣政治','Political','Economic','Legal','geopolitical','oversupply','tariff','regulation','oil price','crude oil','inflation']},
+    {cls:'finance', tipZh:'財務／績效關鍵詞', tipEn:'Finance / performance keyword', words:['營收','獲利','毛利率','EPS','股價','現金流','成本','利潤','利差','投資','NT$32 billion','320 億','財務','revenue','profit','margin','cash flow','stock price','investment','spread']}
+  ];
+  var flatKeywords = [];
+  keywordGroups.forEach(function(g){ g.words.forEach(function(w){ flatKeywords.push({word:w, cls:g.cls, tipZh:g.tipZh, tipEn:g.tipEn}); }); });
+  flatKeywords.sort(function(a,b){ return b.word.length - a.word.length; });
+
+  var autoTimer = null, autoCountdownTimer = null, autoDuration = 60000, autoStartedAt = 0, highlightOn = false;
+  function lang(){ try { return (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'en' : 'zh'; } catch(e){ return document.documentElement.lang && document.documentElement.lang.indexOf('en') === 0 ? 'en' : 'zh'; } }
+  function T(zh,en){ return lang()==='en' ? en : zh; }
+  function activeIndex(){ var active=document.querySelector('.content-section.active'); var id=active?active.id:'sec1'; return Math.max(0, sections.findIndex(function(s){return s.id===id;})); }
+  function updateStaticTexts(){
+    var searchTitle=document.querySelector('#wowSearchPanel .wow-panel-title span'); if(searchTitle) searchTitle.textContent=T('章節搜尋','Section Search');
+    var guideTitle=document.querySelector('#wowGuidePanel .wow-panel-title span'); if(guideTitle) guideTitle.textContent=T('FCFC 小助教','FCFC AI Guide');
+    var input=document.getElementById('wowSearchInput'); if(input) input.placeholder=T('輸入 ESG、AI、PESTEL、五力、財務、價值鏈...', 'Search ESG, AI, PESTEL, Five Forces, finance, value chain...');
+    var badge=document.getElementById('wowAutoText'); if(badge) badge.innerHTML=T('自動播放中｜下一章 <b id="wowAutoCountdown">'+(document.getElementById('wowAutoCountdown')?document.getElementById('wowAutoCountdown').textContent:'60')+'</b>s','Auto playing | Next section in <b id="wowAutoCountdown">'+(document.getElementById('wowAutoCountdown')?document.getElementById('wowAutoCountdown').textContent:'60')+'</b>s');
+    var sb=document.getElementById('wowSearchBtn'); if(sb) sb.title=T('搜尋章節','Search sections');
+    var gb=document.getElementById('wowGuideBtn'); if(gb) gb.title=T('AI 小助教','AI Guide');
+    var ab=document.getElementById('wowAutoBtn'); if(ab) ab.title=T('自動播放','Auto Play');
+    var tb=document.getElementById('wowTimerBtn'); if(tb) tb.title=T('報告計時器','Presentation Timer');
+    var tt=document.getElementById('wowTimerTitle'); if(tt) tt.textContent=T('報告計時器','Presentation Timer');
+    var ts=document.getElementById('wowTimerSub'); if(ts) ts.textContent=T('適合課堂報告使用，可選預設時間，也可自行輸入分鐘與秒數。','For classroom presentations. Choose presets or enter custom minutes and seconds.');
+    var ml=document.getElementById('wowTimerMinLabel'); if(ml) ml.textContent=T('分鐘','Minutes');
+    var sl=document.getElementById('wowTimerSecLabel'); if(sl) sl.textContent=T('秒數','Seconds');
+    var cs=document.getElementById('wowTimerCustomSet'); if(cs) cs.textContent=T('套用','Set');
+  }
+  function updateCircle(){ var idx=activeIndex(); var pct=((idx+1)/sections.length)*360; var circle=document.getElementById('wowCircle'); var txt=document.getElementById('wowCircleText'); if(circle) circle.style.background='conic-gradient(#2563eb '+pct+'deg, rgba(148,163,184,.20) '+pct+'deg)'; if(txt) txt.textContent=(idx+1)+'/'+sections.length; renderGuide(); }
+  function goTo(id){ if(typeof window.switchSection==='function') window.switchSection(id); else { var el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth'}); } setTimeout(updateCircle,60); }
+  function renderSearch(q){
+    var box=document.getElementById('wowSearchResults'); if(!box) return;
+    var l=lang(); var term=(q||'').trim().toLowerCase();
+    var list=sections.filter(function(s){ return !term || (s.zh+s.en+s.keys+s.tipZh+s.tipEn).toLowerCase().indexOf(term)>-1; });
+    box.innerHTML=list.map(function(s){ var title=l==='en'?s.en:s.zh; var sub=l==='en'?s.zh:s.en; var tip=l==='en'?s.tipEn:s.tipZh; return '<button type="button" class="wow-result" data-target="'+s.id+'"><b>'+title+'</b><span>'+sub+'｜'+tip+'</span></button>'; }).join('') || '<p class="text-sm opacity-70 mt-3">'+T('找不到相關章節','No matching section found')+'</p>';
+    box.querySelectorAll('[data-target]').forEach(function(btn){ btn.addEventListener('click', function(){ goTo(btn.dataset.target); var p=document.getElementById('wowSearchPanel'); if(p) p.classList.remove('show'); }); });
+  }
+  function renderGuide(){
+    var wrap=document.getElementById('wowGuideContent'); if(!wrap) return;
+    var idx=activeIndex(); var current=sections[idx]; var next=sections[Math.min(sections.length-1,idx+1)]; var l=lang();
+    var curTitle=l==='en'?current.en:current.zh, nextTitle=l==='en'?next.en:next.zh;
+    var curTip=l==='en'?current.tipEn:current.tipZh;
+    var speaking = l==='en'
+      ? 'First explain what question this section answers, then mention 2–3 keywords, such as: '+current.keys.split(' ').slice(0,4).join(', ')+'.'
+      : '先用一句話說「這章在回答什麼問題」，再講 2–3 個關鍵詞，例如：'+current.keys.split(' ').slice(0,4).join('、')+'。';
+    var nextTip = l==='en' ? 'Next, connect to: ' : '下一章可接到：';
+    wrap.innerHTML='<div class="wow-guide-card"><h4>'+T('目前章節','Current Section')+'</h4><p><b>'+curTitle+'</b><br>'+curTip+'</p></div><div class="wow-guide-card"><h4>'+T('報告講法','Speaking Tip')+'</h4><p>'+speaking+'</p></div><div class="wow-guide-card"><h4>'+T('下一章銜接','Next Transition')+'</h4><p>'+nextTip+'<b>'+nextTitle+'</b>'+T('，讓報告邏輯更順。',' to make the presentation flow more smoothly.')+'</p></div><div class="wow-stat-grid"><div class="wow-stat"><div class="num">'+(idx+1)+'</div><div class="lab">'+T('目前','Current')+'</div></div><div class="wow-stat"><div class="num">'+Math.round(((idx+1)/sections.length)*100)+'%</div><div class="lab">'+T('進度','Progress')+'</div></div><div class="wow-stat"><div class="num">11</div><div class="lab">'+T('章節','Sections')+'</div></div></div>';
+  }
+  function togglePanel(id){ var panel=document.getElementById(id); if(!panel) return; ['wowSearchPanel','wowGuidePanel','wowTimerPanel'].forEach(function(pid){ if(pid!==id){ var p=document.getElementById(pid); if(p) p.classList.remove('show'); }}); panel.classList.toggle('show'); if(id==='wowSearchPanel'){ var input=document.getElementById('wowSearchInput'); renderSearch(input?input.value:''); setTimeout(function(){ if(input) input.focus(); },50); } if(id==='wowGuidePanel') renderGuide(); }
+  function updateAutoBadge(){ var countdown=document.getElementById('wowAutoCountdown'); var fill=document.getElementById('wowAutoProgressFill'); if(!autoTimer){ if(countdown) countdown.textContent='60'; if(fill) fill.style.width='0%'; return; } var elapsed=Date.now()-autoStartedAt; var remaining=Math.max(0, autoDuration-elapsed); var sec=Math.ceil(remaining/1000); var pct=Math.min(100, Math.max(0, (elapsed/autoDuration)*100)); if(countdown) countdown.textContent=String(sec); if(fill) fill.style.width=pct+'%'; }
+  function scheduleAuto(){ clearTimeout(autoTimer); clearInterval(autoCountdownTimer); autoStartedAt=Date.now(); updateAutoBadge(); autoCountdownTimer=setInterval(updateAutoBadge,250); autoTimer=setTimeout(function(){ nextSection(); if(autoTimer) scheduleAuto(); }, autoDuration); }
+  function stopAuto(){ var btn=document.getElementById('wowAutoBtn'); var badge=document.getElementById('wowAutoBadge'); clearTimeout(autoTimer); clearInterval(autoCountdownTimer); autoTimer=null; autoCountdownTimer=null; if(btn) btn.classList.remove('active'); if(badge) badge.classList.remove('show'); updateAutoBadge(); }
+  function nextSection(){ var idx=activeIndex(); goTo(sections[(idx+1)%sections.length].id); }
+  function toggleAuto(){ var btn=document.getElementById('wowAutoBtn'); var badge=document.getElementById('wowAutoBadge'); if(autoTimer){ stopAuto(); return; } scheduleAuto(); if(btn) btn.classList.add('active'); if(badge) badge.classList.add('show'); }
+  function clearHighlights(){ document.querySelectorAll('.wow-keyword:not(.wow-highlight-legend .wow-keyword)').forEach(function(el){ el.replaceWith(document.createTextNode(el.textContent)); }); }
+  function findBest(text, pos){ var lower=text.toLowerCase(); var best=null; flatKeywords.forEach(function(k){ var needle=k.word.toLowerCase(); var i=lower.indexOf(needle,pos); if(i>-1 && (!best || i<best.index || (i===best.index && k.word.length>best.word.length))) best={index:i, word:text.substr(i,k.word.length), meta:k}; }); return best; }
+  function applyHighlights(){
+    clearHighlights(); if(!highlightOn) return; var active=document.querySelector('.content-section.active'); if(!active) return;
+    var walker=document.createTreeWalker(active, NodeFilter.SHOW_TEXT, {acceptNode:function(node){ var p=node.parentElement; if(!p || ['SCRIPT','STYLE','TEXTAREA','INPUT','BUTTON'].indexOf(p.tagName)>-1 || p.closest('.wow-keyword')) return NodeFilter.FILTER_REJECT; var txt=node.nodeValue.toLowerCase(); return flatKeywords.some(function(k){return txt.indexOf(k.word.toLowerCase())>-1;}) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT; }});
+    var nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(node){ var text=node.nodeValue; var frag=document.createDocumentFragment(); var pos=0; while(pos<text.length){ var found=findBest(text,pos); if(!found){ frag.appendChild(document.createTextNode(text.slice(pos))); break; } if(found.index>pos) frag.appendChild(document.createTextNode(text.slice(pos,found.index))); var mark=document.createElement('span'); mark.className='wow-keyword wow-keyword-'+found.meta.cls; mark.title=lang()==='en'?found.meta.tipEn:found.meta.tipZh; mark.textContent=found.word; frag.appendChild(mark); pos=found.index+found.word.length; } node.parentNode.replaceChild(frag,node); });
+  }
+  function toggleHighlight(){ highlightOn=!highlightOn; var b=document.getElementById('wowHighlightBtn'); if(b) b.classList.toggle('active',highlightOn); applyHighlights(); }
+  function initChart(){ var canvas=document.getElementById('wowStockChart'); var fallback=document.getElementById('wowChartFallback'); if(!canvas) return; if(!window.Chart){ canvas.style.display='none'; if(fallback) fallback.style.display='flex'; return; } new Chart(canvas.getContext('2d'), { type:'line', data:{labels:['2021','2022','2023','2024E','2025E'],datasets:[{label:'Stock Price NT$',data:[80.8,70,62.3,54.5,60],tension:.35,fill:true,borderWidth:3,pointRadius:4}]}, options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#fff',font:{weight:'bold'}}}},scales:{x:{ticks:{color:'rgba(255,255,255,.82)'},grid:{color:'rgba(255,255,255,.12)'}},y:{ticks:{color:'rgba(255,255,255,.82)'},grid:{color:'rgba(255,255,255,.12)'}}}} }); }
+  function refreshLanguage(){ updateStaticTexts(); var input=document.getElementById('wowSearchInput'); renderSearch(input?input.value:''); renderGuide(); updateAutoBadge(); }
+  var timerTotal=15*60, timerLeft=timerTotal, timerRun=null;
+  function fmt(sec){ sec=Math.max(0, Math.floor(sec||0)); var m=Math.floor(sec/60), ss=sec%60; return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0'); }
+  function renderTimer(){ var el=document.getElementById('wowTimerDisplay'); if(el) el.textContent=fmt(timerLeft); }
+  function syncTimerInputs(){ var minInput=document.getElementById('wowTimerCustomMin'); var secInput=document.getElementById('wowTimerCustomSec'); if(minInput) minInput.value=String(Math.floor(timerTotal/60)); if(secInput) secInput.value=String(timerTotal%60); }
+  function setTimerSeconds(total){ total=Math.max(1, Math.min(180*60+59, parseInt(total,10)||0)); timerTotal=total; timerLeft=timerTotal; clearInterval(timerRun); timerRun=null; syncTimerInputs(); renderTimer(); }
+  function setTimerMin(min){ setTimerSeconds((parseInt(min,10)||15)*60); }
+  function setCustomTimer(){ var minInput=document.getElementById('wowTimerCustomMin'); var secInput=document.getElementById('wowTimerCustomSec'); var min=Math.max(0, parseInt(minInput&&minInput.value,10)||0); var sec=Math.max(0, Math.min(59, parseInt(secInput&&secInput.value,10)||0)); if(secInput) secInput.value=String(sec); setTimerSeconds(min*60+sec); }
+  function startTimer(){ if(timerRun) return; timerRun=setInterval(function(){ timerLeft=Math.max(0,timerLeft-1); renderTimer(); if(timerLeft<=0){ clearInterval(timerRun); timerRun=null; var el=document.getElementById('wowTimerDisplay'); if(el) el.textContent='TIME'; } },1000); }
+  function pauseTimer(){ clearInterval(timerRun); timerRun=null; }
+  function resetTimer(){ pauseTimer(); timerLeft=timerTotal; renderTimer(); }
+  function bindTimer(){ document.querySelectorAll('.wow-timer-presets [data-min]').forEach(function(btn){btn.addEventListener('click',function(){setTimerMin(parseInt(btn.dataset.min,10)||15);});}); var custom=document.getElementById('wowTimerCustomSet'); if(custom) custom.addEventListener('click',setCustomTimer); ['wowTimerCustomMin','wowTimerCustomSec'].forEach(function(id){ var input=document.getElementById(id); if(input) input.addEventListener('keydown',function(e){ if(e.key==='Enter') setCustomTimer(); }); }); var st=document.getElementById('wowTimerStart'); if(st) st.addEventListener('click',startTimer); var pa=document.getElementById('wowTimerPause'); if(pa) pa.addEventListener('click',pauseTimer); var re=document.getElementById('wowTimerReset'); if(re) re.addEventListener('click',resetTimer); syncTimerInputs(); renderTimer(); }
+  function bind(){
+    updateStaticTexts();
+    var s=document.getElementById('wowSearchBtn'); if(s) s.addEventListener('click',function(){togglePanel('wowSearchPanel')});
+    var g=document.getElementById('wowGuideBtn'); if(g) g.addEventListener('click',function(){togglePanel('wowGuidePanel')});
+    var a=document.getElementById('wowAutoBtn'); if(a) a.addEventListener('click',toggleAuto);
+    var tbtn=document.getElementById('wowTimerBtn'); if(tbtn) tbtn.addEventListener('click',function(){togglePanel('wowTimerPanel')});
+    var input=document.getElementById('wowSearchInput'); if(input) input.addEventListener('input',function(e){renderSearch(e.target.value)});
+    renderSearch(''); renderGuide(); updateCircle(); initChart(); bindTimer();
+    document.addEventListener('keydown',function(e){ if(['INPUT','TEXTAREA'].indexOf(document.activeElement && document.activeElement.tagName)>-1) return; if(e.key==='/'){ e.preventDefault(); togglePanel('wowSearchPanel'); } if(e.key===' '){ e.preventDefault(); toggleAuto(); } });
+  }
+  document.addEventListener('DOMContentLoaded', bind);
+  if(typeof window.switchSection==='function' && !window.__wowSwitchWrap){ var old=window.switchSection; window.switchSection=function(sectionId, updateHash){ old(sectionId, updateHash); if(autoTimer){ scheduleAuto(); } setTimeout(function(){updateCircle();},80); }; window.__wowSwitchWrap=true; }
+  if(typeof window.toggleLanguage==='function' && !window.__wowLangWrap){ var oldLang=window.toggleLanguage; window.toggleLanguage=function(){ oldLang(); setTimeout(refreshLanguage,90); }; window.__wowLangWrap=true; }
+})();
+</script>
+
 </body>
 </html>
+<!-- Final override injected by assistant: Section 5 dark mode readability -->
+<style>
+body.dark #sec5 .sec5-risk-card,
+body.dark #sec5 .sec5-risk-card *,
+html.dark #sec5 .sec5-risk-card,
+html.dark #sec5 .sec5-risk-card * {
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: none !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+body.dark #sec5 .sec5-risk-card.sec5-risk-card-red,
+html.dark #sec5 .sec5-risk-card.sec5-risk-card-red {
+    background: linear-gradient(135deg, rgba(69, 10, 10, 0.98) 0%, rgba(127, 29, 29, 0.68) 55%, rgba(30, 41, 59, 0.98) 100%) !important;
+    border: 1px solid rgba(248, 113, 113, 0.82) !important;
+    color: #f8fafc !important;
+    box-shadow: 0 18px 38px rgba(127, 29, 29, 0.22) !important;
+}
+body.dark #sec5 .sec5-risk-card.sec5-risk-card-green,
+html.dark #sec5 .sec5-risk-card.sec5-risk-card-green {
+    background: linear-gradient(135deg, rgba(5, 46, 22, 0.98) 0%, rgba(20, 83, 45, 0.68) 55%, rgba(30, 41, 59, 0.98) 100%) !important;
+    border: 1px solid rgba(74, 222, 128, 0.82) !important;
+    color: #f8fafc !important;
+    box-shadow: 0 18px 38px rgba(20, 83, 45, 0.22) !important;
+}
+body.dark #sec5 .sec5-risk-card.sec5-risk-card-red h5,
+html.dark #sec5 .sec5-risk-card.sec5-risk-card-red h5 {
+    color: #fca5a5 !important;
+    -webkit-text-fill-color: #fca5a5 !important;
+    font-weight: 900 !important;
+}
+body.dark #sec5 .sec5-risk-card.sec5-risk-card-green h5,
+html.dark #sec5 .sec5-risk-card.sec5-risk-card-green h5 {
+    color: #86efac !important;
+    -webkit-text-fill-color: #86efac !important;
+    font-weight: 900 !important;
+}
+body.dark #sec5 .sec5-risk-card p,
+body.dark #sec5 .sec5-risk-card span,
+body.dark #sec5 .sec5-risk-card div,
+html.dark #sec5 .sec5-risk-card p,
+html.dark #sec5 .sec5-risk-card span,
+html.dark #sec5 .sec5-risk-card div {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+}
+body.dark #sec5 .sec5-risk-card .sec5-risk-icon,
+html.dark #sec5 .sec5-risk-card .sec5-risk-icon {
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+body.dark #sec5 .sec5-risk-card-red .sec5-risk-icon,
+body.dark #sec5 .sec5-risk-card-red .sec5-risk-icon i,
+html.dark #sec5 .sec5-risk-card-red .sec5-risk-icon,
+html.dark #sec5 .sec5-risk-card-red .sec5-risk-icon i {
+    color: #fecaca !important;
+    -webkit-text-fill-color: #fecaca !important;
+}
+body.dark #sec5 .sec5-risk-card-green .sec5-risk-icon,
+body.dark #sec5 .sec5-risk-card-green .sec5-risk-icon i,
+html.dark #sec5 .sec5-risk-card-green .sec5-risk-icon,
+html.dark #sec5 .sec5-risk-card-green .sec5-risk-icon i {
+    color: #bbf7d0 !important;
+    -webkit-text-fill-color: #bbf7d0 !important;
+}
+body.dark #sec5 .sec5-ai-card,
+html.dark #sec5 .sec5-ai-card {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.45) 0%, rgba(30, 41, 59, 0.98) 100%) !important;
+    border: 1px solid rgba(96, 165, 250, 0.78) !important;
+    color: #f8fafc !important;
+}
+body.dark #sec5 .sec5-ai-card h5,
+html.dark #sec5 .sec5-ai-card h5 {
+    color: #93c5fd !important;
+    -webkit-text-fill-color: #93c5fd !important;
+}
+body.dark #sec5 .sec5-ai-card li,
+body.dark #sec5 .sec5-ai-card ul,
+html.dark #sec5 .sec5-ai-card li,
+html.dark #sec5 .sec5-ai-card ul {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1 !important;
+}
+
+
+/* ===== ULTRA FINAL FIX: Section 5 dark mode card readability ===== */
+body.dark #sec5 .sec5-risk-card-red,
+html.dark #sec5 .sec5-risk-card-red {
+    background: linear-gradient(135deg, #3f1118 0%, #1f2937 100%) !important;
+    border: 1px solid rgba(248, 113, 113, 0.95) !important;
+    color: #ffffff !important;
+    box-shadow: 0 16px 36px rgba(127, 29, 29, 0.25) !important;
+}
+body.dark #sec5 .sec5-risk-card-green,
+html.dark #sec5 .sec5-risk-card-green {
+    background: linear-gradient(135deg, #052e22 0%, #1f2937 100%) !important;
+    border: 1px solid rgba(74, 222, 128, 0.95) !important;
+    color: #ffffff !important;
+    box-shadow: 0 16px 36px rgba(20, 83, 45, 0.25) !important;
+}
+body.dark #sec5 .sec5-risk-card-red h5,
+body.dark #sec5 .sec5-risk-card-red h5 *,
+html.dark #sec5 .sec5-risk-card-red h5,
+html.dark #sec5 .sec5-risk-card-red h5 * {
+    color: #fca5a5 !important;
+    -webkit-text-fill-color: #fca5a5 !important;
+    opacity: 1 !important;
+}
+body.dark #sec5 .sec5-risk-card-green h5,
+body.dark #sec5 .sec5-risk-card-green h5 *,
+html.dark #sec5 .sec5-risk-card-green h5,
+html.dark #sec5 .sec5-risk-card-green h5 * {
+    color: #86efac !important;
+    -webkit-text-fill-color: #86efac !important;
+    opacity: 1 !important;
+}
+body.dark #sec5 .sec5-risk-card p,
+body.dark #sec5 .sec5-risk-card p *,
+html.dark #sec5 .sec5-risk-card p,
+html.dark #sec5 .sec5-risk-card p * {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+body.dark #sec5 .sec5-risk-card-red .sec5-risk-icon,
+html.dark #sec5 .sec5-risk-card-red .sec5-risk-icon {
+    background: rgba(248, 113, 113, 0.22) !important;
+    color: #fecaca !important;
+    -webkit-text-fill-color: #fecaca !important;
+}
+body.dark #sec5 .sec5-risk-card-green .sec5-risk-icon,
+html.dark #sec5 .sec5-risk-card-green .sec5-risk-icon {
+    background: rgba(74, 222, 128, 0.22) !important;
+    color: #bbf7d0 !important;
+    -webkit-text-fill-color: #bbf7d0 !important;
+}
+body.dark #sec5 .sec5-ai-card,
+html.dark #sec5 .sec5-ai-card {
+    background: linear-gradient(135deg, #172554 0%, #1e293b 100%) !important;
+    border: 1px solid rgba(96, 165, 250, 0.9) !important;
+    color: #ffffff !important;
+}
+body.dark #sec5 .sec5-ai-card h5,
+html.dark #sec5 .sec5-ai-card h5 {
+    color: #93c5fd !important;
+    -webkit-text-fill-color: #93c5fd !important;
+    opacity: 1 !important;
+}
+body.dark #sec5 .sec5-ai-card li,
+body.dark #sec5 .sec5-ai-card li *,
+html.dark #sec5 .sec5-ai-card li,
+html.dark #sec5 .sec5-ai-card li * {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1 !important;
+}
+
+</style>
