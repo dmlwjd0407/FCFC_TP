@@ -2096,6 +2096,100 @@ body.dark #sec5 .sec5-risk-card-green h5 {
 .wow-highlight-legend{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.65rem;font-size:.72rem;font-weight:900;}
 .wow-highlight-legend span{border-radius:999px;padding:.28rem .55rem;border:1px solid rgba(148,163,184,.22);}
 
+
+/* ===== Drawer menu scroll fix: allow long chapter list to scroll on mobile/desktop ===== */
+.drawer-menu {
+    overflow: hidden !important;
+}
+.drawer-header {
+    flex: 0 0 auto !important;
+}
+.drawer-links {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    max-height: calc(100vh - 7.5rem) !important;
+    padding-right: 0.35rem !important;
+    padding-bottom: 1rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+}
+.drawer-links::-webkit-scrollbar {
+    width: 7px;
+}
+.drawer-links::-webkit-scrollbar-track {
+    background: transparent;
+}
+.drawer-links::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.45);
+    border-radius: 9999px;
+}
+.dark .drawer-links::-webkit-scrollbar-thumb {
+    background: rgba(203, 213, 225, 0.35);
+}
+@media (max-width: 640px) {
+    .drawer-links {
+        max-height: calc(100vh - 7rem) !important;
+    }
+}
+
+
+
+/* ===== Drawer scroll + prevent floating progress circle from covering menu ===== */
+.drawer-menu {
+    z-index: 1600 !important;
+}
+.drawer-overlay {
+    z-index: 1500 !important;
+}
+.drawer-links {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding-right: 0.35rem !important;
+    padding-bottom: 5.5rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+}
+.drawer-links::-webkit-scrollbar { width: 6px; }
+.drawer-links::-webkit-scrollbar-thumb { background: rgba(148,163,184,.45); border-radius: 999px; }
+body.drawer-open #wowCircle,
+body.drawer-open #wowDock,
+body.drawer-open #wowAutoBadge {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+@media (max-width: 768px) {
+    .drawer-links { padding-bottom: 7rem !important; }
+}
+
+
+
+/* ===== FINAL PATCH: align sections 9-11 with sections 1-8 left spacing ===== */
+#sec9 > .relative.z-10.pt-10,
+#sec10 > .relative.z-10.pt-10,
+#sec11 > .relative.z-10.pt-10 {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+#sec9 h2,
+#sec10 h2,
+#sec11 h2 {
+    margin-left: 0 !important;
+}
+@media (max-width: 768px) {
+    #sec9 > .relative.z-10.pt-10,
+    #sec10 > .relative.z-10.pt-10,
+    #sec11 > .relative.z-10.pt-10 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -2822,7 +2916,7 @@ FCFC 必須遵守嚴格的環境保護法與安全規範。此外，貿易限制
 
 <section class="section-container reveal content-section" id="sec9">
 <div class="section-header" data-i18n="k219" data-i18n-mode="text">Rivals</div>
-<div class="relative z-10 pt-10 max-w-6xl mx-auto">
+<div class="relative z-10 pt-10">
 <h2 class="text-4xl font-black mb-10 border-b-4 border-current pb-4 inline-block" data-i18n="k220" data-i18n-mode="html">玖、競爭者分析與競爭動態<br><span class="text-xl font-bold opacity-60">Competitor Analysis &amp; Competitive Dynamics</span></h2>
 
 <div class="sec9-panel p-6 sm:p-8 md:p-10 rounded-3xl border shadow-sm">
@@ -2890,7 +2984,7 @@ FCFC 必須遵守嚴格的環境保護法與安全規範。此外，貿易限制
 <!-- 拾、五力分析：依 FCFC_TP1 詳細化；壹到玖未修改 -->
 <section class="section-container reveal content-section" id="sec10">
 <div class="section-header" data-i18n="k224" data-i18n-mode="text">5 Forces</div>
-<div class="relative z-10 pt-10 max-w-7xl mx-auto">
+<div class="relative z-10 pt-10">
 <h2 class="text-4xl font-black mb-8 border-b-4 border-current pb-4 inline-block" data-i18n="sec10_h2" data-i18n-mode="html">拾、產業分析：五力架構<br><span class="text-xl font-bold opacity-60">Industry Analysis – Five Force Framework</span></h2>
 <p class="text-base md:text-lg opacity-90 leading-relaxed mb-10 max-w-5xl" data-i18n="sec10_intro" data-i18n-mode="text">五力分析可用來判斷 FCFC 在石化與化學纖維產業中面臨的外部競爭壓力。整體來看，現有競爭者與替代品威脅較高；新進入者受資本、技術與法規限制而較低；供應商與買方議價力則取決於 FCFC 的垂直整合、全球採購與高值化轉型程度。</p>
 <div class="grid lg:grid-cols-5 gap-4 mb-10">
@@ -2958,7 +3052,7 @@ FCFC 必須遵守嚴格的環境保護法與安全規範。此外，貿易限制
 <!-- 拾壹、產業生命週期與近期動態：新增自 FCFC_TP1，原章節未修改 -->
 <section class="section-container reveal content-section" id="sec11">
 <div class="section-header" data-i18n="k236" data-i18n-mode="text">Lifecycle</div>
-<div class="relative z-10 pt-10 max-w-7xl mx-auto">
+<div class="relative z-10 pt-10">
 <h2 class="text-4xl font-black mb-8 border-b-4 border-current pb-4 inline-block" data-i18n="k237" data-i18n-mode="html">拾壹、產業生命週期與近期動態<br><span class="text-xl font-bold opacity-60">Industry Lifecycle & Recent News</span></h2>
 
 <p class="text-base leading-relaxed opacity-90 max-w-5xl mb-10" data-i18n="k400" data-i18n-mode="text">本章說明 FCFC 所處的石化與化纖產業已進入成熟後期，傳統大宗產品面臨飽和與價格競爭；但公司正透過高值材料、循環經濟、AI 特用化學品與半導體材料，嘗試從成熟期走向更新階段。</p>
@@ -4331,6 +4425,7 @@ function toggleMenu(forceOpen) {
     overlay.classList.toggle('show', shouldOpen);
     drawer.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
     document.body.style.overflow = shouldOpen ? 'hidden' : '';
+    document.body.classList.toggle('drawer-open', shouldOpen);
 }
 
 function closeMenu() {
@@ -4870,6 +4965,31 @@ html.dark #sec5 .sec5-ai-card li * {
     color: #f8fafc !important;
     -webkit-text-fill-color: #f8fafc !important;
     opacity: 1 !important;
+}
+
+
+
+/* ===== FINAL PATCH: align sections 9-11 with sections 1-8 left spacing ===== */
+#sec9 > .relative.z-10.pt-10,
+#sec10 > .relative.z-10.pt-10,
+#sec11 > .relative.z-10.pt-10 {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+#sec9 h2,
+#sec10 h2,
+#sec11 h2 {
+    margin-left: 0 !important;
+}
+@media (max-width: 768px) {
+    #sec9 > .relative.z-10.pt-10,
+    #sec10 > .relative.z-10.pt-10,
+    #sec11 > .relative.z-10.pt-10 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
 
 </style>
