@@ -15697,6 +15697,372 @@ html.show-en .section-header {
 })();
 </script>
 
+
+<script id="FINAL-FLOATING-TOOLS-REPAIR">
+(function(){
+  const SECTION_IDS = [
+    'sec1','sec2','sec3','sec4','sec5','sec6',
+    'sec7','sec8','sec9','sec10','sec11',
+    'sec12','sec13','sec14','sec15','sec16',
+    'sec17','sec18','sec19','sec20',
+    'sec21','sec22','sec23'
+  ];
+
+  let autoOn = false;
+  let autoTimer = null;
+  let autoCountdownTimer = null;
+  let autoSeconds = 60;
+
+  let timerLeft = 15 * 60;
+  let timerTotal = 15 * 60;
+  let timerRun = null;
+
+  function $(id){ return document.getElementById(id); }
+
+  function closePanels(exceptId){
+    ['wowSearchPanel','wowTimerPanel','wowGuidePanel'].forEach(function(id){
+      if (id !== exceptId) {
+        const el = $(id);
+        if (el) {
+          el.classList.remove('show');
+          el.setAttribute('aria-hidden','true');
+        }
+      }
+    });
+  }
+
+  function togglePanel(id){
+    const panel = $(id);
+    if (!panel) return;
+    const willShow = !panel.classList.contains('show');
+    closePanels(willShow ? id : null);
+    panel.classList.toggle('show', willShow);
+    panel.setAttribute('aria-hidden', willShow ? 'false' : 'true');
+
+    if (willShow && id === 'wowSearchPanel') {
+      setTimeout(function(){
+        const input = $('wowSearchInput');
+        if (input) input.focus();
+      }, 80);
+    }
+  }
+
+  function activeIndex(){
+    const active = document.querySelector('.content-section.active');
+    const id = active ? active.id : (window.__currentSubSectionId || 'sec1');
+    const idx = SECTION_IDS.indexOf(id);
+    return idx >= 0 ? idx : 0;
+  }
+
+  function goSection(id){
+    if (!id) return;
+    if (typeof window.switchSection === 'function') {
+      window.switchSection(id);
+    } else {
+      document.querySelectorAll('.content-section').forEach(function(sec){
+        sec.classList.remove('active');
+      });
+      const target = $(id);
+      if (target) target.classList.add('active');
+      window.__currentSubSectionId = id;
+    }
+  }
+
+  function updateAutoBadge(){
+    const badge = $('wowAutoBadge');
+    const count = $('wowAutoCountdown');
+    const fill = $('wowAutoProgressFill');
+    const autoBtn = $('wowAutoBtn');
+
+    if (badge) badge.classList.toggle('show', autoOn);
+    if (count) count.textContent = String(autoSeconds);
+    if (fill) fill.style.width = ((60 - autoSeconds) / 60 * 100) + '%';
+
+    if (autoBtn) {
+      autoBtn.classList.toggle('active', autoOn);
+      const icon = autoBtn.querySelector('i');
+      if (icon) icon.className = autoOn ? 'fas fa-pause' : 'fas fa-play';
+      autoBtn.title = autoOn ? 'Pause Auto Play / 暫停自動播放' : 'Auto Play / 自動播放';
+    }
+  }
+
+  function stopAuto(){
+    autoOn = false;
+    clearTimeout(autoTimer);
+    clearInterval(autoCountdownTimer);
+    autoTimer = null;
+    autoCountdownTimer = null;
+    autoSeconds = 60;
+    updateAutoBadge();
+  }
+
+  function scheduleAuto(){
+    clearTimeout(autoTimer);
+    clearInterval(autoCountdownTimer);
+    autoSeconds = 60;
+    updateAutoBadge();
+
+    autoCountdownTimer = setInterval(function(){
+      if (!autoOn) return;
+      autoSeconds = Math.max(0, autoSeconds - 1);
+      updateAutoBadge();
+    }, 1000);
+
+    autoTimer = setTimeout(function(){
+      if (!autoOn) return;
+      const idx = activeIndex();
+      const next = SECTION_IDS[Math.min(SECTION_IDS.length - 1, idx + 1)];
+      if (next && next !== SECTION_IDS[idx]) {
+        goSection(next);
+        scheduleAuto();
+      } else {
+        stopAuto();
+      }
+    }, 60000);
+  }
+
+  function toggleAuto(){
+    autoOn = !autoOn;
+    if (autoOn) scheduleAuto();
+    else stopAuto();
+  }
+
+  function formatTime(sec){
+    sec = Math.max(0, Number(sec) || 0);
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  }
+
+  function renderTimer(){
+    const display = $('wowTimerDisplay');
+    if (display) display.textContent = formatTime(timerLeft);
+  }
+
+  function setTimer(sec){
+    clearInterval(timerRun);
+    timerRun = null;
+    timerTotal = Math.max(1, Number(sec) || 900);
+    timerLeft = timerTotal;
+    renderTimer();
+  }
+
+  function startTimer(){
+    clearInterval(timerRun);
+    timerRun = setInterval(function(){
+      timerLeft = Math.max(0, timerLeft - 1);
+      renderTimer();
+      if (timerLeft <= 0) {
+        clearInterval(timerRun);
+        timerRun = null;
+        const display = $('wowTimerDisplay');
+        if (display) display.textContent = 'TIME';
+      }
+    }, 1000);
+  }
+
+  function pauseTimer(){
+    clearInterval(timerRun);
+    timerRun = null;
+  }
+
+  function resetTimer(){
+    pauseTimer();
+    timerLeft = timerTotal;
+    renderTimer();
+  }
+
+  function setCustomTimer(){
+    const min = parseInt(($('wowTimerCustomMin') || {}).value || '0', 10) || 0;
+    const sec = parseInt(($('wowTimerCustomSec') || {}).value || '0', 10) || 0;
+    setTimer((min * 60) + sec);
+  }
+
+  function bindTimerControls(){
+    document.querySelectorAll('.wow-timer-presets [data-min]').forEach(function(btn){
+      if (btn.dataset.finalFloatRepairBound === '1') return;
+      btn.dataset.finalFloatRepairBound = '1';
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        setTimer((parseInt(btn.dataset.min, 10) || 15) * 60);
+      }, true);
+    });
+
+    const custom = $('wowTimerCustomSet');
+    if (custom && custom.dataset.finalFloatRepairBound !== '1') {
+      custom.dataset.finalFloatRepairBound = '1';
+      custom.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        setCustomTimer();
+      }, true);
+    }
+
+    const start = $('wowTimerStart');
+    if (start && start.dataset.finalFloatRepairBound !== '1') {
+      start.dataset.finalFloatRepairBound = '1';
+      start.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        startTimer();
+      }, true);
+    }
+
+    const pause = $('wowTimerPause');
+    if (pause && pause.dataset.finalFloatRepairBound !== '1') {
+      pause.dataset.finalFloatRepairBound = '1';
+      pause.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        pauseTimer();
+      }, true);
+    }
+
+    const reset = $('wowTimerReset');
+    if (reset && reset.dataset.finalFloatRepairBound !== '1') {
+      reset.dataset.finalFloatRepairBound = '1';
+      reset.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        resetTimer();
+      }, true);
+    }
+  }
+
+  function simpleSearch(term){
+    const box = $('wowSearchResults');
+    if (!box) return;
+
+    const q = String(term || '').trim().toLowerCase();
+    if (!q) {
+      box.innerHTML = '<div class="chem-search-empty">請先輸入關鍵字，或點選上方化學小百科名詞。</div>';
+      return;
+    }
+
+    const items = Array.from(document.querySelectorAll('.content-section')).map(function(sec){
+      const h2 = sec.querySelector('h2');
+      return {
+        id: sec.id,
+        title: h2 ? h2.textContent.replace(/\s+/g,' ').trim() : sec.id,
+        text: sec.textContent.replace(/\s+/g,' ').trim()
+      };
+    }).filter(function(item){
+      return item.text.toLowerCase().includes(q) || item.title.toLowerCase().includes(q);
+    }).slice(0, 8);
+
+    if (!items.length) {
+      box.innerHTML = '<div class="chem-search-empty">找不到相關章節，請換一個關鍵字。</div>';
+      return;
+    }
+
+    box.innerHTML = items.map(function(item){
+      return '<button type="button" class="wow-result" data-goto="' + item.id + '"><b>' + item.title + '</b><span>點擊前往此章節</span></button>';
+    }).join('');
+
+    box.querySelectorAll('[data-goto]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        goSection(btn.dataset.goto);
+        const panel = $('wowSearchPanel');
+        if (panel) {
+          panel.classList.remove('show');
+          panel.setAttribute('aria-hidden','true');
+        }
+      });
+    });
+  }
+
+  function bindSearchTools(){
+    const input = $('wowSearchInput');
+    if (input && input.dataset.finalFloatRepairBound !== '1') {
+      input.dataset.finalFloatRepairBound = '1';
+      input.addEventListener('input', function(){
+        simpleSearch(input.value);
+      });
+    }
+
+    document.querySelectorAll('.chem-chip').forEach(function(chip){
+      if (chip.dataset.finalFloatRepairBound === '1') return;
+      chip.dataset.finalFloatRepairBound = '1';
+      chip.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        const q = chip.dataset.query || chip.textContent.trim();
+        if (input) {
+          input.value = q;
+          simpleSearch(q);
+        }
+
+        const hint = $('chemHintBox');
+        if (hint) {
+          hint.hidden = false;
+          hint.innerHTML =
+            '<strong>' + q + '</strong><br>' +
+            '<span>' + (chip.dataset.what || '') + '</span><br>' +
+            '<span>' + (chip.dataset.use || '') + '</span>';
+        }
+      }, true);
+    });
+  }
+
+  function bindFloatingButtons(){
+    const searchBtn = $('wowSearchBtn');
+    const autoBtn = $('wowAutoBtn');
+    const timerBtn = $('wowTimerBtn');
+
+    if (searchBtn && searchBtn.dataset.finalFloatRepairBound !== '1') {
+      searchBtn.dataset.finalFloatRepairBound = '1';
+      searchBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        togglePanel('wowSearchPanel');
+      }, true);
+    }
+
+    if (autoBtn && autoBtn.dataset.finalFloatRepairBound !== '1') {
+      autoBtn.dataset.finalFloatRepairBound = '1';
+      autoBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        toggleAuto();
+      }, true);
+    }
+
+    if (timerBtn && timerBtn.dataset.finalFloatRepairBound !== '1') {
+      timerBtn.dataset.finalFloatRepairBound = '1';
+      timerBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        togglePanel('wowTimerPanel');
+        renderTimer();
+      }, true);
+    }
+
+    bindTimerControls();
+    bindSearchTools();
+    renderTimer();
+  }
+
+  function init(){
+    bindFloatingButtons();
+
+    // Make sure panels are above the page content.
+    ['wowSearchPanel','wowTimerPanel','wowGuidePanel','wowDock','wowAutoBadge'].forEach(function(id){
+      const el = $(id);
+      if (el) el.style.zIndex = id === 'wowDock' ? '2200' : '2300';
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('click', function(){ setTimeout(init, 60); }, true);
+  init();
+})();
+</script>
+
 </body>
 </html>
 <!-- Final override injected by assistant: Section 5 dark mode readability -->
@@ -17723,6 +18089,27 @@ body.show-zh .lang-zh{
 #sec23 > .section-header::after{
     content:none !important;
     display:none !important;
+}
+
+
+/* ===== FINAL PATCH: repair right floating tools ===== */
+#wowDock{
+    z-index:2200 !important;
+    pointer-events:auto !important;
+}
+#wowDock .wow-btn{
+    pointer-events:auto !important;
+    cursor:pointer !important;
+}
+#wowSearchPanel.show,
+#wowTimerPanel.show,
+#wowGuidePanel.show{
+    display:block !important;
+    z-index:2300 !important;
+}
+#wowAutoBadge.show{
+    display:flex !important;
+    z-index:2300 !important;
 }
 
 </style>
