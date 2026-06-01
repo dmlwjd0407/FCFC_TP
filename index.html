@@ -8861,26 +8861,26 @@ setTimeout(forceSec5Contrast, 300);
 // ===== Final Interactive Feature JS: bilingual search/guide + timer + autoplay =====
 (function(){
   var sections = [
-    {id:'sec1', zh:'1. 最新消息', en:'News', keys:'news price oil profit forecast revenue 中東 油價 調漲 營收 獲利', tipZh:'用兩則新聞帶出 FCFC 的外部衝擊與轉虧為盈期待，適合開場說明。', tipEn:'Use the two news items to introduce FCFC’s external shocks and expected profit turnaround as the opening context.'},
-    {id:'sec2', zh:'2. 發展沿革', en:'History', keys:'history 1965 petrochemical sustainability 化纖 石化 永續 沿革', tipZh:'呈現台化從化纖起家，逐步轉向石化、塑膠與永續材料。', tipEn:'Show how FCFC started from chemical fibre and gradually expanded into petrochemicals, plastics, and sustainable materials.'},
-    {id:'sec3', zh:'3. 願景使命與價值', en:'Vision & Values', keys:'vision mission values ESG sustainability 勤勞樸實 止於至善 永續經營 奉獻社會', tipZh:'強調勤勞樸實、止於至善、永續經營、奉獻社會。', tipEn:'Emphasize diligence, rational management, sustainable operation, and contribution to society.'},
-    {id:'sec4', zh:'4. 組織架構', en:'Organization', keys:'organization division petrochemical plastics textile 組織 事業部 垂直整合', tipZh:'用組織架構說明 FCFC 多事業部與垂直整合能力。', tipEn:'Use the organization structure to explain FCFC’s multiple divisions and vertical integration capability.'},
-    {id:'sec5', zh:'5. 產品組合與藍圖', en:'Product Roadmap', keys:'product roadmap AI ESG low carbon green 高值化 低碳 產品 藍圖 區域風險 BBU 儲能電池組件 綠能 儲能 AI材料 半導體 碳化矽 SiC BBU 儲能電池組件 綠能 儲能 AI材料 半導體 碳化矽 SiC', tipZh:'重點放在高值化、低碳材料、AI 管理與區域風險分散。', tipEn:'Focus on high-value products, low-carbon materials, AI management, and regional risk diversification.'},
-    {id:'sec6', zh:'6. 財務績效', en:'Financial Performance', keys:'financial EPS stock price margin cash flow 財務 股價 營收 毛利率 現金流', tipZh:'用營收、毛利率、股價與現金流說明景氣循環與轉型壓力。', tipEn:'Use revenue, gross margin, stock price, and cash flow to explain cyclical pressure and transformation needs.'},
-    {id:'sec7', zh:'7. PESTEL總體環境分析', en:'PESTEL Analysis', keys:'PESTEL political economic social technology environmental legal 政治 經濟 社會 技術 環境 法律', tipZh:'六大外部因素中，政策、油價、ESG 與新材料技術是報告重點。', tipEn:'Among the six external factors, policy, oil prices, ESG, and new-material technology are the key points.'},
-    {id:'sec8', zh:'2. 產業價值鏈', en:'Industry Value Chain', keys:'value chain upstream midstream downstream circular economy 上游 中游 下游 供應鏈 循環經濟 PX PTA SM 苯乙烯 苯酚 丙酮 BPA ABS PP PC PS HIPS 上游原料 石化原料 化學中間體 PX PTA SM 苯乙烯 苯酚 丙酮 BPA ABS PP PC PS HIPS OX MX DMF HAC EG DMT PET 上游原料 石化原料 化學中間體', tipZh:'用上游原料、中游製造、下游應用說明 FCFC 在價值鏈的位置。', tipEn:'Explain FCFC’s value-chain position through upstream raw materials, midstream manufacturing, and downstream applications.'},
-    {id:'sec9', zh:'3. 競爭者與競爭動態', en:'Competition & Dynamics', keys:'competition red ocean China price war response 競爭 紅海 中國 價格戰 策略回應', tipZh:'競爭壓力來自中國擴產與價格戰；策略回應是高值化、市場分散與 ESG。', tipEn:'Competitive pressure comes from Chinese capacity expansion and price wars; FCFC responds with high-value products, market diversification, and ESG.'},
-    {id:'sec10', zh:'4. 五力分析', en:'Five Forces', keys:'five forces rivalry entrants substitutes suppliers buyers 五力 新進入者 替代品 供應商 買方', tipZh:'五力分析用來說明產業吸引力與 FCFC 的防守策略。', tipEn:'The Five Forces framework explains industry attractiveness and FCFC’s defensive strategies.'},
-    {id:'sec11', zh:'11. 產業生命週期與近期動態', en:'Industry Lifecycle & Recent Dynamics', keys:'lifecycle maturity renewal SiC semiconductor AI materials 生命週期 成熟期 更新 半導體 材料 SiC 碳化矽 半導體材料 AI材料 轉型投資 高值材料 SiC 碳化矽 半導體材料 AI材料 轉型投資 高值材料', tipZh:'傳統石化成熟化，但 FCFC 透過半導體、AI 材料與永續產品進入更新階段。', tipEn:'Traditional petrochemicals are maturing, while FCFC seeks renewal through semiconductors, AI materials, and sustainable products.'},
-    {id:'sec12', zh:'1. 核心事業與產品線', en:'Core Businesses & Product Lines', keys:'core business product line petrochemical plastics fibres revenue 核心事業 產品線 石化 塑膠 纖維 營收 PX PTA SM 苯乙烯 苯酚 丙酮 BPA ABS PP PC PS HIPS ASA SAN 化學中間體 工程塑膠 塑膠產品 石化產品 PX PTA SM 苯乙烯 苯酚 丙酮 BPA OX MX PIA DMF HAC AN ABS PP PC PS HIPS ASA SAN PC/ABS 化學中間體 工程塑膠 塑膠產品 石化產品 尼龍 嫘縈', tipZh:'說明 FCFC 的核心營收仍以石化與塑膠產品為主，並逐步朝高值材料轉型。', tipEn:'Explain that FCFC’s core revenue still comes from petrochemical and plastic products while it moves toward high-value materials.'},
-    {id:'sec13', zh:'2. 企業價值鏈活動', en:'Corporate Value Chain Activities', keys:'value chain primary support procurement manufacturing sales service R&D 價值鏈 主要活動 支援活動 採購 製造 銷售 服務 研發', tipZh:'用主要活動與支援活動說明 FCFC 如何把資源轉成營運效率與客戶價值。', tipEn:'Use primary and support activities to explain how FCFC turns resources into operating efficiency and customer value.'},
-    {id:'sec14', zh:'3. 關鍵資源', en:'Key Resources – Tangible and Intangible', keys:'tangible intangible resources financial technical relational capital 有形 無形 資源 財務 技術 關係資本', tipZh:'重點是有形資產支撐規模，無形資產支撐技術門檻與長期關係。', tipEn:'The key point is that tangible assets support scale while intangible assets support technical barriers and long-term relationships.'},
-    {id:'sec15', zh:'4. 核心能力與夥伴', en:'Core Competencies and Complementary Assets/Key Partners', keys:'core competency complementary assets partners AI smart manufacturing circular economy 夥伴 核心能力 互補資產 AI 智慧製造 循環經濟', tipZh:'說明 FCFC 的核心能力需要互補資產與關鍵夥伴一起放大效果。', tipEn:'Explain that FCFC’s core competencies are amplified by complementary assets and key partners.'},
-    {id:'sec16', zh:'5. 動態能力', en:'Dynamic Capabilities', keys:'dynamic capabilities sensing seizing transforming force majeure supply chain 動態能力 感知 抓取 轉型 不可抗力 供應鏈', tipZh:'用 Sensing、Seizing、Transforming 串起 FCFC 面對供應鏈危機的策略反應。', tipEn:'Use sensing, seizing, and transforming to connect FCFC’s strategic response to supply-chain disruption.'},
-    {id:'sec17', zh:'1. 垂直整合', en:'Vertical Integration', keys:'vertical integration upstream midstream downstream FPCC aromatics pipeline 六輕 台塑石化 上游 中游 下游 管線 垂直整合', tipZh:'說明 FCFC 如何透過六輕、台塑石化、芳香烴、塑膠與纖維形成上下游整合。', tipEn:'Explain how FCFC connects the Sixth Naphtha Cracker, FPCC, aromatics, plastics, and fibres into an integrated chain.'},
-    {id:'sec18', zh:'18. 產品多角化', en:'Product Diversification', keys:'diversification related diversification plastics petrochemical fibres PCR ABS PP HIPS green materials 產品多角化 相關多角化 塑膠 石化 纖維 綠色材料 PCR 再生材料 ABS PP PC HIPS Si-PC 高流動 高光澤 直接染色 工程塑膠 醫療材料 汽車材料 高值材料 永續材料 PCR 再生材料 ABS PP PC HIPS Si-PC 高流動 高光澤 直接染色 工程塑膠 醫療材料 汽車材料 高值材料 永續材料', tipZh:'重點是相關多角化：由既有石化、塑膠、纖維能力延伸至高值與綠色材料。', tipEn:'Focus on related diversification from petrochemicals, plastics, and fibres into high-value and green materials.'},
-    {id:'sec19', zh:'3. 地理擴張', en:'Geographical Expansion', keys:'geographic expansion greenfield M&A JV strategic alliance Ningbo Vietnam Louisiana Sony Toyota 地理擴張 綠地投資 併購 合資 策略聯盟 寧波 越南 美國', tipZh:'比較台灣與海外擴張，並區分 Greenfield、JV 與 Strategic Alliance 的角色。', tipEn:'Compare Taiwan and overseas expansion and distinguish the roles of Greenfield investment, JV, and strategic alliance.'},
-    {id:'sec20', zh:'4. 未來挑戰與建議', en:'Future Challenges & Suggestions', keys:'future challenges suggestions carbon neutrality industrial safety digital transformation ESG transparency supply chain 未來挑戰 建議 碳中和 工安 數位轉型 供應鏈 ESG 透明度 碳費 氣候變遷因應法 綠能 儲能 台塑新智能 台化綠能 產銷精實 高價規格 轉型路徑 碳費 氣候變遷因應法 綠能 儲能 台塑新智能 台化綠能 產銷精實 高價規格 轉型路徑', tipZh:'用永續、工安、AI、供應鏈與公共信任整理 FCFC 的未來策略方向。', tipEn:'Use sustainability, safety, AI, supply chain, and public trust to summarize FCFC’s future strategic directions.'},
+    {id:'sec1', zh:'1-1. 最新消息', en:'News', keys:'news price oil profit forecast revenue 中東 油價 調漲 營收 獲利', tipZh:'用兩則新聞帶出 FCFC 的外部衝擊與轉虧為盈期待，適合開場說明。', tipEn:'Use the two news items to introduce FCFC’s external shocks and expected profit turnaround as the opening context.'},
+    {id:'sec2', zh:'1-2. 發展沿革', en:'History', keys:'history 1965 petrochemical sustainability 化纖 石化 永續 沿革', tipZh:'呈現台化從化纖起家，逐步轉向石化、塑膠與永續材料。', tipEn:'Show how FCFC started from chemical fibre and gradually expanded into petrochemicals, plastics, and sustainable materials.'},
+    {id:'sec3', zh:'1-3. 願景使命與價值', en:'Vision & Values', keys:'vision mission values ESG sustainability 勤勞樸實 止於至善 永續經營 奉獻社會', tipZh:'強調勤勞樸實、止於至善、永續經營、奉獻社會。', tipEn:'Emphasize diligence, rational management, sustainable operation, and contribution to society.'},
+    {id:'sec4', zh:'1-4. 組織架構', en:'Organization', keys:'organization division petrochemical plastics textile 組織 事業部 垂直整合', tipZh:'用組織架構說明 FCFC 多事業部與垂直整合能力。', tipEn:'Use the organization structure to explain FCFC’s multiple divisions and vertical integration capability.'},
+    {id:'sec5', zh:'1-5. 產品組合與藍圖', en:'Product Roadmap', keys:'product roadmap AI ESG low carbon green 高值化 低碳 產品 藍圖 區域風險 BBU 儲能電池組件 綠能 儲能 AI材料 半導體 碳化矽 SiC BBU 儲能電池組件 綠能 儲能 AI材料 半導體 碳化矽 SiC', tipZh:'重點放在高值化、低碳材料、AI 管理與區域風險分散。', tipEn:'Focus on high-value products, low-carbon materials, AI management, and regional risk diversification.'},
+    {id:'sec6', zh:'1-6. 財務績效', en:'Financial Performance', keys:'financial EPS stock price margin cash flow 財務 股價 營收 毛利率 現金流', tipZh:'用營收、毛利率、股價與現金流說明景氣循環與轉型壓力。', tipEn:'Use revenue, gross margin, stock price, and cash flow to explain cyclical pressure and transformation needs.'},
+    {id:'sec7', zh:'2-1. PESTEL總體環境分析', en:'PESTEL Analysis', keys:'PESTEL political economic social technology environmental legal 政治 經濟 社會 技術 環境 法律', tipZh:'六大外部因素中，政策、油價、ESG 與新材料技術是報告重點。', tipEn:'Among the six external factors, policy, oil prices, ESG, and new-material technology are the key points.'},
+    {id:'sec8', zh:'2-2. 產業價值鏈', en:'Industry Value Chain', keys:'value chain upstream midstream downstream circular economy 上游 中游 下游 供應鏈 循環經濟 PX PTA SM 苯乙烯 苯酚 丙酮 BPA ABS PP PC PS HIPS 上游原料 石化原料 化學中間體 PX PTA SM 苯乙烯 苯酚 丙酮 BPA ABS PP PC PS HIPS OX MX DMF HAC EG DMT PET 上游原料 石化原料 化學中間體', tipZh:'用上游原料、中游製造、下游應用說明 FCFC 在價值鏈的位置。', tipEn:'Explain FCFC’s value-chain position through upstream raw materials, midstream manufacturing, and downstream applications.'},
+    {id:'sec9', zh:'2-3. 競爭者與競爭動態', en:'Competition & Dynamics', keys:'competition red ocean China price war response 競爭 紅海 中國 價格戰 策略回應', tipZh:'競爭壓力來自中國擴產與價格戰；策略回應是高值化、市場分散與 ESG。', tipEn:'Competitive pressure comes from Chinese capacity expansion and price wars; FCFC responds with high-value products, market diversification, and ESG.'},
+    {id:'sec10', zh:'2-4. 五力分析', en:'Five Forces', keys:'five forces rivalry entrants substitutes suppliers buyers 五力 新進入者 替代品 供應商 買方', tipZh:'五力分析用來說明產業吸引力與 FCFC 的防守策略。', tipEn:'The Five Forces framework explains industry attractiveness and FCFC’s defensive strategies.'},
+    {id:'sec11', zh:'2-5. 產業生命週期與近期動態', en:'Industry Lifecycle & Recent Dynamics', keys:'lifecycle maturity renewal SiC semiconductor AI materials 生命週期 成熟期 更新 半導體 材料 SiC 碳化矽 半導體材料 AI材料 轉型投資 高值材料 SiC 碳化矽 半導體材料 AI材料 轉型投資 高值材料', tipZh:'傳統石化成熟化，但 FCFC 透過半導體、AI 材料與永續產品進入更新階段。', tipEn:'Traditional petrochemicals are maturing, while FCFC seeks renewal through semiconductors, AI materials, and sustainable products.'},
+    {id:'sec12', zh:'3-1. 核心事業與產品線', en:'Core Businesses & Product Lines', keys:'core business product line petrochemical plastics fibres revenue 核心事業 產品線 石化 塑膠 纖維 營收 PX PTA SM 苯乙烯 苯酚 丙酮 BPA ABS PP PC PS HIPS ASA SAN 化學中間體 工程塑膠 塑膠產品 石化產品 PX PTA SM 苯乙烯 苯酚 丙酮 BPA OX MX PIA DMF HAC AN ABS PP PC PS HIPS ASA SAN PC/ABS 化學中間體 工程塑膠 塑膠產品 石化產品 尼龍 嫘縈', tipZh:'說明 FCFC 的核心營收仍以石化與塑膠產品為主，並逐步朝高值材料轉型。', tipEn:'Explain that FCFC’s core revenue still comes from petrochemical and plastic products while it moves toward high-value materials.'},
+    {id:'sec13', zh:'3-2. 企業價值鏈活動', en:'Corporate Value Chain Activities', keys:'value chain primary support procurement manufacturing sales service R&D 價值鏈 主要活動 支援活動 採購 製造 銷售 服務 研發', tipZh:'用主要活動與支援活動說明 FCFC 如何把資源轉成營運效率與客戶價值。', tipEn:'Use primary and support activities to explain how FCFC turns resources into operating efficiency and customer value.'},
+    {id:'sec14', zh:'3-3. 關鍵資源', en:'Key Resources – Tangible and Intangible', keys:'tangible intangible resources financial technical relational capital 有形 無形 資源 財務 技術 關係資本', tipZh:'重點是有形資產支撐規模，無形資產支撐技術門檻與長期關係。', tipEn:'The key point is that tangible assets support scale while intangible assets support technical barriers and long-term relationships.'},
+    {id:'sec15', zh:'3-4. 核心能力與夥伴', en:'Core Competencies and Complementary Assets/Key Partners', keys:'core competency complementary assets partners AI smart manufacturing circular economy 夥伴 核心能力 互補資產 AI 智慧製造 循環經濟', tipZh:'說明 FCFC 的核心能力需要互補資產與關鍵夥伴一起放大效果。', tipEn:'Explain that FCFC’s core competencies are amplified by complementary assets and key partners.'},
+    {id:'sec16', zh:'3-5. 動態能力', en:'Dynamic Capabilities', keys:'dynamic capabilities sensing seizing transforming force majeure supply chain 動態能力 感知 抓取 轉型 不可抗力 供應鏈', tipZh:'用 Sensing、Seizing、Transforming 串起 FCFC 面對供應鏈危機的策略反應。', tipEn:'Use sensing, seizing, and transforming to connect FCFC’s strategic response to supply-chain disruption.'},
+    {id:'sec17', zh:'4-1. 垂直整合', en:'Vertical Integration', keys:'vertical integration upstream midstream downstream FPCC aromatics pipeline 六輕 台塑石化 上游 中游 下游 管線 垂直整合', tipZh:'說明 FCFC 如何透過六輕、台塑石化、芳香烴、塑膠與纖維形成上下游整合。', tipEn:'Explain how FCFC connects the Sixth Naphtha Cracker, FPCC, aromatics, plastics, and fibres into an integrated chain.'},
+    {id:'sec18', zh:'4-2. 產品多角化', en:'Product Diversification', keys:'diversification related diversification plastics petrochemical fibres PCR ABS PP HIPS green materials 產品多角化 相關多角化 塑膠 石化 纖維 綠色材料 PCR 再生材料 ABS PP PC HIPS Si-PC 高流動 高光澤 直接染色 工程塑膠 醫療材料 汽車材料 高值材料 永續材料 PCR 再生材料 ABS PP PC HIPS Si-PC 高流動 高光澤 直接染色 工程塑膠 醫療材料 汽車材料 高值材料 永續材料', tipZh:'重點是相關多角化：由既有石化、塑膠、纖維能力延伸至高值與綠色材料。', tipEn:'Focus on related diversification from petrochemicals, plastics, and fibres into high-value and green materials.'},
+    {id:'sec19', zh:'4-3. 地理擴張', en:'Geographical Expansion', keys:'geographic expansion greenfield M&A JV strategic alliance Ningbo Vietnam Louisiana Sony Toyota 地理擴張 綠地投資 併購 合資 策略聯盟 寧波 越南 美國', tipZh:'比較台灣與海外擴張，並區分 Greenfield、JV 與 Strategic Alliance 的角色。', tipEn:'Compare Taiwan and overseas expansion and distinguish the roles of Greenfield investment, JV, and strategic alliance.'},
+    {id:'sec20', zh:'4-4. 未來挑戰與建議', en:'Future Challenges & Suggestions', keys:'future challenges suggestions carbon neutrality industrial safety digital transformation ESG transparency supply chain 未來挑戰 建議 碳中和 工安 數位轉型 供應鏈 ESG 透明度 碳費 氣候變遷因應法 綠能 儲能 台塑新智能 台化綠能 產銷精實 高價規格 轉型路徑 碳費 氣候變遷因應法 綠能 儲能 台塑新智能 台化綠能 產銷精實 高價規格 轉型路徑', tipZh:'用永續、工安、AI、供應鏈與公共信任整理 FCFC 的未來策略方向。', tipEn:'Use sustainability, safety, AI, supply chain, and public trust to summarize FCFC’s future strategic directions.'},
     {id:'sec21', zh:'5-1. 翻卡記憶', en:'5-1. Flip Cards', keys:'翻卡記憶 卡牌 化學名詞 PX PTA ABS PCR SiC BBU PET PP PC 尼龍 HIPS SM 台化 材料 名詞解釋', tipZh:'透過翻卡記憶認識台化常見化學名詞與用途。', tipEn:'Use flip cards to learn FCFC's common chemical terms and their uses.'},
     {id:'sec22', zh:'5-2. 測驗', en:'5-2. Quiz', keys:'測驗 quiz 題目 作答 計分 FCFC 台化 PESTEL 五力 垂直整合 高值化 永續', tipZh:'透過互動小測驗快速複習前 4 大章節重點。', tipEn:'Review the key points of Chapters 1–4 through an interactive quiz.'},
     {id:'sec23', zh:'5-3. 網站來源', en:'5-3. Sources', keys:'網站來源 參考網站 website source fcfc official cmoney cnyes npc fpcc fpc chimei ccpgp nylon kingandwood sunshine', tipZh:'彙整本報告使用的網站來源與延伸閱讀。', tipEn:'Collect the online sources and further readings used in this report.'}
@@ -13159,16 +13159,16 @@ html:not(.show-en) .section-container > .section-header .lang-en {
 <script id="FINAL-number-prefix-only-real-fix">
 (function(){
   const sectionPrefix = {
-    sec1:'1-1', sec2:'1-2', sec3:'1-3', sec4:'1-4', sec5:'5-1', sec6:'1-6',
+    sec1:'1-1', sec2:'1-2', sec3:'1-3', sec4:'1-4', sec5:'1-5', sec6:'1-6',
     sec7:'2-1', sec8:'2-2', sec9:'2-3', sec10:'2-4', sec11:'2-5',
     sec12:'3-1', sec13:'3-2', sec14:'3-3', sec15:'3-4', sec16:'3-5',
     sec17:'4-1', sec18:'4-2', sec19:'4-3', sec20:'4-4'
   };
   const titleKeys = {
-    k7:'1-1', k26:'1-2', k50:'1-3', k70:'1-4', k111:'5-1', k172:'1-6',
+    k7:'1-1', k26:'1-2', k50:'1-3', k70:'1-4', k111:'1-5', k172:'1-6',
     sec7_h2:'2-1', sec8_title:'2-2', k220:'2-3', sec10_h2:'2-4', k237:'2-5',
     sec12_title:'3-1', sec13_title:'3-2', sec16_title:'3-5',
-    nav_sec1:'1-1', nav_sec2:'1-2', nav_sec3:'1-3', nav_sec4:'1-4', nav_sec5:'5-1', nav_sec6:'1-6',
+    nav_sec1:'1-1', nav_sec2:'1-2', nav_sec3:'1-3', nav_sec4:'1-4', nav_sec5:'1-5', nav_sec6:'1-6',
     nav_sec7:'2-1', nav_sec8:'2-2', nav_sec9:'2-3', nav_sec10:'2-4', nav_sec11:'2-5',
     nav_sec12:'3-1', nav_sec13:'3-2', nav_sec14:'3-3', nav_sec15:'3-4', nav_sec16:'3-5',
     nav_sec17:'4-1', nav_sec18:'4-2', nav_sec19:'4-3', nav_sec20:'4-4'
@@ -13255,7 +13255,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
 <script id="ABSOLUTE-FINAL-sync-menu-and-page-numbering">
 (function(){
   const PREFIX = {
-    sec1:'1-1', sec2:'1-2', sec3:'1-3', sec4:'1-4', sec5:'5-1', sec6:'1-6',
+    sec1:'1-1', sec2:'1-2', sec3:'1-3', sec4:'1-4', sec5:'1-5', sec6:'1-6',
     sec7:'2-1', sec8:'2-2', sec9:'2-3', sec10:'2-4', sec11:'2-5',
     sec12:'3-1', sec13:'3-2', sec14:'3-3', sec15:'3-4', sec16:'3-5',
     sec17:'4-1', sec18:'4-2', sec19:'4-3', sec20:'4-4'
@@ -13875,7 +13875,7 @@ html.show-en .section-header {
     sec2: {num: '1-2', title: `Company history`},
     sec3: {num: '1-3', title: `Vision, Mission, and Values`},
     sec4: {num: '1-4', title: `Organizational Structure and Management Team`},
-    sec5: {num: '5-1', title: `Product Portfolios`},
+    sec5: {num: '1-5', title: `Product Portfolios`},
     sec6: {num: '1-6', title: `Financial Performance during 2021~2025`},
     sec7: {num: '2-1', title: `Macro Analysis – PESTEL`},
     sec8: {num: '2-2', title: `Industry Value Chain`},
@@ -14199,7 +14199,7 @@ html.show-en .section-header {
     sec2: {num: '1-2', title: `發展沿革`},
     sec3: {num: '1-3', title: `願景、使命與價值`},
     sec4: {num: '1-4', title: `組織架構與管理團隊`},
-    sec5: {num: '5-1', title: `產品組合`},
+    sec5: {num: '1-5', title: `產品組合`},
     sec6: {num: '1-6', title: `2021–2025 財務績效`},
     sec7: {num: '2-1', title: `PESTEL 總體環境分析`},
     sec8: {num: '2-2', title: `產業價值鏈`},
