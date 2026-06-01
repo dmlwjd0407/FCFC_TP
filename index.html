@@ -4740,7 +4740,6 @@ section#sec19.section-container > .section-header {
             </h1>
 <h2 class="text-6xl md:text-[8rem] font-black tracking-tighter leading-none mb-8" data-i18n="hero_title" data-i18n-mode="html">台灣化學纖維股份有限公司</h2>
 <div class="max-w-2xl">
-<p class="text-xl font-light opacity-60 leading-relaxed translate-y-4" data-i18n="hero_desc" data-i18n-mode="html">公司概況與財務績效</p>
 </div>
 <div class="mt-20 flex gap-10 text-[10px] font-black tracking-[0.3em] uppercase opacity-40">
 <span data-i18n="k3" data-i18n-mode="text">EST. 1965</span>
@@ -5590,7 +5589,7 @@ FCFC 必須遵守嚴格的環境保護法與安全規範。此外，貿易限制
 </div>
 </section>
 <section class="section-container reveal content-section" id="sec12">
-<span class="section-header" data-i18n="sec12_header" data-i18n-mode="text">核心事業</span>
+<span class="section-header" data-i18n="sec12_header" data-i18n-mode="text">核心事業與產品線</span>
 <div class="relative z-10 pt-10">
 <h2 class="text-4xl md:text-5xl font-black mb-10 inline-block" data-i18n="sec12_title" data-i18n-mode="html">3-1. 核心事業與產品線</h2>
 <div class="space-y-8 sec12-unified">
@@ -7793,7 +7792,7 @@ const translations = {
     "nav_sec9": {"zh":"2-3. 競爭者與競爭動態","en":"2-3.Competitor Analysis and Competitive Dynamics"},
     "nav_sec10": {"zh":"2-4. 產業分析：五力架構","en":"2-4.Industry Analysis – Five Force Framework"},
     "nav_sec11": {"zh":"2-5. 產業生命週期與近期動態","en":"2-5.Industry Lifecycle and recent news"},
-    "nav_sec12": {"zh":"3-1. 核心事業／產品線","en":"3-1.Core Businesses/Product lines"},
+    "nav_sec12": {"zh":"3-1. 核心事業與產品線","en":"3-1.Core Businesses/Product lines"},
     "nav_sec13": {"zh":"3-2. 企業價值鏈關鍵活動","en":"3-2.Corporate Value Chain – Key Activities"},
     "nav_sec14": {"zh":"3-3. 關鍵資源：有形與無形","en":"3-3.Key Resources – Tangible and Intangible"},
     "nav_sec15": {"zh":"3-4. 核心能力與互補資產／關鍵夥伴","en":"3-4.Core Competencies and Complementary Assets/Key Partners"},
@@ -7802,7 +7801,7 @@ const translations = {
     "nav_sec18": {"zh":"4-2. 水平／產品多角化","en":"4-2.Horizontal/Product Diversification"},
     "nav_sec19": {"zh":"4-3. 地理擴張","en":"4-3.Geographical Expansion"},
     "nav_sec20": {"zh":"4-4. 未來挑戰與建議","en":"4-4.Future Challenges and Suggestions"},
-    "sec12_header": {"zh": "核心事業", "en": "Core Businesses"},
+    "sec12_header": {"zh": "核心事業與產品線", "en": "Core Businesses"},
     "sec12_title": {"zh": "3-1. 核心事業與產品線<br><span class=\"text-xl font-bold opacity-60\">Core Businesses & Product Lines</span>", "en": "3-1. Core Businesses & Product Lines<br><span class=\"text-xl font-bold opacity-60\">Core 事業定位</span>"},
     "sec12_a_title": {"zh": "核心定位", "en": "Core Positioning"},
     "sec12_a_body": {"zh": "FCFC 是台塑集團重要成員，主要營運石化、塑膠、化學中間體與纖維相關事業，並透過上下游石化價值鏈連結取得規模生產與垂直整合優勢。", "en": "FCFC is a major member of Formosa Plastics Group. It mainly operates petrochemical, plastics, chemical-intermediate, and fibre-related businesses, gaining scale-production and vertical-integration advantages through upstream and downstream petrochemical value-chain links."},
@@ -8713,7 +8712,7 @@ setTimeout(forceSec5Contrast, 300);
 // ===== Showcase Upgrade: SPA controls, focus mode, keyboard navigation =====
 (function(){
   const sectionOrder = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8','sec9','sec10','sec11','sec12','sec13','sec14','sec15','sec16','sec17','sec18','sec19','sec20'];
-  const zhTitles = ['最新消息','發展沿革','願景使命與價值','組織架構與管理團隊','產品藍圖','財務績效','PESTEL','產業價值鏈','競爭動態','五力分析','生命週期','核心事業','價值鏈活動','關鍵資源','核心能力','動態能力','垂直整合','產品多角化','地理擴張','未來挑戰'];
+  const zhTitles = ['最新消息','發展沿革','願景使命與價值','組織架構與管理團隊','產品藍圖','財務績效','PESTEL','產業價值鏈','競爭動態','五力分析','生命週期','核心事業與產品線','價值鏈活動','關鍵資源','核心能力','動態能力','垂直整合','產品多角化','地理擴張','未來挑戰'];
   const enTitles = ['News','History','Vision & Values','Organization','Product Roadmap','Financials','PESTEL','Value Chain','Competition','Five Forces','Lifecycle','Core Businesses','Value Chain Activities','Key Resources','Core Competencies','Dynamic Capabilities','Vertical Integration','Product Diversification','Geographical Expansion','Future Challenges'];
 
   function currentIndex(){
@@ -12510,7 +12509,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
       zhTags:['1. PESTEL','2. 產業價值鏈','3. 競爭者與競爭動態','4. 五力分析','5. 產業生命週期'],
       enTags:['1. Macro Analysis – PESTEL','2. Industry Value Chain','3. Competitor Analysis and Competitive Dynamics','4. Industry Analysis – Five Force Framework','5. Industry Lifecycle and recent news'] },
     { id:'tp2', zh:'3｜內部分析', en:'3｜Internal Analysis', sections:['sec12','sec13','sec14','sec15','sec16'],
-      zhSub:'涵蓋：核心事業／產品線、企業價值鏈關鍵活動、有形與無形資源、核心能力與互補資產／關鍵夥伴，以及動態能力。',
+      zhSub:'涵蓋：核心事業與產品線、企業價值鏈關鍵活動、有形與無形資源、核心能力與互補資產／關鍵夥伴，以及動態能力。',
       enSub:'Covers: core businesses/product lines, corporate value chain key activities, tangible and intangible resources, core competencies and complementary assets/key partners, and dynamic capabilities.',
       zhTags:['1. 核心事業與產品線','2. 企業價值鏈活動','3. 關鍵資源','4. 核心能力與夥伴','5. 動態能力'],
       enTags:['1. Core Businesses/Product lines','2. Corporate Value Chain – Key Activities','3. Key Resources – Tangible and Intangible','4. Core Competencies and Complementary Assets/Key Partners','5. Dynamic Capabilities'] },
@@ -12779,7 +12778,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
       ['sec11','2-5','Industry Lifecycle and recent news','產業生命週期與近期動態']
     ], zhSub:'涵蓋：PESTEL、產業價值鏈、競爭者、五力分析、產業生命週期。', enSub:'Covers: PESTEL, value chain, competitors, five forces, and lifecycle.' },
     { id:'tp2', zh:'3｜內部分析', en:'3｜Internal Analysis', sections:[
-      ['sec12','3-1','Core Businesses/Product lines','核心事業／產品線'],
+      ['sec12','3-1','Core Businesses/Product lines','核心事業與產品線'],
       ['sec13','3-2','Corporate Value Chain – Key Activities','企業價值鏈關鍵活動'],
       ['sec14','3-3','Key Resources – Tangible and Intangible','關鍵資源：有形與無形'],
       ['sec15','3-4','Core Competencies and Complementary Assets/Key Partners','核心能力與互補資產／關鍵夥伴'],
@@ -12996,7 +12995,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
   const GROUPS = [
     { id:'tp0', sections:[['sec1','1-1','Two recent news','最新消息'],['sec2','1-2','Company history','發展沿革'],['sec3','1-3','Vision, Mission, and Values','願景、使命與價值'],['sec4','1-4','Organizational Structure and Management Team','組織架構與管理團隊'],['sec5','1-5','Product Portfolios','產品組合'],['sec6','1-6','Financial Performance during 2021~2025','2021–2025 財務績效']]},
     { id:'tp1', sections:[['sec7','2-1','Macro Analysis – PESTEL','PESTEL 總體環境分析'],['sec8','2-2','Industry Value Chain','產業價值鏈'],['sec9','2-3','Competitor Analysis and Competitive Dynamics','競爭者與競爭動態'],['sec10','2-4','Industry Analysis – Five Force Framework','產業分析：五力架構'],['sec11','2-5','Industry Lifecycle and recent news','產業生命週期與近期動態']]},
-    { id:'tp2', sections:[['sec12','3-1','Core Businesses/Product lines','核心事業／產品線'],['sec13','3-2','Corporate Value Chain – Key Activities','企業價值鏈關鍵活動'],['sec14','3-3','Key Resources – Tangible and Intangible','關鍵資源：有形與無形'],['sec15','3-4','Core Competencies and Complementary Assets/Key Partners','核心能力與互補資產／關鍵夥伴'],['sec16','3-5','Dynamic Capabilities','動態能力']]},
+    { id:'tp2', sections:[['sec12','3-1','Core Businesses/Product lines','核心事業與產品線'],['sec13','3-2','Corporate Value Chain – Key Activities','企業價值鏈關鍵活動'],['sec14','3-3','Key Resources – Tangible and Intangible','關鍵資源：有形與無形'],['sec15','3-4','Core Competencies and Complementary Assets/Key Partners','核心能力與互補資產／關鍵夥伴'],['sec16','3-5','Dynamic Capabilities','動態能力']]},
     { id:'tp3', sections:[['sec17','4-1','Vertical Integration','垂直整合'],['sec18','4-2','Horizontal/Product Diversification','水平／產品多角化'],['sec19','4-3','Geographical Expansion','地理擴張'],['sec20','4-4','Future Challenges and Suggestions','未來挑戰與建議']]},
     { id:'tp4', sections:[['sec21','5-1','Flip Cards','翻卡記憶'],['sec22','5-2','Quiz','測驗'],['sec23','5-3','Sources','網站來源']]}
   ];
@@ -14064,15 +14063,30 @@ html.show-en .section-header {
   }
 
   function currentSecId(){
-    if (window.__currentSubSectionId && GROUP_TITLE[window.__currentSubSectionId]) return window.__currentSubSectionId;
-    const active = document.querySelector('.content-section.active');
-    return active && GROUP_TITLE[active.id] ? active.id : 'sec1';
+  const hash = (location.hash || '').replace('#','');
+
+  if (window.__currentSubSectionId && GROUP_TITLE[window.__currentSubSectionId]) {
+    return window.__currentSubSectionId;
   }
 
-  function descForMode(mode){
-    const item = GROUP_TITLE[currentSecId()] || GROUP_TITLE.sec1;
-    return item[mode] || item.en || '';
+  if (hash && GROUP_TITLE[hash]) {
+    return hash;
   }
+
+  const active = document.querySelector('.content-section.active');
+  if (active && GROUP_TITLE[active.id]) {
+    return active.id;
+  }
+
+  return null;
+}
+
+  function descForMode(mode){
+    const id = currentSecId();
+    if (!id) return '';
+    const item = GROUP_TITLE[id];
+    return item ? (item[mode] || item.en || '') : '';
+}
 
   function nameForMode(mode){
     if (mode === 'en') return EN_NAME;
@@ -14206,7 +14220,7 @@ html.show-en .section-header {
     sec9: {num: '2-3', title: `競爭者與競爭動態`},
     sec10: {num: '2-4', title: `產業分析：五力架構`},
     sec11: {num: '2-5', title: `產業生命週期與近期動態`},
-    sec12: {num: '3-1', title: `核心事業／產品線`},
+    sec12: {num: '3-1', title: `核心事業與產品線`},
     sec13: {num: '3-2', title: `企業價值鏈關鍵活動`},
     sec14: {num: '3-3', title: `關鍵資源：有形與無形`},
     sec15: {num: '3-4', title: `核心能力與互補資產／關鍵夥伴`},
@@ -14310,16 +14324,6 @@ html.show-en .section-header {
 </script>
 
 
-<style id="MENU-INITIAL-COLLAPSED-FIX-STYLE">
-/* 漢堡目錄初始狀態：四個大標題全部收合，除非使用者點開 */
-.drawer-menu:not(.user-opened-group) .tp-accordion-card.open .tp-subpage-list {
-    display: none !important;
-}
-.drawer-menu:not(.user-opened-group) .tp-accordion-card.open .tp-accordion-caret {
-    transform: none !important;
-}
-</style>
-
 <script id="MENU-INITIAL-COLLAPSED-FIX-SCRIPT">
 (function(){
   let userHasOpenedGroup = false;
@@ -14374,98 +14378,6 @@ html.show-en .section-header {
   setTimeout(collapseAllMenuGroups, 1500);
 })();
 </script>
-
-
-<script>
-/* ===== FINAL PATCH: hero subtitle follows language switch ===== */
-(function(){
-  const HERO_DESC_I18N = {
-    "zh": "公司概況與財務績效",
-    "zh-tw": "公司概況與財務績效",
-    "zh-TW": "公司概況與財務績效",
-    "zh-cn": "公司概况与财务绩效",
-    "zh-CN": "公司概况与财务绩效",
-    "en": "Company Overview & Finance",
-    "ja": "企業概要と財務実績",
-    "ko": "회사 개요 및 재무 성과",
-    "es": "Descripción de la empresa y desempeño financiero",
-    "fr": "Aperçu de l’entreprise et performance financière",
-    "de": "Unternehmensüberblick und finanzielle Leistung",
-    "th": "ภาพรวมบริษัทและผลการดำเนินงานทางการเงิน",
-    "vi": "Tổng quan công ty và hiệu quả tài chính",
-    "id": "Gambaran Perusahaan & Kinerja Keuangan"
-  };
-
-  function normalizeLang(lang){
-    lang = String(lang || "").trim();
-    if (!lang) return "zh-tw";
-    if (lang === "zh") return "zh-tw";
-    if (lang.toLowerCase() === "zh-cn" || lang === "zh-CN" || lang === "cn") return "zh-cn";
-    if (lang.toLowerCase() === "zh-tw" || lang === "zh-TW" || lang === "tw") return "zh-tw";
-    return lang.toLowerCase();
-  }
-
-  function detectLang(){
-    const select = document.getElementById("languageSelect") || document.querySelector("select");
-    return normalizeLang(
-      (select && select.value) ||
-      document.documentElement.getAttribute("data-lang") ||
-      document.documentElement.lang ||
-      localStorage.getItem("fcfc_lang") ||
-      "zh-tw"
-    );
-  }
-
-  function setHeroDesc(lang){
-    const key = normalizeLang(lang || detectLang());
-    const text = HERO_DESC_I18N[key] || HERO_DESC_I18N[key.split("-")[0]] || HERO_DESC_I18N["en"];
-    document.querySelectorAll('[data-i18n="hero_desc"], #hero_desc, .hero-desc').forEach(function(el){
-      el.textContent = text;
-      el.style.display = "";
-      el.classList.remove("notranslate");
-      el.setAttribute("translate", "yes");
-    });
-  }
-
-  window.updateHeroSubtitleLanguage = setHeroDesc;
-
-  const oldChangeSiteLanguage = window.changeSiteLanguage;
-  window.changeSiteLanguage = function(lang){
-    const result = oldChangeSiteLanguage ? oldChangeSiteLanguage.apply(this, arguments) : undefined;
-    setTimeout(function(){ setHeroDesc(lang); }, 0);
-    setTimeout(function(){ setHeroDesc(lang); }, 250);
-    setTimeout(function(){ setHeroDesc(lang); }, 900);
-    return result;
-  };
-
-  const oldApplyLanguage = window.applyLanguage;
-  window.applyLanguage = function(lang){
-    const result = oldApplyLanguage ? oldApplyLanguage.apply(this, arguments) : undefined;
-    setTimeout(function(){ setHeroDesc(lang); }, 0);
-    setTimeout(function(){ setHeroDesc(lang); }, 250);
-    return result;
-  };
-
-  const oldSwitchSection = window.switchSection;
-  window.switchSection = function(){
-    const result = oldSwitchSection ? oldSwitchSection.apply(this, arguments) : undefined;
-    setTimeout(function(){ setHeroDesc(); }, 0);
-    setTimeout(function(){ setHeroDesc(); }, 250);
-    return result;
-  };
-
-  document.addEventListener("DOMContentLoaded", function(){
-    const select = document.getElementById("languageSelect") || document.querySelector("select");
-    if (select) {
-      select.addEventListener("change", function(){ setHeroDesc(this.value); });
-    }
-    setHeroDesc();
-    setTimeout(setHeroDesc, 300);
-    setTimeout(setHeroDesc, 1000);
-  });
-})();
-</script>
-
 
 
 <script>
@@ -14918,11 +14830,11 @@ html.show-en .section-header {
   }
 
   function initOpenGroupIfNeeded(){
-    if (!initialized) {
-      openGroupId = groupOf(activeSec()).id;
-      initialized = true;
-    }
+  if (!initialized) {
+    openGroupId = null; // 一開始全部收合
+    initialized = true;
   }
+}
 
   function renderDrawer(){
     if (rendering) return;
@@ -16063,6 +15975,220 @@ html.show-en .section-header {
 })();
 </script>
 
+
+<script id="FINAL-SEC5-PRODUCT-PORTFOLIO-NUMBER-HARD-FIX">
+(function(){
+  function fixSec5Number(){
+    document.querySelectorAll('[data-sec="sec5"]').forEach(function(btn){
+      const num = btn.querySelector('.tp-subpage-num');
+      if (num) num.textContent = '1-5';
+    });
+
+    document.querySelectorAll('.tp-subpage-btn, .drawer-link, button, a').forEach(function(el){
+      const txt = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      const num = el.querySelector ? el.querySelector('.tp-subpage-num') : null;
+      if (!num) return;
+
+      if (txt.includes('產品組合') || txt.includes('Product Portfolio')) {
+        num.textContent = '1-5';
+      }
+
+      if (txt.includes('翻卡記憶') || txt.includes('Flip Cards') || txt.includes('Flip-card Memory')) {
+        num.textContent = '5-1';
+      }
+    });
+  }
+
+  function scheduleFix(){
+    [0, 60, 160, 400, 800, 1400].forEach(function(ms){
+      setTimeout(fixSec5Number, ms);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', scheduleFix);
+  document.addEventListener('click', function(){ scheduleFix(); }, true);
+  document.addEventListener('change', function(){ scheduleFix(); }, true);
+
+  ['openMenu','toggleMenu','switchSection','changeSiteLanguage','applyLanguage','toggleLanguage'].forEach(function(fn){
+    const old = window[fn];
+    if (typeof old === 'function' && !old.__sec5ProductNumberHardFixed) {
+      const wrapped = function(){
+        const result = old.apply(this, arguments);
+        scheduleFix();
+        return result;
+      };
+      wrapped.__sec5ProductNumberHardFixed = true;
+      window[fn] = wrapped;
+    }
+  });
+
+  scheduleFix();
+})();
+</script>
+
+
+<script id="FINAL-BOTTOM-STEPPER-SUBCHAPTER-NAV">
+(function(){
+  const ids = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8','sec9','sec10','sec11','sec12','sec13','sec14','sec15','sec16','sec17','sec18','sec19','sec20','sec21','sec22','sec23'];
+  const group = {sec1:1,sec2:1,sec3:1,sec4:1,sec5:1,sec6:1,sec7:2,sec8:2,sec9:2,sec10:2,sec11:2,sec12:3,sec13:3,sec14:3,sec15:3,sec16:3,sec17:4,sec18:4,sec19:4,sec20:4,sec21:5,sec22:5,sec23:5};
+  const zh = {
+    sec1:'1-1. 最新消息', sec2:'1-2. 發展沿革', sec3:'1-3. 願景、使命與價值', sec4:'1-4. 組織架構與管理團隊', sec5:'1-5. 產品組合', sec6:'1-6. 2021–2025 財務績效',
+    sec7:'2-1. PESTEL 總體環境分析', sec8:'2-2. 產業價值鏈', sec9:'2-3. 競爭者與競爭動態', sec10:'2-4. 五力分析', sec11:'2-5. 產業生命週期與近期動態',
+    sec12:'3-1. 核心事業與產品線', sec13:'3-2. 企業價值鏈關鍵活動', sec14:'3-3. 關鍵資源', sec15:'3-4. 核心能力與關鍵夥伴', sec16:'3-5. 動態能力',
+    sec17:'4-1. 垂直整合', sec18:'4-2. 水平／產品多角化', sec19:'4-3. 地理擴張', sec20:'4-4. 未來挑戰與建議',
+    sec21:'5-1. 翻卡記憶', sec22:'5-2. 測驗', sec23:'5-3. 網站來源'
+  };
+  const en = {
+    sec1:'1-1. News', sec2:'1-2. History', sec3:'1-3. Vision, Mission, and Values', sec4:'1-4. Organization and Management Team', sec5:'1-5. Product Portfolios', sec6:'1-6. Financial Performance',
+    sec7:'2-1. PESTEL Analysis', sec8:'2-2. Industry Value Chain', sec9:'2-3. Competitor Analysis', sec10:'2-4. Five Forces Analysis', sec11:'2-5. Industry Lifecycle',
+    sec12:'3-1. Core Businesses and Product Lines', sec13:'3-2. Corporate Value Chain Activities', sec14:'3-3. Key Resources', sec15:'3-4. Core Competencies and Partners', sec16:'3-5. Dynamic Capabilities',
+    sec17:'4-1. Vertical Integration', sec18:'4-2. Product Diversification', sec19:'4-3. Geographical Expansion', sec20:'4-4. Future Challenges and Suggestions',
+    sec21:'5-1. Flip Cards', sec22:'5-2. Quiz', sec23:'5-3. Sources'
+  };
+
+  function isEn(){
+    const sel = document.getElementById('languageSelect');
+    const v = sel ? String(sel.value || '').toLowerCase() : '';
+    const c = String(window.currentLang || '').toLowerCase();
+    const h = String(document.documentElement.lang || '').toLowerCase();
+    return v.startsWith('en') || c.startsWith('en') || h.startsWith('en') || document.body.classList.contains('show-en') || document.documentElement.classList.contains('show-en');
+  }
+
+  function current(){
+  const hash = (location.hash || '').replace('#','');
+
+  if (window.__currentSubSectionId && ids.includes(window.__currentSubSectionId)) {
+    return window.__currentSubSectionId;
+  }
+
+  if (ids.includes(hash)) {
+    return hash;
+  }
+
+  const active = document.querySelector('.content-section.active');
+  if (active && ids.includes(active.id)) {
+    return active.id;
+  }
+
+  return ids[0];
+}
+
+  function updateUI(id){
+    const g = group[id] || 1;
+    const idxEl = document.getElementById('stepperIndex');
+    const titleEl = document.getElementById('stepperTitle');
+    const bar = document.getElementById('sectionProgressBar');
+    const prev = document.getElementById('prevSectionBtn');
+    const next = document.getElementById('nextSectionBtn');
+
+    if (idxEl) {
+      idxEl.textContent = String(g).padStart(2,'0') + '/05';
+      idxEl.classList.add('notranslate');
+      idxEl.setAttribute('translate','no');
+    }
+    if (titleEl) {
+      titleEl.textContent = (isEn() ? en[id] : zh[id]) || zh[id];
+      titleEl.classList.add('notranslate');
+      titleEl.setAttribute('translate','no');
+      titleEl.style.whiteSpace = 'nowrap';
+      titleEl.style.overflow = 'hidden';
+      titleEl.style.textOverflow = 'ellipsis';
+    }
+    if (bar) bar.style.width = ((g / 5) * 100) + '%';
+
+    const i = ids.indexOf(id);
+    if (prev) {
+      prev.disabled = i <= 0;
+      prev.style.opacity = i <= 0 ? '.45' : '1';
+      prev.style.pointerEvents = i <= 0 ? 'none' : 'auto';
+    }
+    if (next) {
+      next.disabled = i >= ids.length - 1;
+      next.style.opacity = i >= ids.length - 1 ? '.45' : '1';
+      next.style.pointerEvents = i >= ids.length - 1 ? 'none' : 'auto';
+    }
+
+    document.querySelectorAll('[data-sec="sec5"] .tp-subpage-num').forEach(n => n.textContent = '1-5');
+    document.querySelectorAll('[data-sec="sec21"] .tp-subpage-num').forEach(n => n.textContent = '5-1');
+  }
+
+  function show(id){
+    if (!ids.includes(id)) return;
+    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (!target) return;
+    target.classList.add('active');
+    window.__currentSubSectionId = id;
+    window.currentSectionId = id;
+    try { history.replaceState(null,'','#'+id); } catch(e) {}
+    try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch(e) {}
+    try { if (typeof window.applyLanguage === 'function') window.applyLanguage(window.currentLang || (isEn() ? 'en' : 'zh')); } catch(e) {}
+    updateUI(id);
+    try { window.scrollTo({top:0, behavior:'smooth'}); } catch(e) { window.scrollTo(0,0); }
+  }
+
+  function go(d){
+    const i = ids.indexOf(current());
+    const ni = Math.max(0, Math.min(ids.length - 1, (i < 0 ? 0 : i) + d));
+    show(ids[ni]);
+  }
+
+  function bind(){
+    let prev = document.getElementById('prevSectionBtn');
+    let next = document.getElementById('nextSectionBtn');
+    if (prev && prev.dataset.subChapterNav !== '1') {
+      const n = prev.cloneNode(true);
+      n.dataset.subChapterNav = '1';
+      prev.parentNode.replaceChild(n, prev);
+      n.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); go(-1); }, true);
+    }
+    if (next && next.dataset.subChapterNav !== '1') {
+      const n = next.cloneNode(true);
+      n.dataset.subChapterNav = '1';
+      next.parentNode.replaceChild(n, next);
+      n.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); go(1); }, true);
+    }
+    updateUI(current());
+  }
+
+  if (typeof window.switchSection === 'function' && !window.switchSection.__subChapterNavPatch) {
+    const old = window.switchSection;
+    const patched = function(id){
+      if (ids.includes(id)) { show(id); return; }
+      const r = old.apply(this, arguments);
+      setTimeout(bind, 80);
+      return r;
+    };
+    patched.__subChapterNavPatch = true;
+    window.switchSection = patched;
+  }
+
+  function schedule(){
+    [0,80,250,600].forEach(ms => setTimeout(bind, ms));
+  }
+  document.addEventListener('DOMContentLoaded', schedule);
+  document.addEventListener('click', function(){ setTimeout(schedule, 50); }, true);
+  document.addEventListener('change', function(){ setTimeout(schedule, 50); }, true);
+  window.addEventListener('hashchange', function(){
+    const h = (location.hash || '').replace('#','');
+    if (ids.includes(h)) show(h);
+  });
+  ['changeSiteLanguage','applyLanguage','toggleLanguage','openMenu','toggleMenu'].forEach(function(fn){
+    const old = window[fn];
+    if (typeof old === 'function' && !old.__subChapterNavWrapped) {
+      const wrapped = function(){
+        const r = old.apply(this, arguments);
+        schedule();
+        return r;
+      };
+      wrapped.__subChapterNavWrapped = true;
+      window[fn] = wrapped;
+    }
+  });
+  schedule();
+})();
+</script>
+
 </body>
 </html>
 <!-- Final override injected by assistant: Section 5 dark mode readability -->
@@ -16595,7 +16721,7 @@ html.dark #sec5 .sec5-ai-card li * {
     angel: { zh: '1-1. 最新消息、2-4. 產業分析：五力架構、3-4. 核心能力與互補資產／關鍵夥伴、4-3. 地理擴張', en: '1-1. Two recent news, 2-4. Industry Analysis – Five Force Framework, 3-4. Core Competencies and Complementary Assets/Key Partners, 4-3. Geographical Expansion' },
     ann: { zh: '1-4. 組織架構與管理團隊、2-5. 產業生命週期與近期動態、3-3. 關鍵資源：有形與無形、4-3. 地理擴張', en: '1-4. Organizational Structure and Management Team, 2-5. Industry Lifecycle and recent news, 3-3. Key Resources – Tangible and Intangible, 4-3. Geographical Expansion' },
     tina: { zh: '1-5. 產品組合、3-5. 動態能力、SPA 生成', en: '1-5. Product Portfolios, 3-5. Dynamic Capabilities, SPA Generation' },
-    elaine: { zh: '1-3. 願景、使命與價值、2-1. PESTEL 總體環境分析、3-1. 核心事業／產品線、4-2. 水平／產品多角化', en: '1-3. Vision, Mission, and Values, 2-1. Macro Analysis – PESTEL, 3-1. Core Businesses/Product lines, 4-2. Horizontal/Product Diversification' },
+    elaine: { zh: '1-3. 願景、使命與價值、2-1. PESTEL 總體環境分析、3-1. 核心事業與產品線、4-2. 水平／產品多角化', en: '1-3. Vision, Mission, and Values, 2-1. Macro Analysis – PESTEL, 3-1. Core Businesses/Product lines, 4-2. Horizontal/Product Diversification' },
     winnie: { zh: '1-6. 2021–2025 財務績效、2-2. 產業價值鏈、3-2. 企業價值鏈關鍵活動、4-4. 未來挑戰與建議', en: '1-6. Financial Performance during 2021~2025, 2-2. Industry Value Chain, 3-2. Corporate Value Chain – Key Activities, 4-4. Future Challenges and Suggestions' }
   };
   const memberStudentInfo = {
@@ -17160,7 +17286,7 @@ html.dark #sec5 .sec5-ai-card li * {
     angel: { zh: '1-1. 最新消息、2-4. 產業分析：五力架構、3-4. 核心能力與互補資產／關鍵夥伴、4-3. 地理擴張', en: '1-1. Two recent news, 2-4. Industry Analysis – Five Force Framework, 3-4. Core Competencies and Complementary Assets/Key Partners, 4-3. Geographical Expansion' },
     ann: { zh: '1-4. 組織架構與管理團隊、2-5. 產業生命週期與近期動態、3-3. 關鍵資源：有形與無形、4-3. 地理擴張', en: '1-4. Organizational Structure and Management Team, 2-5. Industry Lifecycle and recent news, 3-3. Key Resources – Tangible and Intangible, 4-3. Geographical Expansion' },
     tina: { zh: '1-5. 產品組合、3-5. 動態能力、SPA 生成', en: '1-5. Product Portfolios, 3-5. Dynamic Capabilities, SPA Generation' },
-    elaine: { zh: '1-3. 願景、使命與價值、2-1. PESTEL 總體環境分析、3-1. 核心事業／產品線、4-2. 水平／產品多角化', en: '1-3. Vision, Mission, and Values, 2-1. Macro Analysis – PESTEL, 3-1. Core Businesses/Product lines, 4-2. Horizontal/Product Diversification' },
+    elaine: { zh: '1-3. 願景、使命與價值、2-1. PESTEL 總體環境分析、3-1. 核心事業與產品線、4-2. 水平／產品多角化', en: '1-3. Vision, Mission, and Values, 2-1. Macro Analysis – PESTEL, 3-1. Core Businesses/Product lines, 4-2. Horizontal/Product Diversification' },
     winnie: { zh: '1-6. 2021–2025 財務績效、2-2. 產業價值鏈、3-2. 企業價值鏈關鍵活動、4-4. 未來挑戰與建議', en: '1-6. Financial Performance during 2021~2025, 2-2. Industry Value Chain, 3-2. Corporate Value Chain – Key Activities, 4-4. Future Challenges and Suggestions' }
   };
 
@@ -18111,5 +18237,11 @@ body.show-zh .lang-zh{
     display:flex !important;
     z-index:2300 !important;
 }
+
+
+/* ===== FINAL PATCH: bottom stepper subchapter navigation ===== */
+#prevSectionBtn,#nextSectionBtn{pointer-events:auto !important;cursor:pointer !important;}
+#prevSectionBtn:disabled,#nextSectionBtn:disabled{cursor:not-allowed !important;}
+#stepperTitle,#stepperIndex{transition:none !important;}
 
 </style>
