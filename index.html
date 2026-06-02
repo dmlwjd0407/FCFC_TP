@@ -3167,7 +3167,52 @@ section.section-container > .section-header {
     left: -1rem !important;
   }
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .site-topbar {
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
+  .topbar-brand {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .brand-lockup-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .toolbar-group {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .section-page-wrap {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .grid,
+  .grid.md\:grid-cols-2,
+  .grid.md\:grid-cols-3,
+  .grid.lg\:grid-cols-2,
+  .grid.lg\:grid-cols-3,
+  .grid.lg\:grid-cols-5 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .data-table,
+  .product-table {
+    min-width: 720px;
+  }
+
+  .overflow-x-auto {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
@@ -4680,18 +4725,8 @@ section#sec19.section-container > .section-header {
 <div class="voice-control-wrap">
 <button class="flex items-center justify-center gap-2 px-4 h-10 rounded-full bg-white border border-slate-200 text-slate-800 font-bold text-xs shadow-md hover:bg-slate-50 transition-all dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-700" id="voiceBtn" onclick="toggleAudioGuide()" type="button">
 <i class="fas fa-volume-up text-blue-500 dark:text-blue-400" id="voiceIcon"></i>
-<span data-en="Audio Guide OFF" data-i18n="k0" data-i18n-mode="text" data-zh="語音導覽 OFF" id="voiceText">語音導覽 OFF</span>
+<span data-en="Audio Guide ON" data-i18n="k0" data-i18n-mode="text" data-zh="語音導覽 ON" id="voiceText">語音導覽 ON</span>
 </button>
-<div aria-hidden="true" class="voice-mini-controls" id="voiceMiniControls">
-<button aria-label="Pause or resume audio guide" class="voice-mini-btn pause" id="voicePauseBtn" onclick="toggleVoicePauseResume(event)" type="button">
-<i class="fa-solid fa-pause" id="voicePauseIcon"></i>
-<span id="voicePauseText">暫停</span>
-</button>
-<button aria-label="Stop audio guide" class="voice-mini-btn stop" id="voiceStopBtn" onclick="stopVoiceGuide(event)" type="button">
-<i class="fa-solid fa-stop" id="voiceStopIcon"></i>
-<span id="voiceStopText">停止</span>
-</button>
-</div>
 <button aria-label="Voice settings" class="voice-settings-btn" onclick="toggleVoicePanel()" type="button">
 <i class="fa-solid fa-sliders"></i>
 </button>
@@ -6819,7 +6854,7 @@ FCFC 必須遵守嚴格的環境保護法與安全規範。此外，貿易限制
 </div>
 </section>
 <section aria-label="Group members" class="people-footer-section">
-<div class="people-footer-heading" data-en="GROUP MEMBERS" data-people-ui="groupHeading" data-zh="GROUP MEMBERS｜組員">GROUP MEMBERS｜組員</div>
+<div class="people-footer-heading" data-en="G1 GROUP MEMBERS" data-people-ui="groupHeading" data-zh="第一組 組員">第一組 組員</div>
 <div class="people-chip-wrap">
 <button aria-haspopup="dialog" class="people-chip" data-person-id="kimberly" type="button"><span data-person-chip-name="">羅于欣</span></button>
 <button aria-haspopup="dialog" class="people-chip" data-person-id="angel" type="button"><span data-person-chip-name="">賈安琪</span></button>
@@ -6997,8 +7032,8 @@ const translations = {
         "en": "Group member: Kimberly Luo, Angel Jia, Ann Tsai, Tina Chang, Elaine Chang, Winnie Lin"
     },
     "k0": {
-        "zh": "語音導覽 OFF",
-        "en": "Audio Guide OFF"
+        "zh": "語音導覽 ON",
+        "en": "Audio Guide ON"
     },
     "k1": {
         "zh": "繁體中文",
@@ -7778,7 +7813,7 @@ const translations = {
     "nav_sec3": {"zh":"1-3. 願景、使命與價值","en":"1-3.Vision, Mission, and Values"},
     "nav_sec4": {"zh":"1-4. 組織架構與管理團隊","en":"1-4.Organizational Structure and Management Team"},
     "nav_sec5": {"zh":"1-5. 產品組合","en":"1-5.Product Portfolios"},
-    "nav_sec6": {"zh":"1-6. 2021–2025 財務績效","en":"1-6.Financial Performance during 2021~2025"},
+    "nav_sec6": {"zh":"1-6. 2021~2025 財務績效","en":"1-6.Financial Performance during 2021~2025"},
     "nav_sec7": {"zh":"2-1. PESTEL 總體環境分析","en":"2-1.Macro Analysis – PESTEL"},
     "nav_sec8": {"zh":"2-2. 產業價值鏈","en":"2-2.Industry Value Chain"},
     "nav_sec9": {"zh":"2-3. 競爭者與競爭動態","en":"2-3.Competitor Analysis and Competitive Dynamics"},
@@ -8326,8 +8361,8 @@ function updateVoiceText() {
         text.innerText = currentLang === 'zh' ? '語音導覽 播放中' : 'Audio Guide Playing';
     } else {
         text.innerText = currentLang === 'zh'
-            ? (text.getAttribute('data-zh') || '語音導覽 OFF')
-            : (text.getAttribute('data-en') || 'Audio Guide OFF');
+            ? (text.getAttribute('data-zh') || '語音導覽 ON')
+            : (text.getAttribute('data-en') || 'Audio Guide ON');
     }
 }
 
@@ -8558,7 +8593,7 @@ function stopAudioGuideForNavigation() {
 }
 
 function switchSection(sectionId, updateHash = true) {
-    const shouldReadNewSection = ('speechSynthesis' in window) && (isSpeaking || isPaused || window.speechSynthesis.speaking || window.speechSynthesis.paused);
+    const shouldReadNewSection = false;
     stopAudioGuideForNavigation();
     const sections = document.querySelectorAll('.content-section');
     const target = document.getElementById(sectionId);
@@ -9047,6 +9082,27 @@ setTimeout(forceSec5Contrast, 300);
         -webkit-text-fill-color: #94a3b8 !important;
     }
 }
+.footer-group-label {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+    font-size: 0.85rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: rgba(226, 232, 240, 0.9);
+    text-align: right;
+}
+
+.dark .footer-group-label {
+    color: rgba(226, 232, 240, 0.9);
+}
+
+@media (max-width: 768px) {
+    .footer-group-label {
+        text-align: left;
+        font-size: 0.78rem;
+    }
+}
 </style>
 <script id="final-evolution-features-script">
 (function(){
@@ -9323,17 +9379,17 @@ html, body { overscroll-behavior-x: contain; }
     id: ['gadis','ardi','google indonesia','indonesian','bahasa']
   };
   const UI_TEXT = {
-    zh: {auto:'自動選擇目前語言語音 / Auto', loading:'語音載入中，請稍候 / Loading voices...', off:'語音導覽 OFF', playing:'播放中 (點擊關閉)'},
-    'zh-CN': {auto:'自动选择当前语言语音 / Auto', loading:'语音载入中，请稍候 / Loading voices...', off:'语音导览 OFF', playing:'播放中 (点击关闭)'},
-    en: {auto:'Auto voice for current language', loading:'Loading voices...', off:'Audio Guide OFF', playing:'Playing (Click Stop)'},
-    ja: {auto:'現在の言語の音声を自動選択', loading:'音声を読み込み中...', off:'音声ガイド OFF', playing:'再生中（クリックで停止）'},
-    ko: {auto:'현재 언어 음성 자동 선택', loading:'음성 불러오는 중...', off:'음성 안내 OFF', playing:'재생 중 (클릭하여 정지)'},
-    es: {auto:'Voz automática del idioma actual', loading:'Cargando voces...', off:'Guía de audio OFF', playing:'Reproduciendo (clic para detener)'},
-    fr: {auto:'Voix automatique de la langue actuelle', loading:'Chargement des voix...', off:'Guide audio OFF', playing:'Lecture (cliquer pour arrêter)'},
-    de: {auto:'Automatische Stimme der aktuellen Sprache', loading:'Stimmen werden geladen...', off:'Audioführung AUS', playing:'Wiedergabe (Klick zum Stoppen)'},
-    th: {auto:'เลือกเสียงตามภาษาปัจจุบันอัตโนมัติ', loading:'กำลังโหลดเสียง...', off:'ปิดเสียงนำทาง', playing:'กำลังเล่น (คลิกเพื่อหยุด)'},
-    vi: {auto:'Tự động chọn giọng theo ngôn ngữ hiện tại', loading:'Đang tải giọng đọc...', off:'Tắt hướng dẫn giọng nói', playing:'Đang phát (bấm để dừng)'},
-    id: {auto:'Pilih suara otomatis sesuai bahasa saat ini', loading:'Memuat suara...', off:'Panduan audio OFF', playing:'Memutar (klik untuk berhenti)'}
+    zh: {auto:'自動選擇目前語言語音 / Auto', loading:'語音載入中，請稍候 / Loading voices...', off:'語音導覽 ON', playing:'播放中 (點擊關閉)'},
+    'zh-CN': {auto:'自动选择当前语言语音 / Auto', loading:'语音载入中，请稍候 / Loading voices...', off:'语音导览 ON', playing:'播放中 (点击关闭)'},
+    en: {auto:'Auto voice for current language', loading:'Loading voices...', off:'Audio Guide ON', playing:'Playing (Click Stop)'},
+    ja: {auto:'現在の言語の音声を自動選択', loading:'音声を読み込み中...', off:'音声ガイド ON', playing:'再生中（クリックで停止）'},
+    ko: {auto:'현재 언어 음성 자동 선택', loading:'음성 불러오는 중...', off:'음성 안내 ON', playing:'재생 중 (클릭하여 정지)'},
+    es: {auto:'Voz automática del idioma actual', loading:'Cargando voces...', off:'Guía de audio ON', playing:'Reproduciendo (clic para detener)'},
+    fr: {auto:'Voix automatique de la langue actuelle', loading:'Chargement des voix...', off:'Guide audio ON', playing:'Lecture (cliquer pour arrêter)'},
+    de: {auto:'Automatische Stimme der aktuellen Sprache', loading:'Stimmen werden geladen...', off:'Audioführung EIN', playing:'Wiedergabe (Klick zum Stoppen)'},
+    th: {auto:'เลือกเสียงตามภาษาปัจจุบันอัตโนมัติ', loading:'กำลังโหลดเสียง...', off:'เปิดการนำทางด้วยเสียง', playing:'กำลังเล่น (คลิกเพื่อหยุด)'},
+    vi: {auto:'Tự động chọn giọng theo ngôn ngữ hiện tại', loading:'Đang tải giọng đọc...', off:'Bật chế độ hướng dẫn bằng giọng nói.', playing:'Đang phát (bấm để dừng)'},
+    id: {auto:'Pilih suara otomatis sesuai bahasa saat ini', loading:'Memuat suara...', off:'Panduan audio ON', playing:'Memutar (klik untuk berhenti)'}
   };
   function activeLang(){
     const sel = document.getElementById('languageSelect');
@@ -9724,18 +9780,18 @@ html, body { top: 0 !important; }
     zh: 'zh-TW', 'zh-TW': 'zh-TW', 'zh-CN': 'zh-CN', en: 'en-US', ja: 'ja-JP', ko: 'ko-KR', es: 'es-ES', fr: 'fr-FR', de: 'de-DE', th: 'th-TH', vi: 'vi-VN', id: 'id-ID'
   };
   const UI_TEXT = {
-    zh: {off:'語音導覽 OFF', playing:'播放中（點擊關閉）'},
-    'zh-TW': {off:'語音導覽 OFF', playing:'播放中（點擊關閉）'},
-    'zh-CN': {off:'语音导览 OFF', playing:'播放中（点击关闭）'},
-    en: {off:'Audio Guide OFF', playing:'Playing (Click Stop)'},
-    ja: {off:'音声ガイド OFF', playing:'再生中（クリックで停止）'},
-    ko: {off:'음성 안내 OFF', playing:'재생 중 (클릭하여 정지)'},
-    es: {off:'Guía de audio OFF', playing:'Reproduciendo (clic para detener)'},
-    fr: {off:'Guide audio OFF', playing:'Lecture (cliquer pour arrêter)'},
-    de: {off:'Audioführung AUS', playing:'Wiedergabe (Klick zum Stoppen)'},
-    th: {off:'ปิดเสียงนำทาง', playing:'กำลังเล่น (คลิกเพื่อหยุด)'},
-    vi: {off:'Tắt hướng dẫn giọng nói', playing:'Đang phát (bấm để dừng)'},
-    id: {off:'Panduan audio OFF', playing:'Memutar (klik untuk berhenti)'}
+    zh: {off:'語音導覽 ON', playing:'播放中（點擊關閉）'},
+    'zh-TW': {off:'語音導覽 ON', playing:'播放中（點擊關閉）'},
+    'zh-CN': {off:'语音导览 ON', playing:'播放中（点击关闭）'},
+    en: {off:'Audio Guide ON', playing:'Playing (Click Stop)'},
+    ja: {off:'音声ガイド ON', playing:'再生中（クリックで停止）'},
+    ko: {off:'음성 안내 ON', playing:'재생 중 (클릭하여 정지)'},
+    es: {off:'Guía de audio ON', playing:'Reproduciendo (clic para detener)'},
+    fr: {off:'Guide audio ON', playing:'Lecture (cliquer pour arrêter)'},
+    de: {off:'Audioführung EIN', playing:'Wiedergabe (Klick zum Stoppen)'},
+    th: {off:'เปิดการนำทางด้วยเสียง', playing:'กำลังเล่น (คลิกเพื่อหยุด)'},
+    vi: {off:'Bật chế độ hướng dẫn bằng giọng nói.', playing:'Đang phát (bấm để dừng)'},
+    id: {off:'Panduan audio ON', playing:'Memutar (klik untuk berhenti)'}
   };
   const VOICE_HINTS = {
     zh: ['hanhan','yating','mei-jia','google 國語','google 中文','chinese','mandarin'],
@@ -10230,7 +10286,7 @@ body.voice-guide-active #voiceBtn #voiceIcon {
         if (text) {
             if (state === 'playing') text.textContent = (window.currentLang === 'en') ? 'Audio Guide Playing' : '語音導覽 播放中';
             else if (state === 'paused') text.textContent = (window.currentLang === 'en') ? 'Audio Guide Paused' : '語音導覽 暫停中';
-            else text.textContent = (window.currentLang === 'en') ? 'Audio Guide OFF' : '語音導覽 OFF';
+            else text.textContent = (window.currentLang === 'en') ? 'Audio Guide ON' : '語音導覽 ON';
         }
     }
 
@@ -10317,7 +10373,7 @@ body.voice-guide-active #voiceBtn #voiceIcon {
         window.speechSynthesis.speak(utterance);
     };
 
-    // 主語音導覽按鈕：OFF 時負責開始；播放/暫停時不再拿來停止，避免一按就關閉。
+    // 主語音導覽按鈕：ON 時負責開始；播放/暫停時不再拿來停止，避免一按就關閉。
     window.toggleAudioGuide = function() {
         if (!hasSpeech()) return;
         if (voiceActiveNow()) {
@@ -10449,6 +10505,8 @@ body.voice-guide-active #voiceBtn #voiceIcon {
   min-height: 4.1rem;
   max-height: 7.25rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   font-size: 0.86rem;
   line-height: 1.55;
   font-weight: 650;
@@ -10569,35 +10627,124 @@ body.voice-guide-active #voiceBtn #voiceIcon {
     const h3 = sec.querySelector('h3');
     return cleanText((h2 || h3 || sec).innerText).slice(0, 80) || t('目前章節', 'Current section');
   }
-  function buildChunks(){
-    const sec = activeSection();
-    if (!sec) return [];
-    const selectors = 'h2, h3, h4, p, li, td, th, .sec12-points span, .sec12-points b';
-    const raw = [];
-    sec.querySelectorAll(selectors).forEach(el => {
-      if (el.closest('button, nav, footer, .voice-guide-panel, #sectionStepper, #wowDock, #wowSearchPanel, #wowGuidePanel, #wowTimerPanel')) return;
-      const txt = cleanText(el.innerText);
-      if (!txt || txt.length < 8) return;
-      if (/^(\d{2}\s*\/\s*\d{2}|Group members|組員|PROF|Professor)$/i.test(txt)) return;
-      raw.push(txt);
-    });
-    const unique = [];
-    raw.forEach(txt => {
-      if (!unique.some(x => x === txt || x.includes(txt) || txt.includes(x))) unique.push(txt);
-    });
-    const chunks = [];
-    let buf = '';
-    unique.forEach(txt => {
-      const next = buf ? (buf + '。 ' + txt) : txt;
-      if (next.length > 230 && buf) { chunks.push(buf); buf = txt; }
-      else { buf = next; }
-    });
-    if (buf) chunks.push(buf);
-    if (!chunks.length) {
-      const fallback = cleanText(sec.innerText);
-      if (fallback) chunks.push(fallback.slice(0, 320));
+  function isReallyVisible(el) {
+    if (!el || el.nodeType !== 1) return false;
+
+    /*
+      這些區塊即使在 HTML 裡，也不要被語音朗讀。
+      包含語音面板、搜尋面板、右側工具、頁尾、按鈕、隱藏元素等。
+    */
+    if (el.closest(
+        'script, style, button, nav, footer, input, select, textarea,' +
+        '.voice-guide-panel, #audioGuidePanel,' +
+        '.voice-mini-controls, #voiceMiniControls,' +
+        '#sectionStepper, #wowDock, #wowSearchPanel, #wowGuidePanel, #wowTimerPanel,' +
+        '.drawer-menu, .drawer-overlay,' +
+        '[aria-hidden="true"], [hidden], .hidden'
+    )) {
+        return false;
     }
-    return chunks.slice(0, 12);
+
+    const style = window.getComputedStyle(el);
+
+    /*
+      重點：只朗讀真的有顯示的元素。
+      display:none、visibility:hidden、opacity:0 都不要唸。
+    */
+    if (
+        style.display === 'none' ||
+        style.visibility === 'hidden' ||
+        Number(style.opacity) === 0
+    ) {
+        return false;
+    }
+
+    const rect = el.getBoundingClientRect();
+
+    /*
+      沒有實際寬高，通常代表沒顯示在畫面上。
+    */
+    if (rect.width === 0 || rect.height === 0) {
+        return false;
+    }
+
+    return true;
+}
+
+  function buildChunks() {
+      const sec = activeSection();
+      if (!sec) return [];
+
+      const selectors = [
+          'h2',
+          'h3',
+          'h4',
+          'p',
+          'li',
+          'td',
+          'th',
+          '.sec12-points span',
+          '.sec12-points b'
+      ].join(',');
+
+      const raw = [];
+      const seen = new Set();
+
+      sec.querySelectorAll(selectors).forEach(function (el) {
+          if (!isReallyVisible(el)) return;
+
+          let txt = cleanText(el.innerText || el.textContent || '');
+
+          if (!txt) return;
+
+          /*
+            過濾太短、功能按鈕、頁碼、語音面板文字、舊版控制文字。
+          */
+          if (txt.length < 2) return;
+  
+          if (/^(ON|OFF|播放中|暫停中|停止|繼續|上一段|下一段|Previous|Pause|Resume|Stop|Speed)$/i.test(txt)) return;
+
+          if (/^(語音導覽|Audio Guide|Press Audio Guide|按下語音導覽)/i.test(txt)) return;
+
+          if (/^(\d+\s*\/\s*\d+|Group members|組員|PROF|Professor)$/i.test(txt)) return;
+
+          /*
+            避免重複朗讀同一句。
+          */
+          if (seen.has(txt)) return;
+          seen.add(txt);
+
+          raw.push(txt);
+      });
+
+      const unique = [];
+
+      raw.forEach(function (txt) {
+          /*
+            如果短句已經包含在長句裡，就不要重複唸。
+          */
+          if (!unique.some(function (x) {
+              return x === txt || x.includes(txt) || txt.includes(x);
+          })) {
+              unique.push(txt);
+          }
+      });
+
+      const chunks = [];
+      let buffer = '';
+
+      unique.forEach(function (txt) {
+          if ((buffer + txt).length > 240) {
+              if (buffer) chunks.push(buffer);
+              buffer = txt;
+          } else {
+              buffer += buffer ? '。 ' + txt : txt;
+          }
+      });
+
+      if (buffer) chunks.push(buffer);
+
+      return chunks.length ? chunks : [t('目前章節沒有可朗讀文字。', 'No readable text in this section.')];
   }
 
   function setMainVoiceButton(mode){
@@ -10615,7 +10762,7 @@ body.voice-guide-active #voiceBtn #voiceIcon {
       if (icon) icon.className = 'fas fa-volume-high text-white dark:text-white';
     } else {
       btn.classList.remove('is-speaking');
-      text.innerText = t(text.getAttribute('data-zh') || '語音導覽 OFF', text.getAttribute('data-en') || 'Audio Guide OFF');
+      text.innerText = t(text.getAttribute('data-zh') || '語音導覽 ON', text.getAttribute('data-en') || 'Audio Guide ON');
       if (icon) icon.className = 'fas fa-volume-up text-blue-500 dark:text-blue-400';
     }
   }
@@ -11365,7 +11512,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
       // Numeric ranges: 1980-90年代 / 1980–90年代 / 1980—90年代 -> 1980到90年代.
       // Also handles 2021~2025 -> 2021至2025, but hyphen specifically becomes「之」.
       // Numeric ranges remain「到」, e.g., 1980-90s → 1980到90年代.
-      t = t.replace(/(\d)\s*[-–—]\s*(\d)/g, '$1到$2');
+      t = fixSpeechChapterNumber(t);
       // Product / plant / model codes read「之」, e.g., PTA-1、SM-1、AR-01.
       t = t.replace(/([A-Za-z]+)\s*[-–—]\s*(\d+)/g, '$1之$2');
       t = t.replace(/(\d)\s*[~～]\s*(\d)/g, '$1至$2');
@@ -11524,34 +11671,6 @@ html:not(.show-en) .section-container > .section-header .lang-en {
   };
 })();
 </script>
-<script id="FINAL-voice-code-hyphen-read-zhi-numeric-range-read-dao">
-/* Voice correction:
-   - Number ranges use「到」: 1980-90s → 1980到90年代
-   - Product/plant/model codes use「之」: PTA-1、SM-1、AR-01 → PTA之1、SM之1、AR之01 */
-(function(){
-  function isEnglishMode(){
-    const lang = String(window.currentLang || document.documentElement.lang || '').toLowerCase();
-    return lang.startsWith('en') ||
-      document.body.classList.contains('show-en') ||
-      document.documentElement.classList.contains('show-en');
-  }
-
-  const oldGetCurrentSectionVoiceText = window.getCurrentSectionVoiceText;
-  window.getCurrentSectionVoiceText = function(){
-    let text = typeof oldGetCurrentSectionVoiceText === 'function' ? oldGetCurrentSectionVoiceText() : '';
-    if (!isEnglishMode()) {
-      text = String(text || '')
-        // First protect code-style letter-number hyphens as「之」.
-        .replace(/([A-Za-z]+)\s*[-–—]\s*(\d+)/g, '$1之$2')
-        // Then numeric ranges are「到」.
-        .replace(/(\d)\s*[-–—]\s*(\d)/g, '$1到$2')
-        // If an older patch already changed numeric ranges to「之」, convert only digit之digit back to「到」.
-        .replace(/(\d)之(\d)/g, '$1到$2');
-    }
-    return text;
-  };
-})();
-</script>
 <script id="FINAL-voice-all-languages-start-from-title">
 /* Final voice guide patch:
    No matter which language is selected, narration starts from the black chapter title (h2),
@@ -11620,8 +11739,26 @@ html:not(.show-en) .section-container > .section-header .lang-en {
       // Product / plant / model codes read「之」, e.g., PTA-1、SM-1、AR-01.
       t = t.replace(/([A-Za-z]+)\s*[-–—]\s*(\d+)/g, '$1之$2');
 
-      // Numeric ranges read「到」, e.g., 1980-90s、2021-2025.
-      t = t.replace(/(\d)\s*[-–—]\s*(\d)/g, '$1到$2');
+      // Numeric ranges read「到」, e.g., 1980-90s、2021~2025.
+      // 小章節編號 1-1、2-5、5-3 要唸「一之一、二之五、五之三」
+      const zhNumMap = {
+         '1': '一',
+         '2': '二',
+         '3': '三',
+          '4': '四',
+          '5': '五',
+          '6': '六',
+          '7': '七',
+          '8': '八',
+          '9': '九'
+        };
+
+        t = t.replace(/(^|[，。！？\s])([1-5])\s*[-–—到之]\s*([1-9])(?=\s*[.．、，])/g, function(match, prefix, a, b) {
+            return prefix + zhNumMap[a] + '之' + zhNumMap[b];
+        });
+
+      // 年份範圍才唸「到」，例如 2021~2025
+      t = t.replace(/(\d{3,4})\s*[-–—]\s*(\d{2,4})/g, '$1到$2');
       t = t.replace(/(\d)\s*[~～]\s*(\d)/g, '$1到$2');
 
       t = t.replace(/→/g, '到');
@@ -11962,7 +12099,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
       t = t.replace(/([A-Za-z]+)\s*[-–—]\s*(\d+)/g, '$1之$2');
 
       // Numeric ranges read「到」.
-      t = t.replace(/(\d)\s*[-–—]\s*(\d)/g, '$1到$2');
+      t = fixSpeechChapterNumber(t);
       t = t.replace(/(\d)\s*[~～]\s*(\d)/g, '$1到$2');
 
       t = t.replace(/→/g, '到');
@@ -12258,7 +12395,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
     if (text) {
       if (mode === 'playing') text.textContent = t('語音導覽 播放中', 'Audio Guide Playing');
       else if (mode === 'paused') text.textContent = t('語音導覽 暫停中', 'Audio Guide Paused');
-      else text.textContent = t('語音導覽 OFF', 'Audio Guide OFF');
+      else text.textContent = t('語音導覽 ON', 'Audio Guide ON');
     }
   }
 
@@ -12463,7 +12600,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
 .tp-group-subtitle { display: block; font-size: 0.75rem; line-height: 1.55; opacity: 0.62; font-weight: 700; }
 .dark .tp-group-subtitle { opacity: 0.82; color: #cbd5e1; }
 .content-section.active + .content-section.active { margin-top: 5.5rem; padding-top: 1.5rem; border-top: 1px dashed rgba(148,163,184,0.35); }
-.tp-group-overview {
+.tp-group-overview no-voice {
   margin: 0 0 2.25rem 0;
   padding: 1.35rem 1.5rem;
   border-radius: 1.5rem;
@@ -12471,16 +12608,16 @@ html:not(.show-en) .section-container > .section-header .lang-en {
   background: linear-gradient(135deg, rgba(37,99,235,0.10), rgba(6,182,212,0.08));
   box-shadow: 0 16px 36px rgba(15,23,42,0.07);
 }
-.dark .tp-group-overview { background: rgba(30,41,59,0.88); color: #e5e7eb; border-color: rgba(148,163,184,0.24); }
-.tp-group-overview-title { font-size: 1.25rem; font-weight: 900; line-height: 1.35; }
-.tp-group-overview-sub { margin-top: .45rem; font-size: .92rem; line-height: 1.8; opacity: .78; font-weight: 700; }
-.tp-group-overview-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .95rem; }
-.tp-group-overview-tags span { padding: .42rem .7rem; border-radius: 9999px; background: rgba(255,255,255,.78); border: 1px solid rgba(148,163,184,.22); font-size: .76rem; font-weight: 900; }
-.dark .tp-group-overview-tags span { background: rgba(15,23,42,.55); border-color: rgba(148,163,184,.22); }
+.dark .tp-group-overview no-voice { background: rgba(30,41,59,0.88); color: #e5e7eb; border-color: rgba(148,163,184,0.24); }
+.tp-group-overview no-voice-title { font-size: 1.25rem; font-weight: 900; line-height: 1.35; }
+.tp-group-overview no-voice-sub { margin-top: .45rem; font-size: .92rem; line-height: 1.8; opacity: .78; font-weight: 700; }
+.tp-group-overview no-voice-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .95rem; }
+.tp-group-overview no-voice-tags span { padding: .42rem .7rem; border-radius: 9999px; background: rgba(255,255,255,.78); border: 1px solid rgba(148,163,184,.22); font-size: .76rem; font-weight: 900; }
+.dark .tp-group-overview no-voice-tags span { background: rgba(15,23,42,.55); border-color: rgba(148,163,184,.22); }
 @media (max-width: 768px) {
-  .tp-group-overview { padding: 1rem; border-radius: 1.25rem; }
-  .tp-group-overview-title { font-size: 1.05rem; }
-  .tp-group-overview-sub { font-size: .84rem; }
+  .tp-group-overview no-voice { padding: 1rem; border-radius: 1.25rem; }
+  .tp-group-overview no-voice-title { font-size: 1.05rem; }
+  .tp-group-overview no-voice-sub { font-size: .84rem; }
   .content-section.active + .content-section.active { margin-top: 3rem; padding-top: 1rem; }
 }
 </style>
@@ -12491,8 +12628,8 @@ html:not(.show-en) .section-container > .section-header .lang-en {
 
   const GROUPS = [
     { id:'tp0', zh:'1｜公司概況與財務績效', en:'1｜Company Overview & Finance', sections:['sec1','sec2','sec3','sec4','sec5','sec6'],
-      zhSub:'涵蓋：最新消息、發展沿革、願景使命與價值、組織架構與管理團隊、產品組合，以及 2021–2025 財務績效。',
-      enSub:'Covers: two recent news, company history, vision, mission and values, organizational structure and management team, product portfolios, and financial performance during 2021–2025.',
+      zhSub:'涵蓋：最新消息、發展沿革、願景使命與價值、組織架構與管理團隊、產品組合，以及 2021~2025 財務績效。',
+      enSub:'Covers: two recent news, company history, vision, mission and values, organizational structure and management team, product portfolios, and financial performance during 2021~2025.',
       zhTags:['1. 最新消息','2. 發展沿革','3. 願景使命與價值','4. 組織架構與管理團隊','5. 產品組合','6. 財務績效'],
       enTags:['1. Two recent news','2. Company history','3. Vision, Mission, and Values','4. Organizational Structure and Management Team','5. Product Portfolios','6. Financial Performance during 2021~2025'] },
     { id:'tp1', zh:'2｜外部分析', en:'2｜External Analysis', sections:['sec7','sec8','sec9','sec10','sec11'],
@@ -12549,16 +12686,16 @@ html:not(.show-en) .section-container > .section-header .lang-en {
     GROUPS.forEach(g => {
       const first = document.getElementById(g.sections[0]);
       if (!first) return;
-      let overview = first.querySelector(':scope > .tp-group-overview');
+      let overview = first.querySelector(':scope > .tp-group-overview no-voice');
       if (!overview) {
         overview = document.createElement('div');
-        overview.className = 'tp-group-overview';
+        overview.className = 'tp-group-overview no-voice';
         first.insertBefore(overview, first.firstChild);
       }
       overview.innerHTML = `
-        <div class="tp-group-overview-title"><span class="lang-zh">${g.zh}</span><span class="lang-en">${g.en}</span></div>
-        <div class="tp-group-overview-sub"><span class="lang-zh">${g.zhSub}</span><span class="lang-en">${g.enSub}</span></div>
-        <div class="tp-group-overview-tags">
+        <div class="tp-group-overview no-voice-title"><span class="lang-zh">${g.zh}</span><span class="lang-en">${g.en}</span></div>
+        <div class="tp-group-overview no-voice-sub"><span class="lang-zh">${g.zhSub}</span><span class="lang-en">${g.enSub}</span></div>
+        <div class="tp-group-overview no-voice-tags">
           ${(isEnglish()?g.enTags:g.zhTags).map(t => `<span>${t}</span>`).join('')}
         </div>`;
     });
@@ -12738,7 +12875,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
 .tp-subpage-tab.active { background:rgba(37,99,235,.12); border-color:rgba(37,99,235,.42); color:#2563eb; }
 .dark .tp-subpage-tab:hover,
 .dark .tp-subpage-tab.active { color:#93c5fd; }
-.tp-group-overview-tags { display:none !important; }
+.tp-group-overview no-voice-tags { display:none !important; }
 @media (max-width: 768px){
   .tp-accordion-header { padding:.95rem .9rem .85rem; }
   .tp-accordion-title { font-size: .98rem; }
@@ -12760,7 +12897,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
       ['sec3','1-3','Vision, Mission, and Values','願景、使命與價值'],
       ['sec4','1-4','Organizational Structure and Management Team','組織架構與管理團隊'],
       ['sec5','1-5','Product Portfolios','產品組合'],
-      ['sec6','1-6','Financial Performance during 2021~2025','2021–2025 財務績效']
+      ['sec6','1-6','Financial Performance during 2021~2025','2021~2025 財務績效']
     ], zhSub:'涵蓋：最新消息、發展沿革、願景使命與價值、組織架構與管理團隊、產品組合、財務績效。', enSub:'Covers: news, history, values, organization, products, and financial performance.' },
     { id:'tp1', zh:'2｜外部分析', en:'2｜External Analysis', sections:[
       ['sec7','2-1','Macro Analysis – PESTEL','PESTEL 總體環境分析'],
@@ -12849,7 +12986,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
     const group = GROUPS.find(g => g.id === groupId) || GROUPS[0];
     const firstSec = group.sections[0][0];
     const firstEl = document.getElementById(firstSec);
-    const overview = firstEl && firstEl.querySelector(':scope > .tp-group-overview');
+    const overview = firstEl && firstEl.querySelector(':scope > .tp-group-overview no-voice');
     if (!overview) return;
     let tabs = overview.querySelector('.tp-subpage-tabs');
     if (!tabs) {
@@ -12985,7 +13122,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
   if (window.__trueTpSubpageModeApplied) return;
   window.__trueTpSubpageModeApplied = true;
   const GROUPS = [
-    { id:'tp0', sections:[['sec1','1-1','Two recent news','最新消息'],['sec2','1-2','Company history','發展沿革'],['sec3','1-3','Vision, Mission, and Values','願景、使命與價值'],['sec4','1-4','Organizational Structure and Management Team','組織架構與管理團隊'],['sec5','1-5','Product Portfolios','產品組合'],['sec6','1-6','Financial Performance during 2021~2025','2021–2025 財務績效']]},
+    { id:'tp0', sections:[['sec1','1-1','Two recent news','最新消息'],['sec2','1-2','Company history','發展沿革'],['sec3','1-3','Vision, Mission, and Values','願景、使命與價值'],['sec4','1-4','Organizational Structure and Management Team','組織架構與管理團隊'],['sec5','1-5','Product Portfolios','產品組合'],['sec6','1-6','Financial Performance during 2021~2025','2021~2025 財務績效']]},
     { id:'tp1', sections:[['sec7','2-1','Macro Analysis – PESTEL','PESTEL 總體環境分析'],['sec8','2-2','Industry Value Chain','產業價值鏈'],['sec9','2-3','Competitor Analysis and Competitive Dynamics','競爭者與競爭動態'],['sec10','2-4','Industry Analysis – Five Force Framework','產業分析：五力架構'],['sec11','2-5','Industry Lifecycle and recent news','產業生命週期與近期動態']]},
     { id:'tp2', sections:[['sec12','3-1','Core Businesses/Product lines','核心事業與產品線'],['sec13','3-2','Corporate Value Chain – Key Activities','企業價值鏈關鍵活動'],['sec14','3-3','Key Resources – Tangible and Intangible','關鍵資源：有形與無形'],['sec15','3-4','Core Competencies and Complementary Assets/Key Partners','核心能力、互補資產與關鍵夥伴'],['sec16','3-5','Dynamic Capabilities','動態能力']]},
     { id:'tp3', sections:[['sec17','4-1','Vertical Integration','垂直整合'],['sec18','4-2','Horizontal/Product Diversification','水平／產品多角化'],['sec19','4-3','Geographical Expansion','地理擴張'],['sec20','4-4','Future Challenges and Suggestions','未來挑戰與建議']]},
@@ -13378,7 +13515,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
     var lang = String((window.currentLang || document.documentElement.lang || 'zh')).toLowerCase();
     if (!(lang.startsWith('zh'))) return t;
     // Only change chapter/subchapter numbering such as 1-1., 1-2、2-3 etc.
-    // Keep year ranges like 2021-2025 untouched.
+    // Keep year ranges like 2021~2025 untouched.
     t = t.replace(/(^|[\s\n\r，。；;：:、])([1-4])\s*[-–—]\s*(\d{1,2})(?=\s*[\.．、，,\s]|$)/g, function(_, lead, a, b){
       return lead + a + '之' + b;
     });
@@ -14198,7 +14335,7 @@ html.show-en .section-header {
     sec3: {num: '1-3', title: `願景、使命與價值`},
     sec4: {num: '1-4', title: `組織架構與管理團隊`},
     sec5: {num: '1-5', title: `產品組合`},
-    sec6: {num: '1-6', title: `2021–2025 財務績效`},
+    sec6: {num: '1-6', title: `2021~2025 財務績效`},
     sec7: {num: '2-1', title: `PESTEL 總體環境分析`},
     sec8: {num: '2-2', title: `產業價值鏈`},
     sec9: {num: '2-3', title: `競爭者與競爭動態`},
@@ -14757,7 +14894,7 @@ html.show-en .section-header {
       ['sec3','1-3','願景、使命與價值','Vision, Mission & Values'],
       ['sec4','1-4','組織架構與管理團隊','Organization & Management Team'],
       ['sec5','1-5','產品組合','Product Portfolio'],
-      ['sec6','1-6','2021–2025 財務績效','2021–2025 Financial Performance']
+      ['sec6','1-6','2021~2025 財務績效','2021~2025 Financial Performance']
     ]},
     {id:'tp1', no:'2', zh:'外部分析', en:'External Analysis', items:[
       ['sec7','2-1','PESTEL 總體環境分析','PESTEL Analysis'],
@@ -15368,7 +15505,7 @@ html.show-en .section-header {
     sec3:'1-3. 願景、使命與價值',
     sec4:'1-4. 組織架構與管理團隊',
     sec5:'1-5. 產品組合',
-    sec6:'1-6. 2021–2025 財務績效',
+    sec6:'1-6. 2021~2025 財務績效',
     sec7:'2-1. PESTEL 總體環境分析',
     sec8:'2-2. 產業價值鏈',
     sec9:'2-3. 競爭者與競爭動態',
@@ -16008,7 +16145,7 @@ html.show-en .section-header {
   const ids = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8','sec9','sec10','sec11','sec12','sec13','sec14','sec15','sec16','sec17','sec18','sec19','sec20','sec21','sec22','sec23'];
   const group = {sec1:1,sec2:1,sec3:1,sec4:1,sec5:1,sec6:1,sec7:2,sec8:2,sec9:2,sec10:2,sec11:2,sec12:3,sec13:3,sec14:3,sec15:3,sec16:3,sec17:4,sec18:4,sec19:4,sec20:4,sec21:5,sec22:5,sec23:5};
   const zh = {
-    sec1:'1-1. 最新消息', sec2:'1-2. 發展沿革', sec3:'1-3. 願景、使命與價值', sec4:'1-4. 組織架構與管理團隊', sec5:'1-5. 產品組合', sec6:'1-6. 2021–2025 財務績效',
+    sec1:'1-1. 最新消息', sec2:'1-2. 發展沿革', sec3:'1-3. 願景、使命與價值', sec4:'1-4. 組織架構與管理團隊', sec5:'1-5. 產品組合', sec6:'1-6. 2021~2025 財務績效',
     sec7:'2-1. PESTEL 總體環境分析', sec8:'2-2. 產業價值鏈', sec9:'2-3. 競爭者與競爭動態', sec10:'2-4. 產業分析：五力架構', sec11:'2-5. 產業生命週期與近期動態',
     sec12:'3-1. 核心事業與產品線', sec13:'3-2. 企業價值鏈關鍵活動', sec14:'3-3. 關鍵資源：有形與無形', sec15:'3-4. 核心能力、互補資產與關鍵夥伴', sec16:'3-5. 動態能力',
     sec17:'4-1. 垂直整合', sec18:'4-2. 水平／產品多角化', sec19:'4-3. 地理擴張', sec20:'4-4. 未來挑戰與建議',
@@ -16164,7 +16301,1163 @@ html.show-en .section-header {
   schedule();
 })();
 </script>
+<style id="FINAL-HIDE-OLD-VOICE-MINI-CONTROLS">
+/* 強制隱藏上方舊版「繼續 / 停止」按鈕 */
+#voiceMiniControls,
+.voice-mini-controls,
+.voice-control-wrap.voice-active .voice-mini-controls,
+body.voice-guide-active .voice-mini-controls {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+</style>
+<script id="FINAL-VOICE-ON-STABLE-FIX">
+(function () {
+    if (window.__finalVoiceOnStableFix) return;
+    window.__finalVoiceOnStableFix = true;
 
+    let voiceRunToken = 0;
+    let voiceState = {
+        chunks: [],
+        index: 0,
+        speaking: false,
+        paused: false,
+        utterance: null,
+        sectionId: null
+    };
+
+    function getLang() {
+        const select = document.getElementById('languageSelect');
+        const raw = String(window.currentLang || (select && select.value) || document.documentElement.lang || 'zh').toLowerCase();
+
+        if (raw.startsWith('en')) return 'en';
+        if (raw.startsWith('zh-cn')) return 'zh-CN';
+        return 'zh';
+    }
+
+    function getSpeechLang() {
+        const lang = getLang();
+        if (lang === 'en') return 'en-US';
+        if (lang === 'zh-CN') return 'zh-CN';
+        return 'zh-TW';
+    }
+
+    function getIdleText() {
+        return getLang() === 'en' ? 'Audio Guide ON' : '語音導覽 ON';
+    }
+
+    function getPlayingText() {
+        return getLang() === 'en' ? 'Audio Guide Playing' : '語音導覽 播放中';
+    }
+
+    function getPausedText() {
+        return getLang() === 'en' ? 'Audio Guide Paused' : '語音導覽 暫停中';
+    }
+
+    function updateVoiceButton(status) {
+        const btn = document.getElementById('voiceBtn');
+        const icon = document.getElementById('voiceIcon');
+        const text = document.getElementById('voiceText');
+
+        if (!text) return;
+
+        text.dataset.zh = '語音導覽 ON';
+        text.dataset.en = 'Audio Guide ON';
+
+        if (status === 'playing') {
+            text.textContent = getPlayingText();
+            if (btn) btn.classList.add('is-speaking');
+            if (icon) icon.className = 'fas fa-pause text-white';
+        } else if (status === 'paused') {
+            text.textContent = getPausedText();
+            if (btn) btn.classList.remove('is-speaking');
+            if (icon) icon.className = 'fas fa-play text-blue-500 dark:text-blue-400';
+        } else {
+            text.textContent = getIdleText();
+            if (btn) btn.classList.remove('is-speaking');
+            if (icon) icon.className = 'fas fa-volume-up text-blue-500 dark:text-blue-400';
+        }
+    }
+
+    function hideOldMiniControls() {
+        const mini = document.getElementById('voiceMiniControls');
+        if (mini) {
+            mini.setAttribute('aria-hidden', 'true');
+            mini.style.display = 'none';
+            mini.style.visibility = 'hidden';
+            mini.style.opacity = '0';
+            mini.style.pointerEvents = 'none';
+        }
+
+        document.body.classList.remove('voice-guide-active');
+
+        const wrap = document.querySelector('.voice-control-wrap');
+        if (wrap) wrap.classList.remove('voice-active');
+    }
+
+    function setPanelVisible(show) {
+        const panel = document.getElementById('audioGuidePanel');
+        if (!panel) return;
+
+        panel.classList.toggle('show', show);
+        panel.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+
+    function updatePanelText(text) {
+        const box = document.getElementById('audioGuideTextBox');
+        if (box) box.textContent = text || '';
+
+        const progress = document.getElementById('audioGuideProgress');
+        if (progress) {
+            const total = voiceState.chunks.length || 0;
+            const now = total ? Math.min(voiceState.index + 1, total) : 0;
+            progress.textContent = now + ' / ' + total;
+        }
+
+        const title = document.getElementById('audioGuideSectionTitle');
+        const activeTitle = document.querySelector('.content-section.active h2');
+        if (title && activeTitle) {
+            title.textContent = activeTitle.innerText.replace(/\s+/g, ' ').trim();
+        }
+    }
+
+    function cancelSpeech() {
+        if (!('speechSynthesis' in window)) return;
+
+        try {
+            window.speechSynthesis.resume();
+        } catch (e) {}
+
+        try {
+            window.speechSynthesis.cancel();
+        } catch (e) {}
+    }
+
+    function resetVoiceToON(closePanel) {
+        voiceRunToken++;
+        cancelSpeech();
+
+        voiceState.speaking = false;
+        voiceState.paused = false;
+        voiceState.utterance = null;
+        voiceState.sectionId = null;
+        voiceState.chunks = [];
+        voiceState.index = 0;
+
+        window.isSpeaking = false;
+        window.isPaused = false;
+        window.currentUtterance = null;
+        window.currentVoiceSectionId = null;
+        window.voiceIsResetForSection = true;
+
+        updateVoiceButton('idle');
+        hideOldMiniControls();
+
+        if (closePanel) {
+            setPanelVisible(false);
+        }
+
+        const playPauseIcon = document.getElementById('audioGuidePlayPauseIcon');
+        if (playPauseIcon) playPauseIcon.className = 'fas fa-play';
+
+        const progress = document.getElementById('audioGuideProgress');
+        if (progress) progress.textContent = '0 / 0';
+    }
+
+    function getActiveSectionId() {
+        const active = document.querySelector('.content-section.active');
+        return active ? active.id : 'main';
+    }
+
+    function getCurrentSectionText() {
+        const active = document.querySelector('.content-section.active') || document.querySelector('main') || document.body;
+        const clone = active.cloneNode(true);
+
+        clone.querySelectorAll(
+            'script, style, button, input, select, textarea, .section-header, .voice-guide-panel, .voice-mini-controls, .drawer-menu, #wowSearchPanel, #wowDock, [aria-hidden="true"]'
+        ).forEach(el => el.remove());
+
+        return String(clone.innerText || '')
+            .replace(/語音導覽\s*(ON|OFF|播放中|暫停中)?/g, '')
+            .replace(/Audio Guide\s*(ON|OFF|Playing|Paused)?/gi, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function splitTextToChunks(text) {
+        const sentences = String(text || '')
+            .split(/(?<=[。！？.!?])\s*/)
+            .map(s => s.trim())
+            .filter(Boolean);
+
+        const chunks = [];
+        let buffer = '';
+
+        sentences.forEach(sentence => {
+            if ((buffer + sentence).length > 180) {
+                if (buffer) chunks.push(buffer);
+                buffer = sentence;
+            } else {
+                buffer += (buffer ? ' ' : '') + sentence;
+            }
+        });
+
+        if (buffer) chunks.push(buffer);
+
+        if (!chunks.length && text) {
+            for (let i = 0; i < text.length; i += 160) {
+                chunks.push(text.slice(i, i + 160));
+            }
+        }
+
+        return chunks;
+    }
+
+    function speakCurrentChunk(token) {
+        if (token !== voiceRunToken) return;
+        if (!voiceState.chunks.length) return;
+
+        if (voiceState.index >= voiceState.chunks.length) {
+            resetVoiceToON(false);
+            return;
+        }
+
+        const text = voiceState.chunks[voiceState.index];
+        updatePanelText(text);
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        voiceState.utterance = utterance;
+
+        utterance.lang = getSpeechLang();
+
+        if (typeof pickPreferredVoice === 'function') {
+            const preferred = pickPreferredVoice(utterance.lang);
+            if (preferred) utterance.voice = preferred;
+        }
+
+        const speedBtn = document.getElementById('audioGuideSpeedBtn');
+        const rate = speedBtn ? parseFloat(String(speedBtn.textContent || '1x').replace('x', '')) : 1;
+        utterance.rate = Number.isFinite(rate) ? rate : 1;
+
+        utterance.onend = function () {
+            if (token !== voiceRunToken) return;
+            if (voiceState.paused) return;
+
+            voiceState.index++;
+            speakCurrentChunk(token);
+        };
+
+        utterance.onerror = function () {
+            if (token !== voiceRunToken) return;
+            resetVoiceToON(false);
+        };
+
+        window.speechSynthesis.speak(utterance);
+    }
+
+    function startVoiceFromCurrentSection() {
+        if (!('speechSynthesis' in window)) {
+            alert('此瀏覽器不支援語音朗讀功能');
+            return;
+        }
+
+        const text = getCurrentSectionText();
+
+        if (!text) {
+            alert('目前章節沒有可朗讀的文字');
+            resetVoiceToON(false);
+            return;
+        }
+
+        voiceRunToken++;
+        const token = voiceRunToken;
+
+        cancelSpeech();
+
+        voiceState.chunks = splitTextToChunks(text);
+        voiceState.index = 0;
+        voiceState.speaking = true;
+        voiceState.paused = false;
+        voiceState.sectionId = getActiveSectionId();
+
+        window.isSpeaking = true;
+        window.isPaused = false;
+        window.currentVoiceSectionId = voiceState.sectionId;
+        window.voiceIsResetForSection = false;
+
+        updateVoiceButton('playing');
+        hideOldMiniControls();
+        setPanelVisible(true);
+
+        const playPauseIcon = document.getElementById('audioGuidePlayPauseIcon');
+        if (playPauseIcon) playPauseIcon.className = 'fas fa-pause';
+
+        speakCurrentChunk(token);
+    }
+
+    function pauseVoice() {
+        if (!('speechSynthesis' in window)) return;
+
+        try {
+            window.speechSynthesis.pause();
+        } catch (e) {}
+
+        voiceState.paused = true;
+        voiceState.speaking = false;
+
+        window.isPaused = true;
+        window.isSpeaking = false;
+
+        updateVoiceButton('paused');
+
+        const playPauseIcon = document.getElementById('audioGuidePlayPauseIcon');
+        if (playPauseIcon) playPauseIcon.className = 'fas fa-play';
+    }
+
+    function resumeVoice() {
+        if (!('speechSynthesis' in window)) return;
+
+        try {
+            window.speechSynthesis.resume();
+        } catch (e) {}
+
+        voiceState.paused = false;
+        voiceState.speaking = true;
+
+        window.isPaused = false;
+        window.isSpeaking = true;
+
+        updateVoiceButton('playing');
+
+        const playPauseIcon = document.getElementById('audioGuidePlayPauseIcon');
+        if (playPauseIcon) playPauseIcon.className = 'fas fa-pause';
+    }
+
+    function toggleVoice() {
+        hideOldMiniControls();
+
+        if (voiceState.paused || window.isPaused || window.speechSynthesis.paused) {
+            resumeVoice();
+            return;
+        }
+
+        if (voiceState.speaking || window.isSpeaking || window.speechSynthesis.speaking) {
+            pauseVoice();
+            return;
+        }
+
+        startVoiceFromCurrentSection();
+    }
+
+    function rebindButton(id, handler) {
+        const oldBtn = document.getElementById(id);
+        if (!oldBtn) return;
+
+        const newBtn = oldBtn.cloneNode(true);
+        newBtn.removeAttribute('onclick');
+        oldBtn.parentNode.replaceChild(newBtn, oldBtn);
+
+        newBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            handler(event);
+        }, true);
+    }
+
+    function bindVoiceButtons() {
+        rebindButton('voiceBtn', toggleVoice);
+        rebindButton('audioGuidePlayPauseBtn', toggleVoice);
+        rebindButton('audioGuideStopBtn', function () {
+            resetVoiceToON(true);
+        });
+        rebindButton('audioGuideCloseBtn', function () {
+            resetVoiceToON(true);
+        });
+        rebindButton('voicePauseBtn', toggleVoice);
+        rebindButton('voiceStopBtn', function () {
+            resetVoiceToON(true);
+        });
+
+        updateVoiceButton('idle');
+        hideOldMiniControls();
+    }
+
+    window.startAudioGuideFromCurrentSection = startVoiceFromCurrentSection;
+    window.toggleAudioGuide = toggleVoice;
+    window.toggleVoicePauseResume = function (event) {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        toggleVoice();
+    };
+    window.stopVoiceGuide = function (event) {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        resetVoiceToON(true);
+    };
+
+    window.stopAudioGuideForNavigation = function () {
+        resetVoiceToON(true);
+        return false;
+    };
+
+    function wrapSwitchSection() {
+        if (typeof window.switchSection !== 'function' || window.switchSection.__voiceOnStableWrapped) return;
+
+        const oldSwitchSection = window.switchSection;
+
+        window.switchSection = function () {
+            resetVoiceToON(true);
+
+            const result = oldSwitchSection.apply(this, arguments);
+
+            setTimeout(function () {
+                resetVoiceToON(true);
+            }, 80);
+
+            return result;
+        };
+
+        window.switchSection.__voiceOnStableWrapped = true;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        bindVoiceButtons();
+        wrapSwitchSection();
+        resetVoiceToON(true);
+    });
+
+    bindVoiceButtons();
+    wrapSwitchSection();
+    resetVoiceToON(true);
+
+    setTimeout(bindVoiceButtons, 300);
+    setTimeout(wrapSwitchSection, 300);
+})();
+</script>
+<style id="ABSOLUTE-FINAL-VOICE-CLICK-FIX-STYLE">
+/* 強制隱藏舊版上方的暫停/停止小按鈕，避免舊版語音狀態干擾 */
+#voiceMiniControls,
+.voice-mini-controls,
+.voice-control-wrap.voice-active .voice-mini-controls,
+body.voice-guide-active .voice-mini-controls {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+</style>
+
+<script id="ABSOLUTE-FINAL-VOICE-CLICK-FIX">
+(function () {
+    let runId = 0;
+
+    const state = {
+        chunks: [],
+        index: 0,
+        playing: false,
+        paused: false,
+        utterance: null,
+        panelOpen: false,
+        rate: 1,
+        sectionId: null
+    };
+    const zhNumMap = {
+        '1': '一',
+        '2': '二',
+        '3': '三',
+        '4': '四',
+        '5': '五',
+        '6': '六',
+        '7': '七',
+        '8': '八',
+        '9': '九'
+    };
+
+    function fixSpeechChapterNumber(text) {
+        let t = String(text || '');
+
+        /*
+        年份範圍才唸「到」
+        例如：2021~2025 → 2021到2025
+        */
+        t = t.replace(/(\d{3,4})\s*[-–—]\s*(\d{2,4})/g, '$1到$2');
+
+        /*
+        小章節編號唸「之」
+        例如：1-1 → 一之一、2-5 → 二之五
+        排除 3-5年、10-20%、2021~2025 這種範圍
+        */
+        t = t.replace(
+            /(^|[，。！？、；：:\s（(【\[])([1-9])\s*(?:-|–|—|到|之)\s*([1-9])(?=\s*(?!\d)(?![年月日%％元美元萬億]))/g,
+            function(match, prefix, a, b) {
+                return prefix + zhNumMap[a] + '之' + zhNumMap[b];
+            }
+        );
+
+        return t;
+    }
+    function getLangCode() {
+        const select = document.getElementById('languageSelect');
+        const raw = String(window.currentLang || (select && select.value) || document.documentElement.lang || 'zh').toLowerCase();
+
+        if (raw.startsWith('en')) return 'en-US';
+        if (raw.startsWith('zh-cn')) return 'zh-CN';
+        if (raw.startsWith('ja')) return 'ja-JP';
+        if (raw.startsWith('ko')) return 'ko-KR';
+        if (raw.startsWith('es')) return 'es-ES';
+        if (raw.startsWith('fr')) return 'fr-FR';
+        if (raw.startsWith('de')) return 'de-DE';
+        if (raw.startsWith('th')) return 'th-TH';
+        if (raw.startsWith('vi')) return 'vi-VN';
+
+        return 'zh-TW';
+    }
+
+    function isChinese() {
+        return getLangCode().startsWith('zh');
+    }
+
+    function label(zh, en) {
+        return getLangCode().startsWith('en') ? en : zh;
+    }
+
+    function getActiveSection() {
+        return document.querySelector('.content-section.active')
+            || document.querySelector('.section-container.active')
+            || document.querySelector('main')
+            || document.body;
+    }
+
+    function getSectionId() {
+        const section = getActiveSection();
+        return section ? (section.id || 'main') : 'main';
+    }
+
+    function cleanText(text) {
+        let t = String(text || '')
+            .replace(/\u00a0/g, ' ')
+            .replace(/[／\/\\]/g, '，')
+            .replace(/[：:]/g, '，')
+            .replace(/[【】\[\]「」『』（）()《》〈〉]/g, '，')
+            .replace(/[；;]/g, '，')
+            .replace(/[|｜]/g, '，')
+            .replace(/\s+/g, ' ')
+            .trim();
+
+        if (isChinese()) {
+            t = t
+                .replace(/(\d+)\s*[-–—]\s*(\d+)/g, '$1到$2')
+                .replace(/([A-Za-z]+)\s*[-–—]\s*(\d+)/g, '$1之$2');
+        }
+
+        return t;
+    }
+
+    function getReadableText() {
+        const section = getActiveSection();
+        if (!section) return '';
+
+        const clone = section.cloneNode(true);
+
+        clone.querySelectorAll(
+            [
+                'script',
+                'style',
+                'button',
+                'input',
+                'select',
+                'textarea',
+                '.section-header',
+                '.site-topbar',
+                '.drawer-menu',
+                '.drawer-overlay',
+                '.voice-mini-controls',
+                '#voiceMiniControls',
+                '#audioGuidePanel',
+                '#wowSearchPanel',
+                '#wowDock',
+
+                /* 不要朗讀四大章總覽 */
+                '.tp-group-overview no-voice',
+                '.tp-group-overview no-voice-title',
+                '.tp-group-overview no-voice-sub',
+                '.tp-group-overview no-voice-tags',
+
+                '[aria-hidden="true"]',
+                '[hidden]',
+                '.hidden',
+                '.no-voice'
+            ].join(',')
+        ).forEach(function (el) {
+            el.remove();
+        });
+
+        return cleanText(clone.innerText || clone.textContent || '');
+    }
+
+    function splitChunks(text) {
+        text = cleanText(text);
+        if (!text) return [];
+
+        const parts = text
+            .split(isChinese() ? /(?<=[。！？])\s*/ : /(?<=[.!?])\s*/)
+            .map(cleanText)
+            .filter(Boolean);
+
+        const chunks = [];
+        let buffer = '';
+
+        parts.forEach(function (part) {
+            if ((buffer + part).length > 240) {
+                if (buffer) chunks.push(buffer);
+                buffer = part;
+            } else {
+                buffer += buffer ? (isChinese() ? '。' : '. ') + part : part;
+            }
+        });
+
+        if (buffer) chunks.push(buffer);
+
+        if (!chunks.length && text) {
+            for (let i = 0; i < text.length; i += 220) {
+                chunks.push(text.slice(i, i + 220));
+            }
+        }
+
+        return chunks;
+    }
+
+    function getRate() {
+        const btn = document.getElementById('audioGuideSpeedBtn');
+        const raw = btn ? String(btn.textContent || '1x').replace('x', '') : '1';
+        const n = parseFloat(raw);
+        return Number.isFinite(n) && n > 0 ? n : 1;
+    }
+
+    function cancelSpeech() {
+        if (!('speechSynthesis' in window)) return;
+
+        try {
+            window.speechSynthesis.resume();
+        } catch (e) {}
+
+        try {
+            window.speechSynthesis.cancel();
+        } catch (e) {}
+
+        state.utterance = null;
+    }
+
+    function updateMainButton(mode) {
+        const btn = document.getElementById('voiceBtn');
+        const text = document.getElementById('voiceText');
+        const icon = document.getElementById('voiceIcon');
+
+        if (btn) {
+            btn.classList.toggle('is-speaking', mode === 'playing' || mode === 'paused');
+        }
+
+        if (icon) {
+            icon.className = (mode === 'playing' || mode === 'paused')
+                ? 'fas fa-volume-high text-white dark:text-white'
+                : 'fas fa-volume-up text-blue-500 dark:text-blue-400';
+        }
+
+        if (text) {
+            text.setAttribute('data-zh', '語音導覽 ON');
+            text.setAttribute('data-en', 'Audio Guide ON');
+
+            if (mode === 'playing') {
+                text.textContent = label('語音導覽 播放中', 'Audio Guide Playing');
+            } else if (mode === 'paused') {
+                text.textContent = label('語音導覽 暫停中', 'Audio Guide Paused');
+            } else {
+                text.textContent = label('語音導覽 ON', 'Audio Guide ON');
+            }
+        }
+
+        const mini = document.getElementById('voiceMiniControls');
+        if (mini) {
+            mini.setAttribute('aria-hidden', 'true');
+            mini.style.display = 'none';
+        }
+
+        const wrap = document.querySelector('.voice-control-wrap');
+        if (wrap) wrap.classList.remove('voice-active');
+
+        document.body.classList.remove('voice-guide-active');
+    }
+
+    function updatePanel() {
+        const panel = document.getElementById('audioGuidePanel');
+        const title = document.getElementById('audioGuideSectionTitle');
+        const box = document.getElementById('audioGuideTextBox');
+        const progress = document.getElementById('audioGuideProgress');
+        const playIcon = document.getElementById('audioGuidePlayPauseIcon');
+        const prevBtn = document.getElementById('audioGuidePrevBtn');
+        const speedBtn = document.getElementById('audioGuideSpeedBtn');
+
+        if (panel) {
+            panel.classList.toggle('show', !!state.panelOpen);
+            panel.setAttribute('aria-hidden', state.panelOpen ? 'false' : 'true');
+        }
+
+        if (title) {
+            title.textContent = fixSpeechChapterNumber(
+                state.chunks[0] || label('目前章節', 'Current section')
+            );
+        }
+
+        if (box) {
+            box.textContent = fixSpeechChapterNumber(
+                state.chunks[state.index] || label('按下語音導覽開始朗讀目前章節。', 'Press Audio Guide to start reading this section.')
+            );
+        }
+
+        if (progress) {
+            progress.textContent = state.chunks.length ? ((state.index + 1) + ' / ' + state.chunks.length) : '0 / 0';
+        }
+
+        if (playIcon) {
+            playIcon.className = state.paused || !state.playing ? 'fas fa-play' : 'fas fa-pause';
+        }
+
+        if (prevBtn) {
+            prevBtn.disabled = state.index <= 0;
+        }
+
+        if (speedBtn) {
+            state.rate = getRate();
+            speedBtn.textContent = state.rate === 1 ? '1x' : state.rate + 'x';
+        }
+
+        if (state.playing) {
+            updateMainButton('playing');
+        } else if (state.paused) {
+            updateMainButton('paused');
+        } else {
+            updateMainButton('idle');
+        }
+
+        window.isSpeaking = state.playing;
+        window.isPaused = state.paused;
+        window.currentUtterance = state.utterance;
+        window.currentVoiceSectionId = state.sectionId;
+        window.voiceIsResetForSection = !state.playing && !state.paused;
+    }
+
+    function finish(closePanel) {
+    /*
+      停止後要讓舊的朗讀流程完全失效。
+      不然停止後馬上再按播放，舊的 onend / setTimeout / speaking 狀態可能還會干擾。
+    */
+    runId++;
+
+    if ('speechSynthesis' in window) {
+        try {
+            window.speechSynthesis.resume();
+        } catch (e) {}
+
+        try {
+            window.speechSynthesis.cancel();
+        } catch (e) {}
+    }
+
+    state.playing = false;
+    state.paused = false;
+    state.utterance = null;
+    state.sectionId = null;
+    state.index = 0;
+
+    /*
+      重點：停止時也把 chunks 清空。
+      這樣下一次按播放一定會重新抓目前章節文字，而不是沿用舊狀態。
+    */
+    state.chunks = [];
+
+    if (closePanel) {
+        state.panelOpen = false;
+    }
+
+    updatePanel();
+
+    /*
+      部分瀏覽器 cancel() 後 speaking 會延遲歸零，
+      所以補一次延遲重置。
+    */
+    setTimeout(function () {
+        if ('speechSynthesis' in window) {
+            try {
+                window.speechSynthesis.cancel();
+            } catch (e) {}
+        }
+
+        state.playing = false;
+        state.paused = false;
+        state.utterance = null;
+        state.sectionId = null;
+        state.index = 0;
+        state.chunks = [];
+
+        updatePanel();
+    }, 120);
+    }
+
+    function speakCurrentChunk() {
+        if (!('speechSynthesis' in window)) {
+            alert('此瀏覽器不支援語音朗讀功能');
+            return;
+        }
+
+        const thisRun = runId;
+        const text = state.chunks[state.index];
+
+        if (!text) {
+            finish(false);
+            return;
+        }
+
+        cancelSpeech();
+
+        setTimeout(function () {
+            if (thisRun !== runId) return;
+            if (!state.playing || state.paused) return;
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            state.utterance = utterance;
+
+            utterance.lang = getLangCode();
+            utterance.rate = getRate();
+            utterance.pitch = 1;
+            utterance.volume = 1;
+
+            if (typeof pickPreferredVoice === 'function') {
+                try {
+                    const voice = pickPreferredVoice(utterance.lang);
+                    if (voice) utterance.voice = voice;
+                } catch (e) {}
+            }
+
+            utterance.onend = function () {
+                if (thisRun !== runId) return;
+                if (!state.playing || state.paused) return;
+
+                if (state.index < state.chunks.length - 1) {
+                    state.index++;
+                    updatePanel();
+                    speakCurrentChunk();
+                } else {
+                    finish(false);
+                }
+            };
+
+            utterance.onerror = function () {
+                if (thisRun !== runId) return;
+                finish(false);
+            };
+
+            try {
+                window.speechSynthesis.speak(utterance);
+            } catch (e) {
+                finish(false);
+                return;
+            }
+
+            updatePanel();
+        }, 120);
+    }
+
+    function startFromCurrentSection() {
+        if (!('speechSynthesis' in window)) {
+            alert('此瀏覽器不支援語音朗讀功能');
+            return;
+        }
+
+        runId++;
+
+        const text = getReadableText();
+        const chunks = splitChunks(text);
+
+        if (!chunks.length) {
+            alert('目前章節沒有可朗讀的文字');
+            finish(false);
+            return;
+        }
+
+        cancelSpeech();
+
+        state.chunks = chunks.map(function(chunk) {
+            return fixSpeechChapterNumber(chunk);
+        });
+        state.index = 0;
+        state.playing = true;
+        state.paused = false;
+        state.panelOpen = true;
+        state.sectionId = getSectionId();
+        state.rate = getRate();
+
+        updatePanel();
+
+        /*
+        重點：不要 cancel 後立刻 speak。
+        停止後再播放失敗，常常就是因為瀏覽器語音引擎還沒完全釋放。
+        */
+        setTimeout(function () {
+            if (!state.playing || state.paused) return;
+            speakCurrentChunk();
+        }, 160);
+    }
+
+    function pauseVoice() {
+        if (!('speechSynthesis' in window)) return;
+
+        try {
+            window.speechSynthesis.pause();
+        } catch (e) {}
+
+        state.playing = false;
+        state.paused = true;
+        state.panelOpen = true;
+
+        updatePanel();
+    }
+
+    function resumeVoice() {
+        if (!('speechSynthesis' in window)) return;
+
+        state.panelOpen = true;
+
+        if (window.speechSynthesis.paused) {
+            try {
+                window.speechSynthesis.resume();
+            } catch (e) {}
+
+            state.playing = true;
+            state.paused = false;
+            updatePanel();
+            return;
+        }
+
+        state.playing = true;
+        state.paused = false;
+        updatePanel();
+
+        setTimeout(function () {
+            if (!window.speechSynthesis.speaking) {
+                speakCurrentChunk();
+            }
+        }, 120);
+    }
+
+    function speechActuallyBusy() {
+        if (!('speechSynthesis' in window)) return false;
+
+        /*
+        如果程式自己的 state 已經不是播放/暫停，
+        就不要再相信 speechSynthesis.speaking。
+        因為 cancel() 後瀏覽器可能會短暫殘留 speaking=true。
+        */
+        if (!state.playing && !state.paused) {
+            return false;
+        }
+
+        return window.speechSynthesis.speaking || window.speechSynthesis.paused;
+    }
+
+    function toggleVoice() {
+        const activeSection = getSectionId();
+
+        /*
+          如果已經切到別章，按語音導覽時直接重頭朗讀目前章節，
+          不延續上一章的 speechSynthesis 狀態。
+        */
+        if (state.sectionId && state.sectionId !== activeSection) {
+            finish(true);
+            startFromCurrentSection();
+            return;
+        }
+
+        /*
+          同一章節：
+          第一次按：播放
+          第二次按：暫停
+          第三次按：繼續
+        */
+        if (state.paused || window.speechSynthesis.paused) {
+            resumeVoice();
+            return;
+        }
+
+        if (state.playing || speechActuallyBusy()) {
+            pauseVoice();
+            return;
+        }
+
+        startFromCurrentSection();
+    }
+
+    function previousChunk() {
+        if (state.index <= 0) return;
+
+        runId++;
+        state.index--;
+        state.playing = true;
+        state.paused = false;
+        state.panelOpen = true;
+
+        updatePanel();
+        speakCurrentChunk();
+    }
+
+    function changeSpeed() {
+        const speeds = [0.6, 0.8, 1, 1.25, 1.5, 1.75, 2];
+        const current = getRate();
+        const index = speeds.indexOf(current);
+        const next = speeds[(index + 1) % speeds.length] || 1;
+
+        const btn = document.getElementById('audioGuideSpeedBtn');
+        if (btn) btn.textContent = next === 1 ? '1x' : next + 'x';
+
+        state.rate = next;
+        updatePanel();
+
+        if (state.playing && !state.paused) {
+            runId++;
+            speakCurrentChunk();
+        }
+    }
+
+    function replaceButton(id, handler) {
+        const oldBtn = document.getElementById(id);
+        if (!oldBtn) return;
+
+        const newBtn = oldBtn.cloneNode(true);
+        newBtn.removeAttribute('onclick');
+
+        oldBtn.parentNode.replaceChild(newBtn, oldBtn);
+
+        newBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            handler(event);
+            return false;
+        }, true);
+    }
+
+    function bindButtons() {
+        replaceButton('voiceBtn', toggleVoice);
+        replaceButton('audioGuidePlayPauseBtn', toggleVoice);
+        replaceButton('audioGuideStopBtn', function () {
+            finish(true);
+        });
+        replaceButton('audioGuideCloseBtn', function () {
+            finish(true);
+        });
+        replaceButton('audioGuidePrevBtn', previousChunk);
+        replaceButton('audioGuideSpeedBtn', changeSpeed);
+        replaceButton('voicePauseBtn', toggleVoice);
+        replaceButton('voiceStopBtn', function () {
+            finish(true);
+        });
+
+        updatePanel();
+    }
+
+    window.startAudioGuideFromCurrentSection = startFromCurrentSection;
+    window.toggleAudioGuide = toggleVoice;
+    window.toggleVoicePauseResume = function (event) {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        toggleVoice();
+    };
+    window.stopVoiceGuide = function (event) {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        finish(true);
+    };
+    window.stopAudioGuideForNavigation = function () {
+        finish(true);
+        return false;
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        bindButtons();
+        finish(true);
+    });
+
+    bindButtons();
+    finish(true);
+
+    /*
+      你原本檔案前面有很多 setTimeout 重新綁定語音按鈕，
+      所以這裡也延後再綁幾次，確保最後一定是這版生效。
+    */
+    setTimeout(bindButtons, 800);
+    setTimeout(bindButtons, 1500);
+    setTimeout(bindButtons, 2500);
+})();
+</script>
+<script id="FINAL-force-chapter-number-read-zhi">
+(function(){
+  if (window.__forceChapterNumberReadZhi) return;
+  window.__forceChapterNumberReadZhi = true;
+
+  const zhNumMap = {
+    '1': '一',
+    '2': '二',
+    '3': '三',
+    '4': '四',
+    '5': '五',
+    '6': '六',
+    '7': '七',
+    '8': '八',
+    '9': '九'
+  };
+
+  function isEnglishMode(){
+    const lang = String(window.currentLang || document.documentElement.lang || '').toLowerCase();
+    return lang.startsWith('en') ||
+      document.body.classList.contains('show-en') ||
+      document.documentElement.classList.contains('show-en');
+  }
+
+  function fixChapterNumber(text){
+    if (isEnglishMode()) return text;
+
+    return String(text || '').replace(
+      /(^|[，。！？\s])([1-5])\s*(?:-|–|—|到|之)\s*([1-9])(?=\s*[.．、，])/g,
+      function(match, prefix, a, b){
+        return prefix + zhNumMap[a] + '之' + zhNumMap[b];
+      }
+    );
+  }
+
+  const oldGetCurrentSectionVoiceText = window.getCurrentSectionVoiceText;
+  if (typeof oldGetCurrentSectionVoiceText === 'function') {
+    window.getCurrentSectionVoiceText = function(){
+      return fixChapterNumber(oldGetCurrentSectionVoiceText.apply(this, arguments));
+    };
+  }
+
+  const NativeUtterance = window.SpeechSynthesisUtterance;
+  if (NativeUtterance) {
+    window.SpeechSynthesisUtterance = function(text){
+      return new NativeUtterance(fixChapterNumber(text));
+    };
+    window.SpeechSynthesisUtterance.prototype = NativeUtterance.prototype;
+  }
+})();
+</script>
 </body>
 </html>
 <!-- Final override injected by assistant: Section 5 dark mode readability -->
@@ -16698,7 +17991,7 @@ html.dark #sec5 .sec5-ai-card li * {
     ann: { zh: '1-4. 組織架構與管理團隊、2-5. 產業生命週期與近期動態、3-3. 關鍵資源：有形與無形、4-3. 地理擴張', en: '1-4. Organizational Structure and Management Team, 2-5. Industry Lifecycle and recent news, 3-3. Key Resources – Tangible and Intangible, 4-3. Geographical Expansion' },
     tina: { zh: '1-5. 產品組合、3-5. 動態能力、SPA 生成', en: '1-5. Product Portfolios, 3-5. Dynamic Capabilities, SPA Generation' },
     elaine: { zh: '1-3. 願景、使命與價值、2-1. PESTEL 總體環境分析、3-1. 核心事業與產品線、4-2. 水平／產品多角化', en: '1-3. Vision, Mission, and Values, 2-1. Macro Analysis – PESTEL, 3-1. Core Businesses/Product lines, 4-2. Horizontal/Product Diversification' },
-    winnie: { zh: '1-6. 2021–2025 財務績效、2-2. 產業價值鏈、3-2. 企業價值鏈關鍵活動、4-4. 未來挑戰與建議', en: '1-6. Financial Performance during 2021~2025, 2-2. Industry Value Chain, 3-2. Corporate Value Chain – Key Activities, 4-4. Future Challenges and Suggestions' }
+    winnie: { zh: '1-6. 2021~2025 財務績效、2-2. 產業價值鏈、3-2. 企業價值鏈關鍵活動、4-4. 未來挑戰與建議', en: '1-6. Financial Performance during 2021~2025, 2-2. Industry Value Chain, 3-2. Corporate Value Chain – Key Activities, 4-4. Future Challenges and Suggestions' }
   };
   const memberStudentInfo = {
     kimberly: { zh: '114212515/國企碩一', en: '114212515 / International Business MA Year 1' },
@@ -16729,13 +18022,13 @@ html.dark #sec5 .sec5-ai-card li * {
 
   const UI = {
     zh: {
-      profHeading: '✦ 指導老師 ✦', groupHeading: 'GROUP MEMBERS｜組員',
+      profHeading: '✦ 指導老師 ✦', groupHeading: '第一組 組員',
       studentInfo: '學號/系級', role: '身分', sections: '負責項目', intro: '個人簡介', website: '系網頁', websiteText: '前往系網頁 ↗',
       professor: 'PROFESSOR', member: 'STUDENT',
       close: '關閉個人簡介名片'
     },
     en: {
-      profHeading: '✦ PROF. ✦', groupHeading: 'GROUP MEMBERS',
+      profHeading: '✦ PROF. ✦', groupHeading: 'G1 GROUP MEMBERS',
       studentInfo: 'Student ID / Department', role: 'Role', sections: 'Division of Work', intro: 'Profile', website: 'Faculty Website', websiteText: 'Open Faculty Website ↗',
       professor: 'PROFESSOR', member: 'STUDENT',
       close: 'Close profile card'
@@ -16966,12 +18259,65 @@ html.dark #sec5 .sec5-ai-card li * {
   function sec(){return document.querySelector('.content-section.active')||document.querySelector('.section-container.active')||document.querySelector('.content-section:not(.hidden)')||document.querySelector('.section-container')||document.querySelector('main')}
   function secId(){const s=sec();return s?(s.id||'main'):'main'}
   function visible(el){
-    if(!el||el.nodeType!==1)return false;
-    if(el.closest('#audioGuidePanel,.section-header,script,style,nav,button,select,input,textarea,.drawer-menu,.floating-tools,.site-topbar,.voice-panel,.voice-control-wrap,.bottom-stepper,.chapter-stepper,#sectionStepper'))return false;
-    if(el.hidden||el.getAttribute('aria-hidden')==='true')return false;
-    const cs=getComputedStyle(el);
-    return cs&&cs.display!=='none'&&cs.visibility!=='hidden';
-  }
+    if(!el || el.nodeType !== 1) return false;
+
+    /*
+      先排除不該朗讀的區塊。
+      注意：原本少了很多 .class 的點，所以有些區塊其實沒有被排除。
+    */
+    if(el.closest(
+        'script, style, nav, footer, button, select, input, textarea,' +
+        '.site-topbar, .drawer-menu, .drawer-overlay,' +
+        '.voice-guide-panel, #audioGuidePanel,' +
+        '.voice-mini-controls, #voiceMiniControls,' +
+        '.voice-panel, .voice-control-wrap,' +
+        '.bottom-stepper, .chapter-stepper, #sectionStepper,' +
+        '#wowDock, #wowSearchPanel, #wowGuidePanel, #wowTimerPanel,' +
+        /* 不要朗讀四大章總覽 */
+        '.tp-group-overview no-voice, .tp-group-overview no-voice-title, .tp-group-overview no-voice-sub, .tp-group-overview no-voice-tags,' +
+        '.hidden, .sr-only, .no-voice,' +
+        '[hidden], [aria-hidden="true"], [data-voice="off"]'
+    )) return false;
+
+    /*
+      語言保險：
+      中文模式不要唸英文備用文字；英文模式不要唸中文備用文字。
+    */
+    const current = code();
+    if(current === 'en' && el.closest('.lang-zh')) return false;
+    if(current !== 'en' && el.closest('.lang-en')) return false;
+
+    /*
+      重點：不是只看自己，要一路檢查到整個章節上層。
+      因為舊文字可能藏在 display:none 的父層裡。
+    */
+    let node = el;
+    while(node && node.nodeType === 1 && node !== document.body){
+        const cs = window.getComputedStyle(node);
+
+        if(
+            node.hidden ||
+            node.getAttribute('aria-hidden') === 'true' ||
+            cs.display === 'none' ||
+            cs.visibility === 'hidden' ||
+            cs.visibility === 'collapse' ||
+            Number(cs.opacity) === 0
+        ){
+            return false;
+        }
+
+        node = node.parentElement;
+    }
+
+    const rect = el.getBoundingClientRect();
+
+    /*
+      沒有實際寬高，代表它沒有真的被畫出來。
+    */
+    if(rect.width === 0 || rect.height === 0) return false;
+
+    return true;
+    }
   function norm(s){
     let x=String(s||'').replace(/\u00a0/g,' ').replace(/\s+/g,' ').trim();
     if(!x)return'';
@@ -16985,26 +18331,102 @@ html.dark #sec5 .sec5-ai-card li * {
     return x;
   }
   function textOf(el){return visible(el)?norm(el.innerText||el.textContent||''):''}
-  function parts(){
-    const s=sec(); if(!s)return[];
-    const out=[], seen=new Set();
-    const h2=s.querySelector('h2');
-    const title=textOf(h2);
-    if(title){out.push(title);seen.add(title)}
-    const walker=document.createTreeWalker(s,NodeFilter.SHOW_TEXT,{acceptNode(n){
-      const p=n.parentElement;
-      if(!p)return NodeFilter.FILTER_REJECT;
-      if(h2&&h2.contains(n))return NodeFilter.FILTER_REJECT;
-      if(!visible(p))return NodeFilter.FILTER_REJECT;
-      const v=norm(n.nodeValue);
-      return v?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
-    }});
-    while(walker.nextNode()){
-      const v=norm(walker.currentNode.nodeValue);
-      if(v&&!seen.has(v)){seen.add(v);out.push(v)}
+  function isTextNodeReallyVisible(textNode){
+    const p = textNode.parentElement;
+    if(!p || !visible(p)) return false;
+
+    /*
+      再檢查文字本身是否真的有被畫在畫面上。
+      這比只檢查 parentElement 更準。
+    */
+    try{
+        const range = document.createRange();
+        range.selectNodeContents(textNode);
+        const rect = range.getBoundingClientRect();
+        range.detach();
+
+        if(rect.width === 0 || rect.height === 0) return false;
+    }catch(e){
+        return false;
     }
+
+    return true;
+}
+
+function parts(){
+    const s = sec();
+    if(!s) return [];
+
+    const out = [];
+    const seen = new Set();
+
+    const h2 = s.querySelector('h2');
+
+    const walker = document.createTreeWalker(s, NodeFilter.SHOW_TEXT, {
+        acceptNode(n){
+            const p = n.parentElement;
+
+            if(!p) return NodeFilter.FILTER_REJECT;
+
+            /*
+              h2 會另外處理，避免重複唸。
+            */
+            if(h2 && h2.contains(n)) return NodeFilter.FILTER_REJECT;
+
+            if(!isTextNodeReallyVisible(n)) return NodeFilter.FILTER_REJECT;
+
+            const v = norm(n.nodeValue);
+
+            if(!v) return NodeFilter.FILTER_REJECT;
+
+            /*
+              排除語音面板、控制文字、舊版按鈕文字。
+            */
+            if(/^(語音導覽|Audio Guide|播放中|暫停中|停止|繼續|上一段|下一段|ON|OFF|Pause|Resume|Stop|Previous|Speed)$/i.test(v)){
+                return NodeFilter.FILTER_REJECT;
+            }
+
+            return NodeFilter.FILTER_ACCEPT;
+        }
+    });
+
+    /*
+      標題也改成用文字節點方式抓，不用 innerText，
+      避免 h2 裡藏的舊字或雙語文字被一起抓進來。
+    */
+    if(h2 && visible(h2)){
+        const h2Walker = document.createTreeWalker(h2, NodeFilter.SHOW_TEXT, {
+            acceptNode(n){
+                if(!isTextNodeReallyVisible(n)) return NodeFilter.FILTER_REJECT;
+                const v = norm(n.nodeValue);
+                return v ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+            }
+        });
+
+        let titleParts = [];
+        while(h2Walker.nextNode()){
+            const v = norm(h2Walker.currentNode.nodeValue);
+            if(v) titleParts.push(v);
+        }
+
+        const title = norm(titleParts.join(' '));
+        if(title && !seen.has(title)){
+            seen.add(title);
+            out.push(title);
+        }
+    }
+
+    while(walker.nextNode()){
+        const v = norm(walker.currentNode.nodeValue);
+
+        if(!v || seen.has(v)) continue;
+
+        seen.add(v);
+        out.push(v);
+    }
+
     return out;
-  }
+}
   function chunks(arr){
     const out=[];let b='';const sep=isZh()?'。 ':'. ';
     arr.forEach(p=>{p=norm(p);if(!p)return;if(b&&b.length+p.length>260){out.push(b);b=p}else b=b?b+sep+p:p});
@@ -17015,7 +18437,7 @@ html.dark #sec5 .sec5-ai-card li * {
     const b=document.getElementById('voiceBtn'),t=document.getElementById('voiceText'),i=document.getElementById('voiceIcon');
     if(b)b.classList.toggle('is-speaking',mode==='playing'||mode==='paused');
     if(i)i.className=(mode==='playing'||mode==='paused')?'fas fa-volume-high text-white dark:text-white':'fas fa-volume-up text-blue-500 dark:text-blue-400';
-    if(t)t.textContent=mode==='playing'?txt('語音導覽 播放中','Audio Guide Playing'):mode==='paused'?txt('語音導覽 暫停中','Audio Guide Paused'):txt('語音導覽 OFF','Audio Guide OFF');
+    if(t)t.textContent=mode==='playing'?txt('語音導覽 播放中','Audio Guide Playing'):mode==='paused'?txt('語音導覽 暫停中','Audio Guide Paused'):txt('語音導覽 ON','Audio Guide ON');
   }
   function sync(){
     window.isSpeaking=state.playing; window.isPaused=state.paused; window.currentVoiceSectionId=state.sectionId; window.currentUtterance=state.utterance;
@@ -17102,7 +18524,7 @@ html.dark #sec5 .sec5-ai-card li * {
  function txt(e){return vis(e)?norm(e.innerText||e.textContent):''}
  function parts(){let s=sec();if(!s)return[];let out=[],seen=new Set(),h=s.querySelector('h2'),ti=txt(h);if(ti){out.push(ti);seen.add(ti)}let w=document.createTreeWalker(s,NodeFilter.SHOW_TEXT,{acceptNode(n){let p=n.parentElement;if(!p)return NodeFilter.FILTER_REJECT;if(h&&h.contains(n))return NodeFilter.FILTER_REJECT;if(!vis(p))return NodeFilter.FILTER_REJECT;return norm(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});while(w.nextNode()){let v=norm(w.currentNode.nodeValue);if(v&&!seen.has(v)){seen.add(v);out.push(v)}}return out}
  function chunks(a){let out=[],b='',sep=zh()?'。 ':'. ';a.forEach(p=>{p=norm(p);if(!p)return;if(b&&b.length+p.length>260){out.push(b);b=p}else b=b?b+sep+p:p});if(b)out.push(b);return out.length?out:[T('目前章節沒有可朗讀文字。','No readable text in this section.')]}
- function ui(){let p=document.getElementById('audioGuidePanel'),lab=document.getElementById('audioGuidePanelLabel'),ttl=document.getElementById('audioGuideSectionTitle'),box=document.getElementById('audioGuideTextBox'),pr=document.getElementById('audioGuideProgress'),ic=document.getElementById('audioGuidePlayPauseIcon'),pv=document.getElementById('audioGuidePrevBtn'),sp=document.getElementById('audioGuideSpeedBtn'),vb=document.getElementById('voiceBtn'),vt=document.getElementById('voiceText'),vi=document.getElementById('voiceIcon');if(p){p.classList.toggle('show',!!st.panel);p.setAttribute('aria-hidden',st.panel?'false':'true')}if(lab)lab.textContent=T('語音導覽','Audio Guide');if(ttl)ttl.textContent=st.chunks[0]||T('目前章節','Current section');if(box)box.textContent=st.chunks[st.i]||T('按下語音導覽開始朗讀目前章節。','Press Audio Guide to start reading this section.');if(pr)pr.textContent=st.chunks.length?(st.i+1)+' / '+st.chunks.length:'0 / 0';if(ic)ic.className=(st.pause||!st.play)?'fas fa-play':'fas fa-pause';if(pv)pv.disabled=st.i<=0;if(sp)sp.textContent=st.rate===1?'1x':st.rate+'x';if(vb)vb.classList.toggle('is-speaking',st.play||st.pause);if(vi)vi.className=(st.play||st.pause)?'fas fa-volume-high text-white dark:text-white':'fas fa-volume-up text-blue-500 dark:text-blue-400';if(vt)vt.textContent=st.play?T('語音導覽 播放中','Audio Guide Playing'):st.pause?T('語音導覽 暫停中','Audio Guide Paused'):T('語音導覽 OFF','Audio Guide OFF');window.isSpeaking=st.play;window.isPaused=st.pause;window.currentUtterance=st.u;window.currentVoiceSectionId=st.sec}
+ function ui(){let p=document.getElementById('audioGuidePanel'),lab=document.getElementById('audioGuidePanelLabel'),ttl=document.getElementById('audioGuideSectionTitle'),box=document.getElementById('audioGuideTextBox'),pr=document.getElementById('audioGuideProgress'),ic=document.getElementById('audioGuidePlayPauseIcon'),pv=document.getElementById('audioGuidePrevBtn'),sp=document.getElementById('audioGuideSpeedBtn'),vb=document.getElementById('voiceBtn'),vt=document.getElementById('voiceText'),vi=document.getElementById('voiceIcon');if(p){p.classList.toggle('show',!!st.panel);p.setAttribute('aria-hidden',st.panel?'false':'true')}if(lab)lab.textContent=T('語音導覽','Audio Guide');if(ttl)ttl.textContent=st.chunks[0]||T('目前章節','Current section');if(box)box.textContent=st.chunks[st.i]||T('按下語音導覽開始朗讀目前章節。','Press Audio Guide to start reading this section.');if(pr)pr.textContent=st.chunks.length?(st.i+1)+' / '+st.chunks.length:'0 / 0';if(ic)ic.className=(st.pause||!st.play)?'fas fa-play':'fas fa-pause';if(pv)pv.disabled=st.i<=0;if(sp)sp.textContent=st.rate===1?'1x':st.rate+'x';if(vb)vb.classList.toggle('is-speaking',st.play||st.pause);if(vi)vi.className=(st.play||st.pause)?'fas fa-volume-high text-white dark:text-white':'fas fa-volume-up text-blue-500 dark:text-blue-400';if(vt)vt.textContent=st.play?T('語音導覽 播放中','Audio Guide Playing'):st.pause?T('語音導覽 暫停中','Audio Guide Paused'):T('語音導覽 ON','Audio Guide ON');window.isSpeaking=st.play;window.isPaused=st.pause;window.currentUtterance=st.u;window.currentVoiceSectionId=st.sec}
  function cancel(){try{speechSynthesis.cancel()}catch(e){}st.u=null}
  function finish(keep=true){cancel();st.play=false;st.pause=false;st.u=null;st.sec=null;if(!keep)st.panel=false;ui()}
  function speak(){if(!('speechSynthesis'in window))return;cancel();let text=st.chunks[st.i];if(!text){finish(true);return}let u=new SpeechSynthesisUtterance(text);st.u=u;u.lang=lm[code()]||document.documentElement.lang||'zh-TW';if(typeof applyVoiceBoost==='function')applyVoiceBoost(u);u.rate=st.rate;if(typeof pickPreferredVoice==='function'){try{let v=pickPreferredVoice(u.lang);if(v)u.voice=v}catch(e){}}u.onend=function(){if(!st.play||st.pause)return;if(st.i<st.chunks.length-1){st.i++;ui();setTimeout(speak,100)}else finish(true)};u.onerror=function(){finish(true)};try{speechSynthesis.speak(u)}catch(e){finish(true);return}ui()}
@@ -17263,7 +18685,7 @@ html.dark #sec5 .sec5-ai-card li * {
     ann: { zh: '1-4. 組織架構與管理團隊、2-5. 產業生命週期與近期動態、3-3. 關鍵資源：有形與無形、4-3. 地理擴張', en: '1-4. Organizational Structure and Management Team, 2-5. Industry Lifecycle and recent news, 3-3. Key Resources – Tangible and Intangible, 4-3. Geographical Expansion' },
     tina: { zh: '1-5. 產品組合、3-5. 動態能力、SPA 生成', en: '1-5. Product Portfolios, 3-5. Dynamic Capabilities, SPA Generation' },
     elaine: { zh: '1-3. 願景、使命與價值、2-1. PESTEL 總體環境分析、3-1. 核心事業與產品線、4-2. 水平／產品多角化', en: '1-3. Vision, Mission, and Values, 2-1. Macro Analysis – PESTEL, 3-1. Core Businesses/Product lines, 4-2. Horizontal/Product Diversification' },
-    winnie: { zh: '1-6. 2021–2025 財務績效、2-2. 產業價值鏈、3-2. 企業價值鏈關鍵活動、4-4. 未來挑戰與建議', en: '1-6. Financial Performance during 2021~2025, 2-2. Industry Value Chain, 3-2. Corporate Value Chain – Key Activities, 4-4. Future Challenges and Suggestions' }
+    winnie: { zh: '1-6. 2021~2025 財務績效、2-2. 產業價值鏈、3-2. 企業價值鏈關鍵活動、4-4. 未來挑戰與建議', en: '1-6. Financial Performance during 2021~2025, 2-2. Industry Value Chain, 3-2. Corporate Value Chain – Key Activities, 4-4. Future Challenges and Suggestions' }
   };
 
   function isEnglish(){
@@ -17298,7 +18720,7 @@ html.dark #sec5 .sec5-ai-card li * {
 <!-- Final clean layout patch: hide duplicated in-page subchapter nav and TP overview card -->
 <style id="FINAL-clean-hide-duplicate-tp-ui">
   .tp-subpage-inline-nav,
-  .tp-group-overview {
+  .tp-group-overview no-voice {
     display: none !important;
   }
   .content-section.active {
@@ -18199,16 +19621,26 @@ body.show-zh .lang-zh{
     z-index:2200 !important;
     pointer-events:auto !important;
 }
+
 #wowDock .wow-btn{
     pointer-events:auto !important;
     cursor:pointer !important;
 }
-#wowSearchPanel.show,
+
+/* 搜尋面板一定要用 flex，內層才可以滾動 */
+#wowSearchPanel.show{
+    display:flex !important;
+    flex-direction:column !important;
+    z-index:2300 !important;
+}
+
+/* 其他面板維持 block 就好 */
 #wowTimerPanel.show,
 #wowGuidePanel.show{
     display:block !important;
     z-index:2300 !important;
 }
+
 #wowAutoBadge.show{
     display:flex !important;
     z-index:2300 !important;
@@ -18379,5 +19811,66 @@ body.dark #sec22 .quiz-option-btn.wrong{
     color:#334155 !important;
     -webkit-text-fill-color:#334155 !important;
 }
+/* ===== FINAL FIX: Section Search panel scroll ===== */
+#wowSearchPanel{
+    overflow: hidden !important;
+    display: none !important;
+    flex-direction: column !important;
+    max-height: calc(100vh - 72px - 2cm - 18px) !important;
+    max-height: calc(100dvh - 72px - 2cm - 18px) !important;
+}
 
+#wowSearchPanel.show{
+    display: flex !important;
+}
+
+#wowSearchPanel .wow-panel-head{
+    flex: 0 0 auto !important;
+}
+
+#wowSearchPanel .wow-search-scroll-inner{
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    padding-bottom: 1rem !important;
+}
+
+@media (max-width: 768px){
+    #wowSearchPanel{
+        left: 12px !important;
+        right: 12px !important;
+        width: auto !important;
+        top: calc(68px + 2cm) !important;
+        max-height: calc(100vh - 68px - 2cm - 14px) !important;
+        max-height: calc(100dvh - 68px - 2cm - 14px) !important;
+    }
+
+    #wowSearchPanel .wow-search-scroll-inner{
+        padding-right: 12px !important;
+        padding-left: 0.92rem !important;
+        padding-bottom: 1rem !important;
+    }
+}
+/* ===== FINAL FIX: hide old top voice pause/stop buttons ===== */
+#voiceMiniControls,
+.voice-mini-controls,
+.voice-control-wrap.voice-active .voice-mini-controls,
+body.voice-guide-active .voice-mini-controls {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+/* 不讓語音導覽讀四大章總覽文字 */
+.tp-group-overview no-voice {
+    /* 畫面照樣可顯示，不影響版面 */
+}
+
+.tp-group-overview no-voice.no-voice,
+.no-voice .tp-group-overview no-voice {
+    speak: none;
+}
 </style>
