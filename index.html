@@ -19873,81 +19873,88 @@ body.voice-guide-active .voice-mini-controls {
 .no-voice .tp-group-overview no-voice {
     speak: none;
 }
-/* ===== FINAL FIX: tablet & desktop light toolbar same as laptop ===== */
-@media (min-width: 769px) {
-    .site-topbar .toolbar-group button,
-    .site-topbar #voiceBtn,
-    .site-topbar #langToggle,
-    .site-topbar #themeToggle,
-    .site-topbar .menu-toggle-btn {
+/* ===== FINAL FIX: 平板工具列淺色/深色分開處理 ===== */
+
+/* 淺色模式：平板工具列按鈕白底 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    html:not(.dark) .site-topbar #voiceBtn,
+    html:not(.dark) .site-topbar #langToggle,
+    html:not(.dark) .site-topbar #themeToggle,
+    html:not(.dark) .site-topbar .menu-toggle-btn,
+    html:not(.dark) .site-topbar #languageSelect {
         background: rgba(255, 255, 255, 0.96) !important;
         color: #0f172a !important;
-        border: 1px solid rgba(226, 232, 240, 0.95) !important;
+        border-color: rgba(226, 232, 240, 0.95) !important;
         box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08) !important;
         -webkit-text-fill-color: #0f172a !important;
     }
 
-    .site-topbar .toolbar-group button span,
-    .site-topbar .toolbar-group button i,
-    .site-topbar #voiceText,
-    .site-topbar #langDisplay,
-    .site-topbar #voiceIcon,
-    .site-topbar #themeToggle i,
-    .site-topbar #langToggle i {
+    html:not(.dark) .site-topbar #voiceText,
+    html:not(.dark) .site-topbar #langDisplay,
+    html:not(.dark) .site-topbar button span {
         color: #0f172a !important;
         -webkit-text-fill-color: #0f172a !important;
     }
 
-    .site-topbar #voiceIcon,
-    .site-topbar #langToggle i,
-    .site-topbar .fa-language,
-    .site-topbar .fa-volume-up,
-    .site-topbar .fa-sliders,
-    .site-topbar .fa-moon {
+    html:not(.dark) .site-topbar #voiceIcon,
+    html:not(.dark) .site-topbar .fa-language,
+    html:not(.dark) .site-topbar .fa-sliders {
         color: #2563eb !important;
         -webkit-text-fill-color: #2563eb !important;
     }
 
-    .site-topbar #themeToggle i.fa-moon,
-    .site-topbar #themeToggle .fa-moon {
+    html:not(.dark) .site-topbar .fa-moon {
         color: #0f172a !important;
         -webkit-text-fill-color: #0f172a !important;
     }
+}
 
-    /* 語言下拉選單也強制白底 */
-    .site-topbar select,
-    .site-topbar #languageSelect,
-    .site-topbar .language-selector,
-    .site-topbar .lang-switcher {
-        background: rgba(255, 255, 255, 0.96) !important;
-        color: #0f172a !important;
-        border: 1px solid rgba(226, 232, 240, 0.95) !important;
-        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08) !important;
-        -webkit-text-fill-color: #0f172a !important;
+/* 深色模式：平板工具列按鈕維持深色 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    html.dark .site-topbar #voiceBtn,
+    html.dark .site-topbar #langToggle,
+    html.dark .site-topbar #themeToggle,
+    html.dark .site-topbar .menu-toggle-btn,
+    html.dark .site-topbar #languageSelect {
+        background: rgba(30, 41, 59, 0.92) !important;
+        color: #e5e7eb !important;
+        border-color: rgba(148, 163, 184, 0.28) !important;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22) !important;
+        -webkit-text-fill-color: #e5e7eb !important;
     }
 
-    /* 語音播放中才維持藍色 */
+    html.dark .site-topbar #voiceText,
+    html.dark .site-topbar #langDisplay,
+    html.dark .site-topbar button span {
+        color: #e5e7eb !important;
+        -webkit-text-fill-color: #e5e7eb !important;
+    }
+
+    html.dark .site-topbar #voiceIcon,
+    html.dark .site-topbar .fa-language,
+    html.dark .site-topbar .fa-sliders {
+        color: #93c5fd !important;
+        -webkit-text-fill-color: #93c5fd !important;
+    }
+
+    html.dark .site-topbar .fa-moon {
+        color: #e5e7eb !important;
+        -webkit-text-fill-color: #e5e7eb !important;
+    }
+}
+
+/* 語音播放中：維持藍底白字 */
+@media (min-width: 769px) and (max-width: 1024px) {
     .site-topbar #voiceBtn.is-speaking {
         background: #2563eb !important;
         color: #ffffff !important;
         -webkit-text-fill-color: #ffffff !important;
     }
 
-    .site-topbar #voiceBtn.is-speaking span,
-    .site-topbar #voiceBtn.is-speaking i,
     .site-topbar #voiceBtn.is-speaking #voiceText,
     .site-topbar #voiceBtn.is-speaking #voiceIcon {
         color: #ffffff !important;
         -webkit-text-fill-color: #ffffff !important;
-    }
-}
-@media (min-width: 769px) {
-    .site-topbar .toolbar-group > div,
-    .site-topbar .toolbar-group .relative,
-    .site-topbar .toolbar-group .rounded-full {
-        background-color: rgba(255, 255, 255, 0.96) !important;
-        color: #0f172a !important;
-        -webkit-text-fill-color: #0f172a !important;
     }
 }
 </style>
