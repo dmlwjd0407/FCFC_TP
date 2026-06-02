@@ -11,11 +11,11 @@
 <script id="FINAL-THEME-INIT">
 (function () {
     const saved = localStorage.getItem('fcfc-theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    /* 預設一律淺色，不要跟著 iPad 系統深色跑 */
+    const theme = saved || 'light';
 
     document.documentElement.classList.remove('dark', 'theme-light', 'theme-dark');
-    document.body && document.body.classList.remove('dark', 'theme-light', 'theme-dark');
 
     if (theme === 'dark') {
         document.documentElement.classList.add('dark', 'theme-dark');
@@ -8170,8 +8170,8 @@ function toggleTheme() {
 }
 function initTheme() {
     const saved = localStorage.getItem('fcfc-theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = saved || (prefersDark ? 'dark' : 'light');
+    /* 預設一律淺色 */
+    const theme = saved || 'light';
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
@@ -20006,6 +20006,42 @@ body.voice-guide-active .voice-mini-controls {
     .site-topbar #voiceBtn.is-speaking #voiceIcon {
         color: #ffffff !important;
         -webkit-text-fill-color: #ffffff !important;
+    }
+}
+/* ===== FINAL FIX: iPad toolbar real light mode ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    html.theme-light .site-topbar #voiceBtn,
+    html.theme-light .site-topbar .voice-settings-btn,
+    html.theme-light .site-topbar #languageSelect,
+    html.theme-light .site-topbar #themeToggle,
+    html.theme-light .site-topbar .menu-toggle-btn {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        border-color: rgba(226, 232, 240, 0.95) !important;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08) !important;
+        -webkit-text-fill-color: #0f172a !important;
+    }
+
+    html.theme-light .site-topbar #voiceText,
+    html.theme-light .site-topbar #langDisplay,
+    html.theme-light .site-topbar button span,
+    html.theme-light .site-topbar select {
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
+    }
+
+    html.theme-light .site-topbar #voiceIcon,
+    html.theme-light .site-topbar .voice-settings-btn i,
+    html.theme-light .site-topbar .fa-language {
+        color: #2563eb !important;
+        -webkit-text-fill-color: #2563eb !important;
+    }
+
+    html.theme-light .site-topbar #themeToggle i,
+    html.theme-light .site-topbar .fa-moon {
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
     }
 }
 </style>
