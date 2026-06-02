@@ -19873,4 +19873,50 @@ body.voice-guide-active .voice-mini-controls {
 .no-voice .tp-group-overview no-voice {
     speak: none;
 }
+/* ===== FINAL FIX: iPad / Tablet light mode toolbar buttons ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    html:not(.dark) .toolbar-group button,
+    html:not(.dark) #voiceBtn,
+    html:not(.dark) #themeToggle,
+    html:not(.dark) #langToggle,
+    html:not(.dark) .menu-toggle-btn {
+        background: rgba(255, 255, 255, 0.92) !important;
+        color: #0f172a !important;
+        border: 1px solid rgba(148, 163, 184, 0.28) !important;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08) !important;
+        -webkit-text-fill-color: currentColor !important;
+    }
+
+    html:not(.dark) .toolbar-group button span,
+    html:not(.dark) .toolbar-group button i,
+    html:not(.dark) #voiceText,
+    html:not(.dark) #langDisplay {
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
+    }
+
+    html:not(.dark) .toolbar-group button svg {
+        color: #2563eb !important;
+        fill: currentColor !important;
+    }
+
+    html:not(.dark) #voiceIcon,
+    html:not(.dark) #langToggle i,
+    html:not(.dark) #themeToggle i {
+        color: #2563eb !important;
+        -webkit-text-fill-color: #2563eb !important;
+    }
+
+    /* 語音播放中才維持藍色，不要變黑 */
+    html:not(.dark) #voiceBtn.is-speaking {
+        background: #2563eb !important;
+        color: #ffffff !important;
+    }
+
+    html:not(.dark) #voiceBtn.is-speaking span,
+    html:not(.dark) #voiceBtn.is-speaking i {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+    }
+}
 </style>
