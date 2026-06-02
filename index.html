@@ -8,6 +8,22 @@
 <script>document.documentElement.classList.add("js-enabled");</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<script id="FINAL-THEME-INIT">
+(function () {
+    const saved = localStorage.getItem('fcfc-theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    document.documentElement.classList.remove('dark', 'theme-light', 'theme-dark');
+    document.body && document.body.classList.remove('dark', 'theme-light', 'theme-dark');
+
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark', 'theme-dark');
+    } else {
+        document.documentElement.classList.add('theme-light');
+    }
+})();
+</script>
 <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Sans+TC:wght@300;400;700;900&display=swap');
         
@@ -8119,22 +8135,52 @@ const translations = {
     "sec8_summary_c_body": {"zh": "產品延伸至汽車、紡織、綠能、醫療與消費品，形成多元需求來源。", "en": "Products extend into automotive, textiles, green energy, medical, and consumer goods, creating diversified demand sources."}
 };
 
-function toggleTheme() {
+function applyTheme(theme) {
     const body = document.body;
     const root = document.documentElement;
     const icon = document.getElementById('themeIcon');
-    if (body.classList.contains('light')) {
-        body.classList.remove('light');
-        //body.classList.add('dark');
-        //root.classList.add('dark');
-        icon.className = "fas fa-sun text-sm";
-    } else {
-        body.classList.remove('dark');
-        body.classList.add('light');
-        root.classList.remove('dark');
-        icon.className = "fas fa-moon text-sm";
+
+    const isDark = theme === 'dark';
+
+    // html 同步
+    root.classList.toggle('dark', isDark);
+    root.classList.toggle('theme-dark', isDark);
+    root.classList.toggle('theme-light', !isDark);
+
+    // body 同步
+    body.classList.toggle('dark', isDark);
+    body.classList.toggle('theme-dark', isDark);
+    body.classList.toggle('theme-light', !isDark);
+    body.classList.toggle('light', !isDark);
+
+    // icon 同步
+    if (icon) {
+        icon.className = isDark ? "fas fa-sun text-sm" : "fas fa-moon text-sm";
     }
+
+    // 儲存主題
+    localStorage.setItem('fcfc-theme', theme);
 }
+
+function toggleTheme() {
+    const root = document.documentElement;
+    const isDark = root.classList.contains('theme-dark') || root.classList.contains('dark');
+
+    applyTheme(isDark ? 'light' : 'dark');
+}
+(function initTheme() {
+    const saved = localStorage.getItem('fcfc-theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+            applyTheme(theme);
+        });
+    } else {
+        applyTheme(theme);
+    }
+})();
 
 let currentLang = 'zh';
 let isSpeaking = false;
@@ -19873,104 +19919,80 @@ body.voice-guide-active .voice-mini-controls {
 .no-voice .tp-group-overview no-voice {
     speak: none;
 }
-/* ===== FINAL FIX: iPad light mode toolbar force white ===== */
+/* ===== FINAL REAL FIX: tablet toolbar follows real theme ===== */
 
-/* 平板淺色模式：強制跟電腦一樣白底 */
+/* 平板淺色模式：白底，跟電腦一樣 */
 @media (min-width: 769px) and (max-width: 1024px) {
-    html:not(.dark) body:not(.dark) .site-topbar #voiceBtn,
-    html:not(.dark) body:not(.dark) .site-topbar #langToggle,
-    html:not(.dark) body:not(.dark) .site-topbar #themeToggle,
-    html:not(.dark) body:not(.dark) .site-topbar .menu-toggle-btn,
-    html:not(.dark) body:not(.dark) .site-topbar #languageSelect,
-    html:not(.dark) body:not(.dark) .site-topbar .toolbar-group button,
-    html:not(.dark) body:not(.dark) .site-topbar .toolbar-group > div,
-    html:not(.dark) body:not(.dark) .site-topbar .toolbar-group .relative,
-    html:not(.dark) body:not(.dark) .site-topbar .toolbar-group .rounded-full {
+    html.theme-light .site-topbar #voiceBtn,
+    html.theme-light .site-topbar .voice-settings-btn,
+    html.theme-light .site-topbar #languageSelect,
+    html.theme-light .site-topbar #themeToggle,
+    html.theme-light .site-topbar .menu-toggle-btn {
         background: rgba(255, 255, 255, 0.96) !important;
         background-color: rgba(255, 255, 255, 0.96) !important;
         color: #0f172a !important;
-        border-color: rgba(226, 232, 240, 0.95) !important;
+        border: 1px solid rgba(226, 232, 240, 0.95) !important;
         box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08) !important;
         -webkit-text-fill-color: #0f172a !important;
     }
 
-    html:not(.dark) body:not(.dark) .site-topbar #voiceText,
-    html:not(.dark) body:not(.dark) .site-topbar #langDisplay,
-    html:not(.dark) body:not(.dark) .site-topbar button span,
-    html:not(.dark) body:not(.dark) .site-topbar button i,
-    html:not(.dark) body:not(.dark) .site-topbar select {
+    html.theme-light .site-topbar #voiceText,
+    html.theme-light .site-topbar #langDisplay,
+    html.theme-light .site-topbar button span,
+    html.theme-light .site-topbar button i,
+    html.theme-light .site-topbar select {
         color: #0f172a !important;
         -webkit-text-fill-color: #0f172a !important;
     }
 
-    html:not(.dark) body:not(.dark) .site-topbar #voiceIcon,
-    html:not(.dark) body:not(.dark) .site-topbar .fa-language,
-    html:not(.dark) body:not(.dark) .site-topbar .fa-sliders,
-    html:not(.dark) body:not(.dark) .site-topbar .fa-volume-up {
+    html.theme-light .site-topbar #voiceIcon,
+    html.theme-light .site-topbar .fa-volume-up,
+    html.theme-light .site-topbar .fa-sliders,
+    html.theme-light .site-topbar .fa-language {
         color: #2563eb !important;
         -webkit-text-fill-color: #2563eb !important;
     }
 
-    html:not(.dark) body:not(.dark) .site-topbar .fa-moon {
+    html.theme-light .site-topbar .fa-moon {
         color: #0f172a !important;
         -webkit-text-fill-color: #0f172a !important;
     }
 }
 
-/* 平板深色模式：只有真的 dark 才黑底 */
+/* 平板深色模式：黑底 */
 @media (min-width: 769px) and (max-width: 1024px) {
-    html.dark .site-topbar #voiceBtn,
-    body.dark .site-topbar #voiceBtn,
-    html.dark .site-topbar #langToggle,
-    body.dark .site-topbar #langToggle,
-    html.dark .site-topbar #themeToggle,
-    body.dark .site-topbar #themeToggle,
-    html.dark .site-topbar .menu-toggle-btn,
-    body.dark .site-topbar .menu-toggle-btn,
-    html.dark .site-topbar #languageSelect,
-    body.dark .site-topbar #languageSelect,
-    html.dark .site-topbar .toolbar-group button,
-    body.dark .site-topbar .toolbar-group button,
-    html.dark .site-topbar .toolbar-group > div,
-    body.dark .site-topbar .toolbar-group > div,
-    html.dark .site-topbar .toolbar-group .relative,
-    body.dark .site-topbar .toolbar-group .relative,
-    html.dark .site-topbar .toolbar-group .rounded-full,
-    body.dark .site-topbar .toolbar-group .rounded-full {
+    html.theme-dark .site-topbar #voiceBtn,
+    html.theme-dark .site-topbar .voice-settings-btn,
+    html.theme-dark .site-topbar #languageSelect,
+    html.theme-dark .site-topbar #themeToggle,
+    html.theme-dark .site-topbar .menu-toggle-btn {
         background: rgba(30, 41, 59, 0.92) !important;
         background-color: rgba(30, 41, 59, 0.92) !important;
         color: #e5e7eb !important;
-        border-color: rgba(148, 163, 184, 0.28) !important;
+        border: 1px solid rgba(148, 163, 184, 0.28) !important;
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22) !important;
         -webkit-text-fill-color: #e5e7eb !important;
     }
 
-    html.dark .site-topbar #voiceText,
-    body.dark .site-topbar #voiceText,
-    html.dark .site-topbar #langDisplay,
-    body.dark .site-topbar #langDisplay,
-    html.dark .site-topbar button span,
-    body.dark .site-topbar button span,
-    html.dark .site-topbar button i,
-    body.dark .site-topbar button i {
+    html.theme-dark .site-topbar #voiceText,
+    html.theme-dark .site-topbar #langDisplay,
+    html.theme-dark .site-topbar button span,
+    html.theme-dark .site-topbar button i,
+    html.theme-dark .site-topbar select {
         color: #e5e7eb !important;
         -webkit-text-fill-color: #e5e7eb !important;
     }
 
-    html.dark .site-topbar #voiceIcon,
-    body.dark .site-topbar #voiceIcon,
-    html.dark .site-topbar .fa-language,
-    body.dark .site-topbar .fa-language,
-    html.dark .site-topbar .fa-sliders,
-    body.dark .site-topbar .fa-sliders,
-    html.dark .site-topbar .fa-volume-up,
-    body.dark .site-topbar .fa-volume-up {
+    html.theme-dark .site-topbar #voiceIcon,
+    html.theme-dark .site-topbar .fa-volume-up,
+    html.theme-dark .site-topbar .fa-sliders,
+    html.theme-dark .site-topbar .fa-language {
         color: #93c5fd !important;
         -webkit-text-fill-color: #93c5fd !important;
     }
 }
 
-/* 語音播放中維持藍底白字 */
+/* 播放中維持藍底白字 */
 @media (min-width: 769px) and (max-width: 1024px) {
     .site-topbar #voiceBtn.is-speaking {
         background: #2563eb !important;
