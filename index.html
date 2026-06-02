@@ -8168,7 +8168,7 @@ function toggleTheme() {
 
     applyTheme(isDark ? 'light' : 'dark');
 }
-(function initTheme() {
+function initTheme() {
     const saved = localStorage.getItem('fcfc-theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const theme = saved || (prefersDark ? 'dark' : 'light');
@@ -8180,7 +8180,7 @@ function toggleTheme() {
     } else {
         applyTheme(theme);
     }
-})();
+}
 
 let currentLang = 'zh';
 let isSpeaking = false;
