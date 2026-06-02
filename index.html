@@ -19873,50 +19873,72 @@ body.voice-guide-active .voice-mini-controls {
 .no-voice .tp-group-overview no-voice {
     speak: none;
 }
-/* ===== FINAL FIX: 平板工具列淺色/深色分開處理 ===== */
+/* ===== FINAL FIX: iPad light mode toolbar force white ===== */
 
-/* 淺色模式：平板工具列按鈕白底 */
+/* 平板淺色模式：強制跟電腦一樣白底 */
 @media (min-width: 769px) and (max-width: 1024px) {
-    html:not(.dark) .site-topbar #voiceBtn,
-    html:not(.dark) .site-topbar #langToggle,
-    html:not(.dark) .site-topbar #themeToggle,
-    html:not(.dark) .site-topbar .menu-toggle-btn,
-    html:not(.dark) .site-topbar #languageSelect {
+    html:not(.dark) body:not(.dark) .site-topbar #voiceBtn,
+    html:not(.dark) body:not(.dark) .site-topbar #langToggle,
+    html:not(.dark) body:not(.dark) .site-topbar #themeToggle,
+    html:not(.dark) body:not(.dark) .site-topbar .menu-toggle-btn,
+    html:not(.dark) body:not(.dark) .site-topbar #languageSelect,
+    html:not(.dark) body:not(.dark) .site-topbar .toolbar-group button,
+    html:not(.dark) body:not(.dark) .site-topbar .toolbar-group > div,
+    html:not(.dark) body:not(.dark) .site-topbar .toolbar-group .relative,
+    html:not(.dark) body:not(.dark) .site-topbar .toolbar-group .rounded-full {
         background: rgba(255, 255, 255, 0.96) !important;
+        background-color: rgba(255, 255, 255, 0.96) !important;
         color: #0f172a !important;
         border-color: rgba(226, 232, 240, 0.95) !important;
         box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08) !important;
         -webkit-text-fill-color: #0f172a !important;
     }
 
-    html:not(.dark) .site-topbar #voiceText,
-    html:not(.dark) .site-topbar #langDisplay,
-    html:not(.dark) .site-topbar button span {
+    html:not(.dark) body:not(.dark) .site-topbar #voiceText,
+    html:not(.dark) body:not(.dark) .site-topbar #langDisplay,
+    html:not(.dark) body:not(.dark) .site-topbar button span,
+    html:not(.dark) body:not(.dark) .site-topbar button i,
+    html:not(.dark) body:not(.dark) .site-topbar select {
         color: #0f172a !important;
         -webkit-text-fill-color: #0f172a !important;
     }
 
-    html:not(.dark) .site-topbar #voiceIcon,
-    html:not(.dark) .site-topbar .fa-language,
-    html:not(.dark) .site-topbar .fa-sliders {
+    html:not(.dark) body:not(.dark) .site-topbar #voiceIcon,
+    html:not(.dark) body:not(.dark) .site-topbar .fa-language,
+    html:not(.dark) body:not(.dark) .site-topbar .fa-sliders,
+    html:not(.dark) body:not(.dark) .site-topbar .fa-volume-up {
         color: #2563eb !important;
         -webkit-text-fill-color: #2563eb !important;
     }
 
-    html:not(.dark) .site-topbar .fa-moon {
+    html:not(.dark) body:not(.dark) .site-topbar .fa-moon {
         color: #0f172a !important;
         -webkit-text-fill-color: #0f172a !important;
     }
 }
 
-/* 深色模式：平板工具列按鈕維持深色 */
+/* 平板深色模式：只有真的 dark 才黑底 */
 @media (min-width: 769px) and (max-width: 1024px) {
     html.dark .site-topbar #voiceBtn,
+    body.dark .site-topbar #voiceBtn,
     html.dark .site-topbar #langToggle,
+    body.dark .site-topbar #langToggle,
     html.dark .site-topbar #themeToggle,
+    body.dark .site-topbar #themeToggle,
     html.dark .site-topbar .menu-toggle-btn,
-    html.dark .site-topbar #languageSelect {
+    body.dark .site-topbar .menu-toggle-btn,
+    html.dark .site-topbar #languageSelect,
+    body.dark .site-topbar #languageSelect,
+    html.dark .site-topbar .toolbar-group button,
+    body.dark .site-topbar .toolbar-group button,
+    html.dark .site-topbar .toolbar-group > div,
+    body.dark .site-topbar .toolbar-group > div,
+    html.dark .site-topbar .toolbar-group .relative,
+    body.dark .site-topbar .toolbar-group .relative,
+    html.dark .site-topbar .toolbar-group .rounded-full,
+    body.dark .site-topbar .toolbar-group .rounded-full {
         background: rgba(30, 41, 59, 0.92) !important;
+        background-color: rgba(30, 41, 59, 0.92) !important;
         color: #e5e7eb !important;
         border-color: rgba(148, 163, 184, 0.28) !important;
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22) !important;
@@ -19924,29 +19946,35 @@ body.voice-guide-active .voice-mini-controls {
     }
 
     html.dark .site-topbar #voiceText,
+    body.dark .site-topbar #voiceText,
     html.dark .site-topbar #langDisplay,
-    html.dark .site-topbar button span {
+    body.dark .site-topbar #langDisplay,
+    html.dark .site-topbar button span,
+    body.dark .site-topbar button span,
+    html.dark .site-topbar button i,
+    body.dark .site-topbar button i {
         color: #e5e7eb !important;
         -webkit-text-fill-color: #e5e7eb !important;
     }
 
     html.dark .site-topbar #voiceIcon,
+    body.dark .site-topbar #voiceIcon,
     html.dark .site-topbar .fa-language,
-    html.dark .site-topbar .fa-sliders {
+    body.dark .site-topbar .fa-language,
+    html.dark .site-topbar .fa-sliders,
+    body.dark .site-topbar .fa-sliders,
+    html.dark .site-topbar .fa-volume-up,
+    body.dark .site-topbar .fa-volume-up {
         color: #93c5fd !important;
         -webkit-text-fill-color: #93c5fd !important;
     }
-
-    html.dark .site-topbar .fa-moon {
-        color: #e5e7eb !important;
-        -webkit-text-fill-color: #e5e7eb !important;
-    }
 }
 
-/* 語音播放中：維持藍底白字 */
+/* 語音播放中維持藍底白字 */
 @media (min-width: 769px) and (max-width: 1024px) {
     .site-topbar #voiceBtn.is-speaking {
         background: #2563eb !important;
+        background-color: #2563eb !important;
         color: #ffffff !important;
         -webkit-text-fill-color: #ffffff !important;
     }
