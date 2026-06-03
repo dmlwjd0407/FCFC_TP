@@ -1,33 +1,118 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="zh-TW">
+<html class="scroll-smooth theme-light" lang="zh-TW"></html>
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-i18n="page_title" data-i18n-mode="text">FCFC | FORMOSA CHEMICALS &amp; FIBRE CORPORATION</title>
-<script>document.documentElement.classList.add("js-enabled");</script>
-<script>
-tailwind.config = {
-    darkMode: 'class'
-};
-</script>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <script id="FINAL-THEME-INIT">
 (function () {
+    const root = document.documentElement;
     const saved = localStorage.getItem('fcfc-theme');
 
-    /* 預設一律淺色，不要跟著 iPad 系統深色跑 */
-    const theme = saved || 'light';
+    /*
+      預設一律淺色，不跟 iPad 系統深色模式跑。
+      只有使用者真的按深色模式，才會變 dark。
+    */
+    const theme = saved === 'dark' ? 'dark' : 'light';
+    const isDark = theme === 'dark';
 
-    document.documentElement.classList.remove('dark', 'theme-light', 'theme-dark');
+    root.classList.add('js-enabled');
 
-    if (theme === 'dark') {
-        document.documentElement.classList.add('dark', 'theme-dark');
+    root.classList.remove('dark', 'theme-light', 'theme-dark');
+
+    if (isDark) {
+        root.classList.add('dark', 'theme-dark');
+        root.style.colorScheme = 'dark';
     } else {
-        document.documentElement.classList.add('theme-light');
+        root.classList.add('theme-light');
+        root.style.colorScheme = 'light';
     }
 })();
 </script>
+
+<style id="CRITICAL-THEME-TOOLBAR">
+/* 一開始就告訴 iPad：網頁淺色模式要用 light controls，不要跟系統深色跑 */
+html.theme-light,
+html.theme-light body {
+    color-scheme: light !important;
+}
+
+/* 深色模式才用 dark controls */
+html.theme-dark,
+html.theme-dark body {
+    color-scheme: dark !important;
+}
+
+/* 淺色模式：工具列一開始就是白色，不等後面 CSS 載入 */
+html.theme-light .site-topbar #voiceBtn,
+html.theme-light .site-topbar .voice-settings-btn,
+html.theme-light .site-topbar .language-select-wrap,
+html.theme-light .site-topbar #languageSelect,
+html.theme-light .site-topbar button[onclick="toggleTheme()"],
+html.theme-light .site-topbar .menu-toggle-btn {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: rgba(226, 232, 240, 0.95) !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08) !important;
+    -webkit-text-fill-color: #0f172a !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+html.theme-light .site-topbar #voiceText,
+html.theme-light .site-topbar #langDisplay,
+html.theme-light .site-topbar button span,
+html.theme-light .site-topbar select {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+html.theme-light .site-topbar #voiceIcon,
+html.theme-light .site-topbar .voice-settings-btn i,
+html.theme-light .site-topbar .fa-language,
+html.theme-light .site-topbar .fa-sliders {
+    color: #2563eb !important;
+    -webkit-text-fill-color: #2563eb !important;
+}
+
+html.theme-light .site-topbar .fa-moon {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+/* 深色模式：真的切成深色時才黑 */
+html.theme-dark .site-topbar #voiceBtn,
+html.theme-dark .site-topbar .voice-settings-btn,
+html.theme-dark .site-topbar .language-select-wrap,
+html.theme-dark .site-topbar #languageSelect,
+html.theme-dark .site-topbar button[onclick="toggleTheme()"],
+html.theme-dark .site-topbar .menu-toggle-btn {
+    background: #1e293b !important;
+    background-color: #1e293b !important;
+    color: #e5e7eb !important;
+    border-color: rgba(148, 163, 184, 0.28) !important;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22) !important;
+    -webkit-text-fill-color: #e5e7eb !important;
+}
+
+html.theme-dark .site-topbar #voiceText,
+html.theme-dark .site-topbar #langDisplay,
+html.theme-dark .site-topbar button span,
+html.theme-dark .site-topbar select {
+    color: #e5e7eb !important;
+    -webkit-text-fill-color: #e5e7eb !important;
+}
+</style>
+
+<script>
+window.tailwind = window.tailwind || {};
+window.tailwind.config = {
+    darkMode: 'class'
+};
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Sans+TC:wght@300;400;700;900&display=swap');
         
@@ -4743,8 +4828,8 @@ section#sec19.section-container > .section-header {
 </div>
 <div class="toolbar-group">
 <div class="voice-control-wrap">
-<button class="flex items-center justify-center gap-2 px-4 h-10 rounded-full bg-white border border-slate-200 text-slate-800 font-bold text-xs shadow-md hover:bg-slate-50 transition-all dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-700" id="voiceBtn" onclick="toggleAudioGuide()" type="button">
-<i class="fas fa-volume-up text-blue-500 dark:text-blue-400" id="voiceIcon"></i>
+<button class="flex items-center justify-center gap-2 px-4 h-10 rounded-full bg-white border border-slate-200 text-slate-800 font-bold text-xs shadow-md hover:bg-slate-50 transition-all" id="voiceBtn" onclick="toggleAudioGuide()" type="button">
+<i class="fas fa-volume-up text-blue-500" id="voiceIcon"></i>
 <span data-en="Audio Guide ON" data-i18n="k0" data-i18n-mode="text" data-zh="語音導覽 ON" id="voiceText">語音導覽 ON</span>
 </button>
 <button aria-label="Voice settings" class="voice-settings-btn" onclick="toggleVoicePanel()" type="button">
@@ -4764,7 +4849,7 @@ section#sec19.section-container > .section-header {
 </div>
 </div>
 </div>
-<div class="language-select-wrap notranslate flex items-center gap-2 px-3 py-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:ring-2 ring-blue-400 transition-all" translate="no">
+<div class="language-select-wrap notranslate flex items-center gap-2 px-3 py-2 rounded-full bg-gray-100 hover:ring-2 ring-blue-400 transition-all" translate="no">
 <i class="fas fa-language text-lg text-blue-500"></i>
 <select aria-label="Language selector" class="language-select notranslate bg-transparent text-sm font-bold outline-none cursor-pointer" id="languageSelect" onchange="changeSiteLanguage(this.value)" translate="no">
 <option class="notranslate" translate="no" value="zh">繁體中文</option>
@@ -8146,24 +8231,25 @@ function applyTheme(theme) {
 
     const isDark = theme === 'dark';
 
-    // html 同步
     root.classList.toggle('dark', isDark);
     root.classList.toggle('theme-dark', isDark);
     root.classList.toggle('theme-light', !isDark);
 
-    // body 同步
-    body.classList.toggle('dark', isDark);
-    body.classList.toggle('theme-dark', isDark);
-    body.classList.toggle('theme-light', !isDark);
-    body.classList.toggle('light', !isDark);
+    if (body) {
+        body.classList.toggle('dark', isDark);
+        body.classList.toggle('theme-dark', isDark);
+        body.classList.toggle('theme-light', !isDark);
+        body.classList.toggle('light', !isDark);
+        body.style.colorScheme = isDark ? 'dark' : 'light';
+    }
 
-    // icon 同步
+    root.style.colorScheme = isDark ? 'dark' : 'light';
+
     if (icon) {
         icon.className = isDark ? "fas fa-sun text-sm" : "fas fa-moon text-sm";
     }
 
-    // 儲存主題
-    localStorage.setItem('fcfc-theme', theme);
+    localStorage.setItem('fcfc-theme', isDark ? 'dark' : 'light');
 }
 
 function toggleTheme() {
