@@ -13980,13 +13980,11 @@ html:not([lang^="zh"]) .section-header [data-lang="zh"] {
     return active && GROUP_TITLE[active.id] ? active.id : 'sec1';
   }
   function run(){
-    const badge = document.querySelector('.topbar-brand-badge');
-    const title = document.querySelector('.topbar-title');
-    const subtitle = document.querySelector('.topbar-subtitle');
-    if (badge) badge.textContent = 'FCFC';
-    if (title) title.textContent = 'FCFC';
-    if (subtitle) subtitle.textContent = OFFICIAL;
-    // hero_desc is handled by FINAL-HERO-DESC-MULTILANG-SCRIPT, so do not force it back to English here.
+    /*
+      不要再動 topbar-brand / topbar-title / topbar-subtitle。
+      不然切換章節後會把原本品牌圖改回 FCFC。
+    */
+
     document.querySelectorAll('[data-i18n="hero_title"]').forEach(el => {
       if ((el.textContent || '').includes('FORMOSA') || (el.textContent || '').includes('CHEMICALS')) {
         el.innerHTML = 'FORMOSA <br> CHEMICALS &amp; <br> FIBRE CORPORATION';
@@ -14387,18 +14385,15 @@ html.show-en .section-header {
 
     const mode = getMode();
 
-    const badge = document.querySelector('.topbar-brand-badge');
-    const title = document.querySelector('.topbar-title');
-    const subtitle = document.querySelector('.topbar-subtitle');
+    /*
+      重點：
+      不要再處理 topbar-brand / topbar-title / topbar-subtitle。
+      上方品牌要交給 brand-lockup-image 那段處理，
+      不然切換章節後會被改回 FCFC。
+    */
     const hero = document.querySelector('[data-i18n="hero_title"]');
 
-    if (badge) { badge.textContent = 'FCFC'; badge.classList.add('notranslate'); badge.setAttribute('translate','no'); }
-    if (title) { title.textContent = 'FCFC'; title.classList.add('notranslate'); title.setAttribute('translate','no'); }
-
-    // 簡體中文明確給簡體名稱，避免 Google Translate 和腳本繁簡互相覆蓋。
-    // 其他語言則以繁中名稱作來源讓 Google Translate 接手。
     if (mode !== lastMode || force) {
-      setCompany(subtitle, mode);
       setCompany(hero, mode);
       lastMode = mode;
     }
@@ -14614,37 +14609,6 @@ html.show-en .section-header {
 })();
 </script>
 
-
-<script>
-/* ===== FINAL PATCH: restore static topbar brand image ===== */
-(function(){
-  const BRAND_IMG_SRC = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MjAnIGhlaWdodD0nNzInIHZpZXdCb3g9JzAgMCA1MjAgNzInPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCcgeDI9JzEnIHkxPScwJyB5Mj0nMSc+CiAgICAgIDxzdG9wIG9mZnNldD0nMCUnIHN0b3AtY29sb3I9JyMzYjgyZjYnLz4KICAgICAgPHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMWQ0ZWQ4Jy8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8Y2lyY2xlIGN4PSczNicgY3k9JzM2JyByPScyOCcgZmlsbD0ndXJsKCNnKScvPgogIDx0ZXh0IHg9JzM2JyB5PSc0MicgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC1mYW1pbHk9J0FyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNmZmZmZmYnPkZDRkM8L3RleHQ+CiAgPHRleHQgeD0nODInIHk9JzMxJyBmb250LWZhbWlseT0nIk5vdG8gU2FucyBUQyIsICJNaWNyb3NvZnQgSmhlbmdIZWkiLCBBcmlhbCwgc2Fucy1zZXJpZicgZm9udC1zaXplPScyMycgZm9udC13ZWlnaHQ9JzkwMCcgZmlsbD0nIzExMTgyNyc+5Y+w54Gj5YyW5a2457qW57at6IKh5Lu95pyJ6ZmQ5YWs5Y+4PC90ZXh0PgogIDx0ZXh0IHg9JzgyJyB5PSc1MicgZm9udC1mYW1pbHk9J0FyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTIuNScgZm9udC13ZWlnaHQ9JzcwMCcgbGV0dGVyLXNwYWNpbmc9JzEuNScgZmlsbD0nIzZiNzI4MCc+Rk9STU9TQSBDSEVNSUNBTFMgJmFtcDsgRklCUkUgQ09SUE9SQVRJT048L3RleHQ+Cjwvc3ZnPg==";
-  function ensureBrandImage(){
-    const topbar = document.querySelector('.topbar-brand');
-    if(!topbar) return;
-    topbar.classList.add('notranslate');
-    topbar.setAttribute('translate','no');
-    topbar.innerHTML = '<div class="brand-image-wrap notranslate" translate="no"><img alt="FCFC 台灣化學纖維股份有限公司 FORMOSA CHEMICALS &amp; FIBRE CORPORATION" class="brand-lockup-image notranslate" src="' + BRAND_IMG_SRC + '" translate="no"/></div>';
-  }
-  ['changeSiteLanguage','applyLanguage','switchSection'].forEach(function(name){
-    const oldFn = window[name];
-    window[name] = function(){
-      const result = oldFn ? oldFn.apply(this, arguments) : undefined;
-      setTimeout(ensureBrandImage, 0);
-      setTimeout(ensureBrandImage, 300);
-      setTimeout(ensureBrandImage, 1000);
-      return result;
-    };
-  });
-  document.addEventListener('DOMContentLoaded', function(){
-    ensureBrandImage();
-    setTimeout(ensureBrandImage, 300);
-    setTimeout(ensureBrandImage, 1000);
-  });
-})();
-</script>
-
-
 <script id="FINAL-ZH-CLEANUP-PATCH">
 (function(){
   const MAP = [
@@ -14752,11 +14716,15 @@ html.show-en .section-header {
     img.setAttribute('src', currentBrandSrc());
     img.setAttribute('alt', 'FCFC 台灣化學纖維股份有限公司 FORMOSA CHEMICALS & FIBRE CORPORATION');
   }
+  window.ensureTopbarBrandImage = ensureTopbarBrandImage;
 
   function runBrandFix(){
     ensureTopbarBrandImage();
     setTimeout(ensureTopbarBrandImage, 50);
     setTimeout(ensureTopbarBrandImage, 300);
+    setTimeout(ensureTopbarBrandImage, 800);
+    setTimeout(ensureTopbarBrandImage, 1200);
+    setTimeout(ensureTopbarBrandImage, 1800);
   }
 
   // Hook common actions
@@ -17580,6 +17548,609 @@ body.voice-guide-active .voice-mini-controls {
   }
 })();
 </script>
+<script id="FINAL-VOICE-STOP-ON-ANY-SUBSECTION-NAV">
+(function () {
+    if (window.__voiceStopOnAnySubsectionNavFinal) return;
+    window.__voiceStopOnAnySubsectionNavFinal = true;
+
+    /*
+      保留你目前版本原本的 stopAudioGuideForNavigation。
+      等一下會先呼叫它，再做額外保險重置。
+    */
+    const oldStopAudioGuideForNavigation = window.stopAudioGuideForNavigation;
+
+    let lastSectionId = '';
+    let stopping = false;
+
+    function isEnglishMode() {
+        const lang = String(window.currentLang || document.documentElement.lang || '').toLowerCase();
+        return lang.startsWith('en') ||
+            document.body.classList.contains('show-en') ||
+            document.documentElement.classList.contains('show-en');
+    }
+
+    function getCurrentVisibleSectionId() {
+        /*
+          你的小章節切換補丁會用 window.__currentSubSectionId 記錄目前小章節，
+          所以這個優先。
+        */
+        if (window.__currentSubSectionId && /^sec\d+$/.test(window.__currentSubSectionId)) {
+            return window.__currentSubSectionId;
+        }
+
+        const hash = String(location.hash || '').replace('#', '');
+        if (/^sec\d+$/.test(hash)) return hash;
+
+        const activeSections = Array.from(document.querySelectorAll('.content-section.active'));
+
+        const visible = activeSections.find(function (el) {
+            const style = window.getComputedStyle(el);
+            const rect = el.getBoundingClientRect();
+
+            return style.display !== 'none' &&
+                style.visibility !== 'hidden' &&
+                rect.width > 0 &&
+                rect.height > 0;
+        });
+
+        if (visible && visible.id) return visible.id;
+
+        return hash || '';
+    }
+
+    function resetVoiceUIOnly() {
+        const voiceBtn = document.getElementById('voiceBtn');
+        const voiceIcon = document.getElementById('voiceIcon');
+        const voiceText = document.getElementById('voiceText');
+        const miniControls = document.getElementById('voiceMiniControls');
+        const wrap = document.querySelector('.voice-control-wrap');
+        const panel = document.getElementById('audioGuidePanel');
+        const playPauseIcon = document.getElementById('audioGuidePlayPauseIcon');
+        const progress = document.getElementById('audioGuideProgress');
+
+        window.isSpeaking = false;
+        window.isPaused = false;
+        window.currentUtterance = null;
+        window.currentVoiceSectionId = null;
+        window.voiceIsResetForSection = true;
+
+        if (voiceBtn) {
+            voiceBtn.classList.remove('is-speaking');
+        }
+
+        if (voiceIcon) {
+            voiceIcon.className = 'fas fa-volume-up text-blue-500';
+        }
+
+        if (voiceText) {
+            voiceText.setAttribute('data-zh', '語音導覽 ON');
+            voiceText.setAttribute('data-en', 'Audio Guide ON');
+            voiceText.textContent = isEnglishMode() ? 'Audio Guide ON' : '語音導覽 ON';
+        }
+
+        if (miniControls) {
+            miniControls.setAttribute('aria-hidden', 'true');
+            miniControls.style.display = 'none';
+        }
+
+        if (wrap) {
+            wrap.classList.remove('voice-active');
+        }
+
+        if (document.body) {
+            document.body.classList.remove('voice-guide-active');
+        }
+
+        if (panel) {
+            panel.classList.remove('show');
+            panel.setAttribute('aria-hidden', 'true');
+        }
+
+        if (playPauseIcon) {
+            playPauseIcon.className = 'fas fa-play';
+        }
+
+        if (progress) {
+            progress.textContent = '0 / 0';
+        }
+    }
+
+    function hardStopVoice() {
+        if (stopping) return;
+        stopping = true;
+
+        /*
+          先呼叫你目前語音系統原本的停止函式，
+          這樣可以清掉它自己內部的 state。
+        */
+        if (typeof oldStopAudioGuideForNavigation === 'function') {
+            try {
+                oldStopAudioGuideForNavigation();
+            } catch (e) {}
+        }
+
+        /*
+          再補 speechSynthesis.cancel()，避免 iPad / Safari 還殘留上一段語音。
+        */
+        if ('speechSynthesis' in window) {
+            try {
+                window.speechSynthesis.resume();
+            } catch (e) {}
+
+            try {
+                window.speechSynthesis.cancel();
+            } catch (e) {}
+        }
+
+        resetVoiceUIOnly();
+
+        /*
+          有些舊程式有 setTimeout 會把語音復活，
+          所以延遲再 cancel 兩次。
+        */
+        setTimeout(function () {
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.cancel();
+                } catch (e) {}
+            }
+            resetVoiceUIOnly();
+        }, 80);
+
+        setTimeout(function () {
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.cancel();
+                } catch (e) {}
+            }
+            resetVoiceUIOnly();
+            stopping = false;
+        }, 260);
+    }
+
+    /*
+      覆蓋 stopAudioGuideForNavigation：
+      從現在開始，不管大章節或小章節切換，都只停止，不自動重播。
+    */
+    window.stopAudioGuideForNavigation = function () {
+        hardStopVoice();
+        return false;
+    };
+
+    function patchSwitchSection() {
+        if (typeof window.switchSection !== 'function') return;
+        if (window.switchSection.__voiceStopOnAnySubsectionNavFinal) return;
+
+        const oldSwitchSection = window.switchSection;
+
+        window.switchSection = function (sectionId, updateHash) {
+            /*
+              4-4 → 5-1、5-1 → 4-4、5-1 → 5-2、5-2 → 5-3
+              都會先停掉上一章語音。
+            */
+            hardStopVoice();
+
+            const result = oldSwitchSection.apply(this, arguments);
+
+            /*
+              小章節切換有些是 setTimeout 後才真的切頁，
+              所以切完後再保險停止。
+            */
+            setTimeout(hardStopVoice, 60);
+            setTimeout(hardStopVoice, 220);
+            setTimeout(function () {
+                lastSectionId = getCurrentVisibleSectionId();
+            }, 300);
+
+            return result;
+        };
+
+        window.switchSection.__voiceStopOnAnySubsectionNavFinal = true;
+    }
+
+    /*
+      先包一次，之後再包幾次。
+      因為你的檔案後面有很多 setTimeout 會重新綁定 switchSection。
+    */
+    patchSwitchSection();
+    setTimeout(patchSwitchSection, 100);
+    setTimeout(patchSwitchSection, 600);
+    setTimeout(patchSwitchSection, 1500);
+    setTimeout(patchSwitchSection, 3000);
+
+    /*
+      補強：點底部上一章/下一章、側邊選單、小章節按鈕時，先停止語音。
+    */
+    document.addEventListener('click', function (event) {
+        const target = event.target;
+
+        if (!target) return;
+
+        /*
+          不要攔截語音面板自己的按鈕。
+        */
+        if (
+            target.closest('#voiceBtn') ||
+            target.closest('#audioGuidePanel') ||
+            target.closest('.voice-control-wrap') ||
+            target.closest('#voiceMiniControls')
+        ) {
+            return;
+        }
+
+        const navButton = target.closest(
+            '#prevSectionBtn, #nextSectionBtn, .nav-link, .drawer-link, .tp-subpage-btn, [onclick*="switchSection"]'
+        );
+
+        if (!navButton) return;
+
+        hardStopVoice();
+        setTimeout(hardStopVoice, 80);
+        setTimeout(hardStopVoice, 240);
+    }, true);
+
+    /*
+      補強：網址 hash 改變也停止語音。
+    */
+    window.addEventListener('hashchange', function () {
+        hardStopVoice();
+        setTimeout(hardStopVoice, 80);
+        setTimeout(function () {
+            lastSectionId = getCurrentVisibleSectionId();
+        }, 180);
+    }, true);
+
+    /*
+      最後保險：觀察目前 active 小章節是否改變。
+      如果從 sec20 變 sec21，或 sec21 變 sec22，就停掉上一章語音。
+    */
+    function checkSectionChanged() {
+        const now = getCurrentVisibleSectionId();
+
+        if (!lastSectionId) {
+            lastSectionId = now;
+            return;
+        }
+
+        if (now && now !== lastSectionId) {
+            hardStopVoice();
+            lastSectionId = now;
+        }
+    }
+
+    const observer = new MutationObserver(function () {
+        checkSectionChanged();
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        lastSectionId = getCurrentVisibleSectionId();
+
+        if (document.body) {
+            observer.observe(document.body, {
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['class', 'style']
+            });
+        }
+
+        patchSwitchSection();
+    });
+
+    setTimeout(function () {
+        lastSectionId = getCurrentVisibleSectionId();
+
+        if (document.body) {
+            try {
+                observer.observe(document.body, {
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['class', 'style']
+                });
+            } catch (e) {}
+        }
+
+        patchSwitchSection();
+    }, 300);
+})();
+</script>
+<script id="FINAL-RESTORE-WOW-STOCK-CHART">
+(function () {
+    let wowStockChartInstance = null;
+
+    function isSec6Visible() {
+        const sec6 = document.getElementById('sec6');
+        if (!sec6) return false;
+
+        const style = window.getComputedStyle(sec6);
+        const rect = sec6.getBoundingClientRect();
+
+        return sec6.classList.contains('active') &&
+            style.display !== 'none' &&
+            rect.width > 0 &&
+            rect.height > 0;
+    }
+
+    function showFallback() {
+        const canvas = document.getElementById('wowStockChart');
+        const fallback = document.getElementById('wowChartFallback');
+
+        if (canvas) canvas.style.display = 'none';
+        if (fallback) {
+            fallback.style.display = 'flex';
+            fallback.style.opacity = '1';
+            fallback.style.visibility = 'visible';
+        }
+    }
+
+    function renderWowStockChart() {
+        const canvas = document.getElementById('wowStockChart');
+        const fallback = document.getElementById('wowChartFallback');
+
+        if (!canvas) return;
+
+        /*
+          如果目前不在 1-6 財務績效，不急著畫。
+          等切到 1-6 再畫，避免 hidden canvas 變成空白。
+        */
+        if (!isSec6Visible()) return;
+
+        if (typeof Chart === 'undefined') {
+            showFallback();
+            return;
+        }
+
+        canvas.style.display = 'block';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+
+        if (fallback) fallback.style.display = 'none';
+
+        if (wowStockChartInstance) {
+            try {
+                wowStockChartInstance.destroy();
+            } catch (e) {}
+            wowStockChartInstance = null;
+        }
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+            showFallback();
+            return;
+        }
+
+        const gradient = ctx.createLinearGradient(0, 0, 0, 260);
+        gradient.addColorStop(0, 'rgba(255,255,255,0.38)');
+        gradient.addColorStop(1, 'rgba(255,255,255,0.04)');
+
+        wowStockChartInstance = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2021', '2022', '2023', '2024E', '2025E'],
+                datasets: [{
+                    label: 'Stock Price NT$',
+                    data: [80.8, 70, 62.3, 54.5, 60],
+                    tension: 0.35,
+                    fill: true,
+                    backgroundColor: gradient,
+                    borderColor: '#ffffff',
+                    borderWidth: 3,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: '#ffffff',
+                    pointBorderColor: '#93c5fd',
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            color: '#ffffff',
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#ffffff',
+                            font: {
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.16)'
+                        }
+                    },
+                    y: {
+                        min: 45,
+                        max: 90,
+                        ticks: {
+                            color: '#ffffff',
+                            font: {
+                                weight: 'bold'
+                            },
+                            callback: function (value) {
+                                return 'NT$ ' + value;
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.16)'
+                        }
+                    }
+                }
+            }
+        });
+
+        setTimeout(function () {
+            if (wowStockChartInstance) {
+                wowStockChartInstance.resize();
+            }
+        }, 120);
+    }
+
+    /*
+      切換章節後重畫。
+      因為 1-6 原本是 display:none，直接初始化容易空白。
+    */
+    const oldSwitchSection = window.switchSection;
+    if (typeof oldSwitchSection === 'function' && !oldSwitchSection.__wowChartRestorePatched) {
+        window.switchSection = function () {
+            const result = oldSwitchSection.apply(this, arguments);
+            setTimeout(renderWowStockChart, 120);
+            setTimeout(renderWowStockChart, 420);
+            return result;
+        };
+        window.switchSection.__wowChartRestorePatched = true;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(renderWowStockChart, 200);
+        setTimeout(renderWowStockChart, 800);
+    });
+
+    window.addEventListener('hashchange', function () {
+        setTimeout(renderWowStockChart, 180);
+        setTimeout(renderWowStockChart, 500);
+    });
+
+    window.addEventListener('resize', function () {
+        if (wowStockChartInstance) {
+            wowStockChartInstance.resize();
+        } else {
+            renderWowStockChart();
+        }
+    });
+
+    /*
+      保險：如果 active section 變成 sec6，就重畫。
+    */
+    const observer = new MutationObserver(function () {
+        if (isSec6Visible()) {
+            setTimeout(renderWowStockChart, 120);
+        }
+    });
+
+    if (document.body) {
+        observer.observe(document.body, {
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class', 'style']
+        });
+    }
+
+    setTimeout(renderWowStockChart, 500);
+})();
+</script>
+<script id="FINAL-FORCE-TOPBAR-BRAND-IMAGE-STAY">
+(function(){
+  if (window.__forceTopbarBrandImageStay) return;
+  window.__forceTopbarBrandImageStay = true;
+
+  function findBrandImageScriptFunction(){
+    /*
+      你原本檔案裡已經有 ensureTopbarBrandImage()，
+      這裡只做補強：如果品牌被其他 script 改回文字，就重新呼叫它。
+    */
+    if (typeof window.ensureTopbarBrandImage === 'function') {
+      window.ensureTopbarBrandImage();
+    }
+  }
+
+  function hasCorrectBrandImage(){
+    const topbar = document.querySelector('.topbar-brand');
+    return !!(topbar && topbar.querySelector('.brand-lockup-image'));
+  }
+
+  function forceBrandImage(){
+    const topbar = document.querySelector('.topbar-brand');
+    if (!topbar) return;
+
+    /*
+      如果品牌區又被改成 FCFC + 英文文字，就清掉，讓原本品牌圖 script 重建。
+    */
+    if (!hasCorrectBrandImage()) {
+      const imgScript = document.getElementById('FINAL-TOPBAR-BRAND-DARKMODE-FIX');
+      if (imgScript) {
+        /*
+          重新觸發 click/change/hash 後你原本的品牌圖修正。
+        */
+        document.dispatchEvent(new Event('change'));
+      }
+    }
+
+    setTimeout(function(){
+      if (!hasCorrectBrandImage()) {
+        /*
+          最後保險：直接用目前頁面中已存在的 brand-lockup-image src 重建。
+          先找頁面上任何一張品牌圖。
+        */
+        const existing = document.querySelector('.brand-lockup-image');
+        const src = existing && existing.getAttribute('src');
+
+        if (src) {
+          topbar.innerHTML =
+            '<div class="brand-image-wrap notranslate" translate="no">' +
+            '<img alt="FCFC 台灣化學纖維股份有限公司 FORMOSA CHEMICALS &amp; FIBRE CORPORATION" class="brand-lockup-image notranslate" translate="no" src="' + src + '">' +
+            '</div>';
+        }
+      }
+    }, 80);
+  }
+
+  function schedule(){
+    forceBrandImage();
+    setTimeout(forceBrandImage, 100);
+    setTimeout(forceBrandImage, 350);
+    setTimeout(forceBrandImage, 800);
+  }
+
+  document.addEventListener('DOMContentLoaded', schedule);
+  document.addEventListener('click', schedule, true);
+  document.addEventListener('change', schedule, true);
+  window.addEventListener('hashchange', schedule);
+
+  ['switchSection', 'applyLanguage', 'changeSiteLanguage', 'toggleTheme'].forEach(function(name){
+    const oldFn = window[name];
+    if (typeof oldFn === 'function' && !oldFn.__forceTopbarBrandImageStay) {
+      const wrapped = function(){
+        const result = oldFn.apply(this, arguments);
+        schedule();
+        return result;
+      };
+      wrapped.__forceTopbarBrandImageStay = true;
+      window[name] = wrapped;
+    }
+  });
+
+  const observer = new MutationObserver(function(){
+    clearTimeout(window.__topbarBrandStayTimer);
+    window.__topbarBrandStayTimer = setTimeout(forceBrandImage, 60);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    const topbar = document.querySelector('.topbar-brand');
+    if (topbar) {
+      observer.observe(topbar, {
+        childList: true,
+        subtree: true,
+        characterData: true
+      });
+    }
+  });
+
+  schedule();
+})();
+</script>
 </body>
 </html>
 <!-- Final override injected by assistant: Section 5 dark mode readability -->
@@ -20245,5 +20816,380 @@ body.dark #sec22 .quiz-option-btn:hover:not([disabled]) {
     color: #7f1d1d !important;
     -webkit-text-fill-color: #7f1d1d !important;
     border-color: #ef4444 !important;
+}
+/* ===== FINAL FIX: 5-1 / 5-2 middle cards follow theme ===== */
+
+/* 淺色模式：中間那層框維持白色 */
+html.theme-light #sec21 .interactive-card,
+body.theme-light #sec21 .interactive-card,
+html.theme-light #sec22 .interactive-card,
+body.theme-light #sec22 .interactive-card {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* 深色模式：中間那層框改成深色 */
+html.theme-dark #sec21 .interactive-card,
+body.theme-dark #sec21 .interactive-card,
+html.dark #sec21 .interactive-card,
+body.dark #sec21 .interactive-card,
+html.theme-dark #sec22 .interactive-card,
+body.theme-dark #sec22 .interactive-card,
+html.dark #sec22 .interactive-card,
+body.dark #sec22 .interactive-card {
+    background: #1e293b !important;
+    background-color: #1e293b !important;
+    color: #e5e7eb !important;
+    border: 1px solid rgba(148, 163, 184, 0.28) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24) !important;
+}
+
+/* 深色模式：中間框內的標題與說明字變亮 */
+html.theme-dark #sec21 .interactive-card *,
+body.theme-dark #sec21 .interactive-card *,
+html.dark #sec21 .interactive-card *,
+body.dark #sec21 .interactive-card *,
+html.theme-dark #sec22 .interactive-card *,
+body.theme-dark #sec22 .interactive-card *,
+html.dark #sec22 .interactive-card *,
+body.dark #sec22 .interactive-card * {
+    color: inherit !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+
+/* 深色模式：5-1 / 5-2 的藍色小標題保留藍色 */
+html.theme-dark #sec21 .interactive-card-head,
+body.theme-dark #sec21 .interactive-card-head,
+html.dark #sec21 .interactive-card-head,
+body.dark #sec21 .interactive-card-head,
+html.theme-dark #sec22 .interactive-card-head,
+body.theme-dark #sec22 .interactive-card-head,
+html.dark #sec22 .interactive-card-head,
+body.dark #sec22 .interactive-card-head,
+html.theme-dark #sec21 .interactive-card-head strong,
+body.theme-dark #sec21 .interactive-card-head strong,
+html.dark #sec21 .interactive-card-head strong,
+body.dark #sec21 .interactive-card-head strong,
+html.theme-dark #sec22 .interactive-card-head strong,
+body.theme-dark #sec22 .interactive-card-head strong,
+html.dark #sec22 .interactive-card-head strong,
+body.dark #sec22 .interactive-card-head strong {
+    color: #93c5fd !important;
+    -webkit-text-fill-color: #93c5fd !important;
+}
+/* ===== FINAL FIX: 5-2 quiz feedback follows light/dark mode ===== */
+
+/* 淺色模式：提示框維持淺藍底深藍字 */
+html.theme-light #sec22 .quiz-feedback,
+body.theme-light #sec22 .quiz-feedback {
+    background: #dbeafe !important;
+    background-color: #dbeafe !important;
+    color: #1d4ed8 !important;
+    -webkit-text-fill-color: #1d4ed8 !important;
+    border: 1px solid #93c5fd !important;
+    border-radius: .9rem !important;
+    padding: .65rem .8rem !important;
+    font-weight: 800 !important;
+    opacity: 1 !important;
+}
+
+/* 深色模式：提示框改成深底亮字 */
+html.theme-dark #sec22 .quiz-feedback,
+body.theme-dark #sec22 .quiz-feedback,
+html.dark #sec22 .quiz-feedback,
+body.dark #sec22 .quiz-feedback {
+    background: #1e293b !important;
+    background-color: #1e293b !important;
+    color: #bfdbfe !important;
+    -webkit-text-fill-color: #bfdbfe !important;
+    border: 1px solid rgba(147, 197, 253, 0.55) !important;
+    border-radius: .9rem !important;
+    padding: .65rem .8rem !important;
+    font-weight: 800 !important;
+    opacity: 1 !important;
+}
+
+/* 保險：提示框裡如果有 span / b / strong，也跟著清楚 */
+html.theme-dark #sec22 .quiz-feedback *,
+body.theme-dark #sec22 .quiz-feedback *,
+html.dark #sec22 .quiz-feedback *,
+body.dark #sec22 .quiz-feedback * {
+    color: #bfdbfe !important;
+    -webkit-text-fill-color: #bfdbfe !important;
+    opacity: 1 !important;
+}
+/* ===== FINAL FIX: 5-2 restart button readable ===== */
+
+/* 淺色模式：重新開始按鈕 */
+html.theme-light #sec22 .quiz-reset-btn,
+body.theme-light #sec22 .quiz-reset-btn {
+    background: #e2e8f0 !important;
+    background-color: #e2e8f0 !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    border: 1px solid #cbd5e1 !important;
+    opacity: 1 !important;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* 淺色模式 hover */
+html.theme-light #sec22 .quiz-reset-btn:hover,
+body.theme-light #sec22 .quiz-reset-btn:hover {
+    background: #cbd5e1 !important;
+    background-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+/* 深色模式：重新開始按鈕 */
+html.theme-dark #sec22 .quiz-reset-btn,
+body.theme-dark #sec22 .quiz-reset-btn,
+html.dark #sec22 .quiz-reset-btn,
+body.dark #sec22 .quiz-reset-btn {
+    background: #475569 !important;
+    background-color: #475569 !important;
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    border: 1px solid #64748b !important;
+    opacity: 1 !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* 深色模式 hover */
+html.theme-dark #sec22 .quiz-reset-btn:hover,
+body.theme-dark #sec22 .quiz-reset-btn:hover,
+html.dark #sec22 .quiz-reset-btn:hover,
+body.dark #sec22 .quiz-reset-btn:hover {
+    background: #64748b !important;
+    background-color: #64748b !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* 保險：如果按鈕裡有 span，也一起變清楚 */
+html.theme-dark #sec22 .quiz-reset-btn *,
+body.theme-dark #sec22 .quiz-reset-btn *,
+html.dark #sec22 .quiz-reset-btn *,
+body.dark #sec22 .quiz-reset-btn * {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1 !important;
+}
+/* ===== FINAL FIX: 5-2 answer correct / wrong readable in light mode ===== */
+
+/* 淺色模式：答對，明顯綠底深綠字 */
+html.theme-light #sec22 .quiz-option-btn.correct,
+body.theme-light #sec22 .quiz-option-btn.correct,
+html.theme-light #sec22 button.quiz-option-btn.correct,
+body.theme-light #sec22 button.quiz-option-btn.correct {
+    background: #bbf7d0 !important;
+    background-color: #bbf7d0 !important;
+    color: #14532d !important;
+    -webkit-text-fill-color: #14532d !important;
+    border: 2px solid #22c55e !important;
+    opacity: 1 !important;
+    filter: none !important;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18) !important;
+}
+
+/* 淺色模式：答錯，明顯紅底深紅字 */
+html.theme-light #sec22 .quiz-option-btn.wrong,
+body.theme-light #sec22 .quiz-option-btn.wrong,
+html.theme-light #sec22 button.quiz-option-btn.wrong,
+body.theme-light #sec22 button.quiz-option-btn.wrong {
+    background: #fecaca !important;
+    background-color: #fecaca !important;
+    color: #7f1d1d !important;
+    -webkit-text-fill-color: #7f1d1d !important;
+    border: 2px solid #ef4444 !important;
+    opacity: 1 !important;
+    filter: none !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+
+/* 保險：按鈕內如果有 span / b / strong，也不要被其他文字規則蓋掉 */
+html.theme-light #sec22 .quiz-option-btn.correct *,
+body.theme-light #sec22 .quiz-option-btn.correct * {
+    color: #14532d !important;
+    -webkit-text-fill-color: #14532d !important;
+    opacity: 1 !important;
+}
+
+html.theme-light #sec22 .quiz-option-btn.wrong *,
+body.theme-light #sec22 .quiz-option-btn.wrong * {
+    color: #7f1d1d !important;
+    -webkit-text-fill-color: #7f1d1d !important;
+    opacity: 1 !important;
+}
+
+/* 如果按鈕答完題後被 disabled，不要變淡 */
+html.theme-light #sec22 .quiz-option-btn.correct:disabled,
+html.theme-light #sec22 .quiz-option-btn.wrong:disabled,
+body.theme-light #sec22 .quiz-option-btn.correct:disabled,
+body.theme-light #sec22 .quiz-option-btn.wrong:disabled {
+    opacity: 1 !important;
+    filter: none !important;
+}
+/* ===== FINAL FIX: restore stock chart visibility ===== */
+#wowChartWrap {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 230px !important;
+    padding: 1rem !important;
+}
+
+#wowStockChart {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 220px !important;
+}
+
+#wowChartFallback {
+    height: 100%;
+    min-height: 220px;
+    align-items: end;
+    gap: .7rem;
+    justify-content: center;
+}
+
+.wow-bar {
+    width: 48px;
+    border-radius: .75rem .75rem .2rem .2rem;
+    background: rgba(255,255,255,.78);
+    position: relative;
+}
+
+.wow-bar span {
+    position: absolute;
+    bottom: -1.45rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .65rem;
+    font-weight: 900;
+    white-space: nowrap;
+    color: #ffffff;
+}
+/* ===== FINAL FIX: topbar company name visible in dark mode ===== */
+
+/* 深色模式：中文公司名要清楚 */
+html.theme-dark .site-topbar .topbar-title,
+html.theme-dark .site-topbar .topbar-title *,
+html.dark .site-topbar .topbar-title,
+html.dark .site-topbar .topbar-title *,
+body.theme-dark .site-topbar .topbar-title,
+body.theme-dark .site-topbar .topbar-title *,
+body.dark .site-topbar .topbar-title,
+body.dark .site-topbar .topbar-title * {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 深色模式：英文副標也不要太淡 */
+html.theme-dark .site-topbar .topbar-subtitle,
+html.theme-dark .site-topbar .topbar-subtitle *,
+html.dark .site-topbar .topbar-subtitle,
+html.dark .site-topbar .topbar-subtitle *,
+body.theme-dark .site-topbar .topbar-subtitle,
+body.theme-dark .site-topbar .topbar-subtitle *,
+body.dark .site-topbar .topbar-subtitle,
+body.dark .site-topbar .topbar-subtitle * {
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+    opacity: 0.92 !important;
+    visibility: visible !important;
+}
+
+/* 淺色模式：維持原本深色字 */
+html.theme-light .site-topbar .topbar-title,
+html.theme-light .site-topbar .topbar-title *,
+body.theme-light .site-topbar .topbar-title,
+body.theme-light .site-topbar .topbar-title * {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+}
+
+html.theme-light .site-topbar .topbar-subtitle,
+html.theme-light .site-topbar .topbar-subtitle *,
+body.theme-light .site-topbar .topbar-subtitle,
+body.theme-light .site-topbar .topbar-subtitle * {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 0.8 !important;
+}
+/* ===== FINAL FIX: topbar company name visible after section switch ===== */
+
+.site-topbar .topbar-brand {
+    min-width: 0 !important;
+}
+
+.site-topbar .topbar-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+}
+
+.site-topbar .topbar-title {
+    display: block !important;
+    font-size: 0.95rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.04em !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.site-topbar .topbar-subtitle {
+    display: block !important;
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* 淺色模式 */
+html.theme-light .site-topbar .topbar-title,
+body.theme-light .site-topbar .topbar-title {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+}
+
+html.theme-light .site-topbar .topbar-subtitle,
+body.theme-light .site-topbar .topbar-subtitle {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 0.85 !important;
+}
+
+/* 深色模式 */
+html.theme-dark .site-topbar .topbar-title,
+body.theme-dark .site-topbar .topbar-title,
+html.dark .site-topbar .topbar-title,
+body.dark .site-topbar .topbar-title {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html.theme-dark .site-topbar .topbar-subtitle,
+body.theme-dark .site-topbar .topbar-subtitle,
+html.dark .site-topbar .topbar-subtitle,
+body.dark .site-topbar .topbar-subtitle {
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+    opacity: 0.9 !important;
+    visibility: visible !important;
 }
 </style>
