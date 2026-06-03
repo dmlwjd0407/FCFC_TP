@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth theme-light" lang="zh-TW"></html>
+<html class="scroll-smooth theme-light" lang="zh-TW">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -587,7 +587,7 @@ window.tailwind.config = {
 
 /* ===== Full page-switch mode with safe fallback ===== */
 .hero-section {
-    display: none;
+    display: flex;
 }
 
 .content-section {
@@ -12820,22 +12820,7 @@ html:not(.show-en) .section-container > .section-header .lang-en {
   }
 
   function ensureOverview(group){
-    GROUPS.forEach(g => {
-      const first = document.getElementById(g.sections[0]);
-      if (!first) return;
-      let overview = first.querySelector(':scope > .tp-group-overview no-voice');
-      if (!overview) {
-        overview = document.createElement('div');
-        overview.className = 'tp-group-overview no-voice';
-        first.insertBefore(overview, first.firstChild);
-      }
-      overview.innerHTML = `
-        <div class="tp-group-overview no-voice-title"><span class="lang-zh">${g.zh}</span><span class="lang-en">${g.en}</span></div>
-        <div class="tp-group-overview no-voice-sub"><span class="lang-zh">${g.zhSub}</span><span class="lang-en">${g.enSub}</span></div>
-        <div class="tp-group-overview no-voice-tags">
-          ${(isEnglish()?g.enTags:g.zhTags).map(t => `<span>${t}</span>`).join('')}
-        </div>`;
-    });
+    document.querySelectorAll('.tp-group-overview').forEach(el => el.remove());
   }
 
   function updateStepper(){
@@ -19789,100 +19774,6 @@ body.show-zh .lang-zh{
 #prevSectionBtn:disabled,#nextSectionBtn:disabled{cursor:not-allowed !important;}
 #stepperTitle,#stepperIndex{transition:none !important;}
 
-
-
-/* ===== FINAL PATCH: Appendix 5-1 / 5-2 contrast cleanup ===== */
-/* 目標：讓翻卡記憶與小測驗在深色模式下也清楚，不再出現白底白字或深底灰字 */
-#sec21 .interactive-lab-box,
-#sec22 .interactive-lab-box{
-    background:#f8fafc !important;
-    color:#0f172a !important;
-    border-color:#dbe3ef !important;
-    box-shadow:0 18px 44px rgba(15,23,42,.14) !important;
-}
-
-.dark #sec21 .interactive-lab-box,
-.dark #sec22 .interactive-lab-box,
-html.dark #sec21 .interactive-lab-box,
-html.dark #sec22 .interactive-lab-box,
-body.dark #sec21 .interactive-lab-box,
-body.dark #sec22 .interactive-lab-box{
-    background:#f8fafc !important;
-    color:#0f172a !important;
-    border-color:#dbe3ef !important;
-}
-
-#sec21 .interactive-lab-subtitle,
-#sec22 .interactive-lab-subtitle,
-#sec21 .interactive-card-text,
-#sec22 .interactive-card-text{
-    color:#475569 !important;
-    opacity:1 !important;
-    -webkit-text-fill-color:currentColor !important;
-}
-
-#sec21 .interactive-card,
-#sec22 .interactive-card{
-    background:#ffffff !important;
-    color:#0f172a !important;
-    border-color:#cbd5e1 !important;
-}
-
-#sec21 .interactive-card-head,
-#sec22 .interactive-card-head{
-    color:#1d4ed8 !important;
-    opacity:1 !important;
-}
-
-#sec21 .interactive-card-head strong,
-#sec22 .interactive-card-head strong{
-    color:#1d4ed8 !important;
-    -webkit-text-fill-color:#1d4ed8 !important;
-}
-
-/* 5-1 翻卡：未翻開卡片改成較清楚的深灰底白字 */
-#sec21 .flashcard{
-    background:#475569 !important;
-    color:#f8fafc !important;
-    -webkit-text-fill-color:#f8fafc !important;
-    border-color:#64748b !important;
-    box-shadow:0 8px 18px rgba(15,23,42,.10) !important;
-}
-
-#sec21 .flashcard:hover{
-    background:#334155 !important;
-    border-color:#2563eb !important;
-}
-
-/* 5-1 翻開後：改成淺藍底深字，避免原本白字看不清楚 */
-#sec21 .flashcard.revealed,
-.dark #sec21 .flashcard.revealed,
-html.dark #sec21 .flashcard.revealed,
-body.dark #sec21 .flashcard.revealed{
-    background:#eaf2ff !important;
-    color:#0f172a !important;
-    -webkit-text-fill-color:#0f172a !important;
-    border-color:#93c5fd !important;
-}
-
-/* 5-2 小測驗統計卡：字色加深、數字更明顯 */
-#sec22 .quiz-stat{
-    background:#475569 !important;
-    color:#f8fafc !important;
-    border-color:#64748b !important;
-}
-
-#sec22 .quiz-stat span{
-    color:#e2e8f0 !important;
-    opacity:1 !important;
-    -webkit-text-fill-color:#e2e8f0 !important;
-}
-
-#sec22 .quiz-stat strong{
-    color:#60a5fa !important;
-    -webkit-text-fill-color:#60a5fa !important;
-}
-
 /* 5-2 題目區：提高深色區塊的對比 */
 #sec22 .quiz-question-shell{
     background:#475569 !important;
@@ -20078,5 +19969,281 @@ html.theme-light .site-topbar .voice-control-wrap.voice-active #voiceText,
 html.theme-light .site-topbar .voice-control-wrap.voice-active #voiceIcon {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
+}
+/* ===== FINAL FIX: 5-1 and 5-2 follow light/dark theme ===== */
+
+/* =========================================================
+   5-1 / 5-2 共用外框：淺色模式
+========================================================= */
+html.theme-light #sec21 .interactive-lab-box,
+body.theme-light #sec21 .interactive-lab-box,
+html.theme-light #sec22 .interactive-lab-box,
+body.theme-light #sec22 .interactive-lab-box {
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+    border-color: #dbe3ef !important;
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* 5-1 / 5-2 共用外框：深色模式 */
+html.theme-dark #sec21 .interactive-lab-box,
+body.theme-dark #sec21 .interactive-lab-box,
+html.dark #sec21 .interactive-lab-box,
+body.dark #sec21 .interactive-lab-box,
+html.theme-dark #sec22 .interactive-lab-box,
+body.theme-dark #sec22 .interactive-lab-box,
+html.dark #sec22 .interactive-lab-box,
+body.dark #sec22 .interactive-lab-box {
+    background: #0f172a !important;
+    background-color: #0f172a !important;
+    color: #e5e7eb !important;
+    border-color: rgba(148, 163, 184, 0.28) !important;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* 說明文字：淺色 */
+html.theme-light #sec21 .interactive-lab-subtitle,
+body.theme-light #sec21 .interactive-lab-subtitle,
+html.theme-light #sec22 .interactive-lab-subtitle,
+body.theme-light #sec22 .interactive-lab-subtitle,
+html.theme-light #sec21 .interactive-card-text,
+body.theme-light #sec21 .interactive-card-text,
+html.theme-light #sec22 .interactive-card-text,
+body.theme-light #sec22 .interactive-card-text {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+}
+
+/* 說明文字：深色 */
+html.theme-dark #sec21 .interactive-lab-subtitle,
+body.theme-dark #sec21 .interactive-lab-subtitle,
+html.dark #sec21 .interactive-lab-subtitle,
+body.dark #sec21 .interactive-lab-subtitle,
+html.theme-dark #sec22 .interactive-lab-subtitle,
+body.theme-dark #sec22 .interactive-lab-subtitle,
+html.dark #sec22 .interactive-lab-subtitle,
+body.dark #sec22 .interactive-lab-subtitle,
+html.theme-dark #sec21 .interactive-card-text,
+body.theme-dark #sec21 .interactive-card-text,
+html.dark #sec21 .interactive-card-text,
+body.dark #sec21 .interactive-card-text,
+html.theme-dark #sec22 .interactive-card-text,
+body.theme-dark #sec22 .interactive-card-text,
+html.dark #sec22 .interactive-card-text,
+body.dark #sec22 .interactive-card-text {
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+    opacity: 1 !important;
+}
+
+/* =========================================================
+   5-1 翻卡：淺色模式
+========================================================= */
+html.theme-light #sec21 .flashcard,
+body.theme-light #sec21 .flashcard {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06) !important;
+}
+
+html.theme-light #sec21 .flashcard:hover,
+body.theme-light #sec21 .flashcard:hover {
+    background: #eff6ff !important;
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+    -webkit-text-fill-color: #1d4ed8 !important;
+    border-color: #93c5fd !important;
+}
+
+html.theme-light #sec21 .flashcard.revealed,
+body.theme-light #sec21 .flashcard.revealed {
+    background: #eaf2ff !important;
+    background-color: #eaf2ff !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    border-color: #93c5fd !important;
+}
+
+/* 5-1 翻卡：深色模式 */
+html.theme-dark #sec21 .flashcard,
+body.theme-dark #sec21 .flashcard,
+html.dark #sec21 .flashcard,
+body.dark #sec21 .flashcard {
+    background: #334155 !important;
+    background-color: #334155 !important;
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    border: 1px solid #475569 !important;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22) !important;
+}
+
+html.theme-dark #sec21 .flashcard:hover,
+body.theme-dark #sec21 .flashcard:hover,
+html.dark #sec21 .flashcard:hover,
+body.dark #sec21 .flashcard:hover {
+    background: #475569 !important;
+    background-color: #475569 !important;
+    border-color: #60a5fa !important;
+}
+
+html.theme-dark #sec21 .flashcard.revealed,
+body.theme-dark #sec21 .flashcard.revealed,
+html.dark #sec21 .flashcard.revealed,
+body.dark #sec21 .flashcard.revealed {
+    background: #1d4ed8 !important;
+    background-color: #1d4ed8 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #60a5fa !important;
+}
+
+/* =========================================================
+   5-2 小測驗：淺色模式
+========================================================= */
+html.theme-light #sec22 .quiz-stat,
+body.theme-light #sec22 .quiz-stat {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06) !important;
+}
+
+html.theme-light #sec22 .quiz-stat span,
+body.theme-light #sec22 .quiz-stat span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+}
+
+html.theme-light #sec22 .quiz-stat strong,
+body.theme-light #sec22 .quiz-stat strong {
+    color: #2563eb !important;
+    -webkit-text-fill-color: #2563eb !important;
+}
+
+html.theme-light #sec22 .quiz-question-shell,
+body.theme-light #sec22 .quiz-question-shell {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06) !important;
+}
+
+html.theme-light #sec22 .quiz-question-title,
+body.theme-light #sec22 .quiz-question-title {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+html.theme-light #sec22 .quiz-option-btn,
+body.theme-light #sec22 .quiz-option-btn {
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+html.theme-light #sec22 .quiz-option-btn:hover:not([disabled]),
+body.theme-light #sec22 .quiz-option-btn:hover:not([disabled]) {
+    background: #eff6ff !important;
+    background-color: #eff6ff !important;
+    border-color: #93c5fd !important;
+    color: #1d4ed8 !important;
+    -webkit-text-fill-color: #1d4ed8 !important;
+}
+
+/* 5-2 小測驗：深色模式 */
+html.theme-dark #sec22 .quiz-stat,
+body.theme-dark #sec22 .quiz-stat,
+html.dark #sec22 .quiz-stat,
+body.dark #sec22 .quiz-stat {
+    background: #334155 !important;
+    background-color: #334155 !important;
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+html.theme-dark #sec22 .quiz-stat span,
+body.theme-dark #sec22 .quiz-stat span,
+html.dark #sec22 .quiz-stat span,
+body.dark #sec22 .quiz-stat span {
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+    opacity: 1 !important;
+}
+
+html.theme-dark #sec22 .quiz-stat strong,
+body.theme-dark #sec22 .quiz-stat strong,
+html.dark #sec22 .quiz-stat strong,
+body.dark #sec22 .quiz-stat strong {
+    color: #60a5fa !important;
+    -webkit-text-fill-color: #60a5fa !important;
+}
+
+html.theme-dark #sec22 .quiz-question-shell,
+body.theme-dark #sec22 .quiz-question-shell,
+html.dark #sec22 .quiz-question-shell,
+body.dark #sec22 .quiz-question-shell {
+    background: #334155 !important;
+    background-color: #334155 !important;
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+html.theme-dark #sec22 .quiz-question-title,
+body.theme-dark #sec22 .quiz-question-title,
+html.dark #sec22 .quiz-question-title,
+body.dark #sec22 .quiz-question-title {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+}
+
+html.theme-dark #sec22 .quiz-option-btn,
+body.theme-dark #sec22 .quiz-option-btn,
+html.dark #sec22 .quiz-option-btn,
+body.dark #sec22 .quiz-option-btn {
+    background: #1e293b !important;
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    border-color: #334155 !important;
+}
+
+html.theme-dark #sec22 .quiz-option-btn:hover:not([disabled]),
+body.theme-dark #sec22 .quiz-option-btn:hover:not([disabled]),
+html.dark #sec22 .quiz-option-btn:hover:not([disabled]),
+body.dark #sec22 .quiz-option-btn:hover:not([disabled]) {
+    background: #475569 !important;
+    background-color: #475569 !important;
+    border-color: #60a5fa !important;
+}
+
+/* 答對 / 答錯：兩種模式都保持清楚 */
+#sec22 .quiz-option-btn.correct {
+    background: #dcfce7 !important;
+    background-color: #dcfce7 !important;
+    color: #14532d !important;
+    -webkit-text-fill-color: #14532d !important;
+    border-color: #22c55e !important;
+}
+
+#sec22 .quiz-option-btn.wrong {
+    background: #fee2e2 !important;
+    background-color: #fee2e2 !important;
+    color: #7f1d1d !important;
+    -webkit-text-fill-color: #7f1d1d !important;
+    border-color: #ef4444 !important;
 }
 </style>
